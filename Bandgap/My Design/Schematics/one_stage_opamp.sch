@@ -33,7 +33,6 @@ N 1820 -1770 1900 -1770 { lab=#net3}
 N 1780 -1840 1860 -1840 { lab=#net4}
 N 2240 -1660 2290 -1660 { lab=vin_min}
 N 1900 -1660 1940 -1660 { lab=vin_plus}
-N 2200 -1420 2290 -1420 { lab=0}
 N 1840 -1770 1840 -1720 { lab=#net3}
 N 1780 -1720 1840 -1720 { lab=#net3}
 N 2200 -1600 2240 -1600 { lab=vout}
@@ -47,11 +46,10 @@ N 1980 -1660 2030 -1660 { lab=#net4}
 N 2030 -1660 2200 -1660 { lab=#net4}
 N 2140 -1770 2140 -1660 { lab=#net4}
 N 2200 -1500 2240 -1500 { lab=0}
-N 1900 -1600 1900 -1580 { lab=#net5}
-N 2290 -1600 2290 -1580 { lab=#net6}
-N 2290 -1520 2290 -1420 { lab=0}
-N 1900 -1520 1900 -1420 { lab=0}
 N 1900 -1500 1980 -1500 { lab=0}
+N 2240 -1600 2300 -1600 { lab=vout}
+N 1900 -1500 1900 -1420 { lab=0}
+N 2200 -1420 2240 -1420 { lab=0}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2180 -1500 0 0 {name=M1
 L=0.6
 W=2
@@ -137,19 +135,19 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/isource.sym} 1780 -1680 0 0 {name=I0 value=10u}
-C {devices/vsource.sym} 1640 -1770 0 0 {name=V1 value=1.8}
+C {devices/vsource.sym} 1640 -1770 0 0 {name=Vdd value=1.8}
 C {devices/lab_pin.sym} 1640 -1420 0 0 {name=l1 sig_type=std_logic lab=0}
-C {devices/vsource_arith.sym} 1900 -1630 0 0 {name=E1 VOL="'2*cos(time*time*time*1e11)'" }
-C {devices/vsource_arith.sym} 2290 -1630 2 0 {name=E2 VOL="'2*cos(time*time*time*1e11)'" cos(V(IN))}
 C {devices/lab_pin.sym} 1900 -1660 0 0 {name=l2 sig_type=std_logic lab=vin_plus}
 C {devices/lab_pin.sym} 2290 -1660 0 1 {name=l3 sig_type=std_logic lab=vin_min}
 C {devices/code_shown.sym} 2430 -1690 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-.ac dec 20 10 100Meg
+v1 vin_plus 0 sin(0 100m 1meg 0 0)
+v2 0 vin_minus sin(0 100m 1meg 0 0)
+.tran 50u 200u
 .end
 " }
-C {devices/lab_pin.sym} 2240 -1600 0 1 {name=l4 sig_type=std_logic lab=vout}
+C {devices/lab_pin.sym} 2300 -1600 0 1 {name=l4 sig_type=std_logic lab=vout}
 C {devices/code.sym} 2420 -1550 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
@@ -195,5 +193,3 @@ m=1
 value=5p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/vsource.sym} 1900 -1550 0 0 {name=V2 value=0.1}
-C {devices/vsource.sym} 2290 -1550 0 0 {name=V3 value=0.1}
