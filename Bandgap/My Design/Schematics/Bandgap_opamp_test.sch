@@ -38,7 +38,6 @@ N 4450 -1440 4450 -1290 { lab=0}
 N 4370 -1610 4370 -1470 { lab=#net5}
 N 4370 -1640 4480 -1640 { lab=vdd}
 N 4480 -1720 4480 -1640 { lab=vdd}
-N 3210 -1720 4480 -1720 { lab=vdd}
 N 4370 -1720 4370 -1670 { lab=vdd}
 N 4040 -1720 4040 -1670 { lab=vdd}
 N 4230 -1530 4230 -1480 { lab=#net4}
@@ -77,7 +76,6 @@ N 3170 -1450 3890 -1450 { lab=#net4}
 N 3170 -1500 3170 -1450 { lab=#net4}
 N 3080 -1500 3170 -1500 { lab=#net4}
 N 3310 -1610 3310 -1600 { lab=Vref}
-N 3310 -1720 3310 -1670 { lab=vdd}
 N 3350 -1640 4000 -1640 { lab=#net5}
 N 4290 -1600 4370 -1600 { lab=#net5}
 N 4290 -1640 4290 -1600 { lab=#net5}
@@ -174,8 +172,6 @@ N 2270 -1610 2290 -1610 { lab=vdd}
 N 2290 -1680 2290 -1610 { lab=vdd}
 N 2270 -1680 2290 -1680 { lab=vdd}
 N 2270 -1680 2270 -1640 { lab=vdd}
-N 2290 -1680 3150 -1680 { lab=vdd}
-N 3150 -1720 3150 -1680 { lab=vdd}
 N 2270 -1420 2290 -1420 { lab=0}
 N 2290 -1420 2290 -1360 { lab=0}
 N 2270 -1360 2290 -1360 { lab=0}
@@ -199,9 +195,7 @@ N 2420 -1480 3560 -1480 { lab=#net6}
 N 2420 -1490 2420 -1480 { lab=#net6}
 N 3510 -1530 3540 -1530 { lab=vdd}
 N 3510 -1720 3510 -1530 { lab=vdd}
-N 2910 -1720 3210 -1720 { lab=vdd}
 N 3030 -1540 3060 -1540 { lab=vdd}
-N 3030 -1720 3030 -1540 { lab=vdd}
 N 3030 -1460 3060 -1460 { lab=vdd}
 N 3030 -1540 3030 -1460 { lab=vdd}
 N 4150 -1460 4250 -1460 { lab=#net2}
@@ -210,12 +204,28 @@ N 4250 -1500 4270 -1500 { lab=#net2}
 N 3670 -1290 3810 -1290 { lab=0}
 N 3560 -1480 3680 -1480 { lab=#net6}
 N 3680 -1480 3840 -1480 { lab=#net6}
+N 3030 -1820 3030 -1540 { lab=vdd}
+N 2290 -1820 3030 -1820 { lab=vdd}
+N 2290 -1680 2340 -1680 { lab=vdd}
+N 2340 -1820 2340 -1680 { lab=vdd}
+N 3230 -1820 3230 -1720 { lab=vdd}
+N 3030 -1820 3230 -1820 { lab=vdd}
+N 3310 -1720 3310 -1670 { lab=#net9}
+N 3310 -1820 3310 -1780 { lab=vdd}
+N 3230 -1820 3310 -1820 { lab=vdd}
+N 3510 -1820 3510 -1720 { lab=vdd}
+N 3310 -1820 3510 -1820 { lab=vdd}
+N 3510 -1820 4480 -1820 { lab=vdd}
+N 4480 -1820 4480 -1720 { lab=vdd}
+N 4370 -1820 4370 -1720 { lab=vdd}
+N 4110 -1820 4110 -1720 { lab=vdd}
+N 4040 -1820 4040 -1720 { lab=vdd}
 C {sky130_fd_pr/pnp_05v5.sym} 3170 -1370 0 0 {name=Q3
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 3610 -1600 0 1 {name=l4 sig_type=std_logic lab=Vref}
-C {devices/code_shown.sym} 2930 -1900 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 2910 -1960 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *vin vdd 0 dc 0 pwl(0 0 100u 0 200u 5 500u 5)
@@ -229,7 +239,7 @@ C {sky130_fd_pr/pnp_05v5.sym} 3540 -1370 0 0 {name=Q5
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 2910 -1720 0 0 {name=l2 sig_type=std_logic lab=vdd}
+C {devices/lab_pin.sym} 2290 -1820 0 0 {name=l2 sig_type=std_logic lab=vdd}
 C {sky130_fd_pr/pnp_05v5.sym} 2950 -1370 0 0 {name=Q9
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
@@ -432,7 +442,7 @@ model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr_ngspice/latest/models/sky130.lib.spice} 4080 -1130 0 0 {}
-C {devices/code.sym} 3420 -1900 0 0 {name=TTTT_MODELS
+C {devices/code.sym} 3400 -1960 0 0 {name=TTTT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -473,3 +483,5 @@ value="
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 4300 -1500 3 0 {name=C1 model=cap_mim_m3_2 W=15 L=17 MF=1 spiceprefix=X}
+C {devices/vsource.sym} 3310 -1750 0 0 {name=V1 value=0}
+C {devices/ngspice_get_expr.sym} 3270 -1740 0 0 {name=r1 node="[ngspice::get_current V1]"}
