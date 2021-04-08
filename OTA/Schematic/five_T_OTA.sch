@@ -100,7 +100,7 @@ value="
 Vsup vdd 0 1.8
 *Vpos vp 0 DC 0.9 AC 1 
 *Vneg 0 vn  DC -0.9 AC 1 
-*.ac dec 10 1 10MEG
+*.ac dec 10 1 70MEG
 Vpos vp 0 DC 0.9 AC 0.1 SIN(0.9 0.1 1MEG)
 Vneg 0 vn  DC -0.9 AC 0.1 SIN(-0.9 0.1 1MEG)
 .tran 0.1u 2u
