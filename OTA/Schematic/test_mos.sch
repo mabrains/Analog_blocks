@@ -51,6 +51,31 @@ N 2800 -920 2810 -920 { lab=0}
 N 2800 -1090 2800 -1060 { lab=#net4}
 N 2800 -1220 2800 -1150 { lab=vdd}
 N 2700 -1220 2800 -1220 { lab=vdd}
+N 2970 -1070 2970 -1020 { lab=#net5}
+N 2970 -960 2970 -920 { lab=0}
+N 2890 -1100 2930 -1100 { lab=#net5}
+N 2970 -1160 2970 -1130 { lab=vdd}
+N 2970 -1220 2970 -1160 { lab=vdd}
+N 2890 -1100 2890 -1040 { lab=#net5}
+N 2890 -1040 2970 -1040 { lab=#net5}
+N 2970 -1100 3070 -1100 { lab=vdd}
+N 3070 -1180 3070 -1100 { lab=vdd}
+N 3070 -1220 3070 -1180 { lab=vdd}
+N 2970 -1220 3070 -1220 { lab=vdd}
+N 3170 -970 3170 -920 { lab=0}
+N 2970 -920 3170 -920 { lab=0}
+N 3090 -1000 3130 -1000 { lab=#net6}
+N 3090 -1060 3090 -1000 { lab=#net6}
+N 3090 -1060 3170 -1060 { lab=#net6}
+N 3170 -1060 3170 -1030 { lab=#net6}
+N 3170 -1000 3180 -1000 { lab=0}
+N 3180 -1000 3180 -920 { lab=0}
+N 3170 -920 3180 -920 { lab=0}
+N 3170 -1090 3170 -1060 { lab=#net6}
+N 3170 -1220 3170 -1150 { lab=vdd}
+N 3070 -1220 3170 -1220 { lab=vdd}
+N 2810 -920 2970 -920 { lab=0}
+N 2800 -1220 2970 -1220 { lab=vdd}
 C {sky130_fd_pr/pfet_01v8.sym} 2140 -1100 0 0 {name=M1
 L=1
 W=10
@@ -144,7 +169,24 @@ model=pfet_01v8_lvt
 spiceprefix=X
 }
 C {devices/isource.sym} 2600 -990 0 0 {name=I2 value=50u}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 2780 -1000 0 0 {name=M4
+C {devices/isource.sym} 2800 -1120 0 0 {name=I3 value=50u}
+C {devices/isource.sym} 2970 -990 0 0 {name=I4 value=50u}
+C {devices/isource.sym} 3170 -1120 0 0 {name=I5 value=50u}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3150 -1000 0 0 {name=M5
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 2780 -1000 0 0 {name=M6
 L=1
 W=10
 nf=1
@@ -158,4 +200,17 @@ sa=0 sb=0 sd=0
 model=nfet_01v8_lvt
 spiceprefix=X
 }
-C {devices/isource.sym} 2800 -1120 0 0 {name=I3 value=50u}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2950 -1100 0 0 {name=M4
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}

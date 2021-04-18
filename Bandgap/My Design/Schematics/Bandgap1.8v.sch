@@ -8,20 +8,15 @@ N -950 -260 -950 -210 { lab=0}
 N -1170 -260 -1170 -210 { lab=0}
 N -1170 -210 -950 -210 { lab=0}
 N -1170 -350 -1170 -320 { lab=#net1}
-N -1170 -440 -760 -440 { lab=#net2}
 N -1170 -530 -1170 -410 { lab=#net2}
-N -950 -540 -760 -540 { lab=#net3}
 N -950 -570 -950 -540 { lab=#net3}
 N -950 -540 -950 -320 { lab=#net3}
 N -950 -710 -950 -630 { lab=Vref}
 N -1170 -710 -950 -710 { lab=Vref}
 N -1170 -710 -1170 -590 { lab=Vref}
-N -540 -490 -470 -490 { lab=Vref}
 N -470 -710 -470 -490 { lab=Vref}
 N -950 -710 -470 -710 { lab=Vref}
-N -660 -400 -660 -210 { lab=0}
 N -950 -210 -660 -210 { lab=0}
-N -660 -650 -660 -580 { lab=Vsupply}
 N -1250 -710 -1170 -710 { lab=Vref}
 N -910 -290 -880 -290 { lab=0}
 N -880 -290 -880 -210 { lab=0}
@@ -68,7 +63,6 @@ N -2130 -290 -2130 -210 { lab=0}
 N -2255 -290 -2200 -290 { lab=0}
 N -2255 -290 -2255 -210 { lab=0}
 N -2255 -210 -1240 -210 { lab=0}
-N -2200 -360 -2200 -315 { lab=#net1}
 N -2200 -360 -1330 -360 { lab=#net1}
 N -1330 -360 -1330 -320 { lab=#net1}
 N -1330 -335 -1170 -335 { lab=#net1}
@@ -77,8 +71,39 @@ N -1620 -360 -1620 -320 { lab=#net1}
 N -1765 -360 -1765 -320 { lab=#net1}
 N -1910 -360 -1910 -320 { lab=#net1}
 N -2055 -360 -2055 -320 { lab=#net1}
+N -500 -490 -470 -490 { lab=Vref}
+N -1060 -420 -800 -420 { lab=#net2}
+N -1060 -460 -1060 -420 { lab=#net2}
+N -1170 -460 -1060 -460 { lab=#net2}
+N -950 -550 -800 -550 { lab=#net3}
+N -2500 -490 -2500 -350 { lab=#net4}
+N -2460 -320 -2400 -320 { lab=#net5}
+N -2400 -520 -2400 -320 { lab=#net5}
+N -2460 -520 -2400 -520 { lab=#net5}
+N -2620 -420 -2500 -420 { lab=#net4}
+N -2660 -600 -2660 -450 { lab=Vdd}
+N -2660 -600 -2500 -600 { lab=Vdd}
+N -2500 -600 -2500 -550 { lab=Vdd}
+N -660 -650 -660 -610 { lab=Vdd}
+N -660 -370 -660 -210 { lab=0}
+N -2500 -290 -2500 -210 { lab=0}
+N -2500 -210 -2255 -210 { lab=0}
+N -2580 -320 -2500 -320 { lab=0}
+N -2580 -320 -2580 -240 { lab=0}
+N -2580 -240 -2500 -240 { lab=0}
+N -2600 -520 -2495 -520 { lab=Vdd}
+N -2600 -600 -2600 -520 { lab=Vdd}
+N -2760 -420 -2655 -420 { lab=Vdd}
+N -2760 -480 -2760 -420 { lab=Vdd}
+N -2760 -480 -2660 -480 { lab=Vdd}
+N -2400 -490 -800 -490 { lab=#net5}
+N -2660 -380 -2300 -380 { lab=#net3}
+N -2660 -390 -2660 -380 { lab=#net3}
+N -2300 -500 -950 -500 { lab=#net3}
+N -2300 -500 -2300 -380 { lab=#net3}
+N -2200 -360 -2200 -320 { lab=#net1}
 C {devices/res.sym} -1170 -560 0 0 {name=R1
-value=23.5k
+value=23k
 footprint=1206
 device=resistor
 m=1}
@@ -92,21 +117,22 @@ value=23k
 footprint=1206
 device=resistor
 m=1}
-C {devices/lab_pin.sym} -2255 -210 0 0 {name=l1 sig_type=std_logic lab=0}
-C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_PMOS.sym} -480 -340 0 0 {name=x1}
-C {devices/lab_pin.sym} -660 -650 0 0 {name=l2 sig_type=std_logic lab=Vsupply}
+C {devices/lab_pin.sym} -2500 -210 0 0 {name=l1 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -660 -650 0 0 {name=l2 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -1250 -710 0 0 {name=l3 sig_type=std_logic lab=Vref}
-C {devices/code_shown.sym} -1185 -935 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -2100 -715 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-vin Vsupply 0 1.8
-*.DC TEMP -40 85 5
-.DC vin 0 3 0.05
-*vin vdd 0 dc 0 pwl(0 0 100u 0 200u 5 500u 5)
+*vin Vdd 0 1.8
+*.DC TEMP -40 125 1
+*.DC vin 0 3 0.05
+*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 3 500u 3)
 *.tran 100u 500u
+vin vdd 0 DC 1.8 AC 1  
+.ac dec 10 1 100MEG
 .end
 " }
-C {devices/code.sym} -745 -915 0 0 {name=TT_MODELS
+C {devices/code.sym} -1660 -695 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -180,5 +206,49 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pnp_05v5.sym} -2180 -290 0 1 {name=Q9
 model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_PMOS.sym} -680 -490 0 0 {name=x1}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -2480 -320 0 1 {name=M1
+L=40
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {devices/lab_pin.sym} -2660 -600 0 0 {name=l4 sig_type=std_logic lab=Vdd}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -2480 -520 0 1 {name=M2
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -2640 -420 0 1 {name=M3
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_lvt
 spiceprefix=X
 }
