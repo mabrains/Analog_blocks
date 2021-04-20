@@ -119,9 +119,9 @@ only_toplevel=true
 value="
 Vsup vdd 0 3.3
 *DC Analysis
-*Vpos vp 0 DC 0.9  
-*Vneg 0 vn  DC -0.9
-*.op
+Vpos vp 0 DC 0.9  
+Vneg 0 vn  DC -0.9
+.op
 *AC Analysis
 *Vpos vp 0 DC 0.9 AC 1 
 *Vneg 0 vn  DC -0.9 AC 1 
