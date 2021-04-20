@@ -47,12 +47,18 @@ C {devices/lab_pin.sym} -1650 -990 0 1 {name=l4 sig_type=std_logic lab=vout}
 C {devices/code_shown.sym} -1565 -1180 0 0 {name=NGSPICE
 only_toplevel=true
 value="
+*DC op
 *Vinput Vin 0 3.5
-*.DC vinput 0 5 0.5
+*.op
+*DC input sweep
+Vinput Vin 0 3.5
+.DC vinput 0 5 0.5
+*PSRR analysis
 *Vinput Vin 0 DC 4 AC 1
 *.AC dec 10 1 100MEG
-VVin Vin 0 PULSE(3.5 4 50u 100n 100n 50u 100u)
-.tran 50u 100u
+*Transient analysis
+*VVin Vin 0 PULSE(3.5 4 50u 100n 100n 50u 100u)
+*.tran 50u 100u
 .end
 " }
 C {devices/code.sym} -1510 -880 0 0 {name=TT_MODELS
