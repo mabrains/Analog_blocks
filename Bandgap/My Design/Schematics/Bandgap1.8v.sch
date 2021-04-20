@@ -120,14 +120,22 @@ m=1}
 C {devices/lab_pin.sym} -2500 -210 0 0 {name=l1 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -660 -650 0 0 {name=l2 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -1250 -710 0 0 {name=l3 sig_type=std_logic lab=Vref}
-C {devices/code_shown.sym} -2125 -765 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -2115 -845 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-vin Vdd 0 1.8
-.DC TEMP -40 125 1
+*DC analysis
+*vin Vdd 0 1.8
+*.op
+*Temerature variation
+*vin Vdd 0 1.8
+*.DC TEMP -40 125 1
+*Supply variation
+*vin Vdd 0 1.8
 *.DC vin 0 3 0.05
+*Transient analysis
 *vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 3 500u 3)
 *.tran 100u 500u
+*PSRR analysis
 *vin vdd 0 DC 1.8 AC 1  
 *.ac dec 10 1 100MEG
 .end
