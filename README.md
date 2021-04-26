@@ -40,6 +40,25 @@ The netlist of all previous analyses is below and for each analysis you want to 
 
 ![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Two_stage_netlist.png)
 
+Specification | Achieved
+------------- | ---------
+Gain          | 61 dB
+GBW           | 38 MHz
+Phase margin  | 54 deg
+
+Corners simulation: 
+Process | TT | FF | SS | FS | SF
+--------|----|----|----|----|----
+gain(dB)| 61 | 63 | 59 | 59 | 63
+GBW(MHz)| 37 | 38 | 35 | 36 | 38
+PM(deg) | 52 | 50 | 53 | 54 | 49
+--------------------------------- 
+Supply  | TT | FF | SS 
+--------|----|----|----
+gain(dB)| 61 | 63 | 59 
+GBW(MHz)| 37 | 37 | 35 
+PM(deg) | 52 | 52 | 53
+
 ### 2. Bandgap reference
 
 ![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/Schematic.png)
@@ -79,6 +98,19 @@ The netlist of all previous analyses is below and for each analysis you want to 
 
 ![Image of BGR netlist](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/BGR_netlist.png)
 
+Specification    | Achieved
+-----------------| ---------
+Reference output |              1.1v
+Temp. variation  | 20mv over T from -40 deg to 125 deg
+Supply variation | 3mv  over VDD from 1.6v to 2v 
+
+Corners simulation:
+   Process   |  TT  |  FF  |  SS  |  FS  |  SF
+-------------|------|------|------|------|------
+Vref at T=27 |1.114v|1.119v|1.107v|1.109v|1.123v
+Vref at T=-45|1.111v|1.115v|1.107v|1.106v|1.119v
+Vref at T=90 |1.113v|1.119v|1.104v|1.108v|1.123v
+
 ### 3. LDO
 
 ![Image of LDO schematic](https://github.com/mabrains/Analog_blocks/blob/main/LDO/Plots/LDO_Miller_BGR_1.8v/Schematic.png)
@@ -115,3 +147,14 @@ Use the command (.tran) then press netlist then press simulate. After simulation
 The netlist of all previous analyses is below and for each analysis you want to do uncomment the lines of it.
 
 ![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/LDO/Plots/LDO_Miller_BGR_1.8v/TB_netlist.png)
+
+Specification    | Achieved
+-----------------| ---------
+output Voltage   | 1.8v
+Input range      | 1.9v to 2.2v
+Vdropout         | 0.1v
+Line regulation  | 26 mv/v
+PSRR @ DC        | 38 dB
+PSRR @ 1KHz      | 72 dB
+PSRR @ 1MHz      | 94 dB
+
