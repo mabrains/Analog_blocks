@@ -37,44 +37,35 @@ N 750 -1670 990 -1670 { lab=Vdd}
 N 990 -1510 1070 -1510 { lab=Vdd}
 N 1070 -1670 1070 -1510 { lab=Vdd}
 N 990 -1670 1070 -1670 { lab=Vdd}
-N 240 -1240 240 -1190 { lab=GND}
-N 160 -1270 240 -1270 { lab=GND}
-N 160 -1270 160 -1190 { lab=GND}
 N 850 -1430 870 -1430 { lab=#net2}
 N 850 -1510 850 -1430 { lab=#net2}
 N 930 -1430 990 -1430 { lab=Vout}
-N 240 -1350 240 -1300 { lab=#net4}
-N 240 -1670 240 -1410 { lab=Vdd}
 N 480 -1440 480 -1190 { lab=GND}
 N 680 -1270 950 -1270 { lab=#net4}
 N 680 -1270 680 -1230 { lab=#net4}
 N 500 -1230 680 -1230 { lab=#net4}
-N 240 -1320 320 -1320 { lab=#net4}
-N 320 -1320 320 -1270 { lab=#net4}
 N 370 -1440 430 -1440 { lab=Vn}
 N 1070 -1190 1070 -1150 { lab=GND}
 N 990 -1190 990 -1150 { lab=GND}
 N 630 -1190 630 -1150 { lab=GND}
 N 550 -1190 550 -1150 { lab=GND}
 N 480 -1190 480 -1150 { lab=GND}
-N 240 -1190 240 -1150 { lab=GND}
-N 160 -1190 160 -1150 { lab=GND}
 N 160 -1150 1070 -1150 { lab=GND}
 N 500 -1270 500 -1230 { lab=#net4}
 N 500 -1270 510 -1270 { lab=#net4}
-N 280 -1270 500 -1270 { lab=#net4}
 N 240 -1670 370 -1670 { lab=Vdd}
-N 690 -1440 750 -1440 { lab=Vn}
+N 690 -1440 750 -1440 { lab=Vp}
 N 990 -1430 1090 -1430 { lab=Vout}
+N 360 -1270 500 -1270 { lab=#net4}
+N 200 -1240 200 -1150 {}
+N 240 -1270 360 -1270 {}
+N 200 -1360 200 -1300 {}
+N 180 -1360 200 -1360 {}
+N 280 -1320 280 -1270 {}
+N 200 -1320 280 -1320 {}
 C {devices/opin.sym} 1090 -1430 0 0 {name=p3 lab=Vout}
 C {devices/ipin.sym} 210 -1670 0 0 {name=p4 lab=Vdd}
 C {devices/ipin.sym} 160 -1150 0 0 {name=p5 lab=GND}
-C {devices/capa.sym} 900 -1430 1 1 {name=C1
-m=1
-value=3p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/isource.sym} 240 -1380 0 0 {name=I0 value=30u}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 450 -1440 0 0 {name=M2
 L=0.5
 W=2
@@ -147,21 +138,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 530 -1270 0 0 {name=M7
 L=0.5
-W=4
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_g5v0d10v5
-spiceprefix=X
-}
-C {sky130_fd_pr/nfet_g5v0d10v5.sym} 260 -1270 0 1 {name=M8
-L=0.5
-W=4
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -189,3 +166,19 @@ spiceprefix=X
 }
 C {devices/ipin.sym} 750 -1440 0 1 {name=p2 lab=Vp}
 C {devices/ipin.sym} 370 -1440 0 0 {name=p1 lab=Vn}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 3 0 {name=C1 model=cap_mim_m3_2 W=1 L=3 MF=1 spiceprefix=X}
+C {devices/ipin.sym} 180 -1360 0 0 {name=p6 lab=Ibias}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 220 -1270 0 1 {name=M1
+L=0.5
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}

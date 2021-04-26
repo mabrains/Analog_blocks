@@ -11,11 +11,11 @@ N 3410 -680 3410 -650 { lab=#net1}
 N 3410 -860 3410 -740 { lab=#net2}
 N 3630 -900 3630 -870 { lab=#net3}
 N 3630 -870 3630 -650 { lab=#net3}
-N 3630 -1040 3630 -960 { lab=xxx}
-N 3410 -1040 3630 -1040 { lab=xxx}
-N 3410 -1040 3410 -920 { lab=xxx}
-N 4110 -1040 4110 -820 { lab=xxx}
-N 3630 -1040 4110 -1040 { lab=xxx}
+N 3630 -1040 3630 -960 { lab=Vref}
+N 3410 -1040 3630 -1040 { lab=Vref}
+N 3410 -1040 3410 -920 { lab=Vref}
+N 4110 -1040 4110 -820 { lab=Vref}
+N 3630 -1040 4110 -1040 { lab=Vref}
 N 3575 -620 3630 -620 { lab=GND}
 N 3575 -620 3575 -540 { lab=GND}
 N 3410 -620 3460 -620 { lab=GND}
@@ -67,7 +67,7 @@ N 2960 -690 2960 -650 { lab=#net1}
 N 2815 -690 2815 -650 { lab=#net1}
 N 2670 -690 2670 -650 { lab=#net1}
 N 2525 -690 2525 -650 { lab=#net1}
-N 4080 -820 4110 -820 { lab=xxx}
+N 4080 -820 4110 -820 { lab=Vref}
 N 2080 -820 2080 -680 { lab=#net4}
 N 2120 -650 2180 -650 { lab=#net5}
 N 2180 -850 2180 -650 { lab=#net5}
@@ -89,7 +89,7 @@ N 1920 -720 1920 -710 { lab=#net3}
 N 2280 -830 3630 -830 { lab=#net3}
 N 2280 -830 2280 -710 { lab=#net3}
 N 2380 -690 2380 -650 { lab=#net1}
-N 4110 -1040 4160 -1040 { lab=xxx}
+N 4110 -1040 4160 -1040 { lab=Vref}
 N 3880 -690 3880 -540 { lab=GND}
 N 3700 -540 3880 -540 { lab=GND}
 N 3670 -620 3700 -620 { lab=GND}
@@ -108,21 +108,12 @@ N 3470 -860 3470 -840 { lab=#net2}
 N 3410 -840 3470 -840 { lab=#net2}
 N 3630 -780 3770 -780 { lab=#net3}
 N 1890 -540 2080 -540 { lab=GND}
-C {devices/res.sym} 3410 -890 0 0 {name=R1
-value=21k
-footprint=1206
-device=resistor
-m=1}
-C {devices/res.sym} 3410 -710 0 0 {name=R2
-value=5.2k
-footprint=1206
-device=resistor
-m=1}
-C {devices/res.sym} 3630 -930 0 0 {name=R3
-value=21k
-footprint=1206
-device=resistor
-m=1}
+N 3340 -930 3610 -930 { lab=GND}
+N 3340 -930 3340 -890 { lab=GND}
+N 3340 -890 3390 -890 { lab=GND}
+N 3340 -710 3390 -710 { lab=GND}
+N 3340 -890 3340 -710 { lab=GND}
+N 3340 -710 3340 -620 { lab=GND}
 C {sky130_fd_pr/pnp_05v5.sym} 3650 -620 0 1 {name=Q1
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
@@ -159,7 +150,38 @@ C {sky130_fd_pr/pnp_05v5.sym} 2400 -620 0 1 {name=Q9
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 2100 -650 0 1 {name=M1
+C {devices/ipin.sym} 1900 -1010 0 0 {name=p1 lab=Vdd}
+C {devices/ipin.sym} 1890 -540 0 0 {name=p2 lab=GND}
+C {devices/opin.sym} 4160 -1040 0 0 {name=p3 lab=Vref}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2100 -850 0 1 {name=M2
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1940 -750 0 1 {name=M3
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2100 -650 0 1 {name=M1
 L=40
 W=1
 nf=1
@@ -170,38 +192,25 @@ as="'int((nf+2)/2) * W/nf * 0.29'"
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=nfet_01v8_lvt
+model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8_lvt.sym} 2100 -850 0 1 {name=M2
-L=1
-W=10
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8_lvt
+C {sky130_fd_pr/res_high_po.sym} 3410 -890 0 0 {name=R1
+W=1
+L=6
+model=res_high_po
 spiceprefix=X
-}
-C {sky130_fd_pr/pfet_01v8_lvt.sym} 1940 -750 0 1 {name=M3
-L=1
-W=10
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8_lvt
+mult=1}
+C {sky130_fd_pr/res_high_po.sym} 3630 -930 0 0 {name=R3
+W=1
+L=6
+model=res_high_po
 spiceprefix=X
-}
-C {/home/eslam/Analog_Design/Bandgap/My Design/Schematics/Bandgap5v_OTA.sym} 3910 -820 0 0 {name=x1}
-C {devices/ipin.sym} 1900 -1010 0 0 {name=p1 lab=Vdd}
-C {devices/ipin.sym} 1890 -540 0 0 {name=p2 lab=GND}
-C {devices/opin.sym} 4160 -1040 0 0 {name=p3 lab=Vref}
+mult=1}
+C {sky130_fd_pr/res_high_po.sym} 3410 -710 0 0 {name=R2
+W=1
+L=2.6
+model=res_high_po
+spiceprefix=X
+mult=1}
+C {/home/eslam/Analog_Design/LDO/Schematic/Bandgap5v_OTA.sym} 3910 -820 0 0 {name=x1}
