@@ -4,32 +4,32 @@ K {}
 V {}
 S {}
 E {}
-N 570 -1850 570 -1790 { lab=Vdd}
-N 390 -1850 570 -1850 { lab=Vdd}
-N 570 -1630 570 -1550 { lab=0}
-N 390 -1550 570 -1550 { lab=0}
-N 670 -1710 750 -1710 { lab=Vref}
-C {devices/code_shown.sym} 815 -1755 0 0 {name=NGSPICE
+N 560 -1040 560 -1010 { lab=Vdd}
+N 550 -1040 560 -1040 { lab=Vdd}
+N 550 -830 560 -830 { lab=0}
+N 560 -850 560 -830 { lab=0}
+N 720 -930 720 -920 { lab=#net1}
+N 680 -930 720 -930 { lab=#net1}
+N 720 -860 720 -830 { lab=0}
+N 560 -830 720 -830 { lab=0}
+C {devices/code_shown.sym} 785 -1025 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*DC analysis
-*vin Vdd 0 1.8
-*.op
 *Temerature variation
 *vin Vdd 0 1.8
-*.DC TEMP -40 125 1
+*.DC TEMP -40 120 0.5
 *Supply variation
-vin Vdd 0 1.8
-.DC vin 0 3 0.05
+*vin Vdd 0 1.8
+*.DC vin 0 2 0.05
 *Transient analysis
-*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 3 500u 3)
-*.tran 100u 500u
+vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 1.8 500u 1.8)
+.tran 100u 500u
 *PSRR analysis
 *vin vdd 0 DC 1.8 AC 1  
 *.ac dec 10 1 100MEG
 .end
 " }
-C {devices/code.sym} 1205 -1645 0 0 {name=TT_MODELS
+C {devices/code.sym} 325 -965 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -69,7 +69,7 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 570 -1710 0 0 {name=x1}
-C {devices/lab_pin.sym} 390 -1850 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/lab_pin.sym} 390 -1550 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 750 -1710 0 1 {name=l3 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} 550 -1040 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/lab_pin.sym} 550 -830 0 0 {name=l2 sig_type=std_logic lab=0}
+C {devices/vsource.sym} 720 -890 0 0 {name=V1 value=0}
+C {/home/eslam/Analog_Design/Reference_Current/Schematic/Reference_Current.sym} 560 -930 0 0 {name=x1}

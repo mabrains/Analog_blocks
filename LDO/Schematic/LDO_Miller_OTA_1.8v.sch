@@ -131,8 +131,8 @@ value="
 *VVin Vin 0 2.2
 *.DC VVin 0 2.2 0.1
 *PSRR analysis
-*VVin Vin 0 DC 2.2 AC 1
-*.AC dec 10 1 2MEG
+VVin Vin 0 DC 2.2 AC 1
+.AC dec 10 1 2MEG
 *Transient analysis
 *VVin Vin 0 PULSE(2 2.1 50u 100n 100n 50u 100u)
 *.tran 50u 100u
