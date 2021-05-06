@@ -114,7 +114,7 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {devices/code_shown.sym} 1960 -1530 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 1760 -1530 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 Vsup vdd 0 3.3

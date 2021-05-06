@@ -17,19 +17,19 @@ N -1680 -940 -1680 -885 { lab=vdd}
 N -1080 -755 -1080 -685 { lab=Vout}
 N -1080 -625 -1080 -560 { lab=0}
 N -1290 -560 -1080 -560 { lab=0}
-C {devices/code_shown.sym} -975 -940 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -985 -1035 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*DC operating point
+*AC Analysis Differential mode
 *Vsup vdd 0 1.8
-*Vpos vp 0 DC 0.9  
-*Vneg 0 vn  DC -0.9
-*.op
-*AC Analysis
-Vsup vdd 0 1.8
-Vpos vp 0 DC 0.9 AC 1 
-Vneg 0 vn  DC -0.9 AC 1 
-.ac dec 10 1 100MEG
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg 0 vn  DC -0.9 AC 1 
+*.ac dec 10 1 100MEG
+*AC Analysis Common mode
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg vn 0 DC 0.9 AC 1 
+*.ac dec 10 1 100MEG
 *Transient Analysis 
 *Vsup vdd 0 1.8
 *Vpos vp 0 SIN(0.9 1m 1Meg)
@@ -39,8 +39,25 @@ Vneg 0 vn  DC -0.9 AC 1
 *Vpos vp 0 DC 0.9 AC 1 
 *Vneg 0 vn  DC -0.9 AC 1 
 *.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+*PSRR analysis
+*Vsup vdd 0 DC 1.8 AC 1
+*Vpos vp 0 DC 0.9  
+*Vneg vn 0 DC 0.9 
+*.ac dec 10 1 100MEG
 " }
-C {devices/code.sym} -695 -840 0 0 {name=TTTT_MODELS
+C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_NMOS_1.8v.sym} -1295 -755 0 0 {name=x1}
+C {devices/lab_pin.sym} -1730 -940 0 0 {name=l1 sig_type=std_logic lab=vdd}
+C {devices/lab_pin.sym} -1540 -815 0 0 {name=l2 sig_type=std_logic lab=vn}
+C {devices/lab_pin.sym} -1540 -695 0 0 {name=l3 sig_type=std_logic lab=vp}
+C {devices/lab_pin.sym} -1540 -560 0 0 {name=l4 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} -1050 -755 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {devices/isource.sym} -1680 -855 0 0 {name=I0 value=20u}
+C {devices/capa.sym} -1080 -655 0 0 {name=C1
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/code.sym} -1200 -975 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -80,15 +97,3 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_NMOS_1.8v.sym} -1295 -755 0 0 {name=x1}
-C {devices/lab_pin.sym} -1730 -940 0 0 {name=l1 sig_type=std_logic lab=vdd}
-C {devices/lab_pin.sym} -1540 -815 0 0 {name=l2 sig_type=std_logic lab=vn}
-C {devices/lab_pin.sym} -1540 -695 0 0 {name=l3 sig_type=std_logic lab=vp}
-C {devices/lab_pin.sym} -1540 -560 0 0 {name=l4 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -1050 -755 0 1 {name=l5 sig_type=std_logic lab=Vout}
-C {devices/isource.sym} -1680 -855 0 0 {name=I0 value=20u}
-C {devices/capa.sym} -1080 -655 0 0 {name=C1
-m=1
-value=2p
-footprint=1206
-device="ceramic capacitor"}

@@ -61,16 +61,21 @@ C {devices/code_shown.sym} 1280 -1440 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *AC analysis
-Vsup vdd 0 1.8
-Vpos vp 0 DC 0.9 AC 1 
-Vneg 0 vn  DC -0.9 AC 1 
-.ac dec 10 1 120MEG
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg 0 vn  DC -0.9 AC 1 
+*.ac dec 10 1 120MEG
 *Transient analysis
 *Vpos vp 0 SIN(0.9 1m 1Meg)
 *Vneg 0 vn SIN(-0.9 1m 1Meg)
 *.tran 0.05u 2u
 *Noise analysis
 *.noise v(vout) Vpos dec 10 1 70MEG Vneg dec 10 1 70MEG
+*PSRR analysis
+Vsup vdd 0 DC 1.8 AC 1
+Vpos vp 0 DC 0.9  
+Vneg vn 0 DC 0.9 
+.ac dec 10 1 100MEG
 " }
 C {/home/eslam/Analog_Design/OTA/Schematic/Folded_Cascode_OTA.sym} 950 -1420 0 0 {name=x1}
 C {devices/isource.sym} 610 -1520 0 0 {name=I0 value=25u}
