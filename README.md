@@ -45,19 +45,28 @@ Specification | Achieved
 Gain          | 61 dB
 GBW           | 38 MHz
 Phase margin  | 54 deg
+CMRR          | 72 dB
+PSRR          | 2.4 dB
+Power         | 274 uW
 
 Corners simulation: 
 Process | TT | FF | SS | FS | SF
 --------|----|----|----|----|----
-gain(dB)| 61 | 63 | 59 | 59 | 63
+gain(dB)| 61 | 61 | 59 | 59 | 61
 GBW(MHz)| 37 | 38 | 35 | 36 | 38
 PM(deg) | 52 | 50 | 53 | 54 | 49
+CMRR(dB)| 72 | 74 | 70 | 70 | 73
+PSRR(dB)| 2.4 | 2.4 | 2.4 | 2.35 | 2.5
+Power(uW)| 274 | 277 | 271 | 277 | 271
 --------------------------------- 
 Supply  | TT | FF | SS 
 --------|----|----|----
-gain(dB)| 61 | 63 | 59 
+gain(dB)| 61 | 61 | 59 
 GBW(MHz)| 37 | 37 | 35 
 PM(deg) | 52 | 52 | 53
+CMRR(dB)| 72 | 72 | 71 
+PSRR(dB)| 2.4 | 2.4 | 2.4 
+Power(uW)| 274 | 292 | 256 
 
 ### 2. Bandgap reference
 
