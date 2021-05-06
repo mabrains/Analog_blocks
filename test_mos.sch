@@ -156,7 +156,7 @@ spiceprefix=X
 C {devices/isource.sym} 2420 -1110 0 0 {name=I1 value=50u}
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 2580 -1100 0 0 {name=M3
 L=1
-W=10
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -168,8 +168,8 @@ sa=0 sb=0 sd=0
 model=pfet_01v8_lvt
 spiceprefix=X
 }
-C {devices/isource.sym} 2600 -990 0 0 {name=I2 value=50u}
-C {devices/isource.sym} 2800 -1120 0 0 {name=I3 value=50u}
+C {devices/isource.sym} 2600 -990 0 0 {name=I2 value=20u}
+C {devices/isource.sym} 2800 -1120 0 0 {name=I3 value=20u}
 C {devices/isource.sym} 2970 -990 0 0 {name=I4 value=50u}
 C {devices/isource.sym} 3170 -1120 0 0 {name=I5 value=50u}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3150 -1000 0 0 {name=M5
@@ -188,7 +188,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 2780 -1000 0 0 {name=M6
 L=1
-W=10
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
