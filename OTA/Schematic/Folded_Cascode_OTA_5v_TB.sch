@@ -64,7 +64,7 @@ value="
 Vsup vdd 0 5
 Vpos vp 0 DC 0.7 AC 1 
 Vneg 0 vn  DC -0.7 AC 1 
-.ac dec 10 1 120MEG
+.ac dec 10 1 100MEG
 *Transient analysis
 *Vsup vdd 0 5
 *Vpos vp 0 SIN(0.9 1m 1Meg)

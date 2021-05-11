@@ -4,82 +4,76 @@ K {}
 V {}
 S {}
 E {}
-N -1790 -1020 -1790 -960 { lab=vout}
-N -1790 -900 -1790 -840 { lab=#net1}
-N -1790 -990 -1650 -990 { lab=vout}
-N -1790 -840 -1790 -800 { lab=#net1}
-N -1790 -740 -1790 -710 { lab=0}
-N -1790 -1050 -1730 -1050 { lab=Vin}
-N -1790 -1230 -1790 -1080 { lab=Vin}
-N -1730 -1230 -1730 -1050 { lab=Vin}
-N -1790 -1230 -1730 -1230 { lab=Vin}
-N -1690 -990 -1690 -920 { lab=vout}
-N -1690 -860 -1690 -830 { lab=#net2}
-N -1690 -770 -1690 -710 { lab=0}
-N -1790 -710 -1690 -710 { lab=0}
-N -2040 -1230 -1790 -1230 { lab=Vin}
-N -2340 -710 -1790 -710 { lab=0}
-N -2540 -1230 -2040 -1230 { lab=Vin}
-N -2530 -710 -2340 -710 { lab=0}
-N -1820 -770 -1810 -770 { lab=0}
-N -1820 -930 -1820 -770 { lab=0}
-N -1820 -930 -1810 -930 { lab=0}
-N -1940 -990 -1940 -970 { lab=vout}
-N -1940 -990 -1790 -990 { lab=vout}
-N -1820 -770 -1820 -710 { lab=0}
-N -1940 -910 -1940 -880 { lab=#net1}
-N -2240 -880 -1790 -880 { lab=#net1}
-N -1850 -1050 -1830 -1050 { lab=#net3}
-N -2020 -1230 -2020 -1140 { lab=Vin}
-N -2020 -960 -2020 -710 { lab=0}
-N -2240 -1010 -2240 -880 { lab=#net1}
-N -2240 -1010 -2190 -1010 { lab=#net1}
-N -2340 -1090 -2190 -1090 { lab=#net4}
-N -2490 -1230 -2490 -1170 { lab=Vin}
-N -2490 -1010 -2490 -710 { lab=0}
-N -2240 -1050 -2190 -1050 { lab=#net4}
-N -2240 -1090 -2240 -1050 { lab=#net4}
-C {devices/lab_pin.sym} -1650 -990 0 1 {name=l4 sig_type=std_logic lab=vout}
-C {devices/code_shown.sym} -1565 -1140 0 0 {name=NGSPICE
+N 2040 -1170 2180 -1170 { lab=Vout}
+N 2120 -1170 2120 -1140 { lab=Vout}
+N 2120 -1080 2120 -920 { lab=0}
+N 1870 -920 2120 -920 { lab=0}
+N 1870 -1080 1870 -920 { lab=0}
+N 1870 -1360 1870 -1260 { lab=Vdd}
+N 1640 -1210 1700 -1210 { lab=Vn}
+N 1640 -1130 1700 -1130 { lab=Vp}
+N 1580 -1170 1700 -1170 { lab=#net1}
+N 1580 -1240 1580 -1170 { lab=#net1}
+N 1580 -1320 1580 -1300 { lab=Vdd}
+N 1580 -1320 1870 -1320 { lab=Vdd}
+C {/home/eslam/Analog_Design/LDO/Schematic/Error_Amplifier.sym} 1860 -1170 0 0 {name=x1}
+C {devices/code_shown.sym} 2265 -1345 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*DC input sweep
-*VVin Vin 0 5
-*.DC VVin 0 5 0.3
+*AC Analysis Differential mode
+*Vsup vdd 0 5
+*Vpos vp 0 DC 2.5 AC 1 
+*Vneg vn 0 DC 2.5 AC -1 
+*.ac dec 10 1 150MEG
+*AC Analysis Common mode
+*Vsup vdd 0 5
+*Vpos vp 0 DC 2.5 AC 1 
+*Vneg vn 0 DC 2.5 AC 1 
+*.ac dec 10 1 150MEG
+*Transient Analysis 
+*Vsup vdd 0 2.2
+*Vpos vp 0 SIN(1.1 1m 1Meg)
+*.tran 0.05u 2u
+*Noise Analysis
+*Vsup vdd 0 2.2
+*Vpos vp 0 DC 1.1 AC 1 
+*Vneg 0 vn  DC -1.1 AC 1 
+*.noise v(vout) Vpos dec 10 1 100MEG Vneg dec 10 1 100MEG
 *PSRR analysis
-*VVin Vin 0 DC 5 AC 1
-*.AC dec 10 1 150MEG
-*Transient analysis
-*VVin Vin 0 PULSE(3 3.1 50u 100n 100n 50u 100u)
-*.tran 50u 100u
-*.end
+Vsup vdd 0 DC 5 AC 1
+Vpos vp 0 DC 2.5  
+Vneg vn 0 DC 2.5 
+.ac dec 10 1 150MEG
+*Vsup vdd 0 0
+*Vpos vp 0 0
+*Vneg vn 0 0
+*.control
+*   alter Vsup dc = 5
+*   alter Vpos dc = 2.5 
+*   alter Vpos ac = 1
+*    alter Vneg dc = 2.5 
+*    alter Vpos ac = -1
+*
+*    ac dec 10 1 100MEG
+*
+*    plot db(vout)
+*    *wrdata AC_analysis db(vout)
+*
+*    alter Vsup dc = 5
+*    alter Vpos dc = 0
+*    alter Vpos ac = 0
+*    alter Vneg dc = 0
+*    alter Vpos ac = 0
+*    alter @Vpos [ sin ] [1m 2.5 1Meg]
+*    alter @Vneg [ sin ] [-1m 2.5 1Meg]
+
+*   tran 0.05u 2u
+*    plot vp vn vout
+*    wrdata Trans_analysis vp vn vout
+*.endc
+
 " }
-C {devices/capa.sym} -1690 -890 0 0 {name=C2
-m=1
-value=20u
-footprint=1206
-device="ceramic capacitor"}
-C {devices/res.sym} -1690 -800 0 0 {name=R3
-value=30m
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_pin.sym} -2540 -1230 0 0 {name=l1 sig_type=std_logic lab=Vin}
-C {devices/lab_pin.sym} -2530 -710 0 0 {name=l2 sig_type=std_logic lab=0}
-C {sky130_fd_pr/res_xhigh_po.sym} -1790 -930 0 0 {name=R1
-W=1
-L=50
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_xhigh_po.sym} -1790 -770 0 0 {name=R2
-W=1
-L=50
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
-C {devices/code.sym} -1570 -850 0 0 {name=TT_MODELS
+C {devices/code.sym} 2610 -1255 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -119,19 +113,14 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
-L=0.5
-W=60
-nf=1
-mult=1000
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_g5v0d10v5
-spiceprefix=X
-}
-C {/home/eslam/Analog_Design/LDO/Schematic/Error_Amplifier.sym} -2030 -1050 0 0 {name=x1}
-C {/home/eslam/Analog_Design/LDO/Schematic/BGR.sym} -2490 -1090 0 0 {name=x2}
+C {devices/capa.sym} 2120 -1110 0 0 {name=C1
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/isource.sym} 1580 -1270 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 1870 -1360 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/lab_pin.sym} 1870 -920 0 0 {name=l2 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 1640 -1130 0 0 {name=l4 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 2180 -1170 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {devices/lab_pin.sym} 1640 -1210 0 0 {name=l3 sig_type=std_logic lab=Vn}

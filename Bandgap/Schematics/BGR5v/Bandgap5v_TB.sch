@@ -12,9 +12,6 @@ N -2420 -930 -2370 -930 { lab=Vref}
 C {devices/code_shown.sym} -2325 -1035 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*DC op
-*vin Vdd 0 5
-*.op
 *Temp variation
 vin Vdd 0 5
 .DC TEMP -40 120 1
@@ -34,7 +31,7 @@ C {devices/lab_pin.sym} -2620 -1100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -2620 -740 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -2370 -930 0 1 {name=l3 sig_type=std_logic lab=Vref
 }
-C {devices/code.sym} -2060 -1000 0 0 {name=TT_MODELS
+C {devices/code.sym} -2080 -1050 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"

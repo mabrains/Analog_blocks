@@ -170,11 +170,11 @@ spiceprefix=X
 }
 C {devices/isource.sym} 2600 -990 0 0 {name=I2 value=20u}
 C {devices/isource.sym} 2800 -1120 0 0 {name=I3 value=20u}
-C {devices/isource.sym} 2970 -990 0 0 {name=I4 value=50u}
-C {devices/isource.sym} 3170 -1120 0 0 {name=I5 value=50u}
+C {devices/isource.sym} 2970 -990 0 0 {name=I4 value=20u}
+C {devices/isource.sym} 3170 -1120 0 0 {name=I5 value=20u}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3150 -1000 0 0 {name=M5
 L=1
-W=10
+W=2
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -202,7 +202,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2950 -1100 0 0 {name=M4
 L=1
-W=10
+W=2
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

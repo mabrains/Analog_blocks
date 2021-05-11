@@ -9,18 +9,15 @@ N 390 -1850 570 -1850 { lab=Vdd}
 N 570 -1630 570 -1550 { lab=0}
 N 390 -1550 570 -1550 { lab=0}
 N 670 -1710 750 -1710 { lab=Vref}
-C {devices/code_shown.sym} 815 -1755 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 805 -1835 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*DC analysis
-*vin Vdd 0 1.8
-*.op
 *Temerature variation
-*vin Vdd 0 1.8
-*.DC TEMP -40 125 1
+vin Vdd 0 5
+.DC TEMP -40 125 1
 *Supply variation
-vin Vdd 0 1.8
-.DC vin 0 3 0.05
+*vin Vdd 0 1.8
+*.DC vin 0 3 0.05
 *Transient analysis
 *vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 3 500u 3)
 *.tran 100u 500u
@@ -29,7 +26,7 @@ vin Vdd 0 1.8
 *.ac dec 10 1 100MEG
 .end
 " }
-C {devices/code.sym} 1205 -1645 0 0 {name=TT_MODELS
+C {devices/code.sym} 1045 -1835 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"

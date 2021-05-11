@@ -29,19 +29,15 @@ N -1940 -990 -1790 -990 { lab=vout}
 N -1820 -770 -1820 -710 { lab=0}
 N -1940 -910 -1940 -880 { lab=#net1}
 N -2240 -880 -1790 -880 { lab=#net1}
-N -2015 -1230 -2015 -1145 { lab=Vin}
-N -2015 -955 -2015 -710 { lab=0}
-N -2240 -990 -2240 -880 { lab=#net1}
-N -2240 -990 -2180 -990 { lab=#net1}
 N -1850 -1050 -1830 -1050 { lab=#net3}
-N -2220 -1110 -2180 -1110 { lab=#net4}
-N -2220 -1110 -2220 -1090 { lab=#net4}
-N -2470 -1230 -2470 -1170 { lab=Vin}
-N -2470 -1010 -2470 -710 { lab=0}
-N -2370 -1090 -2220 -1090 { lab=#net4}
-N -2260 -1050 -2180 -1050 { lab=#net5}
-N -2260 -1230 -2260 -1190 { lab=Vin}
-N -2260 -1130 -2260 -1050 { lab=#net5}
+N -2240 -1010 -2240 -880 { lab=#net1}
+N -2240 -1010 -2190 -1010 { lab=#net1}
+N -2320 -1090 -2190 -1090 { lab=#net4}
+N -2240 -1050 -2190 -1050 { lab=#net5}
+N -2020 -960 -2020 -710 { lab=0}
+N -2020 -1230 -2020 -1140 { lab=Vin}
+N -2240 -1230 -2240 -1180 { lab=Vin}
+N -2240 -1120 -2240 -1050 { lab=#net5}
 C {devices/lab_pin.sym} -1650 -990 0 1 {name=l4 sig_type=std_logic lab=vout}
 C {devices/capa.sym} -1690 -890 0 0 {name=C2
 m=1
@@ -108,7 +104,25 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {sky130_fd_pr/pfet_01v8_lvt.sym} -1810 -1050 0 0 {name=M1
+C {devices/code_shown.sym} -1585 -1150 0 0 {name=NGSPICE
+only_toplevel=true
+value="
+*DC input sweep
+VVin Vin 0 1.8
+*VVref Vref 0 1.1 
+.dc VVin 0 2.2 0.5
+*PSRR analysis
+*VVin Vin 0 DC 2.2 AC 1
+*VVref Vref 0 1.1
+*.ac dec 10 1 150MEG
+*Transient analysis
+*VVin Vin 0 PULSE(2 2.1 50u 100n 100n 50u 100u)
+*.tran 50u 100u
+*.end
+" }
+C {/home/eslam/Analog_Design/LDO/Schematic/Error_Amplifier.sym} -2030 -1050 0 0 {name=x1}
+C {devices/isource.sym} -2240 -1150 0 0 {name=I0 value=20u}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
 L=0.5
 W=60
 nf=1
@@ -119,23 +133,6 @@ as="'int((nf+2)/2) * W/nf * 0.29'"
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=pfet_01v8_lvt
+model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {/home/eslam/Analog_Design/LDO/Schematic/Miller_OTA_NMOS_1.8v.sym} -2020 -1050 0 0 {name=x1}
-C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} -2470 -1090 0 0 {name=x2}
-C {devices/code_shown.sym} -1585 -1150 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*DC input sweep
-*VVin Vin 0 2.2
-*.DC VVin 0 2.2 0.1
-*PSRR analysis
-VVin Vin 0 DC 2.2 AC 1
-.AC dec 10 1 2MEG
-*Transient analysis
-*VVin Vin 0 PULSE(2 2.1 50u 100n 100n 50u 100u)
-*.tran 50u 100u
-*.end
-" }
-C {devices/isource.sym} -2260 -1160 0 0 {name=I0 value=20u}

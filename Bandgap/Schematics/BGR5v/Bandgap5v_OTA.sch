@@ -31,7 +31,7 @@ N -2240 -1310 -1820 -1310 { lab=Vdd}
 N -2330 -1200 -2240 -1200 { lab=Vdd}
 N -2330 -1310 -2330 -1200 { lab=Vdd}
 N -2330 -1310 -2240 -1310 { lab=Vdd}
-N -1690 -1060 -1630 -1060 { lab=Vn}
+N -1690 -1060 -1630 -1060 { lab=Vp}
 N -2010 -1060 -1950 -1060 { lab=Vp}
 N -1430 -1180 -1430 -980 { lab=Vhigh}
 N -1650 -790 -1430 -790 { lab=Gnd}
@@ -60,11 +60,10 @@ N -1520 -1210 -1470 -1210 { lab=Vhigh}
 N -1520 -1210 -1520 -1150 { lab=Vhigh}
 N -1650 -1150 -1520 -1150 { lab=Vhigh}
 N -2240 -790 -2070 -790 { lab=Gnd}
-N -2160 -1200 -2160 -1120 { lab=Vhigh}
 N -2270 -1050 -2240 -1050 { lab=Ibias}
-N -2160 -1120 -2160 -1000 { lab=Vhigh}
 N -2280 -1000 -2160 -1000 { lab=Vhigh}
 N -1520 -1150 -1430 -1150 { lab=Vhigh}
+N -2160 -1200 -2160 -1000 {}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -2220 -1200 0 1 {name=M6
 L=1
 W=10
@@ -181,6 +180,6 @@ C {devices/opin.sym} -2270 -1050 0 1 {name=p3 lab=Ibias}
 C {devices/ipin.sym} -2280 -1000 0 0 {name=p6 lab=Vhigh}
 C {devices/ipin.sym} -2400 -1310 0 0 {name=p4 lab=Vdd}
 C {devices/ipin.sym} -2240 -790 0 0 {name=p5 lab=Gnd}
-C {devices/ipin.sym} -1630 -1060 0 1 {name=p1 lab=Vn}
-C {devices/ipin.sym} -2010 -1060 0 0 {name=p2 lab=Vp}
+C {devices/ipin.sym} -1630 -1060 0 1 {name=p2 lab=Vp}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -1500 -1010 3 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
+C {devices/ipin.sym} -2010 -1060 0 0 {name=p1 lab=Vn}
