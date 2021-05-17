@@ -70,8 +70,8 @@ C {devices/ipin.sym} 1440 -1290 0 0 {name=p4 lab=Vdd}
 C {devices/ipin.sym} 1770 -770 0 0 {name=p5 lab=Gnd}
 C {devices/ipin.sym} 1540 -980 0 0 {name=p6 lab=Vhigh}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1620 -1180 0 1 {name=M6
-L=1
-W=10
+L=0.5
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -84,8 +84,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2000 -1180 0 0 {name=M5
-L=1
-W=10
+L=0.5
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -98,8 +98,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2390 -1190 0 0 {name=M7
-L=1
-W=54
+L=0.5
+W=27
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -156,7 +156,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2090 -860 0 0 {name=M4
 L=0.5
-W=7.4
+W=7.5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -170,7 +170,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1950 -860 0 1 {name=M3
 L=0.5
-W=7.4
+W=7.5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

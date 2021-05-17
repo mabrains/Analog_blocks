@@ -4,34 +4,59 @@ K {}
 V {}
 S {}
 E {}
-N -2570 -1100 -2570 -1040 { lab=Vdd}
-N -2620 -1100 -2570 -1100 { lab=Vdd}
-N -2570 -800 -2570 -740 { lab=0}
-N -2620 -740 -2570 -740 { lab=0}
-N -2420 -930 -2370 -930 { lab=Vref}
-C {devices/code_shown.sym} -2325 -1035 0 0 {name=NGSPICE
+N 800 -560 930 -560 { lab=#net1}
+N 1080 -720 1080 -630 { lab=Vdd}
+N 1080 -490 1080 -420 { lab=0}
+N 800 -420 1080 -420 { lab=0}
+N 800 -560 800 -520 { lab=#net1}
+N 800 -460 800 -420 { lab=0}
+N 880 -600 930 -600 { lab=Vp}
+N 880 -520 930 -520 { lab=Vn}
+N 1230 -560 1280 -560 { lab=Vout}
+N 1260 -560 1260 -520 { lab=Vout}
+N 1260 -460 1260 -420 { lab=0}
+N 1080 -420 1260 -420 { lab=0}
+C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_PMOS.sym} 1090 -560 0 0 {name=x1}
+C {devices/isource.sym} 800 -490 0 0 {name=I0 value=20u}
+C {devices/capa.sym} 1260 -490 0 0 {name=C1
+m=1
+value=3p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_pin.sym} 1080 -720 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/lab_pin.sym} 880 -600 0 0 {name=l2 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 880 -520 0 0 {name=l3 sig_type=std_logic lab=Vn}
+C {devices/lab_pin.sym} 1280 -560 0 1 {name=l4 sig_type=std_logic lab=Vout}
+C {devices/lab_pin.sym} 800 -420 0 0 {name=l5 sig_type=std_logic lab=0}
+C {devices/code_shown.sym} 1355 -805 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*Temp variation
-*vin Vdd 0 5
-*.DC TEMP -40 120 1
-*Supply variation
-*vin Vdd 0 5
-*.DC vin 0 5 0.5
-*Transient analysis
-*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 5 500u 5)
-*.tran 100u 500u
-*PSRR analysis
-*vin vdd 0 DC 5 AC 1  
+*AC Analysis Differential mode
+Vsup vdd 0 1.8
+Vpos vp 0 DC 0.9 AC 1 
+Vneg vn 0 DC 0.9 AC -1
+.ac dec 10 1 100MEG
+*AC Analysis Common mode
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg vn 0 DC 0.9 AC 1 
 *.ac dec 10 1 100MEG
-.end
+*Transient Analysis 
+*Vsup vdd 0 1.8
+*Vpos vp 0 SIN(0.9 1m 1Meg)
+*.tran 0.05u 2u
+*Noise Analysis
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg 0 vn  DC -0.9 AC 1 
+*.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+*PSRR analysis
+*Vsup vdd 0 DC 1.8 AC 1
+*Vpos vp 0 DC 0.9  
+*Vneg vn 0 DC 0.9 
+*.ac dec 10 1 100MEG
 " }
-C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR5v/Bandgap5v.sym} -2570 -920 0 0 {name=x1}
-C {devices/lab_pin.sym} -2620 -1100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/lab_pin.sym} -2620 -740 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -2370 -930 0 1 {name=l3 sig_type=std_logic lab=Vref
-}
-C {devices/code.sym} -2080 -1050 0 0 {name=TT_MODELS
+C {devices/code.sym} 1690 -655 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"

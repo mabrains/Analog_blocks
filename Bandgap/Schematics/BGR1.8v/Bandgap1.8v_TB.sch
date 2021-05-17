@@ -13,8 +13,8 @@ C {devices/code_shown.sym} 805 -1835 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *Temerature variation
-vin Vdd 0 5
-.DC TEMP -40 125 1
+vin Vdd 0 1.8
+.DC TEMP -40 120 1
 *Supply variation
 *vin Vdd 0 1.8
 *.DC vin 0 3 0.05
