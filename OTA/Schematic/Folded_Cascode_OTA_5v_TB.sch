@@ -17,7 +17,7 @@ N -700 -460 -640 -460 { lab=Vout}
 N -690 -460 -690 -390 { lab=Vout}
 N -900 -350 -900 -220 { lab=0}
 N -900 -700 -900 -570 { lab=Vdd}
-C {devices/code.sym} -560 -700 0 0 {name=TT_MODELS
+C {devices/code.sym} -770 -660 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -57,14 +57,19 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {devices/code_shown.sym} -570 -480 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -590 -700 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*AC analysis
-Vsup vdd 0 5
-Vpos vp 0 DC 0.7 AC 1 
-Vneg 0 vn  DC -0.7 AC 1 
-.ac dec 10 1 100MEG
+*AC analysis differential mode
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg vn 0 DC 0.9 AC -1 
+*.ac dec 10 1 100MEG
+*AC analysis common mode
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1 
+*Vneg vn 0 DC 0.9 AC 1 
+*.ac dec 10 1 100MEG
 *Transient analysis
 *Vsup vdd 0 5
 *Vpos vp 0 SIN(0.9 1m 1Meg)
@@ -74,8 +79,13 @@ Vneg 0 vn  DC -0.7 AC 1
 *Vpos vp 0 DC 0.9 AC 1 
 *Vneg 0 vn  DC -0.9 AC 1 
 *.noise v(vout) Vpos dec 10 1 70MEG Vneg dec 10 1 70MEG
+*PSRR analysis
+Vsup vdd 0 DC 1.8 AC 1
+Vpos vp 0 DC 0.9 
+Vneg vn 0 DC 0.9  
+.ac dec 10 1 100MEG
 " }
-C {devices/isource.sym} -1240 -560 0 0 {name=I0 value=25u}
+C {devices/isource.sym} -1240 -560 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} -1310 -700 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -1310 -220 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -1150 -520 0 0 {name=l3 sig_type=std_logic lab=Vn}
@@ -83,7 +93,7 @@ C {devices/lab_pin.sym} -1150 -400 0 0 {name=l4 sig_type=std_logic lab=Vp}
 C {devices/lab_pin.sym} -640 -460 0 1 {name=l5 sig_type=std_logic lab=Vout}
 C {devices/capa.sym} -690 -360 0 0 {name=C1
 m=1
-value=2p
+value=0.5p
 footprint=1206
 device="ceramic capacitor"}
 C {/home/eslam/Analog_Design/OTA/Schematic/Folded_Cascode_OTA_5v.sym} -900 -460 0 0 {name=x1}

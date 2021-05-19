@@ -61,9 +61,9 @@ C {devices/code_shown.sym} 1280 -1440 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *AC analysis
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 0.9 AC 1 
-*Vneg 0 vn  DC -0.9 AC 1 
+Vsup vdd 0 1.8
+Vpos vp 0 DC 0.9 AC 1 
+Vneg vn 0 DC 0.9 AC -1 
 *.ac dec 10 1 120MEG
 *Transient analysis
 *Vpos vp 0 SIN(0.9 1m 1Meg)
@@ -72,13 +72,14 @@ value="
 *Noise analysis
 *.noise v(vout) Vpos dec 10 1 70MEG Vneg dec 10 1 70MEG
 *PSRR analysis
-Vsup vdd 0 DC 1.8 AC 1
-Vpos vp 0 DC 0.9  
-Vneg vn 0 DC 0.9 
-.ac dec 10 1 100MEG
+*Vsup vdd 0 DC 1.8 AC 1
+*Vpos vp 0 DC 0.9  
+*Vneg vn 0 DC 0.9 
+*.ac dec 10 1 100MEG
+.end
 " }
 C {/home/eslam/Analog_Design/OTA/Schematic/Folded_Cascode_OTA.sym} 950 -1420 0 0 {name=x1}
-C {devices/isource.sym} 610 -1520 0 0 {name=I0 value=25u}
+C {devices/isource.sym} 610 -1520 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} 540 -1660 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 540 -1180 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 700 -1480 0 0 {name=l3 sig_type=std_logic lab=Vn}
