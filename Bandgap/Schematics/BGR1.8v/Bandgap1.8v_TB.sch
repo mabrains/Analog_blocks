@@ -13,17 +13,17 @@ C {devices/code_shown.sym} 805 -1835 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *Temerature variation
-vin Vdd 0 1.8
-.DC TEMP -40 120 1
+*vin Vdd 0 1.8
+*.DC TEMP -40 120 1
 *Supply variation
 *vin Vdd 0 1.8
-*.DC vin 0 3 0.05
+*.DC vin 0 3 0.8
 *Transient analysis
-*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 3 500u 3)
+*vin Vdd 0 pwl(0 0 100u 0 200u 3 500u 3)
 *.tran 100u 500u
 *PSRR analysis
-*vin vdd 0 DC 1.8 AC 1  
-*.ac dec 10 1 100MEG
+vin vdd 0 DC 1.8 AC 1  
+.ac dec 10 1 100MEG
 .end
 " }
 C {devices/code.sym} 1045 -1835 0 0 {name=TT_MODELS

@@ -33,11 +33,12 @@ N -1850 -1050 -1830 -1050 { lab=#net3}
 N -2240 -1010 -2240 -880 { lab=#net1}
 N -2240 -1010 -2190 -1010 { lab=#net1}
 N -2320 -1090 -2190 -1090 { lab=#net4}
-N -2240 -1050 -2190 -1050 { lab=#net5}
+N -2240 -1050 -2190 -1050 { lab=#net4}
 N -2020 -960 -2020 -710 { lab=0}
 N -2020 -1230 -2020 -1140 { lab=Vin}
-N -2240 -1230 -2240 -1180 { lab=Vin}
-N -2240 -1120 -2240 -1050 { lab=#net5}
+N -2420 -1230 -2420 -1170 { lab=Vin}
+N -2420 -1010 -2420 -710 { lab=0}
+N -2240 -1090 -2240 -1050 { lab=#net4}
 C {devices/lab_pin.sym} -1650 -990 0 1 {name=l4 sig_type=std_logic lab=vout}
 C {devices/capa.sym} -1690 -890 0 0 {name=C2
 m=1
@@ -53,7 +54,7 @@ C {devices/lab_pin.sym} -2540 -1230 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} -2530 -710 0 0 {name=l2 sig_type=std_logic lab=0}
 C {sky130_fd_pr/res_xhigh_po.sym} -1790 -930 0 0 {name=R1
 W=1
-L=35
+L=40
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
@@ -64,7 +65,7 @@ model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
-C {devices/code.sym} -1530 -830 0 0 {name=TT_MODELS
+C {devices/code.sym} -1570 -850 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -108,20 +109,20 @@ C {devices/code_shown.sym} -1585 -1150 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *DC input sweep
-VVin Vin 0 1.8
-*VVref Vref 0 1.1 
-.dc VVin 0 2.2 0.5
+*VVin Vin 0 1.8 
+*.dc VVin 0 2.5 0.3
+*Line regulation
+*VVin Vin 0 1.8 
+*.dc VVin 1.8 2.5 0.3
 *PSRR analysis
-*VVin Vin 0 DC 2.2 AC 1
-*VVref Vref 0 1.1
-*.ac dec 10 1 150MEG
+*VVin Vin 0 DC 2.5 AC 1
+*.ac dec 10 1 100MEG
 *Transient analysis
 *VVin Vin 0 PULSE(2 2.1 50u 100n 100n 50u 100u)
 *.tran 50u 100u
 *.end
 " }
 C {/home/eslam/Analog_Design/LDO/Schematic/Error_Amplifier.sym} -2030 -1050 0 0 {name=x1}
-C {devices/isource.sym} -2240 -1150 0 0 {name=I0 value=20u}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
 L=0.5
 W=60
@@ -136,3 +137,4 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
+C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} -2420 -1090 0 0 {name=x2}

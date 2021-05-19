@@ -70,7 +70,7 @@ C {devices/ipin.sym} 210 -1670 0 0 {name=p4 lab=Vdd}
 C {devices/ipin.sym} 160 -1150 0 0 {name=p5 lab=GND}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 450 -1440 0 0 {name=M2
 L=0.5
-W=3
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -84,7 +84,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 670 -1440 0 1 {name=M3
 L=0.5
-W=3
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -98,7 +98,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 490 -1580 0 1 {name=M4
 L=0.5
-W=7
+W=8
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -112,7 +112,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 630 -1580 0 0 {name=M5
 L=0.5
-W=7
+W=8
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -126,7 +126,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 970 -1510 0 0 {name=M6
 L=0.5
-W=75
+W=48
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -139,8 +139,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 530 -1270 0 0 {name=M7
-L=1
-W=10
+L=0.5
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -153,8 +153,8 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 970 -1270 0 0 {name=M9
-L=1
-W=54
+L=0.5
+W=16
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -170,8 +170,8 @@ C {devices/ipin.sym} 750 -1440 0 1 {name=p2 lab=Vp}
 C {devices/ipin.sym} 370 -1440 0 0 {name=p1 lab=Vn}
 C {devices/ipin.sym} 180 -1360 0 0 {name=p6 lab=Ibias}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 220 -1270 0 1 {name=M1
-L=1
-W=10
+L=0.5
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -183,8 +183,4 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {devices/capa.sym} 900 -1430 3 1 {name=C1
-m=1
-value=800f
-footprint=1206
-device="ceramic capacitor"}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 3 0 {name=C1 model=cap_mim_m3_2 W=1 L=3 MF=1 spiceprefix=X}

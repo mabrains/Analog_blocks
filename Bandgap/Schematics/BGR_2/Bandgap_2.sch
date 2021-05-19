@@ -105,18 +105,26 @@ N 1520 -1130 1520 -930 { lab=0}
 N 1420 -860 1520 -860 { lab=0}
 N 1360 -1080 1460 -1080 { lab=#net3}
 N 1460 -1080 1460 -1000 { lab=#net3}
-N 1680 -1300 1870 -1300 { lab=Vdd}
-N 1640 -860 1870 -860 { lab=0}
-N 2030 -1040 2070 -1040 { lab=#net1}
 N 1580 -1170 2100 -1170 { lab=Vref}
-N 2070 -1340 2070 -1040 { lab=#net1}
-N 1500 -1340 2070 -1340 { lab=#net1}
-N 1500 -1340 1500 -1220 { lab=#net1}
-N 1870 -970 1870 -860 { lab=0}
-N 1870 -1300 1870 -1110 { lab=Vdd}
 N 1580 -1080 1710 -1080 { lab=#net4}
 N 1460 -1000 1710 -1000 { lab=#net3}
 N 840 -1300 1260 -1300 { lab=Vdd}
+N 1480 -1040 1710 -1040 { lab=#net1}
+N 1480 -1220 1480 -1040 { lab=#net1}
+N 1860 -1300 1860 -1120 { lab=Vdd}
+N 1680 -1300 1860 -1300 { lab=Vdd}
+N 1860 -960 1860 -860 { lab=0}
+N 1640 -860 1860 -860 { lab=0}
+N 2010 -1040 2020 -1040 { lab=#net6}
+N 2060 -1010 2060 -900 { lab=#net3}
+N 1680 -900 2060 -900 { lab=#net3}
+N 1680 -1000 1680 -900 { lab=#net3}
+N 2060 -1320 2060 -1070 { lab=#net1}
+N 1480 -1320 2060 -1320 { lab=#net1}
+N 1480 -1320 1480 -1220 { lab=#net1}
+N 2060 -1040 2140 -1040 { lab=0}
+N 2140 -1040 2140 -860 { lab=0}
+N 1860 -860 2140 -860 { lab=0}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1380 -1220 0 1 {name=M1
 L=0.5
 W=2
@@ -201,12 +209,12 @@ spiceprefix=X
 }
 C {devices/lab_pin.sym} 390 -860 0 0 {name=l1 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 840 -1300 0 0 {name=l2 sig_type=std_logic lab=Vdd}
-C {devices/code_shown.sym} 655 -1265 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 385 -1265 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *Temp variation
-*vin Vdd 0 3
-*.DC TEMP -40 120 1
+vin Vdd 0 1.8
+.DC TEMP -40 120 1
 *Supply variation
 *vin Vdd 0 3
 *.DC vin 0 5 1
@@ -214,11 +222,11 @@ value="
 *vin Vdd 0 pwl(0 0 100u 0 200u 5 500u 5)
 *.tran 100u 500u
 *PSRR analysis
-vin vdd 0 DC 3 AC 1  
-.ac dec 10 1 100MEG
+*vin vdd 0 DC 3 AC 1  
+*.ac dec 10 1 100MEG
 .end
 " }
-C {devices/code.sym} 1020 -1120 0 0 {name=TT_MODELS
+C {devices/code.sym} 760 -1140 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -259,4 +267,18 @@ value="
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
 C {devices/lab_pin.sym} 2100 -1170 0 1 {name=l3 sig_type=std_logic lab=Vref}
-C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym} 1870 -1040 0 0 {name=x1}
+C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR_2/Miller_OTA.sym} 1870 -1040 0 0 {name=x1}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2040 -1040 0 0 {name=M3
+L=0.5
+W=2
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}

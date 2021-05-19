@@ -31,7 +31,7 @@ N -2240 -1310 -1820 -1310 { lab=Vdd}
 N -2330 -1200 -2240 -1200 { lab=Vdd}
 N -2330 -1310 -2330 -1200 { lab=Vdd}
 N -2330 -1310 -2240 -1310 { lab=Vdd}
-N -1690 -1060 -1630 -1060 { lab=#net4}
+N -1690 -1060 -1630 -1060 { lab=Vp}
 N -2010 -1060 -1950 -1060 { lab=Vn}
 N -1430 -1180 -1430 -980 { lab=Vhigh}
 N -1650 -790 -1430 -790 { lab=Gnd}
@@ -151,7 +151,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -1750 -880 0 0 {name=M4
 L=0.5
-W=7.5
+W=7.4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -165,7 +165,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -1890 -880 0 1 {name=M3
 L=0.5
-W=7.5
+W=7.4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

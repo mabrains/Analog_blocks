@@ -35,17 +35,20 @@ N -2020 -960 -2020 -710 { lab=0}
 N -2240 -1010 -2240 -880 { lab=#net1}
 N -2240 -1010 -2190 -1010 { lab=#net1}
 N -2340 -1090 -2190 -1090 { lab=#net4}
-N -2490 -1230 -2490 -1170 { lab=Vin}
-N -2490 -1010 -2490 -710 { lab=0}
 N -2240 -1050 -2190 -1050 { lab=#net4}
 N -2240 -1090 -2240 -1050 { lab=#net4}
+N -2490 -1230 -2490 -1170 { lab=Vin}
+N -2490 -1010 -2490 -710 { lab=0}
 C {devices/lab_pin.sym} -1650 -990 0 1 {name=l4 sig_type=std_logic lab=vout}
-C {devices/code_shown.sym} -1565 -1140 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -1585 -1170 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *DC input sweep
-*VVin Vin 0 5
-*.DC VVin 0 5 0.3
+*VVin Vin 0 3
+*.DC VVin 0 4 0.2
+*Line regulation
+*VVin Vin 0 3
+*.DC VVin 2.2 4 0.1
 *PSRR analysis
 *VVin Vin 0 DC 5 AC 1
 *.AC dec 10 1 150MEG

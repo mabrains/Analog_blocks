@@ -20,7 +20,7 @@ C {/home/eslam/Analog_Design/OTA/Schematic/Miller_OTA_PMOS.sym} 1090 -560 0 0 {n
 C {devices/isource.sym} 800 -490 0 0 {name=I0 value=20u}
 C {devices/capa.sym} 1260 -490 0 0 {name=C1
 m=1
-value=3p
+value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_pin.sym} 1080 -720 0 0 {name=l1 sig_type=std_logic lab=Vdd}
@@ -28,13 +28,13 @@ C {devices/lab_pin.sym} 880 -600 0 0 {name=l2 sig_type=std_logic lab=Vp}
 C {devices/lab_pin.sym} 880 -520 0 0 {name=l3 sig_type=std_logic lab=Vn}
 C {devices/lab_pin.sym} 1280 -560 0 1 {name=l4 sig_type=std_logic lab=Vout}
 C {devices/lab_pin.sym} 800 -420 0 0 {name=l5 sig_type=std_logic lab=0}
-C {devices/code_shown.sym} 1355 -805 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 1335 -835 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *AC Analysis Differential mode
 Vsup vdd 0 1.8
-Vpos vp 0 DC 0.9 AC 1 
-Vneg vn 0 DC 0.9 AC -1
+Vpos vp 0 DC 1 AC 1 
+Vneg vn 0 DC 1 AC -1
 .ac dec 10 1 100MEG
 *AC Analysis Common mode
 *Vsup vdd 0 1.8
