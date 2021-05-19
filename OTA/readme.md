@@ -41,7 +41,7 @@ The netlist of all previous analyses is below and for each analysis you want to 
 
 ![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_netlist.png)
 
-## f. Simulation results
+## Simulation results
 
 Specification | Achieved
 ------------- | ---------
