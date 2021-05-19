@@ -1,32 +1,73 @@
-**.subckt Miller_OTA_NMOS
-C1 Vout net2 1p m=1
-I0 Vdd net4 20u
-XM1 net1 Vn net3 0 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+**.subckt Telescopic_OTA
+C1 Vout 0 0.5p m=1
+XM9 net6 Vb1 0 0 sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM2 net2 Vp net3 0 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM1 net2 Vp net6 0 sky130_fd_pr__nfet_g5v0d10v5 L=1 W=14 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM3 net1 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM2 net1 Vn net6 0 sky130_fd_pr__nfet_g5v0d10v5 L=1 W=14 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM4 net2 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM3 net3 Vb2 net2 0 sky130_fd_pr__nfet_g5v0d10v5 L=1 W=14 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM6 Vout net2 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=30 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM4 Vout Vb2 net1 0 sky130_fd_pr__nfet_g5v0d10v5 L=1 W=14 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM5 net3 net4 0 0 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM5 net3 Vb3 net5 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM8 net4 net4 0 0 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM6 Vout Vb3 net4 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM7 Vout net4 0 0 sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM7 net5 net3 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-C2 Vout 0 2p m=1
+XM8 net4 net3 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
 **** begin user architecture code
+
+
+*AC Analysis Differential mode
+*Vsup vdd 0 1.8
+*VVb1 Vb1 0 0.9
+*VVb2 Vb2 0 1.3
+*VVb3 Vb3 0 0.45
+*Vpos vp 0 DC 0.9 AC 1
+*Vneg 0 vn  DC -0.9 AC 1
+*.ac dec 10 1 50MEG
+*AC Analysis Common mode
+*Vsup vdd 0 1.8
+*VVb1 Vb1 0 0.9
+*VVb2 Vb2 0 1.3
+*VVb3 Vb3 0 0.45
+*Vpos vp 0 DC 0.9 AC 1
+*Vneg vn 0 DC 0.9 AC 1
+*.ac dec 10 1 50MEG
+*Transient Analysis
+*Vsup vdd 0 1.8
+*Vpos vp 0 SIN(0.9 1m 1Meg)
+*VVb1 Vb1 0 0.9
+*VVb2 Vb2 0 1.3
+*VVb3 Vb3 0 0.45
+*.tran 0.05u 2u
+*Noise Analysis
+*Vsup vdd 0 1.8
+*Vpos vp 0 DC 0.9 AC 1
+*Vneg 0 vn  DC -0.9 AC 1
+*.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+*PSRR analysis
+Vsup vdd 0 DC 1.8 AC 1
+VVb1 Vb1 0 0.9
+VVb2 Vb2 0 1.3
+VVb3 Vb3 0 0.45
+Vpos vp 0 DC 0.9
+Vneg vn 0 DC 0.9
+.ac dec 10 1 50MEG
+
+
 
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
@@ -62,26 +103,6 @@ C2 Vout 0 2p m=1
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/all.spice
 * Corner
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
-
-
-
-Vsup vdd 0 3.3
-*DC Analysis
-Vpos vp 0 DC 0.9
-Vneg 0 vn  DC -0.9
-.op
-*AC Analysis
-*Vpos vp 0 DC 0.9 AC 1
-*Vneg 0 vn  DC -0.9 AC 1
-*.ac dec 10 1 50MEG
-*Transient Analysis
-*Vpos vp 0 SIN(0.9 1m 1Meg)
-*.tran 0.05u 2u
-*Noise Analysis
-*Vpos vp 0 DC 0.9 AC 1
-*Vneg 0 vn  DC -0.9 AC 1
-*.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
-
 
 **** end user architecture code
 **.ends
