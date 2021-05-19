@@ -1,4 +1,4 @@
-# 3. LDO
+# LDO Simulation
 
 ## Schematic
 
