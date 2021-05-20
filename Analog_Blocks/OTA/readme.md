@@ -1,45 +1,49 @@
 # Miller OTA Simulation
 
+## Testbench
+
+![Image of Two_stage_Miller_OTA_TB](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_TB.png)
+
 ## Schematic
 
-![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_sch.png)
+![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_sch.png)
 
 ## a. DC analysis
 
 Use the command (.op) then press netlist then press simulate. After simulation is done write the command (show) this command will display all the transistors parameters
 and ensure that all mosfets are in saturation (Vds > Vdsat).
 
-![Image of DC op](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_DC%20operating%20point.png)
+![Image of DC op](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_DC%20operating%20point.png)
 
 ## b. AC analysis
 
 Use the command (.AC) then press netlist then press simulate. After simulation is done write the command (plot db(vout)) to plot the magnitude of the gain in dB.
 
-![Image of gain_mag](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_gain_mag.png)
+![Image of gain_mag](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_gain_mag.png)
 
 write the command (plot 180/pi* phase(vout)) to plot the phase of the gain in degrees.
 
-![Image of gain_phase](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_gain_phase.png)
+![Image of gain_phase](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_gain_phase.png)
 
 ## c. Transient analysis
 
 Make the OTA as a buffer by connecting vn to vout and use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vp vout)
 to plot the input and the output of the buffer.
 
-![Image of transient](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_Transient.png)
+![Image of transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_Transient.png)
 
 ## d. Noise analysis
 
 Use the command (.noise) then press netlist then press simulate. After simulation is done write the command (setplot noise1) and then the command (plot inoise_spectrum)
 to plot the input referred noise.
 
-![Image of noise](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_Input_Noise.png)
+![Image of noise](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_Input_Noise.png)
 
 ## e. Testbench netlist
 
 The netlist of all previous analyses is below and for each analysis you want to do uncomment the lines of it(remove the '*' ).
 
-![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/OTA/Plots/Miller_OTA/Transistor1.8v/Two_stage_netlist.png)
+![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_netlist.png)
 
 ## Simulation results
 
