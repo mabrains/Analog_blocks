@@ -75,6 +75,7 @@ N -2630 -790 -2525 -790 { lab=VDD}
 N -2790 -690 -2685 -690 { lab=VDD}
 N -2790 -750 -2790 -690 { lab=VDD}
 N -2790 -750 -2690 -750 { lab=VDD}
+N -2430 -760 -830 -760 { lab=#net5}
 N -2690 -650 -2330 -650 { lab=#net3}
 N -2690 -660 -2690 -650 { lab=#net3}
 N -2330 -770 -980 -770 { lab=#net3}
@@ -106,9 +107,8 @@ N -1270 -650 -1220 -650 { lab=GND}
 N -1270 -830 -1220 -830 { lab=GND}
 N -1270 -870 -1000 -870 { lab=GND}
 N -2720 -480 -2530 -480 { lab=GND}
-N -980 -800 -840 -800 { lab=#net3}
-N -1200 -720 -840 -720 { lab=#net2}
-N -2430 -760 -840 -760 {}
+N -980 -800 -840 -800 {}
+N -1200 -720 -840 -720 {}
 C {sky130_fd_pr/pnp_05v5.sym} -960 -560 0 1 {name=Q1
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
@@ -205,7 +205,7 @@ L=2.6
 model=res_high_po
 spiceprefix=X
 mult=1}
+C {/home/eslam/Analog_Design/LDO/Schematic/Bandgap5v_OTA.sym} -700 -760 0 0 {name=x1}
 C {devices/ipin.sym} -2710 -950 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} -2720 -480 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} -450 -980 0 0 {name=p3 lab=Vref}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym} -700 -760 0 0 {name=x1}

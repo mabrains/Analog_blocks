@@ -166,6 +166,7 @@ L=7.5
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
+C {/home/eslam/Analog_Design/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym} -640 -460 0 0 {name=x1}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -2380 -520 0 1 {name=M2
 L=1
 W=10
@@ -210,4 +211,3 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -2580 -680 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} -2590 -210 0 0 {name=p5 lab=GND}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym} -640 -460 0 0 {name=x1}
