@@ -1,0 +1,35 @@
+**.subckt Bandgap1.8v_OTA Ibias Vhigh Vdd Gnd Vp Vn
+*.opin Ibias
+*.ipin Vhigh
+*.ipin Vdd
+*.ipin Gnd
+*.ipin Vp
+*.ipin Vn
+XM6 Ibias Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=11 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XM5 net3 Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=11 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XM7 Vhigh Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=11 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=9 m=9 
+XM1 net2 Vn net3 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=80 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM8 Vhigh net1 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1.7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=17 m=17 
+XM4 net1 net2 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1.7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XM3 net2 net2 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1.7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XC1 net1 Vhigh sky130_fd_pr__cap_mim_m3_2 W=1 L=1 MF=1 m=1
+XM2 net1 Vp net3 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=80 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+**.ends
+** flattened .save nodes
+.end
