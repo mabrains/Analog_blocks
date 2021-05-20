@@ -2,11 +2,11 @@
 
 ## Schematic
 
-![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/Schematic.png)
+![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Schematic.png)
 
 ## Bandgap OTA
 
-![Image of BGR OTA](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/OTA.png)
+![Image of BGR OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/OTA.png)
 
 ## a. DC analysis
 
@@ -17,31 +17,31 @@ and ensure that all mosfets are in saturation region (Vds > Vdsat).
 
 Use the command (.DC temp) then press netlist then press simulate. After simulation is done write the command (plot vref) to plot the reference voltage vs temp.
 
-![Image of BGR Temp](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/Vref_TEMP_1.8v.png)
+![Image of BGR Temp](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Vref_TEMP_1.8v.png)
 
 ## c. Supply variations
 
 Use the command (.DC vin) then press netlist then press simulate. After simulation is done write the command (plot vdd vref) to plot the reference voltage vs vdd.
 
-![Image of BGR vdd](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/Vref_Vdd_1.8v.png)
+![Image of BGR vdd](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Vref_Vdd_1.8v.png)
 
 ## d. Transient analysis
 
 Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vdd vref) to plot the reference voltage and the input vs time.
 
-![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/Vref_Transient_1.8v.png)
+![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Vref_Transient_1.8v.png)
 
 ## e. PSRR analysis
 
 Use the command (.AC vin) then press netlist then press simulate. After simulation is done write the command (plot vdb(vref)) to plot the PSRR in dB.
 
-![Image of BGR PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/PSRR_1.8v.png)
+![Image of BGR PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/PSRR_1.8v.png)
 
 ## f. Testbench netlist
 
 The netlist of all previous analyses is below and for each analysis you want to do uncomment the lines of it.
 
-![Image of BGR netlist](https://github.com/mabrains/Analog_blocks/blob/main/Bandgap/curves/Bandgap1.8v/BGR_netlist.png)
+![Image of BGR netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/BGR_netlist.png)
 
 ## Simulation results
 
