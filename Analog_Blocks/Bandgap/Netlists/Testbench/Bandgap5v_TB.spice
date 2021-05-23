@@ -3,18 +3,43 @@ x1 Vref Vdd 0 Bandgap5v
 **** begin user architecture code
 
 
+************************************************
+*Source initialization
+************************************************
+Vsup Vdd 0 DC 0 AC 0
+************************************************
 *Temp variation
-vin Vdd 0 5
-.DC TEMP -40 120 1
+************************************************
+.control
+alter Vsup DC = 5
+dc temp -40 120 1
+plot vref
+.endc
+************************************************
 *Supply variation
-*vin Vdd 0 5
-*.DC vin 0 5 0.5
-*Transient analysis
-*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 5 500u 5)
-*.tran 100u 500u
+************************************************
+.control
+dc Vsup 0 5 0.5
+plot vdd vref
+.endc
+************************************************
 *PSRR analysis
-*vin vdd 0 DC 5 AC 1
-*.ac dec 10 1 100MEG
+************************************************
+.control
+alter Vsup DC = 5
+alter Vsup AC = 1
+ac dec 10 1 100MEG
+plot db(vref)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @Vsup[pwl] = [ 0 0 100u 0 200u 5 500u 5 ]
+tran 100u 500u
+plot vdd vref
+.endc
+************************************************
 
 
 

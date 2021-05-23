@@ -17,35 +17,6 @@ N 1730 -1200 1780 -1200 { lab=Vout}
 N 1760 -1200 1760 -1160 { lab=Vout}
 N 1760 -1100 1760 -1040 { lab=0}
 N 1580 -1040 1760 -1040 { lab=0}
-C {devices/code_shown.sym} 1825 -1495 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*AC Analysis Differential mode
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 1 AC 1 
-*Vneg vn 0 DC 1 AC -1
-*.ac dec 10 1 100MEG
-*AC Analysis Common mode
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 1 AC 1 
-*Vneg vn 0 DC 1 AC 1 
-*.ac dec 10 1 100MEG
-*Transient Analysis 
-*Vsup vdd 0 1.8
-*Vpos vp 0 SIN(0.9 1m 1Meg)
-*Vneg vn 0 SIN(0.9 -1m 1Meg)
-*.tran 0.05u 2u
-*Noise Analysis
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 1 AC 1 
-*Vneg 0 vn  DC -1 AC 1 
-*.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
-*PSRR analysis
-Vsup vdd 0 DC 1.8 AC 1
-Vpos vp 0 DC 1 
-Vneg vn 0 DC 1
-.ac dec 10 1 100MEG
-" }
 C {devices/code.sym} 2180 -1275 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
@@ -98,3 +69,73 @@ value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym} 1590 -1200 0 0 {name=x1}
+C {devices/code_shown.sym} 2345 -1865 0 0 {name=NGSPICE1
+only_toplevel=true
+value="
+***************************************************
+*Source intialization
+***************************************************
+Vsup vdd 0 DC 1.8 AC 0 
+Vpos vp 0 DC 0 AC 0
+Vneg vn 0 DC 0 AC 0
+*****************************************************
+*Noise analysis
+*****************************************************
+.control
+alter Vpos DC = 1
+alter Vpos AC = 1
+alter Vneg DC = 1 
+alter Vneg AC = -1
+noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+setplot noise1
+plot inoise_spectrum 
+.endc
+****************************************************
+*AC analysis differential mode
+****************************************************
+.control
+alter Vpos DC = 1 
+alter Vpos AC = 1
+alter Vneg DC = 1 
+alter Vneg AC = -1
+ac dec 10 1 100MEG
+show
+plot db(Vout)
+plot 180/pi*phase(Vout) 
+.endc
+*****************************************************
+*AC analysis common mode
+*****************************************************
+.control
+alter Vpos DC = 1 
+alter Vpos AC = 1
+alter Vneg DC = 1 
+alter Vneg AC = 1
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
+*PSRR analysis
+*****************************************************
+.control
+alter Vsup AC = 1
+alter Vpos DC = 1
+alter Vpos AC = 0 
+alter Vneg DC = 1
+alter Vneg AC = 0
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
+*Transient analysis
+******************************************************
+.control
+alter @Vpos[Sin] [ 1 1m 1Meg ]
+alter @Vneg[Sin] [ 1 -1m 1Meg ]
+tran 0.05u 10u
+plot vp vn 
+plot Vout
+.endc
+****************************************************** 
+.end
+" }

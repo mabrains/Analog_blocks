@@ -9,28 +9,53 @@ N -2620 -1100 -2570 -1100 { lab=Vdd}
 N -2570 -800 -2570 -740 { lab=0}
 N -2620 -740 -2570 -740 { lab=0}
 N -2420 -930 -2370 -930 { lab=Vref}
-C {devices/code_shown.sym} -2325 -1035 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -2325 -1335 0 0 {name=NGSPICE
 only_toplevel=true
 value="
+************************************************
+*Source initialization
+************************************************
+Vsup Vdd 0 DC 0 AC 0
+************************************************
 *Temp variation
-vin Vdd 0 5
-.DC TEMP -40 120 1
+************************************************
+.control
+alter Vsup DC = 5
+dc temp -40 120 1
+plot vref
+.endc
+************************************************
 *Supply variation
-*vin Vdd 0 5
-*.DC vin 0 5 0.5
-*Transient analysis
-*vin Vdd 0 dc 0 pwl(0 0 100u 0 200u 5 500u 5)
-*.tran 100u 500u
+************************************************
+.control
+dc Vsup 0 5 0.5
+plot vdd vref
+.endc
+************************************************
 *PSRR analysis
-*vin vdd 0 DC 5 AC 1  
-*.ac dec 10 1 100MEG
+************************************************
+.control
+alter Vsup DC = 5
+alter Vsup AC = 1  
+ac dec 10 1 100MEG
+plot db(vref)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @Vsup[pwl] = [ 0 0 100u 0 200u 5 500u 5 ]
+tran 100u 500u
+plot vdd vref
+.endc
+************************************************
 .end
 " }
 C {devices/lab_pin.sym} -2620 -1100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -2620 -740 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -2370 -930 0 1 {name=l3 sig_type=std_logic lab=Vref
 }
-C {devices/code.sym} -2080 -1050 0 0 {name=TT_MODELS
+C {devices/code.sym} -2620 -1300 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"

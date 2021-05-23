@@ -17,34 +17,75 @@ N -1680 -940 -1680 -885 { lab=vdd}
 N -1080 -755 -1080 -685 { lab=Vout}
 N -1080 -625 -1080 -560 { lab=0}
 N -1290 -560 -1080 -560 { lab=0}
-C {devices/code_shown.sym} -985 -1035 0 0 {name=NGSPICE
+C {devices/code_shown.sym} -995 -1155 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-*AC Analysis Differential mode
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 0.9 AC 1 
-*Vneg vn 0 DC 0.9 AC -1 
-*.ac dec 10 1 100MEG
-*AC Analysis Common mode
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 0.9 AC 1 
-*Vneg vn 0 DC 0.9 AC 1 
-*.ac dec 10 1 100MEG
-*Transient Analysis 
-*Vsup vdd 0 1.8
-*Vpos vp 0 SIN(0.9 1m 1Meg)
-*Vneg vn 0 SIN(0.9 -1m 1Meg)
-*.tran 0.05u 10u
-*Noise Analysis
-*Vsup vdd 0 1.8
-*Vpos vp 0 DC 0.9 AC 1 
-*Vneg 0 vn  DC -0.9 AC 1 
-*.noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+***************************************************
+*Source intialization
+***************************************************
+Vsup vdd 0 DC 1.8 AC 0 
+Vpos vp 0 DC 0 AC 0
+Vneg vn 0 DC 0 AC 0
+*****************************************************
+*Noise analysis
+*****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = -1
+noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+setplot noise1
+plot inoise_spectrum 
+.endc
+****************************************************
+*AC analysis differential mode
+****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = -1
+ac dec 10 1 100MEG
+show
+plot db(Vout)
+plot 180/pi*phase(Vout) 
+.endc
+*****************************************************
+*AC analysis common mode
+*****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = 1
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
 *PSRR analysis
-*Vsup vdd 0 DC 1.8 AC 1
-*Vpos vp 0 DC 0.9  
-*Vneg vn 0 DC 0.9 
-*.ac dec 10 1 100MEG
+*****************************************************
+.control
+alter Vsup AC = 1
+alter Vpos DC = 0.9
+alter Vpos AC = 0 
+alter Vneg DC = 0.9
+alter Vneg AC = 0
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
+*Transient analysis
+******************************************************
+.control
+alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+alter @Vneg[Sin] [ 0.9 -1m 1Meg ]
+tran 0.05u 10u
+plot vp vn 
+plot Vout
+.endc
+****************************************************** 
+.end
 " }
 C {devices/lab_pin.sym} -1730 -940 0 0 {name=l1 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} -1540 -815 0 0 {name=l2 sig_type=std_logic lab=vn}

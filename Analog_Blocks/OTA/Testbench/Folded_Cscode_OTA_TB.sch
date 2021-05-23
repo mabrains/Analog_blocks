@@ -17,7 +17,7 @@ N 540 -1660 950 -1660 { lab=Vdd}
 N 1160 -1420 1160 -1350 { lab=Vout}
 N 1160 -1290 1160 -1180 { lab=0}
 N 950 -1180 1160 -1180 { lab=0}
-C {devices/code.sym} 1290 -1660 0 0 {name=TT_MODELS
+C {devices/code.sym} 1060 -1640 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -57,27 +57,6 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {devices/code_shown.sym} 1280 -1440 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*AC analysis
-Vsup vdd 0 1.8
-Vpos vp 0 DC 0.9 AC 1 
-Vneg vn 0 DC 0.9 AC -1 
-.ac dec 10 1 120MEG
-*Transient analysis
-*Vpos vp 0 SIN(0.9 1m 1Meg)
-*Vneg 0 vn SIN(-0.9 1m 1Meg)
-*.tran 0.05u 2u
-*Noise analysis
-*.noise v(vout) Vpos dec 10 1 70MEG Vneg dec 10 1 70MEG
-*PSRR analysis
-*Vsup vdd 0 DC 1.8 AC 1
-*Vpos vp 0 DC 0.9  
-*Vneg vn 0 DC 0.9 
-*.ac dec 10 1 100MEG
-.end
-" }
 C {devices/isource.sym} 610 -1520 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} 540 -1660 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 540 -1180 0 0 {name=l2 sig_type=std_logic lab=0}
@@ -90,3 +69,73 @@ value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transistor1.8v/Folded_Cascode_OTA.sym} 950 -1420 0 0 {name=x1}
+C {devices/code_shown.sym} 1415 -1985 0 0 {name=NGSPICE
+only_toplevel=true
+value="
+***************************************************
+*Source intialization
+***************************************************
+Vsup vdd 0 DC 1.8 AC 0 
+Vpos vp 0 DC 0 AC 0
+Vneg vn 0 DC 0 AC 0
+*****************************************************
+*Noise analysis
+*****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = -1
+noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+setplot noise1
+plot inoise_spectrum 
+.endc
+****************************************************
+*AC analysis differential mode
+****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = -1
+ac dec 10 1 100MEG
+show
+plot db(Vout)
+plot 180/pi*phase(Vout) 
+.endc
+*****************************************************
+*AC analysis common mode
+*****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = 1
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
+*PSRR analysis
+*****************************************************
+.control
+alter Vsup AC = 1
+alter Vpos DC = 0.9
+alter Vpos AC = 0 
+alter Vneg DC = 0.9
+alter Vneg AC = 0
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+*****************************************************
+*Transient analysis
+******************************************************
+.control
+alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+alter @Vneg[Sin] [ 0.9 -1m 1Meg ]
+tran 0.05u 10u
+plot vp vn 
+plot Vout
+.endc
+****************************************************** 
+.end
+" }

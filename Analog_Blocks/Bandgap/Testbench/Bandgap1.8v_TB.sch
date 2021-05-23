@@ -9,24 +9,7 @@ N 390 -1850 570 -1850 { lab=Vdd}
 N 570 -1630 570 -1550 { lab=0}
 N 390 -1550 570 -1550 { lab=0}
 N 670 -1710 750 -1710 { lab=Vref}
-C {devices/code_shown.sym} 805 -1835 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*Temerature variation
-*vin Vdd 0 1.8
-*.DC TEMP -40 120 1
-*Supply variation
-*vin Vdd 0 1.8
-*.DC vin 0 3 0.8
-*Transient analysis
-*vin Vdd 0 pwl(0 0 100u 0 200u 3 500u 3)
-*.tran 100u 500u
-*PSRR analysis
-vin vdd 0 DC 1.8 AC 1  
-.ac dec 10 1 100MEG
-.end
-" }
-C {devices/code.sym} 1045 -1835 0 0 {name=TT_MODELS
+C {devices/code.sym} 465 -2065 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -70,3 +53,46 @@ C {devices/lab_pin.sym} 390 -1850 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 390 -1550 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 750 -1710 0 1 {name=l3 sig_type=std_logic lab=Vref}
 C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 570 -1710 0 0 {name=x1}
+C {devices/code_shown.sym} 805 -2115 0 0 {name=NGSPICE1
+only_toplevel=true
+value=" 
+************************************************
+*Source initialization
+************************************************
+Vsup Vdd 0 DC 0 AC 0
+************************************************
+*Temp variation
+************************************************
+.control
+alter Vsup DC = 1.8
+dc temp -40 120 1
+show
+plot vref
+.endc
+************************************************
+*Supply variation
+************************************************
+.control
+dc Vsup 0 2.5 0.1
+plot vdd vref
+.endc
+************************************************
+*PSRR analysis
+************************************************
+.control
+alter Vsup DC = 1.8
+alter Vsup AC = 1  
+ac dec 10 1 100MEG
+plot db(vref)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @Vsup[pwl] = [ 0 0 100u 0 200u 2.5 500u 2.5 ]
+tran 100u 500u
+plot vdd vref
+.endc
+************************************************
+.end
+" }
