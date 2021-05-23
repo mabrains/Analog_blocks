@@ -2,7 +2,7 @@
 
 ## Schematic
 
-![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Schematic.png)
+![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Transistor1.8v/Schematic.png)
 
 ## Bandgap OTA
 
