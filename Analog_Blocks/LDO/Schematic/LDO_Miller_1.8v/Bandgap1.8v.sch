@@ -77,8 +77,6 @@ N -650 -210 -640 -210 { lab=GND}
 N -2290 -210 -1240 -210 { lab=GND}
 N -2260 -290 -2200 -290 { lab=GND}
 N -2260 -290 -2260 -210 { lab=GND}
-N -640 -640 -640 -530 { lab=VDD}
-N -640 -390 -640 -210 { lab=GND}
 N -480 -460 -440 -460 { lab=Vref}
 N -440 -710 -440 -460 { lab=Vref}
 N -950 -710 -440 -710 { lab=Vref}
@@ -111,6 +109,8 @@ N -2560 -380 -2220 -380 { lab=#net3}
 N -2660 -420 -2560 -420 { lab=VDD}
 N -2300 -460 -800 -460 { lab=#net5}
 N -2400 -640 -640 -640 { lab=VDD}
+N -640 -380 -640 -210 { lab=GND}
+N -640 -640 -640 -540 { lab=VDD}
 C {sky130_fd_pr/pnp_05v5.sym} -930 -290 0 1 {name=Q1
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
@@ -150,19 +150,19 @@ spiceprefix=X
 C {devices/opin.sym} -1250 -710 0 1 {name=p3 lab=Vref}
 C {sky130_fd_pr/res_xhigh_po.sym} -1170 -380 0 0 {name=R1
 W=1
-L=2.2
+L=2
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/res_xhigh_po.sym} -1170 -560 0 0 {name=R2
 W=1
-L=7.5
+L=6.5
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/res_xhigh_po.sym} -950 -560 0 0 {name=R3
 W=1
-L=7.5
+L=6.5
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
@@ -210,4 +210,4 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -2580 -680 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} -2590 -210 0 0 {name=p5 lab=GND}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym} -640 -460 0 0 {name=x1}
+C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap_OTA_1.8v.sym} -640 -460 0 0 {name=x1}

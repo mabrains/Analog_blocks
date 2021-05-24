@@ -8,10 +8,10 @@ N 1180 -1060 1180 -990 { lab=Vout}
 N 1180 -930 1180 -900 { lab=#net1}
 N 1180 -840 1180 -780 { lab=0}
 N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 {}
-N 1120 -1060 1230 -1060 {}
-N 780 -1060 840 -1060 {}
-C {devices/code.sym} 1530 -1030 0 0 {name=TT_MODELS
+N 980 -940 980 -780 { lab=0}
+N 1120 -1060 1230 -1060 { lab=Vout}
+N 780 -1060 840 -1060 { lab=Vin}
+C {devices/code.sym} 900 -1310 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -64,21 +64,46 @@ m=1}
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1285 -1090 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*DC input sweep
-VVin Vin 0 1.8 
-.dc VVin 0 2.5 0.5
-*Line regulation
-*VVin Vin 0 1.8 
-*.dc VVin 1.8 2.5 0.3
-*PSRR analysis
-*VVin Vin 0 DC 2.5 AC 1
-*.ac dec 10 1 100MEG
-*Transient analysis
-*VVin Vin 0 PULSE(2 2.1 50u 100n 100n 50u 100u)
-*.tran 50u 100u
-*.end
-" }
 C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
+C {devices/code_shown.sym} 1325 -1375 0 0 {name=NGSPICE1
+only_toplevel=true
+value=" 
+************************************************
+*Source initialization
+************************************************
+VVin Vin 0 DC 0 AC 0
+************************************************
+*Input/Output Characteristic
+************************************************
+.control
+dc VVin 0 2.2 0.2
+show
+plot Vin Vout
+.endc
+************************************************
+*Line regulation
+************************************************
+.control
+dc VVin 1.8 2.2 0.01
+plot Vout
+.endc
+************************************************
+*PSRR analysis
+************************************************
+.control
+alter VVin DC = 2.2
+alter VVin AC = 1  
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @VVin[pulse] = [ 2 2.1 50u 100n 100n 50u 100u ]
+tran 20u 100u
+plot Vin Vout
+.endc
+************************************************
+.end
+" }

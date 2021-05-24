@@ -81,6 +81,7 @@ N 1210 -980 1210 -870 { lab=#net6}
 N 1210 -810 1210 -710 { lab=Gnd}
 N 1170 -840 1190 -840 { lab=Gnd}
 N 1170 -840 1170 -710 { lab=Gnd}
+N 920 -710 950 -710 { lab=Gnd}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1490 -1120 0 0 {name=M5
 L=1
 W=10
@@ -180,7 +181,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/ipin.sym} 950 -1230 0 0 {name=p4 lab=Vdd}
-C {devices/ipin.sym} 950 -710 0 0 {name=p5 lab=Gnd}
+C {devices/ipin.sym} 920 -710 0 0 {name=p5 lab=Gnd}
 C {devices/ipin.sym} 1340 -980 0 0 {name=p1 lab=Vn}
 C {devices/ipin.sym} 1680 -980 0 1 {name=p2 lab=Vp}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 1830 -930 3 0 {name=C1 model=cap_mim_m3_2 W=2 L=1 MF=1 spiceprefix=X}

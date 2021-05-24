@@ -11,7 +11,7 @@ N 980 -780 1180 -780 { lab=0}
 N 980 -940 980 -780 { lab=0}
 N 1120 -1060 1230 -1060 { lab=Vout}
 N 780 -1060 840 -1060 { lab=Vin}
-C {devices/code.sym} 1530 -1030 0 0 {name=TT_MODELS
+C {devices/code.sym} 1500 -1060 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -68,8 +68,8 @@ C {devices/code_shown.sym} 1285 -1090 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *DC input sweep
-VVin Vin 0 1.8 
-.dc VVin 0 2.5 0.5
+*VVin Vin 0 1.8 
+*.dc VVin 0 2.5 0.5
 *Line regulation
 *VVin Vin 0 1.8 
 *.dc VVin 1.8 2.5 0.3

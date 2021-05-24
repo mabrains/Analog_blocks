@@ -11,24 +11,7 @@ N 1140 -1060 1230 -1060 { lab=Vout}
 N 980 -960 980 -780 { lab=0}
 N 980 -780 1180 -780 { lab=0}
 N 780 -1060 820 -1060 { lab=Vin}
-C {devices/code_shown.sym} 1315 -1070 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-*DC input sweep
-VVin Vin 0 3
-.DC VVin 0 4 0.3
-*Line regulation
-*VVin Vin 0 3
-*.DC VVin 2.2 4 0.1
-*PSRR analysis
-*VVin Vin 0 DC 5 AC 1
-*.AC dec 10 1 150MEG
-*Transient analysis
-*VVin Vin 0 PULSE(3 3.1 50u 100n 100n 50u 100u)
-*.tran 50u 100u
-*.end
-" }
-C {devices/code.sym} 1530 -1030 0 0 {name=TT_MODELS
+C {devices/code.sym} 1790 -1040 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -82,3 +65,45 @@ C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Mil
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
+C {devices/code_shown.sym} 1285 -1345 0 0 {name=NGSPICE1
+only_toplevel=true
+value=" 
+************************************************
+*Source initialization
+************************************************
+VVin Vin 0 DC 0 AC 0
+************************************************
+*Input/Output Characteristic
+************************************************
+.control
+dc VVin 0 3 0.1
+show
+plot Vin Vout
+.endc
+************************************************
+*Line regulation
+************************************************
+.control
+dc VVin 2.2 3 0.1
+plot Vout
+.endc
+************************************************
+*PSRR analysis
+************************************************
+.control
+alter VVin DC = 3 
+alter VVin AC = 1  
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @VVin[pulse] = [ 2.5 2.6 50u 100n 100n 50u 100u ]
+tran 20u 100u
+plot Vin Vout
+.endc
+************************************************
+.end
+" }

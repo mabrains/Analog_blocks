@@ -1,0 +1,169 @@
+**.subckt Miller_OTA_meas
+I0 vdd net1 20u
+C1 Vout 0 2p m=1
+x1 vdd net2 vp Vout net1 0 Miller_OTA_NMOS_1.8v
+**** begin user architecture code
+
+
+***************************************************
+*Source intialization
+***************************************************
+*Vsup vdd 0 DC 1.8 AC 0
+*Vpos vp 0 DC 0 AC 0
+*Vneg vn 0 DC 0 AC 0
+*****************************************************
+*Noise analysis
+*****************************************************
+*.control
+*alter Vpos DC = 0.9
+*alter Vpos AC = 1
+*alter Vneg DC = 0.9
+*alter Vneg AC = -1
+*noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+*setplot noise1
+*plot inoise_spectrum
+*.endc
+****************************************************
+*AC analysis differential mode
+****************************************************
+*.control
+*alter Vpos DC = 0.9
+*alter Vpos AC = 1
+*alter Vneg DC = 0.9
+*alter Vneg AC = -1
+*ac dec 10 1 100MEG
+*show
+*plot db(Vout)
+*plot 180/pi*phase(Vout)
+*meas ac Avd FIND vdb(Vout) AT=10
+*meas ac GBW WHEN vdb(Vout)= 0
+*meas ac PGBW FIND vp(Vout) AT=GBW
+*param pi=3.14
+*measure ac PM param='PGBW + pi'
+*.endc
+*****************************************************
+*AC analysis common mode
+*****************************************************
+*.control
+*alter Vpos DC = 0.9
+*alter Vpos AC = 1
+*alter Vneg DC = 0.9
+*alter Vneg AC = 1
+*ac dec 10 1 100MEG
+*plot db(Vout)
+*meas ac Avcm FIND vdb(Vout) AT=10
+*meas ac CMRR param='Avd - Avcm'  
+*.endc
+*****************************************************
+*PSRR analysis
+*****************************************************
+*.control
+*alter Vsup AC = 1
+*alter Vpos DC = 0.9
+*alter Vpos AC = 0
+*alter Vneg DC = 0.9
+*alter Vneg AC = 0
+*ac dec 10 1 100MEG
+*plot db(Vout)
+*meas ac PSR_1k FIND vdb(Vout) AT=1k
+*meas ac PSR_1M FIND vdb(vout) AT=1Meg
+*.endc
+*****************************************************
+*Transient analysis
+******************************************************
+*.control
+*alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+*alter @Vneg[Sin] [ 0.9 -1m 1Meg ]
+*tran 0.05u 10u
+*plot vp vn
+*plot Vout
+*.endc
+******************************************************
+*Slew Rate analysis
+******************************************************
+Vsup Vdd 0 1.8
+Vpos vp 0 PULSE(0.2 1.8 50u 100n 100n 50u 100u)
+.tran 50u 100u
+
+
+
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/Capacitor
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical.spice
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/specialized_cells.spice
+* All models
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/all.spice
+* Corner
+.include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:
+*+  /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym # of pins=6
+* sym_path:
+*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym
+* sch_path:
+*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sch
+.subckt Miller_OTA_NMOS_1.8v  VDD Vn Vp Vout Ibias GND
+*.ipin Ibias
+*.ipin Vn
+*.ipin Vp
+*.ipin VDD
+*.ipin GND
+*.opin Vout
+C1 Vout net2 1p m=1
+XM1 net1 Vn net3 GND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM2 net2 Vp net3 GND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM5 net3 Ibias GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=12 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM8 Ibias Ibias GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=12 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM7 Vout Ibias GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM4 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.5 W=7.2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM3 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.5 W=7.2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM6 Vout net2 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.5 W=87.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+** flattened .save nodes
+.end

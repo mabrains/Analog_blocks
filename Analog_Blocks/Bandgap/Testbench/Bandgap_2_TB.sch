@@ -4,16 +4,16 @@ K {}
 V {}
 S {}
 E {}
-N 2690 -1060 2690 -1000 { lab=Vdd}
-N 2660 -1060 2690 -1060 { lab=Vdd}
-N 2660 -780 2690 -780 { lab=0}
-N 2690 -840 2690 -780 { lab=0}
-N 2790 -920 2840 -920 { lab=Vref}
+N 2630 -1100 2660 -1100 { lab=Vdd}
+N 2780 -920 2830 -920 { lab=Vref}
+N 2660 -1100 2660 -1040 { lab=Vdd}
+N 2620 -740 2660 -740 { lab=0}
+N 2660 -800 2660 -740 { lab=0}
 C {devices/code_shown.sym} 2915 -1015 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *Temp variation
-vin Vdd 0 1.8
+vin Vdd 0 3.3
 .DC TEMP -40 120 5
 *Supply variation
 *vin Vdd 0 3
@@ -66,7 +66,7 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym} 2690 -920 0 0 {name=x1}
-C {devices/lab_pin.sym} 2660 -1060 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/lab_pin.sym} 2660 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 2840 -920 0 1 {name=l3 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} 2630 -1100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/lab_pin.sym} 2620 -740 0 0 {name=l2 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 2830 -920 0 1 {name=l3 sig_type=std_logic lab=Vref}
+C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym} 2660 -920 0 0 {name=x1}
