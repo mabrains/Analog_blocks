@@ -4,97 +4,23 @@ K {}
 V {}
 S {}
 E {}
-N -1290 -940 -1290 -850 { lab=vdd}
-N -1290 -660 -1290 -560 { lab=0}
-N -1540 -560 -1290 -560 { lab=0}
-N -1540 -695 -1455 -695 { lab=vp}
-N -1125 -755 -1050 -755 { lab=Vout}
-N -1730 -940 -1290 -940 { lab=vdd}
-N -1680 -755 -1455 -755 { lab=#net1}
-N -1680 -825 -1680 -755 { lab=#net1}
-N -1680 -940 -1680 -885 { lab=vdd}
-N -1080 -755 -1080 -685 { lab=Vout}
-N -1080 -625 -1080 -560 { lab=0}
-N -1290 -560 -1080 -560 { lab=0}
-N -1540 -815 -1455 -815 { lab=vn}
-C {devices/code_shown.sym} -995 -1155 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-***************************************************
-*Source intialization
-***************************************************
-Vsup vdd 0 DC 1.8 AC 0 
-Vpos vp 0 DC 0 AC 0
-Vneg vn 0 DC 0 AC 0
-*****************************************************
-*Noise analysis
-*****************************************************
-*.control
-*alter Vpos DC = 0.9 
-*alter Vpos AC = 1
-*alter Vneg DC = 0.9 
-*alter Vneg AC = -1
-*noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
-*setplot noise1
-*plot inoise_spectrum 
-*.endc
-****************************************************
-*AC analysis differential mode
-****************************************************
-.control
-alter Vpos DC = 0.9 
-alter Vpos AC = 1
-alter Vneg DC = 0.9 
-alter Vneg AC = -1
-ac dec 10 1 100MEG
-*show
-*plot db(Vout)
-*plot 180/pi*phase(Vout) 
-meas ac Avd FIND vdb(Vout) AT=10
-meas ac GBW WHEN vdb(Vout)= 0
-let P = (vp(Vout)+pi)*(180/pi)
-meas ac PM FIND P AT=GBW
-.endc
-*****************************************************
-*AC analysis common mode
-*****************************************************
-.control
-alter Vpos DC = 0.9 
-alter Vpos AC = 1
-alter Vneg DC = 0.9 
-alter Vneg AC = 1
-ac dec 10 1 100MEG
-*plot db(Vout)
-meas ac Acm FIND vdb(Vout) AT=10
-.endc
-*****************************************************
-*PSRR analysis
-*****************************************************
-.control
-alter Vsup AC = 1
-alter Vpos DC = 0.9
-alter Vpos AC = 0 
-alter Vneg DC = 0.9
-alter Vneg AC = 0
-ac dec 10 1 100MEG
-*plot db(Vout)
-meas ac PSR_1k FIND vdb(Vout) AT=1k
-meas ac PSR_1M FIND vdb(vout) AT=1Meg 
-.endc
-*****************************************************
-.end
-" }
-C {devices/lab_pin.sym} -1730 -940 0 0 {name=l1 sig_type=std_logic lab=vdd}
-C {devices/lab_pin.sym} -1540 -695 0 0 {name=l3 sig_type=std_logic lab=vp}
-C {devices/lab_pin.sym} -1540 -560 0 0 {name=l4 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -1050 -755 0 1 {name=l5 sig_type=std_logic lab=Vout}
-C {devices/isource.sym} -1680 -855 0 0 {name=I0 value=20u}
-C {devices/capa.sym} -1080 -655 0 0 {name=C1
-m=1
-value=2p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/code.sym} -1170 -965 0 0 {name=TT_MODELS
+N 965 -1325 965 -1235 { lab=vdd}
+N 965 -1045 965 -945 { lab=0}
+N 715 -945 965 -945 { lab=0}
+N 715 -1080 800 -1080 { lab=vp}
+N 1130 -1140 1205 -1140 { lab=Vout}
+N 525 -1325 965 -1325 { lab=vdd}
+N 575 -1140 800 -1140 { lab=#net1}
+N 575 -1210 575 -1140 { lab=#net1}
+N 575 -1325 575 -1270 { lab=vdd}
+N 1175 -1140 1175 -1070 { lab=Vout}
+N 1175 -1010 1175 -945 { lab=0}
+N 965 -945 1175 -945 { lab=0}
+N 740 -1200 800 -1200 { lab=Vout}
+N 740 -1300 740 -1200 { lab=Vout}
+N 1175 -1300 1175 -1140 { lab=Vout}
+N 740 -1300 1175 -1300 { lab=Vout}
+C {devices/code.sym} 1010 -1435 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -134,5 +60,45 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym} -1295 -755 0 0 {name=x1}
-C {devices/lab_pin.sym} -1540 -815 0 0 {name=l2 sig_type=std_logic lab=vn}
+C {devices/code_shown.sym} 1255 -1315 0 0 {name=NGSPICE1
+only_toplevel=true
+value="
+***************************************************
+*Source intialization
+***************************************************
+Vsup vdd 0 DC 1.8 AC 0 
+Vpos vp 0 DC 0 AC 0
+Vneg vn 0 DC 0 AC 0
+*****************************************************
+*Transient analysis
+******************************************************
+*.control
+*alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+*tran 0.05u 5u 
+*plot vp Vout
+*let o= vout - vp
+*meas tran offset FIND o AT=1u
+*.endc
+****************************************************** 
+*Slew Rate analysis
+******************************************************
+.control
+alter @Vpos[PULSE] = [ 0.2 1.8 1u 1p 1p 0.5u 1u ]
+tran 0.01u 5u
+plot vp Vout 
+meas TRAN V1 FIND Vout AT=2u
+meas TRAN V2 FIND Vout AT=2.1u
+.endc
+.end
+" }
+C {devices/lab_pin.sym} 525 -1325 0 0 {name=l1 sig_type=std_logic lab=vdd}
+C {devices/lab_pin.sym} 715 -1080 0 0 {name=l3 sig_type=std_logic lab=vp}
+C {devices/lab_pin.sym} 715 -945 0 0 {name=l4 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 1205 -1140 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {devices/isource.sym} 575 -1240 0 0 {name=I0 value=20u}
+C {devices/capa.sym} 1175 -1040 0 0 {name=C1
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}
+C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym} 960 -1140 0 0 {name=x1}
