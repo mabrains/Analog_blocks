@@ -63,32 +63,34 @@ value="
 C {devices/code_shown.sym} 1255 -1315 0 0 {name=NGSPICE1
 only_toplevel=true
 value="
-***************************************************
+*************************************************************************
 *Source intialization
-***************************************************
+*************************************************************************
 Vsup vdd 0 DC 1.8 AC 0 
 Vpos vp 0 DC 0 AC 0
 Vneg vn 0 DC 0 AC 0
-*****************************************************
+*************************************************************************
 *Transient analysis
-******************************************************
-*.control
-*alter @Vpos[Sin] [ 0.9 1m 1Meg ]
-*tran 0.05u 5u 
-*plot vp Vout
-*let o= vout - vp
-*meas tran offset FIND o AT=1u
-*.endc
-****************************************************** 
+*************************************************************************
+.control
+alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+tran 0.05u 5u 
+plot vp Vout
+let o= vout - vp
+meas tran offset FIND o AT=1u
+.endc
+*************************************************************************
 *Slew Rate analysis
-******************************************************
+*************************************************************************
 .control
 alter @Vpos[PULSE] = [ 0.2 1.8 1u 1p 1p 0.5u 1u ]
+define SR(x,y) x/y
 tran 0.01u 5u
 plot vp Vout 
-meas TRAN V1 FIND Vout AT=2u
-meas TRAN V2 FIND Vout AT=2.1u
+meas tran Trise TRIG v(Vout) VAL=0.4 RISE=2 TARG v(Vout) VAL=1.6 RISE=2
+print SR(vdd,Trise)  
 .endc
+*************************************************************************
 .end
 " }
 C {devices/lab_pin.sym} 525 -1325 0 0 {name=l1 sig_type=std_logic lab=vdd}

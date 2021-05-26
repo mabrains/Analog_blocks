@@ -26,18 +26,29 @@ value="
 Vsup vdd 0 DC 1.8 AC 0 
 Vpos vp 0 DC 0 AC 0
 Vneg vn 0 DC 0 AC 0
+****************************************************
+*DC analysis 
+****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vneg DC = 0.9 
+define Power(x,y) -(x*y)
+op
+show
+print Power(v(vdd),Vsup#branch)
+.endc
 *****************************************************
 *Noise analysis
 *****************************************************
-*.control
-*alter Vpos DC = 0.9 
-*alter Vpos AC = 1
-*alter Vneg DC = 0.9 
-*alter Vneg AC = -1
-*noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
-*setplot noise1
-*plot inoise_spectrum 
-*.endc
+.control
+alter Vpos DC = 0.9 
+alter Vpos AC = 1
+alter Vneg DC = 0.9 
+alter Vneg AC = -1
+noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
+setplot noise1
+plot inoise_spectrum 
+.endc
 ****************************************************
 *AC analysis differential mode
 ****************************************************
@@ -47,9 +58,8 @@ alter Vpos AC = 1
 alter Vneg DC = 0.9 
 alter Vneg AC = -1
 ac dec 10 1 100MEG
-*show
-*plot db(Vout)
-*plot 180/pi*phase(Vout) 
+plot db(Vout)
+plot 180/pi*phase(Vout) 
 meas ac Avd FIND vdb(Vout) AT=10
 meas ac GBW WHEN vdb(Vout)= 0
 let P = (vp(Vout)+pi)*(180/pi)
@@ -64,7 +74,7 @@ alter Vpos AC = 1
 alter Vneg DC = 0.9 
 alter Vneg AC = 1
 ac dec 10 1 100MEG
-*plot db(Vout)
+plot db(Vout)
 meas ac Acm FIND vdb(Vout) AT=10
 .endc
 *****************************************************
@@ -77,7 +87,7 @@ alter Vpos AC = 0
 alter Vneg DC = 0.9
 alter Vneg AC = 0
 ac dec 10 1 100MEG
-*plot db(Vout)
+plot db(Vout)
 meas ac PSR_1k FIND vdb(Vout) AT=1k
 meas ac PSR_1M FIND vdb(vout) AT=1Meg 
 .endc
