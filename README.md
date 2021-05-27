@@ -1,5 +1,5 @@
 
-# Aanlog_Blocks
+# Analog_Blocks
 * In our repo we demonstrate design and simulation of three analog blocks: -
     1. OTA
     2. Bandgap reference voltage
