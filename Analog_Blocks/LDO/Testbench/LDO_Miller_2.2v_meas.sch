@@ -7,11 +7,11 @@ E {}
 N 1180 -1060 1180 -990 { lab=Vout}
 N 1180 -930 1180 -900 { lab=#net1}
 N 1180 -840 1180 -780 { lab=0}
+N 1140 -1060 1230 -1060 { lab=Vout}
+N 980 -960 980 -780 { lab=0}
 N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 { lab=0}
-N 1120 -1060 1230 -1060 { lab=Vout}
-N 780 -1060 840 -1060 { lab=Vin}
-C {devices/code.sym} 900 -1310 0 0 {name=TT_MODELS
+N 780 -1060 820 -1060 { lab=Vin}
+C {devices/code.sym} 1790 -1040 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -64,7 +64,7 @@ m=1}
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1325 -1375 0 0 {name=NGSPICE1
+C {devices/code_shown.sym} 1285 -1345 0 0 {name=NGSPICE1
 only_toplevel=true
 value=" 
 ************************************************
@@ -75,35 +75,42 @@ VVin Vin 0 DC 0 AC 0
 *Input/Output Characteristic
 ************************************************
 .control
-dc VVin 0 2.2 0.2
+dc VVin 0 3 0.1
 show
 plot Vin Vout
+meas DC Vreg WHEN Vout=2.2
+print Vreg-2.2
 .endc
 ************************************************
 *Line regulation
 ************************************************
 .control
-dc VVin 1.8 2.2 0.01
+dc VVin 2.2 3 0.1
 plot Vout
+meas DC v1 FIND Vout AT=2.2
+meas DC v2 FIND Vout AT=3
+print (v2-v1)/0.8
 .endc
 ************************************************
 *PSRR analysis
 ************************************************
 .control
-alter VVin DC = 2.2
+alter VVin DC = 3 
 alter VVin AC = 1  
 ac dec 10 1 100MEG
 plot db(Vout)
+meas AC PSR_1k FIND vdb(Vout) AT=1k
+meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
 .endc
 ************************************************
 *Transient analysis
 ************************************************
 .control
-alter @VVin[pulse] = [ 2 2.1 50u 100n 100n 50u 100u ]
+alter @VVin[pulse] = [ 2.5 2.6 50u 100n 100n 50u 100u ]
 tran 20u 100u
 plot Vin Vout
 .endc
 ************************************************
 .end
 " }
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sym} 980 -1060 0 0 {name=x1}

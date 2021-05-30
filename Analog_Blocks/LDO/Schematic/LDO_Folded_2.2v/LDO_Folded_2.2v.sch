@@ -62,8 +62,8 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_2.2v/Folded_Cascode_OTA_5v.sym} 1150 -1500 0 0 {name=x1}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_2.2v/BGR.sym} 800 -1560 0 0 {name=x2}
 C {devices/ipin.sym} 660 -1680 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} 670 -1160 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 1550 -1440 0 0 {name=p3 lab=Vout}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_2.2v/BGR.sym} 800 -1560 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_2.2v/Folded_Cascode_OTA_5v.sym} 1150 -1500 0 0 {name=x2}

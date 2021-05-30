@@ -112,11 +112,11 @@ plot Vout
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sch
 .subckt Folded_Cascode_OTA_5v  VDD Vout Vp Vn Ibias GND
 *.ipin VDD
 *.ipin GND

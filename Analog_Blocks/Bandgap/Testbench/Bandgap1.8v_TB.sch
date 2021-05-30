@@ -52,7 +52,6 @@ value="
 C {devices/lab_pin.sym} 390 -1850 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 390 -1550 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 750 -1710 0 1 {name=l3 sig_type=std_logic lab=Vref}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 570 -1710 0 0 {name=x1}
 C {devices/code_shown.sym} 805 -2115 0 0 {name=NGSPICE1
 only_toplevel=true
 value=" 
@@ -96,3 +95,4 @@ plot vdd vref
 ************************************************
 .end
 " }
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 570 -1710 0 0 {name=x1}

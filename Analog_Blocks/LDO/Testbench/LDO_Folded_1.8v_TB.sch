@@ -81,4 +81,4 @@ value="
 *.tran 50u 100u
 *.end
 " }
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym} 980 -1060 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym} 980 -1060 0 0 {name=x1}

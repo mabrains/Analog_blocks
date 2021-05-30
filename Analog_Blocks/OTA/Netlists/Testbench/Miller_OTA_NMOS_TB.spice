@@ -112,11 +112,11 @@ plot Vout
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sch
 .subckt Miller_OTA_NMOS  VDD Vn Vp Vout Ibias GND
 *.ipin VDD
 *.ipin Ibias

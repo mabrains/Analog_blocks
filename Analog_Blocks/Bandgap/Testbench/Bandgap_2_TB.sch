@@ -69,4 +69,4 @@ value="
 C {devices/lab_pin.sym} 2630 -1100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 2620 -740 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 2830 -920 0 1 {name=l3 sig_type=std_logic lab=Vref}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym} 2660 -920 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym} 2660 -920 0 0 {name=x1}

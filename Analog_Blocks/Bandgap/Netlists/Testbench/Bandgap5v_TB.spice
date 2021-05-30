@@ -82,9 +82,9 @@ plot vdd vref
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym # of pins=3
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym # of pins=3
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sch
 .subckt Bandgap5v  Vref VDD GND
 *.ipin VDD
 *.ipin GND
@@ -115,9 +115,9 @@ x1 VDD net3 net2 Vref net5 GND Bandgap5v_OTA
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym # of pins=6
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym # of pins=6
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sch
 .subckt Bandgap5v_OTA  Vdd Vn Vp Ibias Vhigh Gnd
 *.opin Ibias
 *.ipin Vhigh

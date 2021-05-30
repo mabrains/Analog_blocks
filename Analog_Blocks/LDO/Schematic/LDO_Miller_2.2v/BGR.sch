@@ -111,7 +111,7 @@ N 3630 -860 3770 -860 { lab=#net3}
 N 3410 -780 3770 -780 { lab=#net2}
 N 2280 -840 2280 -710 { lab=#net3}
 N 2280 -840 3630 -840 { lab=#net3}
-N 2180 -820 3770 -820 {}
+N 2180 -820 3770 -820 { lab=#net5}
 C {sky130_fd_pr/pnp_05v5.sym} 3650 -620 0 1 {name=Q1
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
@@ -211,4 +211,4 @@ L=2.6
 model=res_high_po
 spiceprefix=X
 mult=1}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym} 3910 -820 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym} 3910 -820 0 0 {name=x1}

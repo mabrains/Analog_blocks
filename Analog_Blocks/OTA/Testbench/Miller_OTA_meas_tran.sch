@@ -103,4 +103,4 @@ m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
-C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym} 960 -1140 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym} 960 -1140 0 0 {name=x1}

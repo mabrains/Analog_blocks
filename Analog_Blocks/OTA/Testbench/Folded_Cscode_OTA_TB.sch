@@ -68,7 +68,6 @@ m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
-C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transistor1.8v/Folded_Cascode_OTA.sym} 950 -1420 0 0 {name=x1}
 C {devices/code_shown.sym} 1415 -1985 0 0 {name=NGSPICE
 only_toplevel=true
 value="
@@ -139,3 +138,4 @@ plot Vout
 ****************************************************** 
 .end
 " }
+C {/home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transistor1.8v/Folded_Cascode_OTA.sym} 950 -1420 0 0 {name=x1}

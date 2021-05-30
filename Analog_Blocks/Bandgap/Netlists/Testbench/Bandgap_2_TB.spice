@@ -1,10 +1,10 @@
 **.subckt Bandgap_2_TB
-x1 Vref Vdd 0 Bandgap_2
+x1 0 Vref Vdd Bandgap_2
 **** begin user architecture code
 
 
 *Temp variation
-vin Vdd 0 1.8
+vin Vdd 0 3.3
 .DC TEMP -40 120 5
 *Supply variation
 *vin Vdd 0 3
@@ -57,10 +57,10 @@ vin Vdd 0 1.8
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym # of pins=3
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sch
-.subckt Bandgap_2  Vref GND GND
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym # of pins=3
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2.sch
+.subckt Bandgap_2  VDD Vref GND
 *.ipin VDD
 *.ipin GND
 *.opin Vref
@@ -87,9 +87,9 @@ x1 VDD net1 net4 net3 GND Bandgap_2_OTA
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym # of pins=5
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym # of pins=5
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sch
 .subckt Bandgap_2_OTA  Vdd Vout Vn Vp Vdd
 *.ipin Vdd
 *.ipin Gnd

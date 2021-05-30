@@ -4,19 +4,20 @@ K {}
 V {}
 S {}
 E {}
-N 1580 -1420 1580 -1280 { lab=Vdd}
-N 1360 -1200 1430 -1200 { lab=#net1}
-N 1360 -1300 1360 -1200 { lab=#net1}
-N 1360 -1420 1360 -1360 { lab=Vdd}
-N 1320 -1240 1430 -1240 { lab=Vp}
-N 1320 -1420 1580 -1420 { lab=Vdd}
-N 1320 -1160 1430 -1160 { lab=Vn}
-N 1580 -1120 1580 -1040 { lab=0}
-N 1320 -1040 1580 -1040 { lab=0}
-N 1730 -1200 1780 -1200 { lab=Vout}
-N 1760 -1200 1760 -1160 { lab=Vout}
-N 1760 -1100 1760 -1040 { lab=0}
-N 1580 -1040 1760 -1040 { lab=0}
+N 1620 -1340 1620 -1240 { lab=#net1}
+N 1620 -1460 1620 -1400 { lab=Vdd}
+N 1580 -1080 1840 -1080 { lab=0}
+N 1990 -1240 2040 -1240 { lab=Vout}
+N 2020 -1240 2020 -1200 { lab=Vout}
+N 2020 -1140 2020 -1080 { lab=0}
+N 1840 -1080 2020 -1080 { lab=0}
+N 1580 -1460 1620 -1460 { lab=Vdd}
+N 1620 -1240 1690 -1240 {}
+N 1580 -1280 1690 -1280 {}
+N 1580 -1200 1690 -1200 {}
+N 1840 -1460 1840 -1320 {}
+N 1620 -1460 1840 -1460 {}
+N 1840 -1160 1840 -1080 {}
 C {devices/code.sym} 2180 -1275 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
@@ -57,18 +58,17 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {devices/lab_pin.sym} 1320 -1420 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/isource.sym} 1360 -1330 0 0 {name=I0 value=20u}
-C {devices/lab_pin.sym} 1320 -1240 0 0 {name=l2 sig_type=std_logic lab=Vp}
-C {devices/lab_pin.sym} 1320 -1160 0 0 {name=l3 sig_type=std_logic lab=Vn}
-C {devices/lab_pin.sym} 1320 -1040 0 0 {name=l4 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1780 -1200 0 1 {name=l5 sig_type=std_logic lab=Vout}
-C {devices/capa.sym} 1760 -1130 0 0 {name=C1
+C {devices/lab_pin.sym} 1580 -1460 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/isource.sym} 1620 -1370 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 1580 -1280 0 0 {name=l2 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 1580 -1200 0 0 {name=l3 sig_type=std_logic lab=Vn}
+C {devices/lab_pin.sym} 1580 -1080 0 0 {name=l4 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 2040 -1240 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {devices/capa.sym} 2020 -1170 0 0 {name=C1
 m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
-C {/home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym} 1590 -1200 0 0 {name=x1}
 C {devices/code_shown.sym} 2345 -1865 0 0 {name=NGSPICE1
 only_toplevel=true
 value="
@@ -139,3 +139,4 @@ plot Vout
 ****************************************************** 
 .end
 " }
+C {/home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym} 1850 -1240 0 0 {name=x1}

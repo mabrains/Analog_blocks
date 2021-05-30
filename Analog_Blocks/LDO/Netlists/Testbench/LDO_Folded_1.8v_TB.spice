@@ -42,8 +42,8 @@ x1 Vin Vout 0 LDO_Folded_1.8v
 
 
 *DC input sweep
-VVin Vin 0 1.8
-.dc VVin 0 2.5 0.5
+*VVin Vin 0 1.8
+*.dc VVin 0 2.5 0.5
 *Line regulation
 *VVin Vin 0 1.8
 *.dc VVin 1.8 2.5 0.3
@@ -60,11 +60,11 @@ VVin Vin 0 1.8
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym # of pins=3
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym # of pins=3
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sch
 .subckt LDO_Folded_1.8v  Vin Vout GND
 *.ipin Vin
 *.ipin GND
@@ -81,11 +81,11 @@ x2 net2 Vin GND Bandgap1.8v
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sch
 .subckt Folded_Cascode_OTA  VDD Vout Vp Vn Ibias GND
 *.ipin VDD
 *.ipin GND
@@ -139,9 +139,9 @@ XM14 net6 net6 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.9 W=2 nf=1 ad='int((nf+1)
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym # of pins=3
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym # of pins=3
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sch
 .subckt Bandgap1.8v  Vref VDD GND
 *.opin Vref
 *.ipin VDD
@@ -172,11 +172,11 @@ x1 VDD Vref net3 net2 net5 GND Bandgap1.8v_OTA
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v_OTA.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v_OTA.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v_OTA.sch
 .subckt Bandgap1.8v_OTA  Vdd Ibias Vn Vp Vhigh Vn
 *.opin Ibias
 *.ipin Vhigh

@@ -78,13 +78,18 @@ VVin Vin 0 DC 0 AC 0
 dc VVin 0 2.2 0.2
 show
 plot Vin Vout
+meas DC Vreg WHEN Vout=1.8
+print Vreg-1.8
 .endc
 ************************************************
 *Line regulation
 ************************************************
 .control
-dc VVin 1.8 2.2 0.01
+dc VVin 1.8 2.3 0.01
 plot Vout
+meas DC v1 FIND Vout AT=1.8
+meas DC v2 FIND Vout AT=2.2
+print (v2-v1)/0.4
 .endc
 ************************************************
 *PSRR analysis
@@ -94,6 +99,8 @@ alter VVin DC = 2.2
 alter VVin AC = 1  
 ac dec 10 1 100MEG
 plot db(Vout)
+meas AC PSR_1k FIND vdb(Vout) AT=1k
+meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
 .endc
 ************************************************
 *Transient analysis

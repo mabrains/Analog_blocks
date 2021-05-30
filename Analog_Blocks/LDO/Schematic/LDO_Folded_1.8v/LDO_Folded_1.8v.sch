@@ -4,9 +4,9 @@ K {}
 V {}
 S {}
 E {}
-N 1410 -1470 1410 -1410 { lab=xxx}
+N 1410 -1470 1410 -1410 { lab=Vout}
 N 1410 -1350 1410 -1290 { lab=#net1}
-N 1410 -1440 1550 -1440 { lab=xxx}
+N 1410 -1440 1550 -1440 { lab=Vout}
 N 1410 -1290 1410 -1250 { lab=#net1}
 N 1410 -1190 1410 -1160 { lab=GND}
 N 1410 -1500 1470 -1500 { lab=Vin}
@@ -20,8 +20,8 @@ N 670 -1160 860 -1160 { lab=GND}
 N 1380 -1220 1390 -1220 { lab=GND}
 N 1380 -1380 1380 -1220 { lab=GND}
 N 1380 -1380 1390 -1380 { lab=GND}
-N 1260 -1440 1260 -1420 { lab=xxx}
-N 1260 -1440 1410 -1440 { lab=xxx}
+N 1260 -1440 1260 -1420 { lab=Vout}
+N 1260 -1440 1410 -1440 { lab=Vout}
 N 1380 -1220 1380 -1160 { lab=GND}
 N 940 -1300 1410 -1300 { lab=#net1}
 N 1260 -1360 1260 -1300 { lab=#net1}
@@ -62,8 +62,8 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym} 1150 -1500 0 0 {name=x1}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}
 C {devices/ipin.sym} 660 -1680 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} 670 -1160 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 1550 -1440 0 0 {name=p3 lab=Vout}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym} 1150 -1500 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}

@@ -210,4 +210,4 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -2580 -680 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} -2590 -210 0 0 {name=p5 lab=GND}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym} -640 -460 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v_OTA.sym} -640 -460 0 0 {name=x1}

@@ -4,23 +4,6 @@ R3 net1 0 30m m=1
 x1 Vin Vout 0 LDO_Miller_OTA_2.2v
 **** begin user architecture code
 
-
-*DC input sweep
-VVin Vin 0 3
-.DC VVin 0 4 0.3
-*Line regulation
-*VVin Vin 0 3
-*.DC VVin 2.2 4 0.1
-*PSRR analysis
-*VVin Vin 0 DC 5 AC 1
-*.AC dec 10 1 150MEG
-*Transient analysis
-*VVin Vin 0 PULSE(3 3.1 50u 100n 100n 50u 100u)
-*.tran 50u 100u
-*.end
-
-
-
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
@@ -56,20 +39,61 @@ VVin Vin 0 3
 * Corner
 .include ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
 
+
+
+************************************************
+*Source initialization
+************************************************
+VVin Vin 0 DC 0 AC 0
+************************************************
+*Input/Output Characteristic
+************************************************
+.control
+dc VVin 0 3 0.1
+show
+plot Vin Vout
+.endc
+************************************************
+*Line regulation
+************************************************
+.control
+dc VVin 2.2 3 0.1
+plot Vout
+.endc
+************************************************
+*PSRR analysis
+************************************************
+.control
+alter VVin DC = 3
+alter VVin AC = 1
+ac dec 10 1 100MEG
+plot db(Vout)
+.endc
+************************************************
+*Transient analysis
+************************************************
+.control
+alter @VVin[pulse] = [ 2.5 2.6 50u 100n 100n 50u 100u ]
+tran 20u 100u
+plot Vin Vout
+.endc
+************************************************
+
+
 **** end user architecture code
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sym # of pins=3
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sym # of pins=3
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/LDO_Miller_OTA_2.2v.sch
 .subckt LDO_Miller_OTA_2.2v  Vin Vout GND
 *.ipin Vin
 *.ipin GND
 *.opin Vout
-XR1 net1 Vout GND sky130_fd_pr__res_xhigh_po W=1 L=50 mult=1 m=1
+XR1 net1 Vout GND sky130_fd_pr__res_xhigh_po W=1 L=55 mult=1 m=1
 XR2 GND net1 GND sky130_fd_pr__res_xhigh_po W=1 L=50 mult=1 m=1
 XC1 Vout net1 sky130_fd_pr__cap_mim_m3_2 W=1 L=1 MF=1 m=1
 XM1 Vout net2 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=60 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -80,10 +104,10 @@ x2 Vin net3 net1 net2 net3 GND Error_Amplifier
 .ends
 
 
-* expanding   symbol:  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym
+* expanding   symbol:  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym
 *+ # of pins=3
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sch
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sch
 .subckt BGR  Vref Vdd GND
 *.ipin Vdd
 *.ipin GND
@@ -114,11 +138,11 @@ x1 Vdd net3 net2 Vref net5 GND Bandgap5v_OTA
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sch
 .subckt Error_Amplifier  Vdd Vn Vp Vout Ibias GND
 *.opin Vout
 *.ipin Vdd
@@ -155,9 +179,9 @@ XC1 net2 Vout sky130_fd_pr__cap_mim_m3_2 W=1 L=3 MF=1 m=1
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym # of pins=6
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym # of pins=6
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v_OTA.sch
 .subckt Bandgap5v_OTA  Vdd Vn Vp Ibias Vhigh Gnd
 *.opin Ibias
 *.ipin Vhigh

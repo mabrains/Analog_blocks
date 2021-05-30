@@ -62,8 +62,8 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym} -2490 -1090 0 0 {name=x1}
-C {/home/eslam/Analog_Design/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym} -2030 -1050 0 0 {name=x2}
 C {devices/ipin.sym} -2540 -1230 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} -2530 -710 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} -1650 -990 0 0 {name=p3 lab=Vout}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/BGR.sym} -2490 -1090 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym} -2030 -1050 0 0 {name=x2}

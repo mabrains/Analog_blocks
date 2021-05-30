@@ -200,7 +200,7 @@ C {sky130_fd_pr/pnp_05v5.sym} 430 -930 0 0 {name=Q9
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
 }
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym} 1860 -1040 0 0 {name=x1}
 C {devices/ipin.sym} 840 -1300 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} 370 -860 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 2100 -1170 0 0 {name=p3 lab=Vref}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym} 1860 -1040 0 0 {name=x1}

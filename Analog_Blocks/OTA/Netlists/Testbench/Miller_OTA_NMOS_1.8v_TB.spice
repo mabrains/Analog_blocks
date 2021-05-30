@@ -15,9 +15,9 @@ Vneg vn 0 DC 0 AC 0
 *Noise analysis
 *****************************************************
 .control
-alter Vpos DC = 1
+alter Vpos DC = 0.9
 alter Vpos AC = 1
-alter Vneg DC = 1
+alter Vneg DC = 0.9
 alter Vneg AC = -1
 noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
 setplot noise1
@@ -27,9 +27,9 @@ plot inoise_spectrum
 *AC analysis differential mode
 ****************************************************
 .control
-alter Vpos DC = 1
+alter Vpos DC = 0.9
 alter Vpos AC = 1
-alter Vneg DC = 1
+alter Vneg DC = 0.9
 alter Vneg AC = -1
 ac dec 10 1 100MEG
 show
@@ -40,9 +40,9 @@ plot 180/pi*phase(Vout)
 *AC analysis common mode
 *****************************************************
 .control
-alter Vpos DC = 1
+alter Vpos DC = 0.9
 alter Vpos AC = 1
-alter Vneg DC = 1
+alter Vneg DC = 0.9
 alter Vneg AC = 1
 ac dec 10 1 100MEG
 plot db(Vout)
@@ -52,9 +52,9 @@ plot db(Vout)
 *****************************************************
 .control
 alter Vsup AC = 1
-alter Vpos DC = 1
+alter Vpos DC = 0.9
 alter Vpos AC = 0
-alter Vneg DC = 1
+alter Vneg DC = 0.9
 alter Vneg AC = 0
 ac dec 10 1 100MEG
 plot db(Vout)
@@ -63,8 +63,8 @@ plot db(Vout)
 *Transient analysis
 ******************************************************
 .control
-alter @Vpos[Sin] [ 1 1m 1Meg ]
-alter @Vneg[Sin] [ 1 -1m 1Meg ]
+alter @Vpos[Sin] [ 0.9 1m 1Meg ]
+alter @Vneg[Sin] [ 0.9 -1m 1Meg ]
 tran 0.05u 10u
 plot vp vn
 plot Vout
@@ -112,11 +112,11 @@ plot Vout
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym # of pins=6
+*+  /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym # of pins=6
 * sym_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sym
 * sch_path:
-*+ /home/eslam/Analog_Design/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sch
+*+ /home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor1.8v/Miller_OTA_NMOS_1.8v.sch
 .subckt Miller_OTA_NMOS_1.8v  VDD Vn Vp Vout Ibias GND
 *.ipin Ibias
 *.ipin Vn

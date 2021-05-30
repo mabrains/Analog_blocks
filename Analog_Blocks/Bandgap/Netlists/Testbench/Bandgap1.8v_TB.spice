@@ -83,9 +83,9 @@ plot vdd vref
 **.ends
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym # of pins=3
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym # of pins=3
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sch
 .subckt Bandgap1.8v  Vref VDD GND
 *.opin Vref
 *.ipin VDD
@@ -116,9 +116,9 @@ x1 VDD Vref net3 net2 net5 GND Miller_OTA_1.8v
 
 
 * expanding   symbol:
-*+  /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym # of pins=6
-* sym_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym
-* sch_path: /home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sch
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym # of pins=6
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sch
 .subckt Miller_OTA_1.8v  Vdd Ibias Vn Vp Vhigh Vn
 *.opin Ibias
 *.ipin Vhigh

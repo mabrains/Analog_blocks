@@ -95,4 +95,4 @@ value="
 * Corner
 .include \\\\$::SKYWATER_MODELS\\\\/models/corners/tt/rf.spice
 "}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym} -2570 -920 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v.sym} -2570 -920 0 0 {name=x1}

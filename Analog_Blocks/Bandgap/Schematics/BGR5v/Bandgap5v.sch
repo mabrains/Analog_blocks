@@ -208,4 +208,4 @@ mult=1}
 C {devices/ipin.sym} -2710 -950 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} -2720 -480 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} -450 -980 0 0 {name=p3 lab=Vref}
-C {/home/eslam/Analog_Design/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym} -700 -760 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR5v/Bandgap5v_OTA.sym} -700 -760 0 0 {name=x1}
