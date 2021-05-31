@@ -13,8 +13,8 @@ C {devices/code_shown.sym} 2915 -1015 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *Temp variation
-vin Vdd 0 3.3
-.DC TEMP -40 120 5
+vin Vdd 0 1.8
+.DC TEMP -40 120 1
 *Supply variation
 *vin Vdd 0 3
 *.DC vin 0 5 1

@@ -28,13 +28,13 @@ N 1260 -1360 1260 -1300 { lab=#net1}
 N 940 -1440 940 -1300 { lab=#net1}
 N 940 -1440 990 -1440 { lab=#net1}
 N 900 -1560 990 -1560 { lab=#net2}
-N 1150 -1680 1150 -1580 { lab=Vin}
-N 1150 -1420 1150 -1160 { lab=GND}
-N 1310 -1500 1370 -1500 { lab=#net3}
 N 800 -1680 800 -1640 { lab=Vin}
 N 940 -1500 990 -1500 { lab=#net2}
-N 940 -1560 940 -1500 { lab=#net2}
 N 800 -1480 800 -1160 { lab=GND}
+N 1350 -1500 1370 -1500 { lab=#net3}
+N 1150 -1390 1150 -1160 { lab=GND}
+N 1150 -1680 1150 -1610 { lab=Vin}
+N 940 -1560 940 -1500 { lab=#net2}
 C {sky130_fd_pr/res_xhigh_po.sym} 1410 -1380 0 0 {name=R1
 W=1
 L=35
@@ -65,5 +65,5 @@ spiceprefix=X
 C {devices/ipin.sym} 660 -1680 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} 670 -1160 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 1550 -1440 0 0 {name=p3 lab=Vout}
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Folded_Cascode_OTA.sym} 1150 -1500 0 0 {name=x1}
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Error_amplifier_Folded.sym} 1150 -1500 0 0 {name=x1}

@@ -124,10 +124,10 @@ plot Vout
 *.ipin Vn
 *.opin Vout
 *.ipin Ibias
-XM1 net3 Vp net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM1 net3 Vp net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=70 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XM2 net2 Vn net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM2 net2 Vn net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=70 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
 XM9 Vout net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=6 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'

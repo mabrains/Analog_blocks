@@ -103,24 +103,24 @@ N 1300 -1130 1300 -1030 { lab=GND}
 N 1520 -1130 1560 -1130 { lab=GND}
 N 1520 -1130 1520 -930 { lab=GND}
 N 1420 -860 1520 -860 { lab=GND}
-N 1360 -1080 1460 -1080 { lab=#net3}
-N 1460 -1080 1460 -1000 { lab=#net3}
+N 1360 -1070 1460 -1070 { lab=#net3}
 N 1580 -1170 2100 -1170 { lab=Vref}
-N 840 -1300 1260 -1300 { lab=VDD}
 N 1680 -1300 1860 -1300 { lab=VDD}
 N 1640 -860 1860 -860 { lab=GND}
 N 1480 -1320 2060 -1320 { lab=#net1}
 N 1480 -1320 1480 -1220 { lab=#net1}
-N 1860 -970 1860 -860 { lab=GND}
-N 1860 -1300 1860 -1110 { lab=VDD}
 N 2020 -1040 2060 -1040 { lab=#net1}
 N 2060 -1320 2060 -1040 { lab=#net1}
 N 1580 -1080 1700 -1080 { lab=#net4}
 N 1460 -1000 1700 -1000 { lab=#net3}
 N 370 -860 390 -860 { lab=GND}
+N 1860 -950 1860 -860 { lab=GND}
+N 1860 -1300 1860 -1130 { lab=VDD}
+N 380 -1300 1260 -1300 { lab=VDD}
+N 1460 -1070 1460 -1000 { lab=#net3}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1380 -1220 0 1 {name=M1
-L=0.5
-W=2
+L=1
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -133,8 +133,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1560 -1220 0 0 {name=M2
-L=0.5
-W=2
+L=1
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -200,7 +200,7 @@ C {sky130_fd_pr/pnp_05v5.sym} 430 -930 0 0 {name=Q9
 model=pnp_05v5_W0p68L0p68
 spiceprefix=X
 }
-C {devices/ipin.sym} 840 -1300 0 0 {name=p1 lab=VDD}
+C {devices/ipin.sym} 380 -1300 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} 370 -860 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 2100 -1170 0 0 {name=p3 lab=Vref}
 C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR_2/Bandgap_2_OTA.sym} 1860 -1040 0 0 {name=x1}

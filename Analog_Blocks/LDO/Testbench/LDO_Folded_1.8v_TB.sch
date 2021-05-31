@@ -68,8 +68,8 @@ C {devices/code_shown.sym} 1285 -1090 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 *DC input sweep
-*VVin Vin 0 1.8 
-*.dc VVin 0 2.5 0.5
+VVin Vin 0 1.8 
+.dc VVin 0 2.2 0.1
 *Line regulation
 *VVin Vin 0 1.8 
 *.dc VVin 1.8 2.5 0.3
