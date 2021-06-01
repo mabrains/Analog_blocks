@@ -61,11 +61,6 @@ N 1900 -380 2140 -380 { lab=Ibias}
 N 1900 -430 1900 -380 { lab=Ibias}
 N 1730 -830 1830 -830 { lab=VDD}
 N 1700 -510 1730 -510 { lab=Ibias}
-C {devices/capa.sym} 2360 -590 1 1 {name=C1
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 1910 -600 0 0 {name=M1
 L=0.5
 W=20
@@ -184,3 +179,4 @@ C {devices/ipin.sym} 2210 -600 0 1 {name=p3 lab=Vp}
 C {devices/ipin.sym} 1730 -830 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} 1650 -350 0 0 {name=p5 lab=GND}
 C {devices/opin.sym} 2660 -590 0 0 {name=p6 lab=Vout}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 2360 -590 3 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
