@@ -6,7 +6,7 @@
 
 ## Schematic
 
-![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_sch.png)
+![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/Two_stage_sch_sizing.png)
 
 ## a. DC analysis
 
