@@ -168,9 +168,9 @@ spiceprefix=X
 mult=1}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -2380 -520 0 1 {name=M2
 L=1
-W=10
+W=5
 nf=1
-mult=1
+mult=2
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -182,9 +182,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -2540 -420 0 1 {name=M3
 L=1
-W=10
+W=5
 nf=1
-mult=1
+mult=2
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -195,8 +195,8 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} -2380 -320 0 1 {name=M1
-L=40
-W=1
+L=20
+W=0.42
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -210,4 +210,4 @@ spiceprefix=X
 }
 C {devices/ipin.sym} -2580 -680 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} -2590 -210 0 0 {name=p5 lab=GND}
-C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Miller_OTA_1.8v.sym} -640 -460 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v_OTA.sym} -640 -460 0 0 {name=x1}

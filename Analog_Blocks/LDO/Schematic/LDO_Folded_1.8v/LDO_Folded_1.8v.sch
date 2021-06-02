@@ -37,22 +37,22 @@ N 1150 -1680 1150 -1610 { lab=Vin}
 N 940 -1560 940 -1500 { lab=#net2}
 C {sky130_fd_pr/res_xhigh_po.sym} 1410 -1380 0 0 {name=R1
 W=1
-L=35
+L=40
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/res_xhigh_po.sym} 1410 -1220 0 0 {name=R2
 W=1
-L=55
+L=50
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 1260 -1390 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1390 -1500 0 0 {name=M1
 L=0.5
-W=60
+W=20
 nf=1
-mult=100
+mult=1000
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -65,5 +65,5 @@ spiceprefix=X
 C {devices/ipin.sym} 660 -1680 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} 670 -1160 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} 1550 -1440 0 0 {name=p3 lab=Vout}
-C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}
 C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/Error_amplifier_Folded.sym} 1150 -1500 0 0 {name=x1}
+C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sym} 800 -1560 0 0 {name=x2}

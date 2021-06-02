@@ -50,7 +50,7 @@ mult=1}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
 L=0.5
-W=60
+W=20
 nf=1
 mult=1000
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
