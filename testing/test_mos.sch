@@ -74,6 +74,30 @@ N 2680 -920 2840 -920 { lab=0}
 N 2670 -1220 2840 -1220 { lab=vdd}
 N 2160 -1220 2470 -1220 { lab=vdd}
 N 2160 -920 2470 -920 { lab=0}
+N 3230 -970 3230 -920 { lab=0}
+N 3150 -1000 3190 -1000 { lab=#net7}
+N 3150 -1060 3150 -1000 { lab=#net7}
+N 3150 -1060 3230 -1060 { lab=#net7}
+N 3230 -1060 3230 -1030 { lab=#net7}
+N 3230 -1000 3240 -1000 { lab=0}
+N 3240 -1000 3240 -920 { lab=0}
+N 3230 -920 3240 -920 { lab=0}
+N 3230 -1090 3230 -1060 { lab=#net7}
+N 3230 -1220 3230 -1150 { lab=vdd}
+N 3040 -1220 3230 -1220 { lab=vdd}
+N 3050 -920 3230 -920 { lab=0}
+N 3420 -970 3420 -920 { lab=0}
+N 3340 -1000 3380 -1000 { lab=#net8}
+N 3340 -1060 3340 -1000 { lab=#net8}
+N 3340 -1060 3420 -1060 { lab=#net8}
+N 3420 -1060 3420 -1030 { lab=#net8}
+N 3420 -1000 3430 -1000 { lab=0}
+N 3430 -1000 3430 -920 { lab=0}
+N 3420 -920 3430 -920 { lab=0}
+N 3420 -1090 3420 -1060 { lab=#net8}
+N 3420 -1220 3420 -1150 { lab=vdd}
+N 3230 -1220 3420 -1220 { lab=vdd}
+N 3240 -920 3420 -920 { lab=0}
 C {sky130_fd_pr/pfet_01v8.sym} 2140 -1100 0 0 {name=M1
 L=1
 W=10
@@ -203,6 +227,36 @@ L=0.5
 W=5
 nf=1
 mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/isource.sym} 3230 -1120 0 0 {name=I6 value=20u}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3210 -1000 0 0 {name=M7
+L=0.5
+W=5
+nf=5
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/isource.sym} 3420 -1120 0 0 {name=I7 value=20u}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3400 -1000 0 0 {name=M8
+L=0.5
+W=5
+nf=1
+mult=5
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 

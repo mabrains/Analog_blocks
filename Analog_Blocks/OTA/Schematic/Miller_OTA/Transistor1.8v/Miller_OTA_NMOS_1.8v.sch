@@ -65,7 +65,7 @@ C {sky130_fd_pr/nfet_01v8_lvt.sym} 1910 -600 0 0 {name=M1
 L=0.5
 W=5
 nf=1
-mult=4
+mult=5
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -79,7 +79,7 @@ C {sky130_fd_pr/nfet_01v8_lvt.sym} 2130 -600 0 1 {name=M2
 L=0.5
 W=5
 nf=1
-mult=4
+mult=5
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -179,4 +179,4 @@ C {devices/ipin.sym} 2210 -600 0 1 {name=p3 lab=Vp}
 C {devices/ipin.sym} 1730 -830 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} 1650 -350 0 0 {name=p5 lab=GND}
 C {devices/opin.sym} 2660 -590 0 0 {name=p6 lab=Vout}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 2360 -590 3 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 2360 -590 1 1 {name=C1 model=cap_mim_m3_2 W=30 L=30 MF=1 spiceprefix=X}

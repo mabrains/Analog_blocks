@@ -63,7 +63,7 @@ plot db(Vout)
 plot phase(Vout) 
 meas ac Avd FIND vdb(Vout) AT=10
 meas ac GBW WHEN vdb(Vout)= 0
-let P = 180+vp(Vout)
+let P = 180 + phase(Vout)
 meas ac PM FIND P WHEN vdb(Vout)=0
 .endc
 *****************************************************
