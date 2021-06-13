@@ -47,12 +47,12 @@ The netlist of all previous analyses is below and for each analysis you want to 
 
 ## Simulation results
 
-Specification    | Achieved
------------------| ---------
-output Voltage   | 1.8v
-Input range      | 1.9v to 2.5v
-Vdropout         | 0.1v
-Line regulation  | 26 mv/v
-PSRR @ DC        | 30 dB
-PSRR @ 1KHz      | 45 dB
-PSRR @ 1MHz      | 110 dB
+  Specification  |      TT        |       FF         |       SS         |       FS         |         SF         
+-----------------| ---------------|------------------|------------------|------------------|------------------
+output Voltage   | 1.79v to 1.84v |1.79v to 1.85v    |1.77v to 1.83v    |1.79v to 1.83v    |1.79 to 1.83v       
+Input range      | 1.812v to 2.2v |1.8v to 2.2v      |1.877v to 2.2v    |1.8v to 2.2v      |1.8v to 2.2v
+Vdropout         | 12.4 mv        |0.3 mv            |77 mv             |0.8 mv            |10mv
+Line regulation  | 110 mv/v       |135 mv/v          |142 mv/v          |74mv/v            |120mv/v
+PSRR @ 1KHz      | 31 dB          |36 dB             |29 dB             |29 dB             |30 dB
+PSRR @ 1MHz      | 77 dB          |76 dB             |82 dB             |86 dB             |85 dB
+
