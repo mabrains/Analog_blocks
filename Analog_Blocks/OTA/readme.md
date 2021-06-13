@@ -6,7 +6,7 @@
 
 ## Schematic
 
-![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/Two_stage_sch_sizing.png)
+![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/Two_stage_sch.png)
 
 ## a. DC analysis
 
@@ -43,7 +43,7 @@ to plot the input referred noise.
 
 The netlist of all previous analyses is below: -
 
-![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/TB_netlist.png)
+![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/TB_netlist.png)
 
 ## Simulation results
 
