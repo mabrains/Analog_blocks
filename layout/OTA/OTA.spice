@@ -1,0 +1,16 @@
+* NGSPICE file created from ota.ext - technology: sky130A
+
+
+* Top level circuit ota
+
+X0 Vout D2 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=20
+X1 D2 Vout sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X2 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u M=8
+X3 D2 Vp D5 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u M=8
+X4 Vout Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u M=16
+X5 VDD D1 D2 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X6 D5 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u M=8
+X7 D1 D1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X8 D1 Vn D5 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u M=8
+.end
+

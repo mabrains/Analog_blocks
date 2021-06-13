@@ -74,7 +74,7 @@ plot Vin Vout
 .end
 " }
 C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1130 -1270 0 0 {name=TT_MODELS1
+C {devices/code.sym} 1140 -1300 0 0 {name=TT_MODELS1
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
