@@ -6,7 +6,7 @@
 
 ## Schematic
 
-![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/Two_stage_sch_sizing.png)
+![Image of Two_stage_Miller_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/Two_stage_sch.png)
 
 ## a. DC analysis
 
@@ -41,9 +41,9 @@ to plot the input referred noise.
 
 ## e. Testbench netlist
 
-The netlist of all previous analyses is below: -
+The netlist of all previous analyses is below or by running OTA_script existed in scripts folder.
 
-![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor1.8v/TB_netlist.png)
+![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/TB_netlist.png)
 
 ## Simulation results
 
@@ -74,3 +74,19 @@ PM(deg) | 52 | 52 | 53
 CMRR(dB)| 72 | 72 | 71 
 PSRR(dB)| 2.4 | 2.4 | 2.4 
 Power(uW)| 274 | 292 | 256 
+
+## Layout
+
+![Image of OTA_layout](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/Layout.png)
+
+### DRC report
+
+DRC check was done using run_standard_drc.py script in scripts folder.
+
+### LVS report
+
+LVS check was done using run_standard_lvs.py script existed in scripts folder
+![Image of LVS_report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/LVS_report.png)
+
+
+
