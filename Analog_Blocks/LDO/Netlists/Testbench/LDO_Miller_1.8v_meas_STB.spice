@@ -1,84 +1,42 @@
-v {xschem version=2.9.9 file_version=1.2 }
-G {}
-K {}
-V {}
-S {}
-E {}
-N 1180 -1060 1180 -990 { lab=Vout}
-N 1180 -930 1180 -900 { lab=#net1}
-N 1180 -840 1180 -780 { lab=0}
-N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 { lab=0}
-N 1120 -1060 1230 -1060 { lab=Vout}
-N 780 -1060 840 -1060 { lab=Vin}
-C {devices/capa.sym} 1180 -960 0 0 {name=C2
-m=1
-value=20u
-footprint=1206
-device="ceramic capacitor"}
-C {devices/res.sym} 1180 -870 0 0 {name=R3
-value=30m
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
-C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1325 -1375 0 0 {name=NGSPICE1
-only_toplevel=true
-value=" 
-************************************************
-*Source initialization
-************************************************
-VVin Vin 0 DC 0 AC 0
-************************************************
-*Input/Output Characteristic
-************************************************
+**.subckt LDO_Miller_1.8v_meas_STB
+XC1 net1 Vout sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
+XM1 net1 net2 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=12.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=100 m=100 
+x1 Vin Vref net3 net2 Vref 0 Error_Amplifier
+XR1 Vout net1 0 sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=6.9 mult=8 m=8
+XR2 0 Vout 0 sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=9.3 mult=8 m=8
+C2 net1 net4 1u m=1
+R3 net4 0 0.1 m=1
+L1 Vout net3 1G m=1
+C3 net3 Vtest 1G m=1
+**** begin user architecture code
+
+
+***************************************************
+*Source intialization
+***************************************************
+Vsup Vin 0 DC 2 AC 0
+VVref Vref 0 DC 0 AC 0
+VVin vtest 0 DC 0 AC 0
+****************************************************
+*Stability analysis
+****************************************************
 .control
-dc VVin 0 2.2 0.2
+alter VVref DC = 1.02
+alter VVin AC = 1
+set units = degrees
+ac dec 10 1 200MEG
 show
-plot Vin Vout
-meas DC Vreg WHEN Vout=1.8
-print Vreg-1.8
-.endc
-************************************************
-*Line regulation
-************************************************
-.control
-dc VVin 1.8 2.3 0.01
-plot Vout
-meas DC v1 FIND Vout AT=1.8
-meas DC v2 FIND Vout AT=2.2
-print (v2-v1)/0.4
-.endc
-************************************************
-*PSRR analysis
-************************************************
-.control
-alter VVin DC = 2.2
-alter VVin AC = 1  
-ac dec 10 1 100MEG
 plot db(Vout)
-meas AC PSR_1k FIND vdb(Vout) AT=1k
-meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
+plot phase(Vout)
+meas ac Avd FIND vdb(Vout) AT=10
+meas ac GBW WHEN vdb(Vout)= 0
+meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
 .endc
-************************************************
-*Transient analysis
-************************************************
-.control
-alter @VVin[pulse] = [ 0 2.3 50u 100n 100n 50u 100u ]
-tran 20u 2m
-plot Vin Vout
-.endc
-************************************************
-.end
-" }
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1140 -1300 0 0 {name=TT_MODELS1
-spice_ignore=false
-only_toplevel=true
-format="tcleval( @value )"
-value="
+
+
+
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
@@ -113,4 +71,49 @@ value="
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/all.spice
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
-"}
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:
+*+  /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym # of pins=6
+* sym_path:
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym
+* sch_path:
+*+ /home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sch
+.subckt Error_Amplifier  Vdd Vn Vp Vout Ibias GND
+*.opin Vout
+*.ipin Vdd
+*.ipin GND
+*.ipin Vp
+*.ipin Vn
+*.ipin Ibias
+XM2 net1 Vn net3 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM3 net2 Vp net3 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM4 net1 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM5 net2 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM6 Vout net2 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=16 m=16 
+XM7 net3 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM9 Vout Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=64 m=64 
+XM1 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XC1 net2 Vout sky130_fd_pr__cap_mim_m3_2 W=25 L=25 MF=3 m=3
+.ends
+
+** flattened .save nodes
+.end

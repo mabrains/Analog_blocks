@@ -35,12 +35,12 @@ N -2020 -1230 -2020 -1140 { lab=Vin}
 N -2420 -1230 -2420 -1170 { lab=Vin}
 N -2420 -1010 -2420 -710 { lab=GND}
 N -2240 -1090 -2240 -1050 { lab=#net3}
-C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=20 L=25 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=30 L=30 MF=2 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
 L=0.5
-W=20
+W=12.5
 nf=1
-mult=1000
+mult=100
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -57,7 +57,7 @@ C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_A
 C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sym} -2420 -1090 0 0 {name=x2}
 C {sky130_fd_pr/res_xhigh_po_1p41.sym} -1790 -930 0 0 {name=R1
 W=1.41
-L=7.1
+L=6.9
 model=res_xhigh_po_1p41
 spiceprefix=X
 mult=8}

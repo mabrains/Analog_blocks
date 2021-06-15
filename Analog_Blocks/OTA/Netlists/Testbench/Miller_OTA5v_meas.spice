@@ -153,7 +153,7 @@ XM5 net3 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/
 XM8 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=8 m=8 
-XC1 net2 Vout sky130_fd_pr__cap_mim_m3_2 W=25 L=25 MF=1 m=1
+XC1 net2 Vout sky130_fd_pr__cap_mim_m3_2 W=27.3 L=27.3 MF=2 m=2
 XM7 Vout Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=16 m=16 

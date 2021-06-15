@@ -164,7 +164,7 @@ C {devices/ipin.sym} 1540 -950 0 0 {name=p3 lab=Vn}
 C {devices/ipin.sym} 1920 -950 0 1 {name=p4 lab=Vp}
 C {devices/opin.sym} 2280 -940 0 0 {name=p5 lab=Vout}
 C {devices/ipin.sym} 1180 -700 0 0 {name=p6 lab=GND}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 2070 -940 3 0 {name=C1 model=cap_mim_m3_2 W=25 L=25 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 2070 -940 3 0 {name=C1 model=cap_mim_m3_2 W=27.3 L=27.3 MF=2 spiceprefix=X}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2140 -780 0 0 {name=M7
 L=1
 W=3

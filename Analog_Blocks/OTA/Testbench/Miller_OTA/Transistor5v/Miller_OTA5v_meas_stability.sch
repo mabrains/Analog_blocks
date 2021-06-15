@@ -4,77 +4,33 @@ K {}
 V {}
 S {}
 E {}
-N 1180 -1060 1180 -990 { lab=Vout}
-N 1180 -930 1180 -900 { lab=#net1}
-N 1180 -840 1180 -780 { lab=0}
-N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 { lab=0}
-N 1120 -1060 1230 -1060 { lab=Vout}
-N 780 -1060 840 -1060 { lab=Vin}
-C {devices/capa.sym} 1180 -960 0 0 {name=C2
-m=1
-value=20u
-footprint=1206
-device="ceramic capacitor"}
-C {devices/res.sym} 1180 -870 0 0 {name=R3
-value=30m
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
-C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1325 -1375 0 0 {name=NGSPICE1
-only_toplevel=true
-value=" 
-************************************************
-*Source initialization
-************************************************
-VVin Vin 0 DC 0 AC 0
-************************************************
-*Input/Output Characteristic
-************************************************
-.control
-dc VVin 0 2.2 0.2
-show
-plot Vin Vout
-meas DC Vreg WHEN Vout=1.8
-print Vreg-1.8
-.endc
-************************************************
-*Line regulation
-************************************************
-.control
-dc VVin 1.8 2.3 0.01
-plot Vout
-meas DC v1 FIND Vout AT=1.8
-meas DC v2 FIND Vout AT=2.2
-print (v2-v1)/0.4
-.endc
-************************************************
-*PSRR analysis
-************************************************
-.control
-alter VVin DC = 2.2
-alter VVin AC = 1  
-ac dec 10 1 100MEG
-plot db(Vout)
-meas AC PSR_1k FIND vdb(Vout) AT=1k
-meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
-.endc
-************************************************
-*Transient analysis
-************************************************
-.control
-alter @VVin[pulse] = [ 0 2.3 50u 100n 100n 50u 100u ]
-tran 20u 2m
-plot Vin Vout
-.endc
-************************************************
-.end
-" }
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1140 -1300 0 0 {name=TT_MODELS1
+N 1360 -1440 1360 -1340 { lab=#net1}
+N 1360 -1560 1360 -1500 { lab=Vdd}
+N 1320 -1560 1360 -1560 { lab=Vdd}
+N 1360 -1340 1430 -1340 { lab=#net1}
+N 1320 -1380 1430 -1380 { lab=Vp}
+N 1580 -1560 1580 -1420 { lab=Vdd}
+N 1360 -1560 1580 -1560 { lab=Vdd}
+N 1400 -1300 1430 -1300 { lab=#net2}
+N 1400 -1300 1400 -1200 { lab=#net2}
+N 1400 -1200 1740 -1200 { lab=#net2}
+N 1730 -1340 1840 -1340 { lab=Vout}
+N 1580 -1260 1580 -1120 { lab=0}
+N 1740 -1240 1740 -1200 { lab=#net2}
+N 1740 -1340 1740 -1300 { lab=Vout}
+N 1740 -1200 1850 -1200 { lab=#net2}
+N 1910 -1200 1960 -1200 { lab=Vtest}
+N 1320 -1120 1580 -1120 { lab=0}
+N 1810 -1340 1810 -1290 { lab=Vout}
+N 1810 -1230 1810 -1120 { lab=0}
+N 1580 -1120 1810 -1120 { lab=0}
+C {devices/lab_pin.sym} 1320 -1560 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/isource.sym} 1360 -1470 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 1320 -1380 0 0 {name=l2 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 1320 -1120 0 0 {name=l4 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 1840 -1340 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {/home/eslam/Analog_blocks/Analog_Blocks/OTA/Schematic/Miller_OTA/Transistor5v/Miller_OTA_NMOS.sym} 1590 -1340 0 0 {name=x1}
+C {devices/code.sym} 1430 -1720 0 0 {name=TT_MODELS1
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -114,3 +70,45 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
+C {devices/code_shown.sym} 2045 -1605 0 0 {name=NGSPICE
+only_toplevel=true
+value="
+***************************************************
+*Source intialization
+***************************************************
+Vsup vdd 0 DC 1.8 AC 0 
+Vpos vp 0 DC 0 AC 0
+Vin vtest 0 DC 0 AC 0
+****************************************************
+*Stability analysis 
+****************************************************
+.control
+alter Vpos DC = 0.9 
+alter Vin AC = 1
+set units = degrees
+ac dec 10 1 200MEG
+show
+plot db(Vout)
+plot phase(Vout) 
+meas ac Avd FIND vdb(Vout) AT=10
+meas ac GBW WHEN vdb(Vout)= 0
+meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
+.endc
+.end
+" }
+C {devices/ind.sym} 1740 -1270 0 0 {name=L1
+m=1
+value=1G
+footprint=1206
+device=inductor}
+C {devices/capa.sym} 1880 -1200 3 0 {name=C2
+m=1
+value=1G
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_pin.sym} 1960 -1200 0 1 {name=l3 sig_type=std_logic lab=Vtest}
+C {devices/capa.sym} 1810 -1260 0 0 {name=C1
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}

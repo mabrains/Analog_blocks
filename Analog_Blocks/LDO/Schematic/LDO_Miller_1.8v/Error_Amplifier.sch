@@ -183,4 +183,4 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 3 0 {name=C1 model=cap_mim_m3_2 W=20 L=25 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 3 0 {name=C1 model=cap_mim_m3_2 W=25 L=25 MF=3 spiceprefix=X}
