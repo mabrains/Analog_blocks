@@ -42,6 +42,10 @@ N 1560 -940 1710 -940 { lab=Vout}
 N 1260 -940 1260 -900 { lab=#net3}
 N 1260 -840 1260 -820 { lab=Vtest}
 N 1710 -940 1760 -940 { lab=Vout}
+N 1960 -1050 1960 -950 { lab=#net1}
+N 1850 -1050 1960 -1050 { lab=#net1}
+N 1960 -890 1960 -770 { lab=0}
+N 1850 -770 1960 -770 { lab=0}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 1560 -1000 0 0 {name=C1 model=cap_mim_m3_2 W=30 L=30 MF=1 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1690 -1110 0 0 {name=M1
 L=0.5
@@ -76,7 +80,7 @@ value=1u
 footprint=1206
 device="ceramic capacitor"}
 C {devices/res.sym} 1850 -860 0 0 {name=R3
-value=0.1
+value=100m
 footprint=1206
 device=resistor
 m=1}
@@ -95,13 +99,13 @@ value=1G
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_pin.sym} 1260 -820 0 0 {name=l5 sig_type=std_logic lab=Vtest}
-C {devices/code_shown.sym} 1915 -1195 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 2045 -1165 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup Vin 0 DC 2 AC 0 
+Vsup Vin 0 DC 2.2 AC 0 
 VVref Vref 0 DC 0 AC 0
 VVin vtest 0 DC 0 AC 0
 ****************************************************
@@ -161,3 +165,8 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
+C {devices/res.sym} 1960 -920 0 0 {name=R4
+value=15k
+footprint=1206
+device=resistor
+m=1}

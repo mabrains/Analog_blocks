@@ -1,0 +1,440 @@
+timestamp 0
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use via_new$4 via_new$4_0[0:9:0][0:0:0] 1 0 2706 0 1 -12781
+use via_new$5 via_new$5_1[0:9:0][0:0:0] 1 0 2945 0 1 -12923
+use via_new$5 via_new$5_0[0:9:0][0:0:0] 1 0 2943 0 1 -12421
+use via_new$6 via_new$6_1[0:9:0][0:0:0] 1 0 6801 0 1 -12681
+use via_new$6 via_new$6_0[0:9:0][0:0:0] 1 0 5358 0 1 -12583
+use via_new$1 via_new$1_0 1 0 3581 0 1 -11849
+use via_new$3 via_new$3_0 1 0 4852 0 1 -11626
+use via_new via_new_1 1 0 4398 0 1 -10904
+use via_new via_new_0 1 0 2820 0 1 -10904
+use via_new$3 via_new$3_1 1 0 4852 0 1 -7633
+parameters sky130_fd_pr__pnp_05v0 a2=area
+parameters sky130_fd_pr__nfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__nfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+parameters sky130_fd_pr__pfet_g5v0d10v5 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_20v0 l=l w=w a1=as a2=ad p1=ps p2=pd
+parameters sky130_fd_pr__res_xhigh_po l=l w=w
+parameters sky130_fd_pr__res_xhigh_po_5p73 l=l
+parameters sky130_fd_pr__res_xhigh_po_2p85 l=l
+parameters sky130_fd_pr__res_xhigh_po_1p41 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p69 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p35 l=l
+node "m3_3581_n11889#" 1 388.335 3581 -11889 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 150160 3468 0 0 0 0 0 0
+node "m2_4852_n11666#" 3 2012.49 4852 -11666 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 651680 8466 0 0 0 0 0 0 0 0
+node "a_6896_n12721#" 198 144.192 6896 -12721 mvndif 0 0 0 0 0 0 0 0 0 0 0 0 4872 284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3128 252 10320 418 0 0 0 0 0 0 0 0 0 0
+node "a_2838_n12721#" 199 638.598 2838 -12721 mvndif 0 0 0 0 0 0 0 0 0 0 0 0 4872 284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3128 252 48612 1454 0 0 0 0 0 0 0 0 0 0
+node "a_2896_n12809#" 3659 10439.8 2896 -12809 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1040000 8520 0 0 272000 16136 367264 16152 0 0 0 0 0 0 0 0 0 0
+node "D1011" 31975 4120.38 5296 -11714 mvpdif 0 0 0 0 0 0 0 0 0 0 0 0 0 0 464000 16232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1677600 17576 0 0 286144 17104 411690 17380 886720 12684 349760 5872 0 0 0 0 0 0
+node "a_2988_n11768#" 19972 -178.06 2988 -11768 mvpdif 0 0 0 0 0 0 0 0 0 0 0 0 0 0 290000 10580 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 171360 10420 257200 10800 64000 2400 265280 3636 0 0 0 0 0 0
+node "a_3046_n11865#" 5805 2007 3046 -11865 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 955200 20704 0 0 27200 2144 55108 2488 0 0 0 0 0 0 0 0 0 0
+node "a_3703_n9233#" 2553 0 3703 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_3173_n9233#" 2553 0 3173 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_3173_n8873#" 179 2223.07 3173 -8873 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "a_2643_n9665#" 179 1510.17 2643 -9665 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "a_2643_n9233#" 2553 0 2643 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "D2" 7451 1360.68 2113 -9665 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 116000 4232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 312192 7024 213182 5686 229260 4992 339040 4878 0 0 0 0 0 0
+node "a_2113_n9233#" 2553 0 2113 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_2113_n8873#" 179 1858.2 2113 -8873 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "VBJTS" 6320 17995.1 48 -12700 pdif 0 0 0 0 0 0 0 0 0 0 147968 4352 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 443360 7912 847342 11574 1014264 12594 164320 4268 0 0 0 0 0 0
+node "a_1583_n9233#" 2553 0 1583 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_1053_n9233#" 2553 0 1053 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_1053_n8873#" 179 1856.48 1053 -8873 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "a_523_n9665#" 179 1508.79 523 -9665 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "a_523_n9233#" 2553 0 523 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n7_n9233#" 2553 0 -7 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n7_n8873#" 179 1859.58 -7 -8873 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 487296 5712 333432 2426 0 0 0 0 0 0 0 0 0 0
+node "a_n537_n9233#" 2553 0 -537 -9233 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 101520 1284 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "Vref" 7457 7120.13 -537 -8873 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 116000 4232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 312192 7024 213182 5686 505843 10648 1672320 21544 0 0 0 0 0 0
+node "D6" 37472 12146 -3455 -13095 p 0 0 0 0 0 0 0 0 0 0 0 0 9744 568 522000 18348 0 0 0 0 0 0 0 0 0 0 0 0 0 0 260000 7200 0 0 347072 21436 611148 26036 324560 9394 800480 10966 0 0 0 0 0 0
+node "D9" 48244 9821.25 -3272 -11489 mvpdif 0 0 0 0 0 0 0 0 0 0 0 0 9744 568 696000 24464 0 0 0 0 0 0 0 0 0 0 0 0 0 0 208000 5760 0 0 442544 26984 822432 32412 449440 12356 702240 9418 0 0 0 0 0 0
+node "G3" 10029 3837.66 -2740 -11586 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1916400 39528 0 0 507696 7320 379864 4352 252169 4384 401580 4452 0 0 0 0 0 0
+node "G4" 39122 9612.26 -3214 -11586 p 0 0 0 0 0 0 0 0 0 0 18496 544 0 0 464000 16232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1916400 39528 0 0 561556 21264 606358 22170 704210 10326 768119 18636 0 0 0 0 0 0
+node "D5" 70163 3079.57 -3114 -11489 mvpdif 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1067200 37728 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 627776 37472 955884 40948 314720 6814 1014480 13322 0 0 0 0 0 0
+node "G1011" 32420 33876 -3552 -6988 p 0 0 0 0 0 0 0 0 0 0 0 0 29232 1704 255200 11352 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3568800 65000 0 0 364752 26896 1480776 58900 1421760 27692 1971440 27156 0 0 0 0 0 0
+node "VDD" 55195 121083 -3810 -7188 nw 0 0 0 0 26539604 58472 0 0 0 0 0 0 3170976 109344 754000 29132 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3520798 140124 21898634 103454 12684480 44476 13595040 46578 12000000 26000 12000000 26000 0 0
+substrate "GND" 0 0 -3673 -13255 pw 0 0 10550652 70804 0 0 0 0 896832 24912 2759412 71088 43848 2556 971848 33512 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4631012 132332 19253791 79068 12421120 38448 12552000 33540 12000000 26000 12000000 26000 0 0
+cap "VBJTS" "D2" 250.9
+cap "G3" "a_523_n9665#" 185.658
+cap "G4" "D9" 1155.15
+cap "VDD" "D6" 171.515
+cap "VDD" "D2" 894.644
+cap "a_2988_n11768#" "a_3046_n11865#" 1521.06
+cap "a_2896_n12809#" "a_2838_n12721#" 72.741
+cap "a_523_n9665#" "a_1053_n8873#" 57.7149
+cap "VDD" "G3" 1805.51
+cap "m3_3581_n11889#" "VDD" 368.35
+cap "VBJTS" "a_1053_n8873#" 57.7149
+cap "G1011" "m2_4852_n11666#" 130.281
+cap "G1011" "Vref" 516.157
+cap "D5" "D6" 13148.2
+cap "G4" "G1011" 349.48
+cap "a_2988_n11768#" "D2" 4163.13
+cap "G3" "D5" 1393.73
+cap "a_523_n9665#" "a_n7_n8873#" 57.7149
+cap "G1011" "D9" 1861.7
+cap "G4" "VBJTS" 1915.06
+cap "VDD" "Vref" 509.325
+cap "D2" "a_3046_n11865#" 1346.55
+cap "m2_4852_n11666#" "D1011" 29.304
+cap "VDD" "a_2838_n12721#" 21.8534
+cap "VDD" "G4" 8614.46
+cap "G4" "D1011" 926.594
+cap "m3_3581_n11889#" "a_3046_n11865#" 385.723
+cap "G1011" "a_2896_n12809#" 257.744
+cap "VDD" "D9" 2145.79
+cap "D5" "Vref" 1248.15
+cap "a_3173_n8873#" "a_2643_n9665#" 57.7149
+cap "G4" "D5" 1319.43
+cap "a_2988_n11768#" "Vref" 3500.71
+cap "G3" "D6" 1167.53
+cap "a_523_n9665#" "VBJTS" 185.658
+cap "D9" "D5" 13426.8
+cap "a_2896_n12809#" "D1011" 185.057
+cap "a_2643_n9665#" "D2" 185.658
+cap "a_3046_n11865#" "Vref" 983.124
+cap "VDD" "G1011" 30442
+cap "G1011" "D1011" 651.677
+cap "G4" "a_3173_n8873#" 57.7149
+cap "D2" "Vref" 1219.65
+cap "a_6896_n12721#" "a_2896_n12809#" 255.826
+cap "G1011" "D5" 3593.18
+cap "a_3173_n8873#" "a_2113_n8873#" 185.658
+cap "G4" "D6" 451.669
+cap "VDD" "D1011" 9501.8
+cap "G4" "D2" 1008.73
+cap "G3" "Vref" 231.881
+cap "m3_3581_n11889#" "Vref" 678.202
+cap "m3_3581_n11889#" "m2_4852_n11666#" 118.72
+cap "D9" "D6" 7651.08
+cap "a_2113_n8873#" "D2" 57.7149
+cap "G4" "G3" 785.844
+cap "G3" "a_n7_n8873#" 57.7149
+cap "G4" "a_2643_n9665#" 185.658
+cap "G3" "D9" 538.8
+cap "VDD" "D5" 2200.24
+cap "a_2113_n8873#" "a_2643_n9665#" 57.7149
+cap "VDD" "a_2988_n11768#" 2210.11
+cap "a_1053_n8873#" "a_n7_n8873#" 185.658
+cap "a_6896_n12721#" "D1011" 135.355
+cap "m2_4852_n11666#" "Vref" 941.089
+cap "a_2113_n8873#" "a_1053_n8873#" 185.658
+cap "G1011" "D6" 2545.64
+cap "VDD" "a_3046_n11865#" 866.439
+cap "G4" "m2_4852_n11666#" 173.936
+cap "G4" "Vref" 104.348
+cap "a_n7_n8873#" "Vref" 185.658
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 2896 -12721 2897 -12720 l=4000 w=84 "GND" "a_2896_n12809#" 8000 0 "a_2838_n12721#" 84 0 "a_6896_n12721#" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -769 -13007 -768 -13006 l=100 w=84 "GND" "D6" 200 0 "GND" 84 0 "G1011" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -927 -13007 -926 -13006 l=100 w=84 "GND" "D6" 200 0 "G1011" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1085 -13007 -1084 -13006 l=100 w=84 "GND" "D6" 200 0 "GND" 84 0 "G1011" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1243 -13007 -1242 -13006 l=100 w=84 "GND" "D6" 200 0 "G1011" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1401 -13007 -1400 -13006 l=100 w=84 "GND" "D6" 200 0 "GND" 84 0 "G1011" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1559 -13007 -1558 -13006 l=100 w=84 "GND" "D9" 200 0 "D6" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1717 -13007 -1716 -13006 l=100 w=84 "GND" "D9" 200 0 "GND" 84 0 "D6" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -1875 -13007 -1874 -13006 l=100 w=84 "GND" "D9" 200 0 "D9" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2033 -13007 -2032 -13006 l=100 w=84 "GND" "D9" 200 0 "GND" 84 0 "D9" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2191 -13007 -2190 -13006 l=100 w=84 "GND" "D9" 200 0 "D9" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2349 -13007 -2348 -13006 l=100 w=84 "GND" "D9" 200 0 "GND" 84 0 "D9" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2507 -13007 -2506 -13006 l=100 w=84 "GND" "D9" 200 0 "D6" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2665 -13007 -2664 -13006 l=100 w=84 "GND" "D9" 200 0 "GND" 84 0 "D6" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2823 -13007 -2822 -13006 l=100 w=84 "GND" "D6" 200 0 "G1011" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -2981 -13007 -2980 -13006 l=100 w=84 "GND" "D6" 200 0 "GND" 84 0 "G1011" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -3139 -13007 -3138 -13006 l=100 w=84 "GND" "D6" 200 0 "G1011" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -3297 -13007 -3296 -13006 l=100 w=84 "GND" "D6" 200 0 "GND" 84 0 "G1011" 84 0
+device msubckt sky130_fd_pr__nfet_g5v0d10v5 -3455 -13007 -3454 -13006 l=100 w=84 "GND" "D6" 200 0 "G1011" 84 0 "GND" 84 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 7108 -11700 7109 -11699 l=200 w=4000 "VDD" "D1011" 400 0 "VDD" 4000 0 "G4" 4000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 6850 -11700 6851 -11699 l=200 w=4000 "VDD" "D1011" 400 0 "G4" 4000 0 "VDD" 4000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 5612 -11714 5613 -11713 l=200 w=4000 "VDD" "G1011" 400 0 "VDD" 4000 0 "D1011" 4000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 5354 -11714 5355 -11713 l=200 w=4000 "VDD" "G1011" 400 0 "D1011" 4000 0 "VDD" 4000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 4152 -11768 4153 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "D2" 1000 0 "a_2988_n11768#" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3994 -11768 3995 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "a_2988_n11768#" 1000 0 "D2" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3836 -11768 3837 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "Vref" 1000 0 "a_2988_n11768#" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3678 -11768 3679 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "a_2988_n11768#" 1000 0 "Vref" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3520 -11768 3521 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "Vref" 1000 0 "a_2988_n11768#" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3362 -11768 3363 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "a_2988_n11768#" 1000 0 "Vref" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3204 -11768 3205 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "D2" 1000 0 "a_2988_n11768#" 1000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3046 -11768 3047 -11767 l=100 w=1000 "VDD" "a_3046_n11865#" 200 0 "a_2988_n11768#" 1000 0 "D2" 1000 0
+device rsubckt sky130_fd_pr__res_xhigh_po 3703 -9233 3704 -9232 l=360 w=282 "GND" "a_3703_n9233#" 0 0 "G4" 282 0 "a_3173_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 3173 -9233 3174 -9232 l=360 w=282 "GND" "a_3173_n9233#" 0 0 "a_2643_n9665#" 282 0 "a_3173_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 2643 -9233 2644 -9232 l=360 w=282 "GND" "a_2643_n9233#" 0 0 "a_2643_n9665#" 282 0 "a_2113_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 2113 -9233 2114 -9232 l=360 w=282 "GND" "a_2113_n9233#" 0 0 "D2" 282 0 "a_2113_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 1583 -9233 1584 -9232 l=360 w=282 "GND" "a_1583_n9233#" 0 0 "VBJTS" 282 0 "a_1053_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 1053 -9233 1054 -9232 l=360 w=282 "GND" "a_1053_n9233#" 0 0 "a_523_n9665#" 282 0 "a_1053_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po 523 -9233 524 -9232 l=360 w=282 "GND" "a_523_n9233#" 0 0 "a_523_n9665#" 282 0 "a_n7_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po -7 -9233 -6 -9232 l=360 w=282 "GND" "a_n7_n9233#" 0 0 "G3" 282 0 "a_n7_n8873#" 282 0
+device rsubckt sky130_fd_pr__res_xhigh_po -537 -9233 -536 -9232 l=360 w=282 "GND" "a_n537_n9233#" 0 0 "G3" 282 0 "Vref" 282 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1476 -11489 -1475 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D5" 3000 0 "D9" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1634 -11489 -1633 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D9" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1792 -11489 -1791 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D5" 3000 0 "D9" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1950 -11489 -1949 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D6" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2108 -11489 -2107 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D5" 3000 0 "D6" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2266 -11489 -2265 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D6" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2424 -11489 -2423 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D5" 3000 0 "D6" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2582 -11489 -2581 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D6" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2740 -11489 -2739 -11488 l=100 w=3000 "VDD" "G3" 200 0 "D5" 3000 0 "D6" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2898 -11489 -2897 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D9" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3056 -11489 -3055 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D5" 3000 0 "D9" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3214 -11489 -3213 -11488 l=100 w=3000 "VDD" "G4" 200 0 "D9" 3000 0 "D5" 3000 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3874 -6891 3875 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3716 -6891 3717 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3558 -6891 3559 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3400 -6891 3401 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3242 -6891 3243 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 3084 -6891 3085 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2926 -6891 2927 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2768 -6891 2769 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2610 -6891 2611 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2452 -6891 2453 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2294 -6891 2295 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 2136 -6891 2137 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1978 -6891 1979 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1820 -6891 1821 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1662 -6891 1663 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1504 -6891 1505 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1346 -6891 1347 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1188 -6891 1189 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 1030 -6891 1031 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 872 -6891 873 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 714 -6891 715 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 556 -6891 557 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 398 -6891 399 -6890 l=100 w=200 "VDD" "G1011" 200 0 "D5" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 240 -6891 241 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "D5" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 82 -6891 83 -6890 l=100 w=200 "VDD" "G1011" 200 0 "D5" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -76 -6891 -75 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "D5" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -234 -6891 -233 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -392 -6891 -391 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -550 -6891 -549 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -708 -6891 -707 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -866 -6891 -865 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1024 -6891 -1023 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1182 -6891 -1181 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1340 -6891 -1339 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1498 -6891 -1497 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1656 -6891 -1655 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1814 -6891 -1813 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -1972 -6891 -1971 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2130 -6891 -2129 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2288 -6891 -2287 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2446 -6891 -2445 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2604 -6891 -2603 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2762 -6891 -2761 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -2920 -6891 -2919 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3078 -6891 -3077 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3236 -6891 -3235 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3394 -6891 -3393 -6890 l=100 w=200 "VDD" "G1011" 200 0 "G1011" 200 0 "VDD" 200 0
+device msubckt sky130_fd_pr__pfet_g5v0d10v5 -3552 -6891 -3551 -6890 l=100 w=200 "VDD" "G1011" 200 0 "VDD" 200 0 "G1011" 200 0
+device msubckt sky130_fd_pr__pnp_05v0 1759 -12877 1760 -12876 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 815 -12877 816 -12876 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 -129 -12877 -128 -12876 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 1759 -11933 1760 -11932 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 815 -11933 816 -11932 "None" "GND" 0 0 "G4" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 -129 -11933 -128 -11932 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 1759 -10989 1760 -10988 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 815 -10989 816 -10988 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+device msubckt sky130_fd_pr__pnp_05v0 -129 -10989 -128 -10988 "None" "GND" 0 0 "VBJTS" 200 0 "GND" 1960 0
+subcap "a_2896_n12809#" -10034.2
+cap "via_new$4_0[0]/li_0_n150#" "a_2896_n12809#" -80.0893
+cap "a_2896_n12809#" "GND" -125
+cap "GND" "a_2896_n12809#" -125
+subcap "a_6896_n12721#" -397.67
+cap "GND" "via_new$6_1[0]/m1_0_n40#" -8.79545
+cap "GND" "a_2896_n12809#" -26.3393
+subcap "a_2896_n12809#" -10256
+subcap "a_2988_n11768#" -13.1021
+subcap "a_3046_n11865#" -1506.49
+cap "VDD" "via_new$1_0/m1_0_n40#" 40.5776
+cap "VDD" "via_new$4_0[0]/li_0_n150#" 122.66
+cap "a_2896_n12809#" "via_new$4_0[0]/li_0_n150#" 562.919
+subcap "m2_4852_n11666#" -1491.4
+subcap "D1011" -3366.75
+cap "VDD" "via_new$1_0/m1_0_n40#" 1.13687e-13
+cap "via_new$6_0[0]/m1_0_n40#" "GND" 935.356
+cap "VDD" "GND" 107.374
+subcap "m2_4852_n11666#" -2022.08
+subcap "D1011" -4311.82
+cap "via_new$6_0[0]/m1_0_n40#" "GND" 1139.94
+cap "via_new$6_1[0]/m1_0_n40#" "GND" -38.06
+cap "a_2896_n12809#" "GND" 197.312
+cap "GND" "via_new$6_1[0]/m1_0_n40#" 161.233
+cap "a_2896_n12809#" "via_new$6_1[0]/m1_0_n40#" 57.0285
+subcap "a_3046_n11865#" -1149.86
+cap "via_new_0/m1_0_n80#" "D2" 34.0426
+subcap "m2_4852_n11666#" -214.382
+subcap "D1011" -4421.17
+cap "via_new_1/m1_0_n80#" "via_new$1_0/m1_0_n40#" 21.3904
+cap "via_new_1/m1_0_n80#" "Vref" 86.9565
+cap "Vref" "via_new$1_0/m1_0_n40#" 5.68434e-14
+cap "via_new_1/m1_0_n80#" "D2" -2.04636e-12
+subcap "m2_4852_n11666#" -2144.21
+subcap "D1011" -4103.64
+cap "G1011" "Vref" -7.10543e-15
+cap "VDD" "via_new$3_1/m2_0_n40#" 639.595
+cap "D1011" "via_new$3_1/m2_0_n40#" 6.03961e-14
+merge "via_new$3_1/VSUBS" "via_new_1/VSUBS" -6622.79 0 0 -1651866 -7214 0 0 0 0 0 0 0 0 0 0 357594 -13988 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1152627 -24580 -1587525 -17351 0 0 0 0 0 0 0 0 0 0
+merge "via_new_1/VSUBS" "via_new_0/VSUBS"
+merge "via_new_0/VSUBS" "via_new$3_0/VSUBS"
+merge "via_new$3_0/VSUBS" "via_new$6_0[9]/VSUBS"
+merge "via_new$6_0[9]/VSUBS" "via_new$6_0[8]/VSUBS"
+merge "via_new$6_0[8]/VSUBS" "via_new$6_0[7]/VSUBS"
+merge "via_new$6_0[7]/VSUBS" "via_new$6_0[6]/VSUBS"
+merge "via_new$6_0[6]/VSUBS" "via_new$6_0[5]/VSUBS"
+merge "via_new$6_0[5]/VSUBS" "via_new$6_0[4]/VSUBS"
+merge "via_new$6_0[4]/VSUBS" "via_new$6_0[3]/VSUBS"
+merge "via_new$6_0[3]/VSUBS" "via_new$6_0[2]/VSUBS"
+merge "via_new$6_0[2]/VSUBS" "via_new$6_0[1]/VSUBS"
+merge "via_new$6_0[1]/VSUBS" "via_new$6_0[0]/VSUBS"
+merge "via_new$6_0[0]/VSUBS" "via_new$1_0/VSUBS"
+merge "via_new$1_0/VSUBS" "via_new$5_0[9]/VSUBS"
+merge "via_new$5_0[9]/VSUBS" "via_new$5_0[8]/VSUBS"
+merge "via_new$5_0[8]/VSUBS" "via_new$5_0[7]/VSUBS"
+merge "via_new$5_0[7]/VSUBS" "via_new$5_0[6]/VSUBS"
+merge "via_new$5_0[6]/VSUBS" "via_new$5_0[5]/VSUBS"
+merge "via_new$5_0[5]/VSUBS" "via_new$5_0[4]/VSUBS"
+merge "via_new$5_0[4]/VSUBS" "via_new$5_0[3]/VSUBS"
+merge "via_new$5_0[3]/VSUBS" "via_new$5_0[2]/VSUBS"
+merge "via_new$5_0[2]/VSUBS" "via_new$5_0[1]/VSUBS"
+merge "via_new$5_0[1]/VSUBS" "via_new$5_0[0]/VSUBS"
+merge "via_new$5_0[0]/VSUBS" "via_new$5_0[0]/li_0_n40#"
+merge "via_new$5_0[0]/li_0_n40#" "via_new$6_1[9]/VSUBS"
+merge "via_new$6_1[9]/VSUBS" "via_new$6_1[8]/VSUBS"
+merge "via_new$6_1[8]/VSUBS" "via_new$6_1[7]/VSUBS"
+merge "via_new$6_1[7]/VSUBS" "via_new$6_1[6]/VSUBS"
+merge "via_new$6_1[6]/VSUBS" "via_new$6_1[5]/VSUBS"
+merge "via_new$6_1[5]/VSUBS" "via_new$6_1[4]/VSUBS"
+merge "via_new$6_1[4]/VSUBS" "via_new$6_1[3]/VSUBS"
+merge "via_new$6_1[3]/VSUBS" "via_new$6_1[2]/VSUBS"
+merge "via_new$6_1[2]/VSUBS" "via_new$6_1[1]/VSUBS"
+merge "via_new$6_1[1]/VSUBS" "via_new$6_1[0]/VSUBS"
+merge "via_new$6_1[0]/VSUBS" "via_new$5_1[9]/VSUBS"
+merge "via_new$5_1[9]/VSUBS" "via_new$5_1[8]/VSUBS"
+merge "via_new$5_1[8]/VSUBS" "via_new$5_1[7]/VSUBS"
+merge "via_new$5_1[7]/VSUBS" "via_new$5_1[6]/VSUBS"
+merge "via_new$5_1[6]/VSUBS" "via_new$5_1[5]/VSUBS"
+merge "via_new$5_1[5]/VSUBS" "via_new$5_1[4]/VSUBS"
+merge "via_new$5_1[4]/VSUBS" "via_new$5_1[3]/VSUBS"
+merge "via_new$5_1[3]/VSUBS" "via_new$5_1[2]/VSUBS"
+merge "via_new$5_1[2]/VSUBS" "via_new$5_1[1]/VSUBS"
+merge "via_new$5_1[1]/VSUBS" "via_new$5_1[0]/VSUBS"
+merge "via_new$5_1[0]/VSUBS" "via_new$5_1[0]/li_0_n40#"
+merge "via_new$5_1[0]/li_0_n40#" "via_new$4_0[9]/VSUBS"
+merge "via_new$4_0[9]/VSUBS" "via_new$4_0[8]/VSUBS"
+merge "via_new$4_0[8]/VSUBS" "via_new$4_0[7]/VSUBS"
+merge "via_new$4_0[7]/VSUBS" "via_new$4_0[6]/VSUBS"
+merge "via_new$4_0[6]/VSUBS" "via_new$4_0[5]/VSUBS"
+merge "via_new$4_0[5]/VSUBS" "via_new$4_0[4]/VSUBS"
+merge "via_new$4_0[4]/VSUBS" "via_new$4_0[3]/VSUBS"
+merge "via_new$4_0[3]/VSUBS" "via_new$4_0[2]/VSUBS"
+merge "via_new$4_0[2]/VSUBS" "via_new$4_0[1]/VSUBS"
+merge "via_new$4_0[1]/VSUBS" "via_new$4_0[0]/VSUBS"
+merge "via_new$4_0[0]/VSUBS" "via_new$4_0[0]/li_0_n150#"
+merge "via_new$4_0[0]/li_0_n150#" "GND"
+merge "GND" "a_2838_n12721#"
+merge "via_new$3_1/m2_0_n40#" "via_new$3_0/m2_0_n40#" -1337.17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -244913 -6170 0 0 102422 -1264 -149138 -1684 -113680 -960 -10650 -480 0 0 0 0 0 0
+merge "via_new$3_0/m2_0_n40#" "m2_4852_n11666#"
+merge "m2_4852_n11666#" "via_new$1_0/m1_0_n40#"
+merge "via_new$1_0/m1_0_n40#" "a_3046_n11865#"
+merge "a_3046_n11865#" "m3_3581_n11889#"
+merge "m3_3581_n11889#" "via_new$6_0[0]/m1_0_n40#"
+merge "via_new$6_0[0]/m1_0_n40#" "a_2896_n12809#"
+merge "a_2896_n12809#" "G1011"
+merge "via_new_1/m1_0_n80#" "via_new_0/m1_0_n80#" -5786.94 0 0 0 0 -1229495 -6649 0 0 0 0 0 0 803166 -8055 568214 -3350 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2726 -11013 1728379 -9053 0 0 -25600 -960 0 0 0 0 0 0
+merge "via_new_0/m1_0_n80#" "VDD"
+merge "VDD" "a_2988_n11768#"
+merge "via_new$6_1[0]/m1_0_n40#" "a_6896_n12721#" -1048.86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -304638 -5396 0 0 0 0 0 0 0 0 0 0 0 0 0 0 335225 0 0 0 -277634 -5316 -17794 -5766 -384535 -3096 -20208 0 0 0 0 0 0 0
+merge "a_6896_n12721#" "D1011"
+merge "via_new$6_0[9]/VSUBS" "via_new$6_0[8]/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[8]/VSUBS" "via_new$6_0[7]/VSUBS"
+merge "via_new$6_0[7]/VSUBS" "via_new$6_0[6]/VSUBS"
+merge "via_new$6_0[6]/VSUBS" "via_new$6_0[5]/VSUBS"
+merge "via_new$6_0[5]/VSUBS" "via_new$6_0[4]/VSUBS"
+merge "via_new$6_0[4]/VSUBS" "via_new$6_0[3]/VSUBS"
+merge "via_new$6_0[3]/VSUBS" "via_new$6_0[2]/VSUBS"
+merge "via_new$6_0[2]/VSUBS" "via_new$6_0[1]/VSUBS"
+merge "via_new$6_0[1]/VSUBS" "via_new$6_1[9]/VSUBS"
+merge "via_new$6_1[9]/VSUBS" "via_new$6_1[8]/VSUBS"
+merge "via_new$6_1[8]/VSUBS" "via_new$6_1[7]/VSUBS"
+merge "via_new$6_1[7]/VSUBS" "via_new$6_1[6]/VSUBS"
+merge "via_new$6_1[6]/VSUBS" "via_new$6_1[5]/VSUBS"
+merge "via_new$6_1[5]/VSUBS" "via_new$6_1[4]/VSUBS"
+merge "via_new$6_1[4]/VSUBS" "via_new$6_1[3]/VSUBS"
+merge "via_new$6_1[3]/VSUBS" "via_new$6_1[2]/VSUBS"
+merge "via_new$6_1[2]/VSUBS" "via_new$6_1[1]/VSUBS"
+merge "via_new$6_1[1]/VSUBS" "via_new$5_0[9]/VSUBS"
+merge "via_new$5_0[9]/VSUBS" "via_new$5_0[8]/VSUBS"
+merge "via_new$5_0[8]/VSUBS" "via_new$5_0[7]/VSUBS"
+merge "via_new$5_0[7]/VSUBS" "via_new$5_0[6]/VSUBS"
+merge "via_new$5_0[6]/VSUBS" "via_new$5_0[5]/VSUBS"
+merge "via_new$5_0[5]/VSUBS" "via_new$5_0[4]/VSUBS"
+merge "via_new$5_0[4]/VSUBS" "via_new$5_0[3]/VSUBS"
+merge "via_new$5_0[3]/VSUBS" "via_new$5_0[2]/VSUBS"
+merge "via_new$5_0[2]/VSUBS" "via_new$5_0[1]/VSUBS"
+merge "via_new$5_0[1]/VSUBS" "via_new$5_1[9]/VSUBS"
+merge "via_new$5_1[9]/VSUBS" "via_new$5_1[8]/VSUBS"
+merge "via_new$5_1[8]/VSUBS" "via_new$5_1[7]/VSUBS"
+merge "via_new$5_1[7]/VSUBS" "via_new$5_1[6]/VSUBS"
+merge "via_new$5_1[6]/VSUBS" "via_new$5_1[5]/VSUBS"
+merge "via_new$5_1[5]/VSUBS" "via_new$5_1[4]/VSUBS"
+merge "via_new$5_1[4]/VSUBS" "via_new$5_1[3]/VSUBS"
+merge "via_new$5_1[3]/VSUBS" "via_new$5_1[2]/VSUBS"
+merge "via_new$5_1[2]/VSUBS" "via_new$5_1[1]/VSUBS"
+merge "via_new$5_1[1]/VSUBS" "via_new$4_0[9]/VSUBS"
+merge "via_new$4_0[9]/VSUBS" "via_new$4_0[8]/VSUBS"
+merge "via_new$4_0[8]/VSUBS" "via_new$4_0[7]/VSUBS"
+merge "via_new$4_0[7]/VSUBS" "via_new$4_0[6]/VSUBS"
+merge "via_new$4_0[6]/VSUBS" "via_new$4_0[5]/VSUBS"
+merge "via_new$4_0[5]/VSUBS" "via_new$4_0[4]/VSUBS"
+merge "via_new$4_0[4]/VSUBS" "via_new$4_0[3]/VSUBS"
+merge "via_new$4_0[3]/VSUBS" "via_new$4_0[2]/VSUBS"
+merge "via_new$4_0[2]/VSUBS" "via_new$4_0[1]/VSUBS"
+merge "via_new$4_0[1]/VSUBS" "GND"
+merge "via_new$5_0[7:9]/li_0_n40#" "via_new$5_0[0:2]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[3:9]/m1_0_n40#" "via_new$6_0[0:6]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$4_0[6:9]/li_0_n150#" "via_new$4_0[0:3]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_1[6:9]/m1_0_n40#" "via_new$6_1[0:3]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$4_0[5:9]/li_0_n150#" "via_new$4_0[0:4]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[7:9]/li_0_n150#" "via_new$4_0[0:2]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[5:9]/li_0_n40#" "via_new$5_0[0:4]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_1[8:9]/li_0_n40#" "via_new$5_1[0:1]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[8:9]/li_0_n150#" "via_new$4_0[0:1]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[9:9]/li_0_n150#" "via_new$4_0[0:0]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_1[3:9]/m1_0_n40#" "via_new$6_1[0:6]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_0[4:9]/m1_0_n40#" "via_new$6_0[0:5]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_1[8:9]/m1_0_n40#" "via_new$6_1[0:1]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_1[7:9]/m1_0_n40#" "via_new$6_1[0:2]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_1[4:9]/li_0_n40#" "via_new$5_1[0:5]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[6:9]/li_0_n40#" "via_new$5_0[0:3]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[2:9]/li_0_n150#" "via_new$4_0[0:7]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_1[9:9]/li_0_n40#" "via_new$5_1[0:0]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[2:9]/m1_0_n40#" "via_new$6_0[0:7]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_0[7:9]/m1_0_n40#" "via_new$6_0[0:2]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_0[5:9]/m1_0_n40#" "via_new$6_0[0:4]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_0[3:9]/li_0_n40#" "via_new$5_0[0:6]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[8:9]/li_0_n40#" "via_new$5_0[0:1]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[6:9]/m1_0_n40#" "via_new$6_0[0:3]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_1[4:9]/m1_0_n40#" "via_new$6_1[0:5]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_1[9:9]/m1_0_n40#" "via_new$6_1[0:0]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_1[5:9]/li_0_n40#" "via_new$5_1[0:4]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[8:9]/m1_0_n40#" "via_new$6_0[0:1]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$4_0[4:9]/li_0_n150#" "via_new$4_0[0:5]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[4:9]/li_0_n40#" "via_new$5_0[0:5]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[9:9]/li_0_n40#" "via_new$5_0[0:0]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_1[1:9]/li_0_n40#" "via_new$5_1[0:8]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_1[5:9]/m1_0_n40#" "via_new$6_1[0:4]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_1[2:9]/li_0_n40#" "via_new$5_1[0:7]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[1:9]/li_0_n150#" "via_new$4_0[0:8]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_1[6:9]/li_0_n40#" "via_new$5_1[0:3]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[9:9]/m1_0_n40#" "via_new$6_0[0:0]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$6_1[1:9]/m1_0_n40#" "via_new$6_1[0:8]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_1[3:9]/li_0_n40#" "via_new$5_1[0:6]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_1[2:9]/m1_0_n40#" "via_new$6_1[0:7]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0
+merge "via_new$5_0[1:9]/li_0_n40#" "via_new$5_0[0:8]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_1[7:9]/li_0_n40#" "via_new$5_1[0:2]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$5_0[2:9]/li_0_n40#" "via_new$5_0[0:7]/li_0_n40#" -4212.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320000 -8160 -320000 -8160 0 0 0 0 0 0 0 0 0 0
+merge "via_new$4_0[3:9]/li_0_n150#" "via_new$4_0[0:6]/li_0_n150#" -387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24000 -760 -24000 -760 0 0 0 0 0 0 0 0 0 0
+merge "via_new$6_0[1:9]/m1_0_n40#" "via_new$6_0[0:8]/m1_0_n40#" -205.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -480 -12800 -480 0 0 0 0 0 0 0 0

@@ -1,19 +1,7 @@
-v {xschem version=2.9.9 file_version=1.2 }
-G {}
-K {}
-V {}
-S {}
-E {}
-N 1440 -1660 1440 -1570 { lab=Vdd}
-N 1260 -1660 1440 -1660 { lab=Vdd}
-N 1440 -1370 1440 -1280 { lab=0}
-N 1260 -1280 1440 -1280 { lab=0}
-N 1560 -1470 1600 -1470 { lab=Vref}
-C {devices/code.sym} 1480 -1150 0 0 {name=TT_MODELS1
-spice_ignore=false
-only_toplevel=true
-format="tcleval( @value )"
-value="
+**.subckt Bandgap1.8v_2_meas
+x1 Vdd Vref 0 Bandgap_2
+**** begin user architecture code
+
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
@@ -48,10 +36,9 @@ value="
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/all.spice
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
-"}
-C {devices/code_shown.sym} 1665 -1855 0 0 {name=NGSPICE1
-only_toplevel=true
-value=" 
+
+
+
 ************************************************
 *Source initialization
 ************************************************
@@ -66,7 +53,7 @@ show
 plot vref
 meas DC Vref_27 FIND Vref AT=27
 meas DC Vref_neg40 FIND Vref AT=-40
-meas DC Vref_120 FIND Vref AT=120 
+meas DC Vref_120 FIND Vref AT=120
 .endc
 ************************************************
 *Supply variation
@@ -83,11 +70,11 @@ meas DC Vref_Sup_neg10per FIND Vref AT=1.98
 ************************************************
 .control
 alter Vsup DC = 1.8
-alter Vsup AC = 1  
+alter Vsup AC = 1
 ac dec 10 1 100MEG
 plot db(vref)
 meas ac PSR_1k FIND vdb(Vref) AT=1k
-meas ac PSR_1M FIND vdb(vref) AT=1Meg 
+meas ac PSR_1M FIND vdb(vref) AT=1Meg
 .endc
 ************************************************
 *Transient analysis
@@ -98,9 +85,68 @@ tran 100u 500u
 plot vdd vref
 .endc
 ************************************************
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:
+*+  /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sym # of pins=3
+* sym_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sym
+* sch_path: /home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sch
+.subckt Bandgap_2  VDD Vref GND
+*.ipin VDD
+*.ipin GND
+*.opin Vref
+XM1 Vref net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM2 net2 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XQ1 GND GND net4 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ2 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ3 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ4 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ5 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ6 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ7 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ8 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ9 GND GND net5 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
+XR1 net5 net3 GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=1.8 mult=1 m=1
+XR2 net3 Vref GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=7.2 mult=1 m=1
+XR3 net4 net2 GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=7.2 mult=1 m=1
+XM5 net7 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM7 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=44 m=44 
+XM3 net8 net3 net7 VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=6 m=6 
+XM4 net6 net4 net7 VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=6 m=6 
+XM8 net1 net8 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=10 m=10 
+XM6 net8 net6 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM9 net6 net6 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.42 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM10 net9 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+XM11 net9 net1 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=20 W=0.42 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XM12 net4 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+.ends
+
+** flattened .save nodes
 .end
-" }
-C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sym} 1440 -1470 0 0 {name=x1}
-C {devices/lab_pin.sym} 1260 -1660 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/lab_pin.sym} 1260 -1280 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1600 -1470 0 1 {name=l3 sig_type=std_logic lab=Vref}

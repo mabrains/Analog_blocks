@@ -9,28 +9,39 @@ N 1180 -930 1180 -900 { lab=#net1}
 N 1180 -840 1180 -780 { lab=0}
 N 980 -780 1180 -780 { lab=0}
 N 980 -940 980 -780 { lab=0}
-N 1120 -1060 1230 -1060 { lab=Vout}
 N 780 -1060 840 -1060 { lab=Vin}
+N 1120 -1060 1280 -1060 { lab=Vout}
+N 1270 -1060 1270 -1000 { lab=Vout}
+N 1270 -690 1270 -660 { lab=0}
+N 980 -660 1270 -660 { lab=0}
+N 980 -780 980 -660 { lab=0}
+N 1270 -720 1340 -720 { lab=0}
+N 1340 -720 1340 -660 { lab=0}
+N 1270 -660 1340 -660 { lab=0}
+N 1200 -720 1230 -720 { lab=Vb}
+N 1270 -940 1270 -880 { lab=#net2}
+N 1270 -820 1270 -750 { lab=#net3}
 C {devices/capa.sym} 1180 -960 0 0 {name=C2
 m=1
-value=20u
+value=1u
 footprint=1206
 device="ceramic capacitor"}
 C {devices/res.sym} 1180 -870 0 0 {name=R3
-value=30m
+value=100m
 footprint=1206
 device=resistor
 m=1}
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1325 -1375 0 0 {name=NGSPICE1
+C {devices/lab_pin.sym} 1280 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
+C {devices/code_shown.sym} 1395 -1375 0 0 {name=NGSPICE1
 only_toplevel=true
 value=" 
 ************************************************
 *Source initialization
 ************************************************
 VVin Vin 0 DC 0 AC 0
+Vs Vb 0 DC 0 AC 0
 ************************************************
 *Input/Output Characteristic
 ************************************************
@@ -47,15 +58,26 @@ print Vreg-1.8
 .control
 dc VVin 1.8 2.3 0.01
 plot Vout
-meas DC v1 FIND Vout AT=1.8
-meas DC v2 FIND Vout AT=2.2
+meas DC Vmin FIND Vout AT=1.95
+meas DC Vmax FIND Vout AT=2.2
 print (v2-v1)/0.4
+.endc
+************************************************
+*Temerature variation 
+************************************************
+.control
+alter VVin DC = 2 
+dc TEMP -45 125 1
+plot Vout
+meas DC Vout_nom FIND Vout AT=27
+meas DC Vout_neg40 FIND Vout AT=-40
+meas DC Vout_120 FIND Vout AT=120
 .endc
 ************************************************
 *PSRR analysis
 ************************************************
 .control
-alter VVin DC = 2.2
+alter VVin DC = 2
 alter VVin AC = 1  
 ac dec 10 1 100MEG
 plot db(Vout)
@@ -63,18 +85,26 @@ meas AC PSR_1k FIND vdb(Vout) AT=1k
 meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
 .endc
 ************************************************
-*Transient analysis
+*Line Transient
 ************************************************
 .control
-alter @VVin[pulse] = [ 0 2.3 50u 100n 100n 50u 100u ]
-tran 20u 2m
+alter @VVin[pulse] = [ 1.95 2.2 50u 100n 100n 50u 100u ]
+tran 20u 400u
 plot Vin Vout
+.endc
+************************************************
+*Load Transient
+************************************************
+.control
+alter @Vs[pulse] = [ 0 0.4 50u 100n 100n 50u 100u ]
+tran 20u 400u
+plot i(V1) Vout
 .endc
 ************************************************
 .end
 " }
 C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1140 -1300 0 0 {name=TT_MODELS1
+C {devices/code.sym} 1150 -1350 0 0 {name=TT_MODELS1
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -114,3 +144,24 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
+C {devices/res.sym} 1270 -970 0 0 {name=R1
+value=1k
+footprint=1206
+device=resistor
+m=1}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1250 -720 0 0 {name=M1
+L=0.5
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 1200 -720 0 0 {name=l4 sig_type=std_logic lab=Vb}
+C {devices/vsource.sym} 1270 -850 0 0 {name=V1 value=0}
