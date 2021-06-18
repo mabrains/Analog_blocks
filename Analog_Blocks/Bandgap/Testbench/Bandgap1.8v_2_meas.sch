@@ -8,7 +8,7 @@ N 1440 -1660 1440 -1570 { lab=Vdd}
 N 1260 -1660 1440 -1660 { lab=Vdd}
 N 1440 -1370 1440 -1280 { lab=0}
 N 1260 -1280 1440 -1280 { lab=0}
-N 1560 -1470 1600 -1470 { lab=Vref}
+N 1540 -1450 1580 -1450 { lab=Vref}
 C {devices/code.sym} 1480 -1150 0 0 {name=TT_MODELS1
 spice_ignore=false
 only_toplevel=true
@@ -103,4 +103,4 @@ plot vdd vref
 C {/home/eslam/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sym} 1440 -1470 0 0 {name=x1}
 C {devices/lab_pin.sym} 1260 -1660 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} 1260 -1280 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1600 -1470 0 1 {name=l3 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} 1580 -1450 0 1 {name=l3 sig_type=std_logic lab=Vref}
