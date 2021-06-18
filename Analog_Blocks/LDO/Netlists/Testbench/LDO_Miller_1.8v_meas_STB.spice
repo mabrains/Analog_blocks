@@ -7,7 +7,7 @@ x1 Vin Vref net3 net2 Vref 0 Error_Amplifier
 XR1 Vout net1 0 sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=6.9 mult=8 m=8
 XR2 0 Vout 0 sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=9.3 mult=8 m=8
 C2 net1 net4 1u m=1
-R3 net4 0 0.1 m=1
+R3 net4 0 100m m=1
 L1 Vout net3 1G m=1
 C3 net3 Vtest 1G m=1
 **** begin user architecture code
@@ -16,7 +16,7 @@ C3 net3 Vtest 1G m=1
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup Vin 0 DC 2 AC 0
+Vsup Vin 0 DC 2.2 AC 0
 VVref Vref 0 DC 0 AC 0
 VVin vtest 0 DC 0 AC 0
 ****************************************************

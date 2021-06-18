@@ -11,16 +11,6 @@ N 980 -780 1180 -780 { lab=0}
 N 980 -940 980 -780 { lab=0}
 N 780 -1060 840 -1060 { lab=Vin}
 N 1120 -1060 1280 -1060 { lab=Vout}
-N 1270 -1060 1270 -1000 { lab=Vout}
-N 1270 -690 1270 -660 { lab=0}
-N 980 -660 1270 -660 { lab=0}
-N 980 -780 980 -660 { lab=0}
-N 1270 -720 1340 -720 { lab=0}
-N 1340 -720 1340 -660 { lab=0}
-N 1270 -660 1340 -660 { lab=0}
-N 1200 -720 1230 -720 { lab=Vb}
-N 1270 -940 1270 -880 { lab=#net2}
-N 1270 -820 1270 -750 { lab=#net3}
 C {devices/capa.sym} 1180 -960 0 0 {name=C2
 m=1
 value=1u
@@ -41,7 +31,6 @@ value="
 *Source initialization
 ************************************************
 VVin Vin 0 DC 0 AC 0
-Vs Vb 0 DC 0 AC 0
 ************************************************
 *Input/Output Characteristic
 ************************************************
@@ -60,7 +49,7 @@ dc VVin 1.8 2.3 0.01
 plot Vout
 meas DC Vmin FIND Vout AT=1.95
 meas DC Vmax FIND Vout AT=2.2
-print (v2-v1)/0.4
+print (Vmax-Vmin)/0.25
 .endc
 ************************************************
 *Temerature variation 
@@ -91,14 +80,6 @@ meas AC PSR_1M FIND vdb(Vout) AT=1MEG
 alter @VVin[pulse] = [ 1.95 2.2 50u 100n 100n 50u 100u ]
 tran 20u 400u
 plot Vin Vout
-.endc
-************************************************
-*Load Transient
-************************************************
-.control
-alter @Vs[pulse] = [ 0 0.4 50u 100n 100n 50u 100u ]
-tran 20u 400u
-plot i(V1) Vout
 .endc
 ************************************************
 .end
@@ -144,24 +125,3 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
-C {devices/res.sym} 1270 -970 0 0 {name=R1
-value=1k
-footprint=1206
-device=resistor
-m=1}
-C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1250 -720 0 0 {name=M1
-L=0.5
-W=1
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_g5v0d10v5
-spiceprefix=X
-}
-C {devices/lab_pin.sym} 1200 -720 0 0 {name=l4 sig_type=std_logic lab=Vb}
-C {devices/vsource.sym} 1270 -850 0 0 {name=V1 value=0}

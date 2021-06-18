@@ -1,0 +1,19 @@
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Class EA.spice:  Merged 2 devices.
+
+Subcircuit summary:
+Circuit 1: EA.spice                        |Circuit 2: Error_Amplifier.spice           
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (3)           |sky130_fd_pr__pfet_g5v0d10v5 (3)           
+sky130_fd_pr__nfet_g5v0d10v5 (5)           |sky130_fd_pr__nfet_g5v0d10v5 (5)           
+sky130_fd_pr__cap_mim_m3_2 (1)             |sky130_fd_pr__cap_mim_m3_2 (1)             
+Number of devices: 9                       |Number of devices: 9                       
+Number of nets: 9                          |Number of nets: 9                          
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+Cells have no pins;  pin matching not needed.
+Device classes EA.spice and Error_Amplifier.spice are equivalent.
+Circuits match uniquely.

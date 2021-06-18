@@ -1,0 +1,18 @@
+* NGSPICE file created from Error_amplifier.ext - technology: sky130A
+
+
+* Top level circuit Error_amplifier
+
+X0 D3 D2 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=4
+X1 GND Ibias Vout GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=64
+X2 D7 Vn D2 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X3 D2 D2 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=4
+X4 D7 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=4
+X5 D3 Vp D7 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X6 Vdd D3 Vout Vdd sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=16
+X7 GND Ibias Ibias GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=4
+X8 Vout D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X9 Vout D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X10 Vout D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+.end
+

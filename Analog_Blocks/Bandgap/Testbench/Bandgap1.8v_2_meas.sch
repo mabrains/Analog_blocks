@@ -72,7 +72,7 @@ meas DC Vref_120 FIND Vref AT=120
 *Supply variation
 ************************************************
 .control
-dc Vsup 0 3 0.2
+dc Vsup 0 3 0.5
 plot vdd vref
 meas DC Vref_nom FIND Vref AT=1.8
 meas DC Vref_Sup_pos10per FIND Vref AT=1.62

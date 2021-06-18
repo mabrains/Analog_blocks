@@ -42,10 +42,6 @@ N 1560 -940 1710 -940 { lab=Vout}
 N 1260 -940 1260 -900 { lab=#net3}
 N 1260 -840 1260 -820 { lab=Vtest}
 N 1710 -940 1760 -940 { lab=Vout}
-N 1960 -1050 1960 -950 { lab=#net1}
-N 1850 -1050 1960 -1050 { lab=#net1}
-N 1960 -890 1960 -770 { lab=0}
-N 1850 -770 1960 -770 { lab=0}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 1560 -1000 0 0 {name=C1 model=cap_mim_m3_2 W=30 L=30 MF=1 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 1690 -1110 0 0 {name=M1
 L=0.5
@@ -165,8 +161,3 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
-C {devices/res.sym} 1960 -920 0 0 {name=R4
-value=15k
-footprint=1206
-device=resistor
-m=1}

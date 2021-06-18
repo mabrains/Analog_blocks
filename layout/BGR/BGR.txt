@@ -1,17 +1,16 @@
 Equate elements:  no current cell.
 Equate elements:  no current cell.
-Class Bandgap_2.spice:  Merged 7 devices.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
 
 Subcircuit summary:
 Circuit 1: BGR.spice                       |Circuit 2: Bandgap_2.spice                 
 -------------------------------------------|-------------------------------------------
 sky130_fd_pr__pfet_g5v0d10v5 (8)           |sky130_fd_pr__pfet_g5v0d10v5 (8)           
 sky130_fd_pr__nfet_g5v0d10v5 (4)           |sky130_fd_pr__nfet_g5v0d10v5 (4)           
-sky130_fd_pr__pnp_05v0 (2)                 |(no matching element)                      
-sky130_fd_pr__res_xhigh_po (3)             |(no matching element)                      
-(no matching element)                      |sky130_fd_pr__pnp_05v5_W0p68L0p68 (2)      
-(no matching element)                      |sky130_fd_pr__res_xhigh_po_1p41 (3)        
-Number of devices: 17                      |Number of devices: 17                      
+sky130_fd_pr__pnp_05v0 (2)                 |sky130_fd_pr__pnp_05v0 (9) **Mismatch**    
+sky130_fd_pr__res_xhigh_po (3)             |sky130_fd_pr__res_xhigh_po (3)             
+Number of devices: 17 **Mismatch**         |Number of devices: 24 **Mismatch**         
 Number of nets: 12                         |Number of nets: 12                         
 ---------------------------------------------------------------------------------------
 NET mismatches: Class fragments follow (with fanout counts):
@@ -19,98 +18,82 @@ Circuit 1: BGR.spice                       |Circuit 2: Bandgap_2.spice
 
 ---------------------------------------------------------------------------------------
 Net: GND                                   |Net: GND                                   
-  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 4   |  sky130_fd_pr__pnp_05v5_W0p68L0p68/1 = 2  
-  sky130_fd_pr__nfet_g5v0d10v5/4 = 4       |  sky130_fd_pr__pnp_05v5_W0p68L0p68/2 = 2  
-  sky130_fd_pr__pnp_05v0/1 = 2             |  sky130_fd_pr__pnp_05v5_W0p68L0p68/4 = 2  
-  sky130_fd_pr__pnp_05v0/2 = 2             |  sky130_fd_pr__res_xhigh_po_1p41/3 = 3    
+  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 4   |  sky130_fd_pr__pnp_05v0/1 = 9             
+  sky130_fd_pr__nfet_g5v0d10v5/4 = 4       |  sky130_fd_pr__pnp_05v0/2 = 9             
+  sky130_fd_pr__pnp_05v0/1 = 2             |  sky130_fd_pr__pnp_05v0/4 = 9             
+  sky130_fd_pr__pnp_05v0/2 = 2             |  sky130_fd_pr__res_xhigh_po/3 = 3         
   sky130_fd_pr__res_xhigh_po/3 = 3         |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 4   
                                            |  sky130_fd_pr__nfet_g5v0d10v5/4 = 4       
+                                           |                                           
+Net: VBJTS                                 |Net: net2                                  
+  sky130_fd_pr__pnp_05v0/3 = 1             |  sky130_fd_pr__pnp_05v0/3 = 8             
+  sky130_fd_pr__res_xhigh_po/(1|2) = 1     |  sky130_fd_pr__res_xhigh_po/(1|2) = 1     
 ---------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------
 Net: G4                                    |Net: net4                                  
-  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__pnp_05v5_W0p68L0p68/3 = 1  
-  sky130_fd_pr__pnp_05v0/3 = 1             |  sky130_fd_pr__res_xhigh_po_1p41/(1|2) =  
-  sky130_fd_pr__res_xhigh_po/(1|2) = 1     |  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       
-  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: D2                                    |Net: net5                                  
-  sky130_fd_pr__res_xhigh_po/(1|2) = 1     |  sky130_fd_pr__pnp_05v5_W0p68L0p68/3 = 1  
-  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__res_xhigh_po_1p41/(1|2) =  
-                                           |                                           
-Net: Vref                                  |Net: net2                                  
+  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__pnp_05v0/3 = 1             
+  sky130_fd_pr__pnp_05v0/3 = 1             |  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       
   sky130_fd_pr__res_xhigh_po/(1|2) = 1     |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   
-  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__res_xhigh_po_1p41/(1|2) =  
-                                           |                                           
-Net: VBJTS                                 |Net: Vref                                  
-  sky130_fd_pr__pnp_05v0/3 = 1             |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   
-  sky130_fd_pr__res_xhigh_po/(1|2) = 1     |  sky130_fd_pr__res_xhigh_po_1p41/(1|2) =  
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: G3                                    |Net: net3                                  
-  sky130_fd_pr__res_xhigh_po/(1|2) = 2     |  sky130_fd_pr__res_xhigh_po_1p41/(1|2) =  
-  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       |  sky130_fd_pr__pfet_g5v0d10v5/2 = 1       
+  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |  sky130_fd_pr__res_xhigh_po/(1|2) = 1     
 ---------------------------------------------------------------------------------------
 DEVICE mismatches: Class fragments follow (with node fanout counts):
 Circuit 1: BGR.spice                       |Circuit 2: Bandgap_2.spice                 
 
 ---------------------------------------------------------------------------------------
-Instance: sky130_fd_pr__res_xhigh_po12     |Instance: sky130_fd_pr__res_xhigh_po_1p41R 
-  (1,2) = (4,2)                            |  (1,2) = (4,2)                            
-  3 = 15                                   |  3 = 17                                   
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching instance)                     |Instance: sky130_fd_pr__res_xhigh_po_1p41R 
-                                           |  (1,2) = (3,2)                            
-                                           |  3 = 17                                   
+Instance: sky130_fd_pr__pnp_05v03          |Instance: sky130_fd_pr__pnp_05v0Q10        
+  1 = 15                                   |  1 = 38                                   
+  2 = 15                                   |  2 = 38                                   
+  3 = 2                                    |  3 = 4                                    
+                                           |  4 = 38                                   
                                            |                                           
+Instance: sky130_fd_pr__pnp_05v07          |Instance: sky130_fd_pr__pnp_05v0Q11        
+  1 = 15                                   |  1 = 38                                   
+  2 = 15                                   |  2 = 38                                   
+  3 = 4                                    |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
-(no matching instance)                     |Instance: sky130_fd_pr__res_xhigh_po_1p41R 
-                                           |  (1,2) = (3,2)                            
-                                           |  3 = 17                                   
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q12        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Instance: sky130_fd_pr__res_xhigh_po20     |(no matching instance)                     
-  (1,2) = (3,2)                            |                                           
-  3 = 15                                   |                                           
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q13        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q14        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
-Instance: sky130_fd_pr__res_xhigh_po5      |(no matching instance)                     
-  (1,2) = (3,2)                            |                                           
-  3 = 15                                   |                                           
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q15        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v5_W0p68L0p6 
-                                           |  1 = 17                                   
-                                           |  2 = 17                                   
-                                           |  3 = 2                                    
-                                           |  4 = 17                                   
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q16        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
-(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v5_W0p68L0p6 
-                                           |  1 = 17                                   
-                                           |  2 = 17                                   
-                                           |  3 = 4                                    
-                                           |  4 = 17                                   
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Instance: sky130_fd_pr__pnp_05v07          |(no matching instance)                     
-  1 = 15                                   |                                           
-  2 = 15                                   |                                           
-  3 = 4                                    |                                           
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q17        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
                                            |                                           
-Instance: sky130_fd_pr__pnp_05v03          |(no matching instance)                     
-  1 = 15                                   |                                           
-  2 = 15                                   |                                           
-  3 = 2                                    |                                           
+(no matching instance)                     |Instance: sky130_fd_pr__pnp_05v0Q18        
+                                           |  1 = 38                                   
+                                           |  2 = 38                                   
+                                           |  3 = 9                                    
+                                           |  4 = 38                                   
 ---------------------------------------------------------------------------------------
 Netlists do not match.
 The top level cell failed pin matching.
