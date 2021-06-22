@@ -24,7 +24,6 @@ m=1}
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1230 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Folded_1.8v/LDO_Folded_1.8v.sym} 980 -1060 0 0 {name=x1}
 C {devices/code_shown.sym} 1285 -1365 0 0 {name=NGSPICE1
 only_toplevel=true
 value=" 

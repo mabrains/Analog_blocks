@@ -8,10 +8,10 @@ drc on
 snap internal
 gds flatglob *__example_*
 gds flatten true
-gds read /home/eslam/Analog_blocks/layout/LDO/Error_amplifier
-load Error_amplifier
+gds read /home/eslam/mabrains/Analog_blocks/layout/LDO/LDO
+load LDO
 select top cell
 expand
 extract all
 ext2spice lvs
-ext2spice -M -o EA.spice
+ext2spice -M -o LDO.spice

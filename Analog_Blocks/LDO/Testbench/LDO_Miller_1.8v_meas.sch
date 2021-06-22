@@ -84,7 +84,6 @@ plot Vin Vout
 ************************************************
 .end
 " }
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
 C {devices/code.sym} 1150 -1350 0 0 {name=TT_MODELS1
 spice_ignore=false
 only_toplevel=true
@@ -125,3 +124,4 @@ value="
 * Corner
 .include ~/Analog_blocks/models/skywater-pdk/libraries/sky130_fd_pr/latest/models/corners/tt/rf.spice
 "}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
