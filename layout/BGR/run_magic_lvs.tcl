@@ -8,7 +8,7 @@ drc on
 snap internal
 gds flatglob *__example_*
 gds flatten true
-gds read /home/eslam/Analog_blocks/layout/BGR/Bandgap1v8
+gds read /home/eslam/mabrains/Analog_blocks/layout/BGR/Bandgap1v8
 load Bandgap1v8
 select top cell
 expand
