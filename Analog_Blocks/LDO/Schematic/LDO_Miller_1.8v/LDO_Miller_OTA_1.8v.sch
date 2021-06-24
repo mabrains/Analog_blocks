@@ -32,11 +32,13 @@ N -2020 -960 -2020 -710 { lab=GND}
 N -2020 -1230 -2020 -1140 { lab=Vin}
 N -2440 -1230 -2440 -1200 { lab=Vin}
 N -2440 -960 -2440 -710 { lab=GND}
-N -2320 -1080 -2220 -1080 { lab=#net3}
 N -2220 -1090 -2220 -1080 { lab=#net3}
 N -2220 -1090 -2190 -1090 { lab=#net3}
 N -2220 -1080 -2220 -1050 { lab=#net3}
 N -2220 -1050 -2190 -1050 { lab=#net3}
+N -2340 -1080 -2220 -1080 {}
+N -2440 -1200 -2440 -1160 {}
+N -2440 -1000 -2440 -960 {}
 C {sky130_fd_pr/cap_mim_m3_2.sym} -1940 -940 0 0 {name=C1 model=cap_mim_m3_2 W=30 L=30 MF=1 spiceprefix=X}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} -1810 -1050 0 0 {name=M1
 L=0.5
@@ -68,4 +70,4 @@ model=res_xhigh_po_1p41
 spiceprefix=X
 mult=1}
 C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym} -2030 -1050 0 0 {name=x1}
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/Bandgap/Schematics/BGR1.8v_2/Bandgap_2.sym} -2440 -1080 0 0 {name=x2}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sym} -2440 -1080 0 0 {name=x2}
