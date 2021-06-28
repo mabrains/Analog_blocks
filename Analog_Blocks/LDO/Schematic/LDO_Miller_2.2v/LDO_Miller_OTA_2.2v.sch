@@ -65,5 +65,5 @@ spiceprefix=X
 C {devices/ipin.sym} -2540 -1230 0 0 {name=p1 lab=Vin}
 C {devices/ipin.sym} -2530 -710 0 0 {name=p2 lab=GND}
 C {devices/opin.sym} -1650 -990 0 0 {name=p3 lab=Vout}
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v.sym} -2490 -1080 0 0 {name=x1}
-C {/home/eslam/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym} -2030 -1050 0 0 {name=x2}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Error_Amplifier.sym} -2030 -1050 0 0 {name=x2}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_2.2v/Bandgap5v.sym} -2490 -1080 0 0 {name=x1}

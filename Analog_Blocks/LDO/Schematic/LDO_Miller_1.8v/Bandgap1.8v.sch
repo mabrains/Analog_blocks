@@ -15,68 +15,39 @@ N -950 -210 -660 -210 { lab=GND}
 N -1250 -710 -1170 -710 { lab=Vref}
 N -910 -290 -880 -290 { lab=GND}
 N -880 -290 -880 -210 { lab=GND}
-N -1005 -290 -950 -290 { lab=GND}
-N -1005 -290 -1005 -210 { lab=GND}
-N -1170 -290 -1120 -290 { lab=GND}
-N -1120 -290 -1120 -210 { lab=GND}
 N -1240 -290 -1210 -290 { lab=GND}
 N -1240 -290 -1240 -210 { lab=GND}
 N -1240 -210 -1170 -210 { lab=GND}
 N -1330 -260 -1330 -210 { lab=GND}
 N -1290 -290 -1260 -290 { lab=GND}
 N -1260 -290 -1260 -210 { lab=GND}
-N -1385 -290 -1330 -290 { lab=GND}
-N -1385 -290 -1385 -210 { lab=GND}
-N -1475 -260 -1475 -210 { lab=GND}
 N -1435 -290 -1405 -290 { lab=GND}
 N -1405 -290 -1405 -210 { lab=GND}
-N -1530 -290 -1475 -290 { lab=GND}
-N -1530 -290 -1530 -210 { lab=GND}
 N -1620 -260 -1620 -210 { lab=GND}
 N -1580 -290 -1550 -290 { lab=GND}
 N -1550 -290 -1550 -210 { lab=GND}
-N -1675 -290 -1620 -290 { lab=GND}
-N -1675 -290 -1675 -210 { lab=GND}
-N -1765 -260 -1765 -210 { lab=GND}
 N -1725 -290 -1695 -290 { lab=GND}
 N -1695 -290 -1695 -210 { lab=GND}
-N -1820 -290 -1765 -290 { lab=GND}
-N -1820 -290 -1820 -210 { lab=GND}
-N -1910 -260 -1910 -210 { lab=GND}
 N -1870 -290 -1840 -290 { lab=GND}
 N -1840 -290 -1840 -210 { lab=GND}
-N -1965 -290 -1910 -290 { lab=GND}
-N -1965 -290 -1965 -210 { lab=GND}
-N -2055 -260 -2055 -210 { lab=GND}
 N -2015 -290 -1985 -290 { lab=GND}
 N -1985 -290 -1985 -210 { lab=GND}
-N -2110 -290 -2055 -290 { lab=GND}
-N -2110 -290 -2110 -210 { lab=GND}
-N -2200 -260 -2200 -210 { lab=GND}
 N -2160 -290 -2130 -290 { lab=GND}
 N -2130 -290 -2130 -210 { lab=GND}
 N -2200 -360 -1330 -360 { lab=#net1}
 N -1330 -360 -1330 -320 { lab=#net1}
 N -1330 -335 -1170 -335 { lab=#net1}
-N -1475 -360 -1475 -320 { lab=#net1}
 N -1620 -360 -1620 -320 { lab=#net1}
-N -1765 -360 -1765 -320 { lab=#net1}
-N -1910 -360 -1910 -320 { lab=#net1}
-N -2055 -360 -2055 -320 { lab=#net1}
-N -2200 -360 -2200 -320 { lab=#net1}
 N -950 -530 -950 -320 { lab=#net3}
 N -950 -710 -950 -590 { lab=Vref}
 N -1240 -380 -1190 -380 { lab=GND}
 N -1240 -380 -1240 -290 { lab=GND}
 N -1240 -560 -1190 -560 { lab=GND}
 N -1240 -560 -1240 -380 { lab=GND}
-N -990 -560 -990 -290 { lab=GND}
 N -990 -560 -970 -560 { lab=GND}
 N -660 -210 -650 -210 { lab=GND}
 N -650 -210 -640 -210 { lab=GND}
 N -2290 -210 -1240 -210 { lab=GND}
-N -2260 -290 -2200 -290 { lab=GND}
-N -2260 -290 -2260 -210 { lab=GND}
 N -480 -460 -440 -460 { lab=Vref}
 N -440 -710 -440 -460 { lab=Vref}
 N -950 -710 -440 -710 { lab=Vref}
@@ -111,42 +82,17 @@ N -2300 -460 -800 -460 { lab=#net5}
 N -2400 -640 -640 -640 { lab=VDD}
 N -640 -380 -640 -210 { lab=GND}
 N -640 -640 -640 -540 { lab=VDD}
-C {sky130_fd_pr/pnp_05v5.sym} -930 -290 0 1 {name=Q1
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1190 -290 0 0 {name=Q2
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1310 -290 0 1 {name=Q3
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1455 -290 0 1 {name=Q4
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1600 -290 0 1 {name=Q5
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1745 -290 0 1 {name=Q6
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -1890 -290 0 1 {name=Q7
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -2035 -290 0 1 {name=Q8
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
-C {sky130_fd_pr/pnp_05v5.sym} -2180 -290 0 1 {name=Q9
-model=pnp_05v5_W0p68L0p68
-spiceprefix=X
-}
+N -990 -560 -990 -210 { lab=GND}
+N -1470 -260 -1470 -210 { lab=GND}
+N -1470 -360 -1470 -320 { lab=#net1}
+N -1760 -260 -1760 -210 { lab=GND}
+N -1760 -360 -1760 -320 { lab=#net1}
+N -2200 -360 -2200 -320 { lab=#net1}
+N -2200 -260 -2200 -210 { lab=GND}
+N -2050 -260 -2050 -210 { lab=GND}
+N -2050 -360 -2050 -320 { lab=#net1}
+N -1910 -360 -1910 -320 { lab=#net1}
+N -1910 -260 -1910 -210 { lab=GND}
 C {devices/opin.sym} -1250 -710 0 1 {name=p3 lab=Vref}
 C {sky130_fd_pr/res_xhigh_po.sym} -1170 -380 0 0 {name=R1
 W=1
@@ -211,3 +157,39 @@ spiceprefix=X
 C {devices/ipin.sym} -2580 -680 0 0 {name=p4 lab=VDD}
 C {devices/ipin.sym} -2590 -210 0 0 {name=p5 lab=GND}
 C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym} -640 -460 0 0 {name=x1}
+C {sky130_fd_pr/pnp_05v5.sym} -930 -290 0 1 {name=Q1
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1190 -290 0 0 {name=Q2
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1310 -290 0 1 {name=Q3
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1450 -290 0 1 {name=Q4
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1600 -290 0 1 {name=Q5
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1740 -290 0 1 {name=Q6
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -1890 -290 0 1 {name=Q7
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -2030 -290 0 1 {name=Q8
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
+C {sky130_fd_pr/pnp_05v5.sym} -2180 -290 0 1 {name=Q9
+model=pnp_05v5_W0p68L0p68
+spiceprefix=X
+}
