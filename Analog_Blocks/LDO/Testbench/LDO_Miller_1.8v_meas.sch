@@ -24,13 +24,14 @@ m=1}
 C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
 C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1280 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1395 -1375 0 0 {name=NGSPICE1
+C {devices/code_shown.sym} 1425 -1605 0 0 {name=NGSPICE1
 only_toplevel=true
 value=" 
 ************************************************
 *Source initialization
 ************************************************
 VVin Vin 0 DC 0 AC 0
+Iout Vout 0 DC 0 AC 0 
 ************************************************
 *Input/Output Characteristic
 ************************************************
@@ -45,11 +46,25 @@ print Vreg-1.8
 *Line regulation
 ************************************************
 .control
+alter Iout DC = 100u
 dc VVin 1.8 2.3 0.01
 plot Vout
 meas DC Vmin FIND Vout AT=1.95
 meas DC Vmax FIND Vout AT=2.2
 print (Vmax-Vmin)/0.25
+.endc
+************************************************
+*Load regulation and Quiescent current
+************************************************
+.control
+alter VVin DC = 2
+dc Iout 0 1m 10u
+plot Vout
+plot i(VVin)
+meas DC Iq FIND i(VVin) AT=0
+meas DC Vmax FIND Vout AT=0
+meas DC Vmin FIND Vout AT=1m
+print (Vmax-Vmin)/1m
 .endc
 ************************************************
 *Temerature variation 
@@ -77,9 +92,28 @@ meas AC PSR_1M FIND vdb(Vout) AT=1MEG
 *Line Transient
 ************************************************
 .control
-alter @VVin[pulse] = [ 1.95 2.2 50u 100n 100n 50u 100u ]
-tran 20u 400u
+alter Iout DC = 100u 
+alter @VVin[pulse] = [ 1.95 2.2 50u 5u 5u 50u 100u ]
+tran 20u 150u
 plot Vin Vout
+.endc
+************************************************
+*Load Transient
+************************************************
+.control
+alter VVin DC = 2 
+alter @Iout[pulse] = [ 0 100u 50u 5u 5u 50u 100u ]
+tran 20u 150u
+plot Iout Vout
+.endc
+************************************************
+*Quiescent current Transient
+************************************************
+.control
+alter VVin DC = 2
+alter Iout DC = 0
+tran 20u 400u
+plot i(VVin) 
 .endc
 ************************************************
 .end
