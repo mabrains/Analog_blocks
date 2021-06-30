@@ -56,3 +56,17 @@ Line regulation  | 110 mv/v       |135 mv/v          |142 mv/v          |74mv/v 
 PSRR @ 1KHz      | 31 dB          |36 dB             |29 dB             |29 dB             |30 dB
 PSRR @ 1MHz      | 77 dB          |76 dB             |82 dB             |86 dB             |85 dB
 
+## Layout
+
+![Image of LDO_layout](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/LDO_layout.png)
+
+### DRC report
+
+The layout was checked using the script "run_standard_drc.py" existed in scripts folder and it was DRC clean.
+
+### LVS report 
+
+LVS was checked using the script "run_standard_lvs.py" existed in scripts folder and it was LVS clean. 
+
+![Image of LDO_lvs_report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/LDO_lvs_report.png)
+
