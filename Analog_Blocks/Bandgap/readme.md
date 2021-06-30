@@ -6,7 +6,7 @@
 
 ## Bandgap OTA
 
-![Image of BGR OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Transistor5v/OTA_schematic.png)
+![Image of BGR OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/BGR_OTA.png)
 
 ## a. DC analysis
 
