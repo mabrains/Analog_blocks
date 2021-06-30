@@ -70,3 +70,7 @@ LVS was checked using the script "run_standard_lvs.py" existed in scripts folder
 
 ![Image of LDO_lvs_report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/LDO_lvs_report.png)
 
+note: There is mismatch in resistor model name in schematic editor and layout editor leads to above mismatches.
+
+
+
