@@ -57,3 +57,18 @@ Corners simulation:
 Vref at T=27 |1v    |1.009v|1.007v|1.009v|1.023v
 Vref at T=-45|0.995v|1.005v|1.007v|1.006v|1.019v
 Vref at T=90 |0.997v|1.009v|1.004v|1.008v|1.023v
+
+## Layout
+
+![Image of BGR layout](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v_2/Layout.png)
+
+### DRC report
+
+The layout was checked using the script "run_standard_drc.py" existed in scripts folder and it was DRC clean.
+
+### LVS report 
+
+LVS was checked using the script "run_standard_lvs.py" existed in scripts folder and it was LVS clean.
+note: the difference in number of devices is because the layout was flattened and the 8 parallel BJT's were considered one device.
+
+![Image of BGR lvs report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v_2/lvs_report.png)
