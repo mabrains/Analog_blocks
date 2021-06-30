@@ -4,122 +4,17 @@ K {}
 V {}
 S {}
 E {}
-N 1180 -1060 1180 -990 { lab=Vout}
-N 1180 -930 1180 -900 { lab=#net1}
-N 1180 -840 1180 -780 { lab=0}
-N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 { lab=0}
-N 780 -1060 840 -1060 { lab=Vin}
-N 1120 -1060 1280 -1060 { lab=Vout}
-C {devices/capa.sym} 1180 -960 0 0 {name=C2
-m=1
-value=1u
-footprint=1206
-device="ceramic capacitor"}
-C {devices/res.sym} 1180 -870 0 0 {name=R3
-value=100m
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
-C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1280 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1425 -1605 0 0 {name=NGSPICE1
-only_toplevel=true
-value=" 
-************************************************
-*Source initialization
-************************************************
-VVin Vin 0 DC 0 AC 0
-Iout Vout 0 DC 0 AC 0 
-************************************************
-*Input/Output Characteristic
-************************************************
-.control
-dc VVin 0 2.2 0.2
-show
-plot Vin Vout
-meas DC Vreg WHEN Vout=1.8
-print Vreg-1.8
-.endc
-************************************************
-*Line regulation
-************************************************
-.control
-alter Iout DC = 100u
-dc VVin 1.8 2.3 0.01
-plot Vout
-meas DC Vmin FIND Vout AT=1.95
-meas DC Vmax FIND Vout AT=2.2
-print (Vmax-Vmin)/0.25
-.endc
-************************************************
-*Load regulation and Quiescent current
-************************************************
-.control
-alter VVin DC = 2
-dc Iout 0 1m 10u
-plot Vout
-plot i(VVin)
-meas DC Iq FIND i(VVin) AT=0
-meas DC Vmax FIND Vout AT=0
-meas DC Vmin FIND Vout AT=1m
-print (Vmax-Vmin)/1m
-.endc
-************************************************
-*Temerature variation 
-************************************************
-.control
-alter VVin DC = 2 
-dc TEMP -45 125 1
-plot Vout
-meas DC Vout_nom FIND Vout AT=27
-meas DC Vout_neg40 FIND Vout AT=-40
-meas DC Vout_120 FIND Vout AT=120
-.endc
-************************************************
-*PSRR analysis
-************************************************
-.control
-alter VVin DC = 2
-alter VVin AC = 1  
-ac dec 10 1 100MEG
-plot db(Vout)
-meas AC PSR_1k FIND vdb(Vout) AT=1k
-meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
-.endc
-************************************************
-*Line Transient
-************************************************
-.control
-alter Iout DC = 100u 
-alter @VVin[pulse] = [ 1.95 2.2 50u 5u 5u 50u 100u ]
-tran 20u 150u
-plot Vin Vout
-.endc
-************************************************
-*Load Transient
-************************************************
-.control
-alter VVin DC = 2 
-alter @Iout[pulse] = [ 0 100u 50u 5u 5u 50u 100u ]
-tran 20u 150u
-plot Iout Vout
-.endc
-************************************************
-*Quiescent current Transient
-************************************************
-.control
-alter VVin DC = 2
-alter Iout DC = 0
-tran 20u 400u
-plot i(VVin) 
-.endc
-************************************************
-.end
-" }
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1180 -1280 0 0 {name=TTTT_MODELS1
+N 220 -230 310 -230 { lab=Vin}
+N 370 -230 460 -230 { lab=Vout1}
+N 420 -230 420 -190 { lab=Vout1}
+N 420 -130 420 -80 { lab=0}
+N 220 -80 420 -80 { lab=0}
+N 600 -230 660 -230 { lab=Vin}
+N 720 -230 830 -230 { lab=Vout2}
+N 800 -230 800 -190 { lab=Vout2}
+N 800 -130 800 -80 { lab=0}
+N 410 -80 800 -80 { lab=0}
+C {devices/code.sym} 720 -420 0 0 {name=TTTT_MODELS1
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -164,3 +59,33 @@ value="
 
 
 "}
+C {devices/code_shown.sym} 195 -465 0 0 {name=NGSPICE1
+only_toplevel=true
+value="
+VVin Vin 0 pulse( 0 3.6 1u 1n 1n 1u 2u )
+.tran 1u 3u
+.end
+" }
+C {sky130_fd_pr/diode.sym} 340 -230 1 1 {name=D1
+model=diode_pw2nd_05v5
+area=10000
+}
+C {devices/res.sym} 420 -160 0 0 {name=R1
+value=1
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} 220 -230 0 0 {name=l4 sig_type=std_logic lab=Vin}
+C {devices/lab_pin.sym} 460 -230 0 1 {name=l3 sig_type=std_logic lab=Vout1}
+C {devices/lab_pin.sym} 220 -80 0 0 {name=l1 sig_type=std_logic lab=0}
+C {sky130_fd_pr/lvsdiode.sym} 690 -230 1 1 {name=D2
+model=diode_pw2nd_05v5
+area=10000
+}
+C {devices/res.sym} 800 -160 0 0 {name=R2
+value=1
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_pin.sym} 600 -230 0 0 {name=l2 sig_type=std_logic lab=Vin}
+C {devices/lab_pin.sym} 830 -230 0 1 {name=l5 sig_type=std_logic lab=Vout2}
