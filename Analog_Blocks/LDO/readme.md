@@ -37,7 +37,7 @@ Use the command (.AC vin) then press netlist then press simulate. After simulati
 
 Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vin and vout vs time.
 
-![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Transient.png)
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Line_transient.png)
 
 ## e. Testbench netlist
 
