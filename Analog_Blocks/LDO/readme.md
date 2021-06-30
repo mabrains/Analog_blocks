@@ -41,7 +41,7 @@ Use the command (.tran) then press netlist then press simulate. After simulation
 
 ## e. Testbench netlist
 
-The netlist of all previous analyses is below and for each analysis you want to do uncomment the lines of it.
+The netlist of all previous analyses is below or you can simply run it using script "LDO_script.bash" existed in scripts folder.
 
 ![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/TB_netlist.png)
 
