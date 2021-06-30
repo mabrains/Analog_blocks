@@ -69,6 +69,7 @@ The layout was checked using the script "run_standard_drc.py" existed in scripts
 ### LVS report 
 
 LVS was checked using the script "run_standard_lvs.py" existed in scripts folder and it was LVS clean.
+
 note: the difference in number of devices is because the layout was flattened and the 8 parallel BJT's were considered one device.
 
 ![Image of BGR lvs report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v_2/lvs_report.png)
