@@ -37,11 +37,11 @@ Use the command (.AC vin) then press netlist then press simulate. After simulati
 
 Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vin and vout vs time.
 
-![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Transient.png)
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Line_transient.png)
 
 ## e. Testbench netlist
 
-The netlist of all previous analyses is below and for each analysis you want to do uncomment the lines of it.
+The netlist of all previous analyses is below or you can simply run it using script "LDO_script.bash" existed in scripts folder.
 
 ![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/TB_netlist.png)
 

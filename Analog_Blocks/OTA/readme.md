@@ -41,7 +41,7 @@ to plot the input referred noise.
 
 ## e. Testbench netlist
 
-The netlist of all previous analyses is below or by running OTA_script existed in scripts folder.
+The netlist of all previous analyses is below or by running "OTA_script.bash" existed in scripts folder.
 
 ![Image of netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/OTA/Images/Miller_OTA/Transistor5v/TB_netlist.png)
 
