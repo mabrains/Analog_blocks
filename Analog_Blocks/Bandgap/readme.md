@@ -39,7 +39,7 @@ Use the command (.AC vin) then press netlist then press simulate. After simulati
 
 ## f. Testbench netlist
 
-The netlist of all previous analyses is below or you cxan run it using the script "BGR_script.bash" existed in scripts folder.
+The netlist of all previous analyses is below or you can run it using the script "BGR_script.bash" existed in scripts folder.
 
 ![Image of BGR netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap1.8v/Transistor5v/TB_netlist.png)
 
