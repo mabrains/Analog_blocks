@@ -4,122 +4,65 @@ K {}
 V {}
 S {}
 E {}
-N 1180 -1060 1180 -990 { lab=Vout}
-N 1180 -930 1180 -900 { lab=#net1}
-N 1180 -840 1180 -780 { lab=0}
-N 980 -780 1180 -780 { lab=0}
-N 980 -940 980 -780 { lab=0}
-N 780 -1060 840 -1060 { lab=Vin}
-N 1120 -1060 1280 -1060 { lab=Vout}
-C {devices/capa.sym} 1180 -960 0 0 {name=C2
-m=1
-value=1u
-footprint=1206
-device="ceramic capacitor"}
-C {devices/res.sym} 1180 -870 0 0 {name=R3
-value=100m
-footprint=1206
-device=resistor
-m=1}
-C {devices/lab_pin.sym} 780 -1060 0 0 {name=l1 sig_type=std_logic lab=Vin}
-C {devices/lab_pin.sym} 980 -780 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1280 -1060 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 1425 -1605 0 0 {name=NGSPICE1
+N 2340 -1290 2340 -1230 { lab=Vl}
+N 2340 -1170 2340 -1110 { lab=Vout}
+N 2340 -1260 2480 -1260 { lab=Vl}
+N 2340 -1110 2340 -1070 { lab=Vout}
+N 2340 -1010 2340 -980 { lab=0}
+N 2340 -1320 2400 -1320 { lab=Vin}
+N 2340 -1500 2340 -1350 { lab=Vin}
+N 2400 -1500 2400 -1320 { lab=Vin}
+N 2340 -1500 2400 -1500 { lab=Vin}
+N 2090 -1500 2340 -1500 { lab=Vin}
+N 1790 -980 2340 -980 { lab=0}
+N 1590 -1500 2090 -1500 { lab=Vin}
+N 1600 -980 1790 -980 { lab=0}
+N 1680 -1500 1680 -1440 { lab=Vin}
+N 1680 -1380 1680 -1320 { lab=#net1}
+N 2340 -1120 2390 -1120 { lab=Vout}
+N 1800 -1120 2080 -1120 { lab=#net2}
+N 2140 -1120 2340 -1120 { lab=Vout}
+N 1800 -1120 1800 -1090 { lab=#net2}
+N 1800 -1030 1800 -1020 { lab=Vtest}
+N 1710 -1020 1800 -1020 { lab=Vtest}
+N 2460 -1260 2460 -1190 { lab=Vl}
+N 2460 -1130 2460 -1100 { lab=#net3}
+N 2460 -1040 2460 -980 { lab=0}
+N 2340 -980 2460 -980 { lab=0}
+N 1800 -1260 1800 -1120 { lab=#net2}
+N 1780 -1360 1870 -1360 { lab=Vref}
+N 1680 -1320 1870 -1320 { lab=#net1}
+N 1800 -1280 1870 -1280 { lab=#net2}
+N 1800 -1280 1800 -1260 { lab=#net2}
+N 2210 -1320 2300 -1320 { lab=#net4}
+N 2040 -1500 2040 -1410 { lab=Vin}
+N 2040 -1230 2040 -980 { lab=0}
+C {devices/code_shown.sym} 2605 -1425 0 0 {name=NGSPICE
 only_toplevel=true
-value=" 
-************************************************
-*Source initialization
-************************************************
-VVin Vin 0 DC 0 AC 0
-Iout Vout 0 DC 0 AC 0 
-************************************************
-*Input/Output Characteristic
-************************************************
+value="
+***************************************************
+*Source intialization
+***************************************************
+Vsup Vin 0 DC 2 AC 0 
+VVref Vref 0 DC 1.2 AC 0
+VVin vtest 0 DC 0 AC 1
+Iout Vl 0 DC 50m AC 0
+****************************************************
+*Stability analysis 
+****************************************************
 .control
-dc VVin 0 2.2 0.2
+set units = degrees
+ac dec 10 1 200MEG
 show
-plot Vin Vout
-meas DC Vreg WHEN Vout=1.8
-print Vreg-1.8
-.endc
-************************************************
-*Line regulation
-************************************************
-.control
-alter Iout DC = 100u
-dc VVin 1.8 2.3 0.01
-plot Vout
-meas DC Vmin FIND Vout AT=1.95
-meas DC Vmax FIND Vout AT=2.2
-print (Vmax-Vmin)/0.25
-.endc
-************************************************
-*Load regulation and Quiescent current
-************************************************
-.control
-alter VVin DC = 2
-dc Iout 0 1m 10u
-plot Vout
-plot i(VVin)
-meas DC Iq FIND i(VVin) AT=0
-meas DC Vmax FIND Vout AT=0
-meas DC Vmin FIND Vout AT=1m
-print (Vmax-Vmin)/1m
-.endc
-************************************************
-*Temerature variation 
-************************************************
-.control
-alter VVin DC = 2 
-dc TEMP -45 125 1
-plot Vout
-meas DC Vout_nom FIND Vout AT=27
-meas DC Vout_neg40 FIND Vout AT=-40
-meas DC Vout_120 FIND Vout AT=120
-.endc
-************************************************
-*PSRR analysis
-************************************************
-.control
-alter VVin DC = 2
-alter VVin AC = 1  
-ac dec 10 1 100MEG
 plot db(Vout)
-meas AC PSR_1k FIND vdb(Vout) AT=1k
-meas AC PSR_1M FIND vdb(Vout) AT=1MEG 
+plot phase(Vout) 
+meas ac Avd FIND vdb(Vout) AT=10
+meas ac GBW WHEN vdb(Vout)= 0
+meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
 .endc
-************************************************
-*Line Transient
-************************************************
-.control
-alter Iout DC = 100u 
-alter @VVin[pulse] = [ 1.95 2.2 50u 5u 5u 50u 100u ]
-tran 20u 150u
-plot Vin Vout
-.endc
-************************************************
-*Load Transient
-************************************************
-.control
-alter VVin DC = 2 
-alter @Iout[pulse] = [ 0 100u 50u 5u 5u 50u 100u ]
-tran 20u 150u
-plot Iout Vout
-.endc
-************************************************
-*Quiescent current Transient
-************************************************
-.control
-alter VVin DC = 2
-alter Iout DC = 0
-tran 20u 400u
-plot i(VVin) 
-.endc
-************************************************
 .end
 " }
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym} 980 -1060 0 0 {name=x1}
-C {devices/code.sym} 1170 -1280 0 0 {name=TTTT_MODELS2
+C {devices/code.sym} 2230 -1650 0 0 {name=TTTT_MODELS2
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -164,3 +107,55 @@ value="
 
 
 "}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2320 -1320 0 0 {name=M1
+L=0.5
+W=20
+nf=1
+mult=2000
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/res.sym} 2340 -1200 0 0 {name=R1
+value=50k
+footprint=1206
+device=resistor
+m=1}
+C {devices/res.sym} 2340 -1040 0 0 {name=R2
+value=100k
+footprint=1206
+device=resistor
+m=1}
+C {devices/isource.sym} 1680 -1410 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 2480 -1260 0 1 {name=l1 sig_type=std_logic lab=Vl}
+C {devices/lab_pin.sym} 2390 -1120 0 1 {name=l2 sig_type=std_logic lab=Vout}
+C {devices/ind.sym} 2110 -1120 1 0 {name=L1
+m=1
+value=1G
+footprint=1206
+device=inductor}
+C {devices/capa.sym} 1800 -1060 0 0 {name=C1
+m=1
+value=1G
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_pin.sym} 1590 -1500 0 0 {name=l3 sig_type=std_logic lab=Vin}
+C {devices/lab_pin.sym} 1780 -1360 0 0 {name=l4 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} 1710 -1020 0 0 {name=l5 sig_type=std_logic lab=Vtest}
+C {devices/lab_pin.sym} 1600 -980 0 0 {name=l6 sig_type=std_logic lab=0}
+C {devices/capa.sym} 2460 -1160 0 0 {name=C2
+m=1
+value=1u
+footprint=1206
+device="ceramic capacitor"}
+C {devices/res.sym} 2460 -1070 0 0 {name=R3
+value=100m
+footprint=1206
+device=resistor
+m=1}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym} 2030 -1320 0 0 {name=x1}

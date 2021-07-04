@@ -37,9 +37,6 @@ N 750 -1670 990 -1670 { lab=Vdd}
 N 990 -1510 1070 -1510 { lab=Vdd}
 N 1070 -1670 1070 -1510 { lab=Vdd}
 N 990 -1670 1070 -1670 { lab=Vdd}
-N 850 -1430 870 -1430 { lab=#net2}
-N 850 -1510 850 -1430 { lab=#net2}
-N 930 -1430 990 -1430 { lab=Vout}
 N 480 -1440 480 -1190 { lab=GND}
 N 680 -1270 950 -1270 { lab=Ibias}
 N 680 -1270 680 -1230 { lab=Ibias}
@@ -183,4 +180,3 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 1 0 {name=C1 model=cap_mim_m3_2 W=25 L=25 MF=3 spiceprefix=X}

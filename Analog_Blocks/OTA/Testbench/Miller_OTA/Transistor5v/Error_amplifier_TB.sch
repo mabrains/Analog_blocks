@@ -4,31 +4,32 @@ K {}
 V {}
 S {}
 E {}
-N -1730 -1060 -1640 -1060 { lab=Vn}
-N -1730 -940 -1640 -940 { lab=Vp}
-N -1890 -760 -1480 -760 { lab=0}
-N -1820 -1000 -1640 -1000 { lab=#net1}
-N -1820 -1070 -1820 -1000 { lab=#net1}
-N -1820 -1240 -1820 -1130 { lab=Vdd}
-N -1890 -1240 -1480 -1240 { lab=Vdd}
-N -1270 -870 -1270 -760 { lab=0}
-N -1480 -760 -1270 -760 { lab=0}
-N -1280 -1000 -1220 -1000 { lab=Vout}
-N -1270 -1000 -1270 -930 { lab=Vout}
-N -1480 -890 -1480 -760 { lab=0}
-N -1480 -1240 -1480 -1110 { lab=Vdd}
-C {devices/isource.sym} -1820 -1100 0 0 {name=I0 value=20u}
-C {devices/lab_pin.sym} -1890 -1240 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/lab_pin.sym} -1890 -760 0 0 {name=l2 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} -1730 -1060 0 0 {name=l3 sig_type=std_logic lab=Vn}
-C {devices/lab_pin.sym} -1730 -940 0 0 {name=l4 sig_type=std_logic lab=Vp}
-C {devices/lab_pin.sym} -1220 -1000 0 1 {name=l5 sig_type=std_logic lab=Vout}
-C {devices/capa.sym} -1270 -900 0 0 {name=C1
+N 1080 -1980 1080 -1880 { lab=#net1}
+N 1080 -2100 1080 -2040 { lab=Vdd}
+N 1040 -1720 1300 -1720 { lab=0}
+N 1450 -1880 1500 -1880 { lab=Vout}
+N 1480 -1880 1480 -1840 { lab=Vout}
+N 1480 -1780 1480 -1720 { lab=0}
+N 1300 -1720 1480 -1720 { lab=0}
+N 1040 -2100 1080 -2100 { lab=Vdd}
+N 1080 -1880 1110 -1880 { lab=#net1}
+N 1280 -2100 1280 -1970 { lab=Vdd}
+N 1080 -2100 1280 -2100 { lab=Vdd}
+N 1280 -1790 1280 -1720 { lab=0}
+N 1020 -1920 1110 -1920 { lab=Vn}
+N 1020 -1840 1110 -1840 { lab=Vp}
+C {devices/lab_pin.sym} 1040 -2100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/isource.sym} 1080 -2010 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 1020 -1840 0 0 {name=l2 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 1020 -1920 0 0 {name=l3 sig_type=std_logic lab=Vn}
+C {devices/lab_pin.sym} 1040 -1720 0 0 {name=l4 sig_type=std_logic lab=0}
+C {devices/lab_pin.sym} 1500 -1880 0 1 {name=l5 sig_type=std_logic lab=Vout}
+C {devices/capa.sym} 1480 -1810 0 0 {name=C1
 m=1
 value=2p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/code_shown.sym} -1125 -1595 0 0 {name=NGSPICE1
+C {devices/code_shown.sym} 1565 -2285 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 ***************************************************
@@ -106,7 +107,7 @@ meas ac PSR_1M FIND vdb(vout) AT=1Meg
 *****************************************************
 .end
 " }
-C {devices/code.sym} -1330 -1220 0 0 {name=TTTT_MODELS
+C {devices/code.sym} 1350 -2120 0 0 {name=TTTT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -151,4 +152,4 @@ value="
 
 
 "}
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym} -1480 -1000 0 0 {name=x1}
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym} 1270 -1880 0 0 {name=x1}

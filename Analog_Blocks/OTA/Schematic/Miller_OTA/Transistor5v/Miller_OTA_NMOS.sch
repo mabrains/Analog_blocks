@@ -45,9 +45,6 @@ N 1260 -700 1720 -700 { lab=GND}
 N 1180 -780 1260 -780 { lab=GND}
 N 1180 -780 1180 -700 { lab=GND}
 N 1180 -700 1260 -700 { lab=GND}
-N 2020 -940 2040 -940 { lab=#net2}
-N 2020 -1020 2020 -940 { lab=#net2}
-N 2100 -940 2160 -940 { lab=Vout}
 N 1260 -1180 1540 -1180 { lab=VDD}
 N 1650 -950 1650 -700 { lab=GND}
 N 1850 -780 2120 -780 { lab=Ibias}
@@ -60,6 +57,9 @@ N 2160 -940 2280 -940 { lab=Vout}
 N 1540 -950 1600 -950 { lab=Vn}
 N 1220 -920 1260 -920 { lab=Ibias}
 N 1260 -920 1260 -810 { lab=Ibias}
+N 2110 -940 2160 -940 {}
+N 2020 -940 2050 -940 {}
+N 2020 -1020 2020 -940 {}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1620 -950 0 0 {name=M1
 L=0.5
 W=10
@@ -164,7 +164,6 @@ C {devices/ipin.sym} 1540 -950 0 0 {name=p3 lab=Vn}
 C {devices/ipin.sym} 1920 -950 0 1 {name=p4 lab=Vp}
 C {devices/opin.sym} 2280 -940 0 0 {name=p5 lab=Vout}
 C {devices/ipin.sym} 1180 -700 0 0 {name=p6 lab=GND}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 2070 -940 3 0 {name=C1 model=cap_mim_m3_2 W=27.3 L=27.3 MF=2 spiceprefix=X}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2140 -780 0 0 {name=M7
 L=1
 W=3
@@ -179,3 +178,4 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
+C {sky130_fd_pr/cap_mim_m3_2.sym} 2080 -940 3 1 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
