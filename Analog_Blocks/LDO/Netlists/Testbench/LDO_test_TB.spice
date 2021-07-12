@@ -1,6 +1,6 @@
 **.subckt LDO_test_TB
-C2 Vout net1 1u m=1
-R3 net1 0 100m m=1
+C2 Vout net1 5u m=1
+R3 net1 0 0.5 m=1
 x1 Vin Vref Vout 0 LDO_test
 **** begin user architecture code
 
@@ -12,17 +12,59 @@ VVref Vref 0 1.2
 VVin Vin 0 DC 0 AC 0
 Iout Vout 0 DC 0 AC 0
 ************************************************
-*Line regulation
+*Dropout voltage
 ************************************************
 .control
-alter Iout DC = 50m
-dc VVin 2 3.6 0.1
+alter VVin DC = 1.85
+op
 show
-plot Vout
-meas DC Vmin FIND Vout AT=2
-meas DC Vmax FIND Vout AT=3.6
-print (Vmax-Vmin)/1.6
 .endc
+************************************************
+*Line regulation
+************************************************
+*.control
+*dc VVin 2 3.6 0.1
+*plot Vout
+*meas DC Vmin FIND Vout AT=2
+*meas DC Vmax FIND Vout AT=3.6
+*print (Vmax-Vmin)/(1.6*1.8)
+*.endc
+***********************************************
+*.control
+*alter Iout DC = 100u
+*dc VVin 2 3.6 0.1
+*plot Vout
+*meas DC Vmin FIND Vout AT=2
+*meas DC Vmax FIND Vout AT=3.6
+*print (Vmax-Vmin)/(1.6*1.8)
+*.endc
+***********************************************
+*.control
+*alter Iout DC = 1m
+*dc VVin 2 3.6 0.1
+*plot Vout
+*meas DC Vmin FIND Vout AT=2
+*meas DC Vmax FIND Vout AT=3.6
+*print (Vmax-Vmin)/(1.6*1.8)
+*.endc
+***********************************************
+*.control
+*alter Iout DC = 10m
+*dc VVin 2 3.6 0.1
+*plot Vout
+*meas DC Vmin FIND Vout AT=2
+*meas DC Vmax FIND Vout AT=3.6
+*print (Vmax-Vmin)/(1.6*1.8)
+*.endc
+************************************************
+*.control
+*alter Iout DC = 50m
+*dc VVin 2 3.6 0.1
+*plot Vout
+*meas DC Vmin FIND Vout AT=2
+*meas DC Vmax FIND Vout AT=3.6
+*print (Vmax-Vmin)/(1.6*1.8)
+*.endc
 ***********************************************
 
 
@@ -30,40 +72,40 @@ print (Vmax-Vmin)/1.6
 
 .param mc_mm_switch=0
 .param mc_pr_switch=0
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice
 * Mismatch parameters
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
-.include ~/mabrains/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
 * Resistor/Capacitor
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
 * Special cells
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
 * All models
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/all.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/all.spice
 * Corner
-.include ~/mabrains/pdks/sky130A/libs.tech/ngspice/corners/tt/rf.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/rf.spice
 
 
 
@@ -83,7 +125,7 @@ print (Vmax-Vmin)/1.6
 *.ipin Vref
 XM1 Vout net3 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=2000 m=2000 
++ sa=0 sb=0 sd=0 mult=186 m=186 
 R1 Vout net1 50k m=1
 R2 net1 GND 100k m=1
 I0 Vin net2 20u
@@ -110,7 +152,7 @@ XM1 net3 Vp net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)
 XM2 net2 Vn net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=5 m=5 
-XM9 Vout net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM9 Vout net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
 XM4 net3 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -119,7 +161,7 @@ XM4 net3 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1
 XM3 net1 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
-XM8 net4 net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM8 net4 net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
 XM10 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'

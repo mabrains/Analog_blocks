@@ -4,110 +4,45 @@ K {}
 V {}
 S {}
 E {}
-N 1080 -1980 1080 -1880 { lab=#net1}
-N 1080 -2100 1080 -2040 { lab=Vdd}
-N 1040 -1720 1300 -1720 { lab=0}
-N 1450 -1880 1500 -1880 { lab=Vout}
-N 1480 -1880 1480 -1840 { lab=Vout}
-N 1480 -1780 1480 -1720 { lab=0}
-N 1300 -1720 1480 -1720 { lab=0}
-N 1040 -2100 1080 -2100 { lab=Vdd}
-N 1080 -1880 1110 -1880 { lab=#net1}
-N 1280 -2100 1280 -1970 { lab=Vdd}
-N 1080 -2100 1280 -2100 { lab=Vdd}
-N 1280 -1790 1280 -1720 { lab=0}
-N 1020 -1920 1110 -1920 { lab=Vn}
-N 1020 -1840 1110 -1840 { lab=Vp}
-C {devices/lab_pin.sym} 1040 -2100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
-C {devices/isource.sym} 1080 -2010 0 0 {name=I0 value=20u}
-C {devices/lab_pin.sym} 1020 -1840 0 0 {name=l2 sig_type=std_logic lab=Vp}
-C {devices/lab_pin.sym} 1020 -1920 0 0 {name=l3 sig_type=std_logic lab=Vn}
-C {devices/lab_pin.sym} 1040 -1720 0 0 {name=l4 sig_type=std_logic lab=0}
-C {devices/lab_pin.sym} 1500 -1880 0 1 {name=l5 sig_type=std_logic lab=Vout}
-C {devices/capa.sym} 1480 -1810 0 0 {name=C1
-m=1
-value=2p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/code_shown.sym} 1565 -2285 0 0 {name=NGSPICE
+N 610 -740 700 -740 { lab=Vout}
+N 220 -680 290 -680 { lab=Vp}
+N 220 -800 290 -800 { lab=Vout}
+N 220 -920 220 -800 { lab=Vout}
+N 220 -920 660 -920 { lab=Vout}
+N 660 -920 660 -740 { lab=Vout}
+N 430 -960 430 -840 { lab=Vdd}
+N 120 -960 430 -960 { lab=Vdd}
+N 430 -640 430 -560 { lab=Vss}
+N 120 -560 430 -560 { lab=Vss}
+C {devices/lab_pin.sym} 220 -680 0 0 {name=l2 sig_type=std_logic lab=Vp}
+C {devices/lab_pin.sym} 700 -740 0 1 {name=l3 sig_type=std_logic lab=Vout}
+C {devices/code_shown.sym} 785 -955 0 0 {name=NGSPICE1
 only_toplevel=true
 value="
-***************************************************
+****************************
 *Source intialization
-***************************************************
-Vsup vdd 0 DC 1.8 AC 0 
-Vpos vp 0 DC 0 AC 0
-Vneg vn 0 DC 0 AC 0
-****************************************************
-*DC analysis 
-****************************************************
+****************************
+Vpos Vp 0 DC 0 AC 0
+Vhigh Vdd 0 DC 2.9 AC 0
+Vlow Vss 0 DC 0.7 AC 0
+****************************
+*Transient analysis
+****************************
 .control
-alter Vpos DC = 0.9 
-alter Vneg DC = 0.9 
-define Power(x,y) -(x*y)
-op
-show
-print Power(v(vdd),Vsup#branch)
+alter @Vpos[Sin] [ 1 100m 1Meg ]
+tran 0.05u 5u 
+plot Vp Vout
 .endc
-*****************************************************
-*Noise analysis
-*****************************************************
+****************************
 .control
-alter Vpos DC = 0.9 
-alter Vpos AC = 1
-alter Vneg DC = 0.9 
-alter Vneg AC = -1
-noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
-setplot noise1
-plot inoise_spectrum 
+alter @Vpos[Sin] [ 1 5 1Meg ]
+tran 0.05u 5u 
+plot Vp Vout
 .endc
-****************************************************
-*AC analysis differential mode
-****************************************************
-.control
-alter Vpos DC = 0.9 
-alter Vpos AC = 1
-alter Vneg DC = 0.9 
-alter Vneg AC = -1
-set units = degrees
-ac dec 10 1 200MEG
-plot db(Vout)
-plot phase(Vout) 
-meas ac Avd FIND vdb(Vout) AT=10
-meas ac GBW WHEN vdb(Vout)= 0
-let P = 180+vp(Vout)
-meas ac PM FIND P WHEN vdb(Vout)=0
-.endc
-*****************************************************
-*AC analysis common mode
-*****************************************************
-.control
-alter Vpos DC = 0.9 
-alter Vpos AC = 1
-alter Vneg DC = 0.9 
-alter Vneg AC = 1
-ac dec 10 1 200MEG
-plot db(Vout)
-meas ac Acm FIND vdb(Vout) AT=10
-.endc
-*****************************************************
-*PSRR analysis
-*****************************************************
-.control
-alter Vsup AC = 1
-alter Vpos DC = 0.9
-alter Vpos AC = 0 
-alter Vneg DC = 0.9
-alter Vneg AC = 0
-ac dec 10 1 200MEG
-plot db(Vout)
-meas ac PSR_1k FIND vdb(Vout) AT=1k
-meas ac PSR_1M FIND vdb(vout) AT=1Meg 
-.endc
-*****************************************************
+****************************
 .end
 " }
-C {devices/code.sym} 1350 -2120 0 0 {name=TTTT_MODELS
+C {devices/code.sym} 880 -1130 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -129,6 +64,8 @@ value="
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice"
+.include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_20v0__tt_discrete.corner.spice"
+.include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_20v0__tt_discrete.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice"
 * Mismatch parameters
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
@@ -152,4 +89,6 @@ value="
 
 
 "}
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym} 1270 -1880 0 0 {name=x1}
+C {/home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sym} 430 -740 0 0 {name=x1}
+C {devices/lab_pin.sym} 120 -960 0 0 {name=l1 sig_type=std_logic lab=Vdd}
+C {devices/lab_pin.sym} 120 -560 0 0 {name=l4 sig_type=std_logic lab=Vss}

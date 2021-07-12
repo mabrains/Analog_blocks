@@ -86,18 +86,40 @@ N 3230 -1090 3230 -1060 { lab=#net7}
 N 3230 -1220 3230 -1150 { lab=vdd}
 N 3040 -1220 3230 -1220 { lab=vdd}
 N 3050 -920 3230 -920 { lab=0}
-N 3420 -970 3420 -920 { lab=0}
-N 3340 -1000 3380 -1000 { lab=#net8}
-N 3340 -1060 3340 -1000 { lab=#net8}
-N 3340 -1060 3420 -1060 { lab=#net8}
-N 3420 -1060 3420 -1030 { lab=#net8}
-N 3420 -1000 3430 -1000 { lab=0}
-N 3430 -1000 3430 -920 { lab=0}
-N 3420 -920 3430 -920 { lab=0}
-N 3420 -1090 3420 -1060 { lab=#net8}
 N 3420 -1220 3420 -1150 { lab=vdd}
 N 3230 -1220 3420 -1220 { lab=vdd}
 N 3240 -920 3420 -920 { lab=0}
+N 3420 -1120 3520 -1120 { lab=vdd}
+N 3520 -1220 3520 -1120 { lab=vdd}
+N 3420 -1220 3520 -1220 { lab=vdd}
+N 3420 -1090 3420 -1050 { lab=#net8}
+N 3420 -990 3420 -920 { lab=0}
+N 3360 -1120 3380 -1120 { lab=#net8}
+N 3360 -1120 3360 -1070 { lab=#net8}
+N 3360 -1070 3420 -1070 { lab=#net8}
+N 3610 -970 3610 -920 { lab=0}
+N 3530 -1000 3570 -1000 { lab=#net9}
+N 3530 -1060 3530 -1000 { lab=#net9}
+N 3530 -1060 3610 -1060 { lab=#net9}
+N 3610 -1060 3610 -1030 { lab=#net9}
+N 3610 -1000 3620 -1000 { lab=0}
+N 3620 -1000 3620 -920 { lab=0}
+N 3610 -920 3620 -920 { lab=0}
+N 3610 -1090 3610 -1060 { lab=#net9}
+N 3610 -1220 3610 -1150 { lab=vdd}
+N 3800 -1220 3800 -1150 { lab=vdd}
+N 3610 -1220 3800 -1220 { lab=vdd}
+N 3620 -920 3800 -920 { lab=0}
+N 3800 -1120 3900 -1120 { lab=vdd}
+N 3900 -1220 3900 -1120 { lab=vdd}
+N 3800 -1220 3900 -1220 { lab=vdd}
+N 3800 -1090 3800 -1050 { lab=#net10}
+N 3800 -990 3800 -920 { lab=0}
+N 3740 -1120 3760 -1120 { lab=#net10}
+N 3740 -1120 3740 -1070 { lab=#net10}
+N 3740 -1070 3800 -1070 { lab=#net10}
+N 3420 -920 3610 -920 { lab=0}
+N 3520 -1220 3610 -1220 { lab=vdd}
 C {sky130_fd_pr/pfet_01v8.sym} 2140 -1100 0 0 {name=M1
 L=1
 W=10
@@ -197,10 +219,10 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/isource.sym} 3230 -1120 0 0 {name=I6 value=20u}
-C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3210 -1000 0 0 {name=M7
-L=0.5
-W=5
-nf=5
+C {sky130_fd_pr/nfet_g5v0d16v0.sym} 3210 -1000 0 0 {name=M7
+L=0.7
+W=5.0
+nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -208,25 +230,25 @@ as="'int((nf+2)/2) * W/nf * 0.29'"
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=nfet_g5v0d10v5
+model=nfet_g5v0d16v0
 spiceprefix=X
 }
-C {devices/isource.sym} 3420 -1120 0 0 {name=I7 value=20u}
-C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3400 -1000 0 0 {name=M8
-L=0.5
-W=5
+C {sky130_fd_pr/pfet_g5v0d16v0.sym} 3400 -1120 0 0 {name=M8
+L=0.66
+W=5.0
 nf=1
-mult=5
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=nfet_g5v0d10v5
+model=pfet_g5v0d16v0
 spiceprefix=X
 }
-C {devices/code.sym} 1870 -1190 0 0 {name=TTTT_MODELS
+C {devices/isource.sym} 3420 -1020 0 0 {name=I7 value=20u}
+C {devices/code.sym} 1810 -1240 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -248,6 +270,8 @@ value="
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice"
+.include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_20v0__tt_discrete.corner.spice"
+.include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_20v0__tt_discrete.corner.spice"
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice"
 * Mismatch parameters
 .include "~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
@@ -271,3 +295,19 @@ value="
 
 
 "}
+C {devices/isource.sym} 3610 -1120 0 0 {name=I8 value=20u}
+C {devices/isource.sym} 3800 -1020 0 0 {name=I9 value=20u}
+C {sky130_fd_pr/nfet_20v0.sym} 3590 -1000 0 0 {name=M9
+L=2.95
+W=29.41
+mult=1
+model=nfet_20v0
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_20v0.sym} 3780 -1120 0 0 {name=M10
+L=0.5
+W=30
+mult=1
+model=pfet_20v0
+spiceprefix=X
+}

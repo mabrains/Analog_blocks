@@ -17,7 +17,7 @@ N -1280 -1000 -1220 -1000 { lab=Vout}
 N -1270 -1000 -1270 -930 { lab=Vout}
 N -1480 -890 -1480 -760 { lab=0}
 N -1480 -1240 -1480 -1110 { lab=Vdd}
-C {devices/isource.sym} -1820 -1100 0 0 {name=I0 value=20u}
+C {devices/isource.sym} -1820 -1100 0 0 {name=I0 value=15u}
 C {devices/lab_pin.sym} -1890 -1240 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -1890 -760 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -1730 -1060 0 0 {name=l3 sig_type=std_logic lab=Vn}
@@ -106,7 +106,8 @@ meas ac PSR_1M FIND vdb(vout) AT=1Meg
 *****************************************************
 .end
 " }
-C {devices/code.sym} -1330 -1220 0 0 {name=TTTT_MODELS
+C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym} -1480 -1000 0 0 {name=x1}
+C {devices/code.sym} -1350 -1250 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -151,4 +152,3 @@ value="
 
 
 "}
-C {/home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Folded_Cascode_OTA/Transitor5v/Folded_Cascode_OTA_5v.sym} -1480 -1000 0 0 {name=x1}

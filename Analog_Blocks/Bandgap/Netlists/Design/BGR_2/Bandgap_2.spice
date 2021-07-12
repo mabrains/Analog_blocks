@@ -8,16 +8,16 @@ XM13 Vref net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1
 XM14 net9 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
-XQ10 GND GND net4 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ11 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ12 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ13 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ14 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ15 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ16 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ17 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ18 GND GND net2 GND sky130_fd_pr__pnp_05v5_W0p68L0p68
-XR4 net2 net3 GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=1.8 mult=1 m=1
+XQ10 GND GND net4 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ11 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ12 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ13 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ14 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ15 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ16 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ17 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ18 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XR4 net2 net3 GND sky130_fd_pr__res_xhigh_po_1p41 L=1.8 mult=1 m=1
 XM15 net6 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
@@ -48,8 +48,8 @@ XM23 net8 net1 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=20 W=0.42 nf=1 ad='int((nf
 XM24 net4 net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
-XR1 net3 Vref GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=7.2 mult=1 m=1
-XR2 net4 net9 GND sky130_fd_pr__res_xhigh_po_1p41 W=1.41 L=7.2 mult=1 m=1
+XR1 net3 Vref GND sky130_fd_pr__res_xhigh_po_1p41 L=7.2 mult=1 m=1
+XR2 net4 net9 GND sky130_fd_pr__res_xhigh_po_1p41 L=7.2 mult=1 m=1
 **.ends
 ** flattened .save nodes
 .end

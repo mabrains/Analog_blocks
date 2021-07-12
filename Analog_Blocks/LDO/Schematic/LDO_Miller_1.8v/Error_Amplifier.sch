@@ -62,6 +62,9 @@ N 280 -1320 280 -1270 { lab=Ibias}
 N 200 -1320 280 -1320 { lab=Ibias}
 N 170 -1270 170 -1150 { lab=GND}
 N 170 -1270 200 -1270 { lab=GND}
+N 840 -1430 870 -1430 { lab=#net2}
+N 840 -1510 840 -1430 { lab=#net2}
+N 930 -1430 990 -1430 { lab=Vout}
 C {devices/opin.sym} 1090 -1430 0 0 {name=p3 lab=Vout}
 C {devices/ipin.sym} 210 -1670 0 0 {name=p4 lab=Vdd}
 C {devices/ipin.sym} 160 -1150 0 0 {name=p5 lab=GND}
@@ -180,3 +183,4 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
+C {sky130_fd_pr/cap_mim_m3_2.sym} 900 -1430 3 1 {name=C1 model=cap_mim_m3_2 W=20 L=25 MF=1 spiceprefix=X}

@@ -1,4 +1,4 @@
-**.subckt Error_amplifier_TB
+**.subckt Error_amplifier_Miller_TB
 I0 Vdd net1 20u
 C1 Vout 0 2p m=1
 x1 Vdd Vn Vp Vout net1 0 Error_Amplifier
@@ -161,6 +161,7 @@ XM9 Vout Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((n
 XM1 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XC1 net2 Vout sky130_fd_pr__cap_mim_m3_2 W=20 L=25 MF=1 m=1
 .ends
 
 ** flattened .save nodes
