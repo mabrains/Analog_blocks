@@ -8,7 +8,7 @@ drc on
 snap internal
 gds flatglob *__example_*
 gds flatten true
-gds read /home/eslam/Analog_blocks/layout/LDO/Error_amplifier
+gds read /home/eslam/mabrains/Analog_blocks/layout/LDO/Error_amplifier
 load Error_amplifier
 select top cell
 expand

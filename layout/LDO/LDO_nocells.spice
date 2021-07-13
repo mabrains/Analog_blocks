@@ -8,16 +8,16 @@ XM13 net4 net1 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1
 XM14 net10 net1 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
-XQ10 GND GND net9 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ11 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ12 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ13 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ14 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ15 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ16 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ17 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ18 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XR4 net2 net3 GND sky130_fd_pr__res_xhigh_po_1p41 L=1.8 mult=1 m=1
+XQ10 GND GND net9 sky130_fd_pr__pnp_05v5
+XQ11 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ12 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ13 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ14 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ15 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ16 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ17 GND GND net2 sky130_fd_pr__pnp_05v5
+XQ18 GND GND net2 sky130_fd_pr__pnp_05v5
+XR4 net2 net3 GND sky130_fd_pr__res_xhigh_po L=1.8 mult=1 m=1
 XM15 net6 net1 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
@@ -48,8 +48,8 @@ XM23 net8 net1 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=20 W=0.42 nf=1 ad='int((nf
 XM24 net9 net8 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=1 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
-XR3 net3 net4 GND sky130_fd_pr__res_xhigh_po_1p41 L=7.2 mult=1 m=1
-XR5 net9 net10 GND sky130_fd_pr__res_xhigh_po_1p41 L=7.2 mult=1 m=1
+XR3 net3 net4 GND sky130_fd_pr__res_xhigh_po L=7.2 mult=1 m=1
+XR5 net9 net10 GND sky130_fd_pr__res_xhigh_po L=7.2 mult=1 m=1
 XM2 net11 net4 net13 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
@@ -75,12 +75,12 @@ XM8 net4 net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
 XC2 net14 net12 sky130_fd_pr__cap_mim_m3_2 W=25 L=25 MF=3 m=3
-XC3 net15 Vout sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
+XC3 Vout net15  sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
 XM10 Vout net14 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=60 m=60 
-XR6 net15 Vout GND sky130_fd_pr__res_xhigh_po_1p41 L=56 mult=1 m=1
-XR7 GND net15 GND sky130_fd_pr__res_xhigh_po_1p41 L=74 mult=1 m=1
+XR6 net15 Vout GND sky130_fd_pr__res_xhigh_po L=56 mult=1 m=1
+XR7 GND net15 GND sky130_fd_pr__res_xhigh_po L=74 mult=1 m=1
 **.ends
 ** flattened .save nodes
 .end

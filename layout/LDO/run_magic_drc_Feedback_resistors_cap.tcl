@@ -8,7 +8,7 @@ drc on
 snap internal
 gds flatglob *__example_*
 gds flatten true
-gds read /home/eslam/Analog_blocks/layout/LDO/Feedback_resistors_cap
+gds read /home/eslam/mabrains/Analog_blocks/layout/LDO/Feedback_resistors_cap
 load Feedback_resistors_cap
 select top cell
 expand

@@ -1,0 +1,36 @@
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Class Bandgap_2.spice:  Merged 7 devices.
+
+Subcircuit summary:
+Circuit 1: BGR.spice                       |Circuit 2: Bandgap_2.spice                 
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (8)           |sky130_fd_pr__pfet_g5v0d10v5 (8)           
+sky130_fd_pr__nfet_g5v0d10v5 (4)           |sky130_fd_pr__nfet_g5v0d10v5 (4)           
+sky130_fd_pr__pnp_05v5 (2)                 |sky130_fd_pr__pnp_05v5 (2)                 
+sky130_fd_pr__res_xhigh_po (3)             |sky130_fd_pr__res_xhigh_po (3)             
+Number of devices: 17                      |Number of devices: 17                      
+Number of nets: 12                         |Number of nets: 12                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Property errors were found.
+Netlists match uniquely.
+There were property errors.
+sky130_fd_pr__res_xhigh_po20 vs. sky130_fd_pr__res_xhigh_poR4:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po11 vs. sky130_fd_pr__res_xhigh_poR1:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po12 vs. sky130_fd_pr__res_xhigh_poR2:
+Property w in circuit1 has no matching property in circuit2
+Circuit 1 BGR.spice instance sky130_fd_pr__pnp_05v57 property "area" has no match in circuit 2.
+sky130_fd_pr__pnp_05v53 vs. sky130_fd_pr__pnp_05v5Q11:
+ M circuit1: 0   circuit2: 8   
+sky130_fd_pr__pnp_05v53 vs. sky130_fd_pr__pnp_05v5Q11:
+Property area in circuit1 has no matching property in circuit2
+Cells have no pins;  pin matching not needed.
+Device classes BGR.spice and Bandgap_2.spice are equivalent.
+Circuits match uniquely.
+Property errors were found.
+The following cells had property errors: BGR.spice
