@@ -4,39 +4,30 @@ K {}
 V {}
 S {}
 E {}
-N 220 -920 220 -800 { lab=Vout}
-N 220 -920 660 -920 { lab=Vout}
-N 660 -920 660 -740 { lab=Vout}
-N 565 -740 700 -740 { lab=Vout}
-N 220 -800 285 -800 { lab=Vout}
-N 220 -680 285 -680 { lab=Vp}
-C {devices/lab_pin.sym} 220 -680 0 0 {name=l2 sig_type=std_logic lab=Vp}
-C {devices/lab_pin.sym} 700 -740 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 785 -955 0 0 {name=NGSPICE1
-only_toplevel=true
-value="
-****************************
-*Source intialization
-****************************
-Vpos Vp 0 DC 0 AC 0
-****************************
-*Transient analysis
-****************************
-.control
-alter @Vpos[Sin] [ 1 100m 1Meg ]
-tran 0.05u 5u 
-plot Vp Vout
-.endc
-****************************
-.control
-alter @Vpos[Sin] [ 1 5 1Meg ]
-tran 0.05u 5u 
-plot Vp Vout
-.endc
-****************************
-.end
-" }
-C {devices/code.sym} 880 -1130 0 0 {name=TT_MODELS
+N 800 -720 860 -720 { lab=Vg}
+N 900 -690 900 -620 { lab=Vd}
+N 900 -840 900 -750 { lab=0}
+N 900 -720 1000 -720 { lab=0}
+N 1000 -800 1000 -720 { lab=0}
+N 900 -800 1000 -800 { lab=0}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 880 -720 0 0 {name=M1
+L=0.5
+W=20
+nf=1
+mult=72
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 800 -720 0 0 {name=l1 sig_type=std_logic lab=Vg}
+C {devices/lab_pin.sym} 900 -620 0 0 {name=l2 sig_type=std_logic lab=Vd}
+C {devices/lab_pin.sym} 900 -840 0 0 {name=l3 sig_type=std_logic lab=0}
+C {devices/code.sym} 1350 -770 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -83,4 +74,13 @@ value="
 
 
 "}
-C {/home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sym} 425 -740 0 0 {name=x1}
+C {devices/code_shown.sym} 1050 -770 0 0 {name=NGSPICE
+only_toplevel=true
+value="
+VGS Vg 0 -1.8
+VDS Vd 0 0
+.control
+dc VDS 0 -2 -0.01 VGS -1 -1.8 -0.1
+plot VDS#branch
+.endc
+" }

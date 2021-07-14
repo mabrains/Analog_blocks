@@ -66,7 +66,7 @@ C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2320 -1320 0 0 {name=M1
 L=0.5
 W=20
 nf=1
-mult=237
+mult=1400
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -86,7 +86,7 @@ value=100k
 footprint=1206
 device=resistor
 m=1}
-C {devices/isource.sym} 1680 -1410 0 0 {name=I0 value=15u}
+C {devices/isource.sym} 1680 -1410 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} 2480 -1260 0 1 {name=l1 sig_type=std_logic lab=Vl}
 C {devices/lab_pin.sym} 2390 -1120 0 1 {name=l2 sig_type=std_logic lab=Vout}
 C {devices/ind.sym} 2110 -1120 1 0 {name=L1

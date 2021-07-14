@@ -4,39 +4,23 @@ K {}
 V {}
 S {}
 E {}
-N 220 -920 220 -800 { lab=Vout}
-N 220 -920 660 -920 { lab=Vout}
-N 660 -920 660 -740 { lab=Vout}
-N 565 -740 700 -740 { lab=Vout}
-N 220 -800 285 -800 { lab=Vout}
-N 220 -680 285 -680 { lab=Vp}
-C {devices/lab_pin.sym} 220 -680 0 0 {name=l2 sig_type=std_logic lab=Vp}
-C {devices/lab_pin.sym} 700 -740 0 1 {name=l3 sig_type=std_logic lab=Vout}
-C {devices/code_shown.sym} 785 -955 0 0 {name=NGSPICE1
-only_toplevel=true
-value="
-****************************
-*Source intialization
-****************************
-Vpos Vp 0 DC 0 AC 0
-****************************
-*Transient analysis
-****************************
-.control
-alter @Vpos[Sin] [ 1 100m 1Meg ]
-tran 0.05u 5u 
-plot Vp Vout
-.endc
-****************************
-.control
-alter @Vpos[Sin] [ 1 5 1Meg ]
-tran 0.05u 5u 
-plot Vp Vout
-.endc
-****************************
-.end
-" }
-C {devices/code.sym} 880 -1130 0 0 {name=TT_MODELS
+N 1040 -680 1140 -680 { lab=PLUS}
+N 1040 -580 1140 -580 { lab=MINUS}
+N 1460 -680 1460 -660 { lab=MINUS}
+N 1460 -680 1720 -680 { lab=out}
+N 1460 -600 1460 -520 { lab=0}
+N 1670 -800 1670 -680 { lab=MINUS}
+N 930 -800 1670 -800 { lab=MINUS}
+N 930 -800 930 -480 { lab=MINUS}
+N 930 -480 1080 -480 { lab=MINUS}
+N 1080 -580 1080 -480 { lab=MINUS}
+C {devices/ammeter.sym} 1170 -680 3 0 {name=V1}
+C {devices/ammeter.sym} 1170 -580 3 0 {name=V2}
+C {devices/lab_pin.sym} 1200 -680 0 1 {name=l1 sig_type=std_logic lab=PLUS_I}
+C {devices/lab_pin.sym} 1200 -580 0 1 {name=l2 sig_type=std_logic lab=MINUS_I}
+C {devices/bsource.sym} 1460 -630 0 0 {name=B1 VAR=V FUNC="'VCC/2*(1+tanh(100*(V(PLUS_I)-V(MINUS_I))))'"}
+C {devices/lab_pin.sym} 1460 -520 0 0 {name=l3 sig_type=std_logic lab=0}
+C {devices/code.sym} 1880 -820 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -83,4 +67,31 @@ value="
 
 
 "}
-C {/home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sym} 425 -740 0 0 {name=x1}
+C {devices/lab_pin.sym} 1040 -680 0 0 {name=l4 sig_type=std_logic lab=PLUS}
+C {devices/lab_pin.sym} 1040 -580 0 0 {name=l5 sig_type=std_logic lab=MINUS}
+C {devices/lab_pin.sym} 1720 -680 0 1 {name=l6 sig_type=std_logic lab=out}
+C {devices/code_shown.sym} 1775 -625 0 0 {name=NGSPICE1
+only_toplevel=true
+value="
+****************************
+*Source intialization
+****************************
+Vpos PLUS 0 DC 0 AC 0
+.param VCC = 3
+****************************
+*Transient analysis
+****************************
+.control
+alter @Vpos[Sin] [ 1 100m 1Meg ]
+tran 0.05u 5u 
+plot V(out)
+.endc
+****************************
+.control
+alter @Vpos[Sin] [ 1 5 1Meg ]
+tran 0.05u 5u 
+plot V(out)
+.endc
+****************************
+.end
+" }
