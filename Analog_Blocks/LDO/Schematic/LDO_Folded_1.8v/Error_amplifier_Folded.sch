@@ -38,10 +38,6 @@ N 3240 -760 3280 -760 { lab=VDD}
 N 3240 -880 3340 -880 { lab=VDD}
 N 3340 -970 3340 -880 { lab=VDD}
 N 3240 -970 3340 -970 { lab=VDD}
-N 3240 -730 3240 -550 { lab=Vout}
-N 3040 -730 3040 -550 { lab=#net4}
-N 3120 -590 3120 -520 { lab=#net4}
-N 3040 -590 3120 -590 { lab=#net4}
 N 2060 -430 2240 -430 { lab=GND}
 N 2060 -480 2060 -430 { lab=GND}
 N 2240 -480 2240 -430 { lab=GND}
@@ -94,16 +90,20 @@ N 3340 -880 3340 -760 { lab=VDD}
 N 3040 -760 3120 -760 { lab=VDD}
 N 3120 -880 3120 -760 { lab=VDD}
 N 2740 -660 2740 -510 { lab=GND}
-N 3240 -690 3320 -690 { lab=Vout}
+N 3240 -730 3240 -550 { lab=Vout}
+N 3040 -730 3040 -550 { lab=#net4}
+N 3040 -650 3130 -650 { lab=#net4}
+N 3130 -650 3130 -520 { lab=#net4}
+N 3240 -650 3320 -650 { lab=Vout}
 C {devices/ipin.sym} 2000 -970 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} 1920 -430 0 0 {name=p2 lab=GND}
 C {devices/ipin.sym} 2480 -660 0 0 {name=p3 lab=Vp}
 C {devices/ipin.sym} 2840 -660 0 1 {name=p4 lab=Vn}
-C {devices/opin.sym} 3320 -690 0 0 {name=p5 lab=Vout}
+C {devices/opin.sym} 3320 -650 0 0 {name=p5 lab=Vout}
 C {devices/ipin.sym} 2030 -610 0 0 {name=p6 lab=Ibias}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2560 -660 0 0 {name=M1
 L=0.5
-W=10
+W=20
 nf=1
 mult=5
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -117,7 +117,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 2780 -660 0 1 {name=M2
 L=0.5
-W=10
+W=20
 nf=1
 mult=5
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -130,7 +130,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3220 -520 0 0 {name=M9
-L=1
+L=2
 W=3
 nf=1
 mult=2
@@ -172,7 +172,7 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 3060 -520 0 1 {name=M8
-L=1
+L=2
 W=3
 nf=1
 mult=2
@@ -229,9 +229,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2260 -880 0 1 {name=M13
 L=0.5
-W=7
+W=3
 nf=1
-mult=2
+mult=4
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 

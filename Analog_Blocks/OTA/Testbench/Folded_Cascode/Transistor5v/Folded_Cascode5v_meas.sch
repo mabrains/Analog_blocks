@@ -17,7 +17,7 @@ N -1280 -1000 -1220 -1000 { lab=Vout}
 N -1270 -1000 -1270 -930 { lab=Vout}
 N -1480 -890 -1480 -760 { lab=0}
 N -1480 -1240 -1480 -1110 { lab=Vdd}
-C {devices/isource.sym} -1820 -1100 0 0 {name=I0 value=15u}
+C {devices/isource.sym} -1820 -1100 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} -1890 -1240 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/lab_pin.sym} -1890 -760 0 0 {name=l2 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} -1730 -1060 0 0 {name=l3 sig_type=std_logic lab=Vn}
@@ -34,15 +34,15 @@ value="
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup vdd 0 DC 1.8 AC 0 
+Vsup vdd 0 DC 2 AC 0 
 Vpos vp 0 DC 0 AC 0
 Vneg vn 0 DC 0 AC 0
 ****************************************************
-*DC analysis 
+*Power analysis
 ****************************************************
 .control
-alter Vpos DC = 0.9 
-alter Vneg DC = 0.9 
+alter Vpos DC = 1.2  
+alter Vneg DC = 1.2
 define Power(x,y) -(x*y)
 op
 show
@@ -52,9 +52,9 @@ print Power(v(vdd),Vsup#branch)
 *Noise analysis
 *****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = -1
 noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
 setplot noise1
@@ -64,9 +64,9 @@ plot inoise_spectrum
 *AC analysis differential mode
 ****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = -1
 set units = degrees
 ac dec 10 1 200MEG
@@ -81,9 +81,9 @@ meas ac PM FIND P WHEN vdb(Vout)=0
 *AC analysis common mode
 *****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = 1
 ac dec 10 1 200MEG
 plot db(Vout)
@@ -94,9 +94,9 @@ meas ac Acm FIND vdb(Vout) AT=10
 *****************************************************
 .control
 alter Vsup AC = 1
-alter Vpos DC = 0.9
+alter Vpos DC = 1.2
 alter Vpos AC = 0 
-alter Vneg DC = 0.9
+alter Vneg DC = 1.2
 alter Vneg AC = 0
 ac dec 10 1 200MEG
 plot db(Vout)

@@ -1,24 +1,33 @@
 **.subckt Pass_transistor_TB
-R1 Vout net2 50k m=1
+XM1 Vout net2 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1400 m=1400 
+R1 Vout net1 50k m=1
+R2 net1 0 100k m=1
+E1 net2 0 net1 Vref 1e6
 I0 Vout 0 50m
-R2 net2 0 100k m=1
-XM2 Vout2 Vc Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=237 m=237 
-XM1 Vout net1 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=237 m=237 
-I1 net3 0 50.1m
-R3 Vout2 net3 50 m=1
-x1 net1 net2 Vref Ideal_Opamp
+XM2 Vout2 net4 Vin2 Vin2 sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1400 m=1400 
+R3 Vout2 net3 50k m=1
+R4 net3 0 100k m=1
+I1 Vout2 0 50m
+x1 net3 net4 Vref2 Ideal_opamp
 **** begin user architecture code
 
 
 .option wnflag=1
 .option savecurrents
-VVc Vc 0 0.13
+**.subckt test_bsource PLUS MINUS OUT
+*.ipin PLUS
+*.ipin MINUS
+*.opin OUT
+.param VDD=3.6
+.param GAIN={1000/VDD*2}
 VVin Vin 0 2
+VVin2 Vin2 0 2
 VVref Vref 0 1.2
+VVref2 Vref2 0 1.2
 .control
 save all
 save @m.xm1.msky130_fd_pr__pfet_g5v0d10v5[vds]
@@ -81,14 +90,19 @@ write Pass_transistor_TB.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sym # of pins=3
-* sym_path: /home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sym
-* sch_path: /home/eslam/mabrains/Analog_blocks/testing/Ideal_Opamp.sch
-.subckt Ideal_Opamp  Vout Vp Vn
+* expanding   symbol:
+*+  /home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Ideal_opamp/Ideal_opamp.sym # of pins=3
+* sym_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Ideal_opamp/Ideal_opamp.sym
+* sch_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/OTA/Schematic/Ideal_opamp/Ideal_opamp.sch
+.subckt Ideal_opamp  Vp Out Vn
 *.ipin Vp
 *.ipin Vn
-*.opin Vout
-E1 Vout 0 Vp Vn 100000
+*.opin Out
+V1 Vp PLUS_I 0
+V2 Vn MINUS_I 0
+B1 Out 0 V = 'VDD/2*(1+tanh(GAIN*(V(PLUS_I)-V(MINUS_I))))' 
 .ends
 
 ** flattened .save nodes

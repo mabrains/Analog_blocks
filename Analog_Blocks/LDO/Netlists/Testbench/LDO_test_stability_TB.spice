@@ -1,14 +1,14 @@
 **.subckt LDO_test_stability_TB
-XM1 Vl net4 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=237 m=237 
-R1 Vl Vout 50k m=1
+XM1 Vload net4 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1400 m=1400 
+R1 Vload Vout 50k m=1
 R2 Vout 0 100k m=1
-I0 Vin net1 15u
+I0 Vin net1 20u
 L1 Vout net2 1G m=1
 C1 net2 Vtest 1G m=1
-C2 Vl net3 5u m=1
-R3 net3 0 0.5 m=1
+C2 Vload net3 4u m=1
+R3 net3 0 1 m=1
 x1 Vin net4 net2 Vref net1 0 Error_amplifier_Folded
 **** begin user architecture code
 
@@ -16,16 +16,16 @@ x1 Vin net4 net2 Vref net1 0 Error_amplifier_Folded
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup Vin 0 DC 2 AC 0
+Vsup Vin 0 DC 3.6 AC 0
 VVref Vref 0 DC 1.2 AC 0
-VVin vtest 0 DC 0 AC 1
-Iout Vl 0 DC 50m AC 0
+VVin Vtest 0 DC 0 AC 1
+Iout Vload 0 DC 50m AC 0
 ****************************************************
 *Stability analysis
 ****************************************************
 .control
 set units = degrees
-ac dec 10 1 200MEG
+ac dec 10 0.1 200MEG
 show
 plot db(Vout)
 plot phase(Vout)
@@ -34,6 +34,18 @@ meas ac GBW WHEN vdb(Vout)= 0
 meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
 .endc
 ****************************************************
+.control
+alter Iout DC = 0
+set units = degrees
+ac dec 10 0.1 200MEG
+show
+plot db(Vout)
+plot phase(Vout)
+meas ac Avd FIND vdb(Vout) AT=1
+meas ac GBW WHEN vdb(Vout)= 0
+meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
+.endc
+***************************************************
 
 
 
@@ -95,13 +107,13 @@ meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
 *.ipin Vn
 *.opin Vout
 *.ipin Ibias
-XM1 net3 Vp net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM1 net3 Vp net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=5 m=5 
-XM2 net2 Vn net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM2 net2 Vn net1 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=5 m=5 
-XM9 Vout net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM9 Vout net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
 XM4 net3 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -110,7 +122,7 @@ XM4 net3 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1
 XM3 net1 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
-XM8 net4 net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM8 net4 net4 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
 XM10 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -122,9 +134,9 @@ XM11 net5 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)
 XM12 net6 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 
-XM13 net5 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM13 net5 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=2 m=2 
++ sa=0 sb=0 sd=0 mult=4 m=4 
 XM14 net6 net6 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=2 m=2 

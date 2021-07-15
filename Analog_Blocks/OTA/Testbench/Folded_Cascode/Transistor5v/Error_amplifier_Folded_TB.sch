@@ -14,10 +14,10 @@ N 920 -2100 1250 -2100 { lab=Vdd}
 N 1040 -1640 1250 -1640 { lab=0}
 N 1480 -1780 1480 -1640 { lab=0}
 N 1250 -1640 1480 -1640 { lab=0}
-N 1450 -1880 1500 -1880 {}
-N 1250 -1770 1250 -1640 {}
-N 1250 -2100 1250 -1990 {}
-N 920 -1880 1090 -1880 {}
+N 1450 -1880 1500 -1880 { lab=Vout}
+N 1250 -1770 1250 -1640 { lab=0}
+N 1250 -2100 1250 -1990 { lab=Vdd}
+N 920 -1880 1090 -1880 { lab=#net1}
 C {devices/lab_pin.sym} 880 -2100 0 0 {name=l1 sig_type=std_logic lab=Vdd}
 C {devices/isource.sym} 920 -2010 0 0 {name=I0 value=20u}
 C {devices/lab_pin.sym} 1020 -1820 0 0 {name=l2 sig_type=std_logic lab=Vp}
@@ -26,7 +26,7 @@ C {devices/lab_pin.sym} 1040 -1640 0 0 {name=l4 sig_type=std_logic lab=0}
 C {devices/lab_pin.sym} 1500 -1880 0 1 {name=l5 sig_type=std_logic lab=Vout}
 C {devices/capa.sym} 1480 -1810 0 0 {name=C1
 m=1
-value=2p
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/code_shown.sym} 1565 -2285 0 0 {name=NGSPICE
@@ -35,15 +35,15 @@ value="
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup vdd 0 DC 1.8 AC 0 
+Vsup vdd 0 DC 2 AC 0 
 Vpos vp 0 DC 0 AC 0
 Vneg vn 0 DC 0 AC 0
 ****************************************************
 *DC analysis 
 ****************************************************
 .control
-alter Vpos DC = 0.9 
-alter Vneg DC = 0.9 
+alter Vpos DC = 1.2 
+alter Vneg DC = 1.2 
 define Power(x,y) -(x*y)
 op
 show
@@ -53,9 +53,9 @@ print Power(v(vdd),Vsup#branch)
 *Noise analysis
 *****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = -1
 noise v(vout) Vpos dec 10 1 50MEG Vneg dec 10 1 50MEG
 setplot noise1
@@ -65,9 +65,9 @@ plot inoise_spectrum
 *AC analysis differential mode
 ****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = -1
 set units = degrees
 ac dec 10 1 200MEG
@@ -82,9 +82,9 @@ meas ac PM FIND P WHEN vdb(Vout)=0
 *AC analysis common mode
 *****************************************************
 .control
-alter Vpos DC = 0.9 
+alter Vpos DC = 1.2 
 alter Vpos AC = 1
-alter Vneg DC = 0.9 
+alter Vneg DC = 1.2 
 alter Vneg AC = 1
 ac dec 10 1 200MEG
 plot db(Vout)
@@ -95,9 +95,9 @@ meas ac Acm FIND vdb(Vout) AT=10
 *****************************************************
 .control
 alter Vsup AC = 1
-alter Vpos DC = 0.9
+alter Vpos DC = 1.2
 alter Vpos AC = 0 
-alter Vneg DC = 0.9
+alter Vneg DC = 1.2
 alter Vneg AC = 0
 ac dec 10 1 200MEG
 plot db(Vout)
