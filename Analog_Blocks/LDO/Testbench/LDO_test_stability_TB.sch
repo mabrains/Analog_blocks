@@ -41,36 +41,30 @@ value="
 ***************************************************
 *Source intialization
 ***************************************************
-Vsup Vin 0 DC 3.6 AC 0 
+Vsup Vin 0 DC 0 AC 0 
 VVref Vref 0 DC 1.2 AC 0
 VVin Vtest 0 DC 0 AC 1
-Iout Vload 0 DC 50m AC 0
+Iout Vload 0 DC 0 AC 0
 ****************************************************
 *Stability analysis 
 ****************************************************
 .control
+foreach voltage 2 3.6
+alter Vsup $voltage
+foreach current 0 50m
+alter Iout $current
 set units = degrees
 ac dec 10 0.1 200MEG
-show
+*show
 plot db(Vout)
 plot phase(Vout) 
 meas ac Avd FIND vdb(Vout) AT=1
 meas ac GBW WHEN vdb(Vout)= 0
 meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
+end
+end
 .endc
 ****************************************************
-.control
-alter Iout DC = 0
-set units = degrees
-ac dec 10 0.1 200MEG
-show
-plot db(Vout)
-plot phase(Vout) 
-meas ac Avd FIND vdb(Vout) AT=1
-meas ac GBW WHEN vdb(Vout)= 0
-meas ac PM FIND vp(Vout) WHEN vdb(Vout)=0
-.endc
-***************************************************
 .end
 " }
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 2310 -1350 0 0 {name=M1
