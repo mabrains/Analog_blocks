@@ -1,5 +1,10 @@
 # Bandgap reference simulation
 
+## Schematic
+
+![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Bandgap_self_3.7_schematic.png)
+
+
 ## a. DC analysis
 
 Use the command (.op) then press netlist then press simulate. After simulation is done write the command (show) this command will display all the transistors parameters
