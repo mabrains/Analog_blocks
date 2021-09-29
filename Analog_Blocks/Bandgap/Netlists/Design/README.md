@@ -26,7 +26,12 @@ Use the command (.DC vin) then press netlist then press simulate. After simulati
 
 Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vdd vref) to plot the reference voltage and the input vs time.
 
-![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Transient_simulation.png)
+Supply varies from 0 to 2.2v
+![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Tran_2.2.png)
+Supply varies from 0 to 2.4v
+![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Tran_2.4.png)
+Supply varies from 0 to 2v
+![Image of BGR transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Tran_2v.png)
 
 ## e. PSRR analysis
 
