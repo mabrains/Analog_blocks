@@ -1,24 +1,25 @@
 
-.include ~/mabrains/Analog_blocks/Analog_Blocks/Bandgap/Netlists/Design/BGR_5v/Bandgap_self_3.7v.spice
+.include ~/mabrains/Analog_blocks/Analog_Blocks/Bandgap/Netlists/Design/BGR_5v/Bandgap_self_2.2v.spice
+
 .control
 op
 .endc
 .control
-dc Vs 0 4.2 0.3
+dc Vs 0 4.2 0.2
 plot vdd bg_out
-meas DC Vref_Sup_pos10per FIND bg_out AT=3.3
-meas DC Vref_Sup_neg10per FIND bg_out AT=4.2
+meas DC Vref_Sup_pos10per FIND bg_out AT=2
+meas DC Vref_Sup_neg10per FIND bg_out AT=2.4
 .endc
 *Temprature Variation
 .control
-alter Vs DC = 3.7
+alter Vs DC = 2.2
 dc temp -40 125 1
 plot v(bg_out)
 .endc
 
 *PSRR Analysis
 .control
-alter Vs DC =3.7
+alter Vs DC =2.2
 alter Vs AC = 1
 ac dec 10 1 1G
 plot db(bg_out)
@@ -27,8 +28,20 @@ meas ac PSRR_1M FIND vdb(bg_out) AT=1Meg
 .endc
 **Transient
 .control
-alter @Vs[pwl] = [ 0 0 5u 0 20u 4.2 30u 4.2]
-tran 0.5u 40u
+alter @Vs[pwl] = [ 0 0 50u 0 150u 2 200u 2 ]
+tran 0.5u 200u
 plot vdd bg_out
 .endc
+.control
+alter @Vs[pwl] = [ 0 0 50u 0 150u 2.2 200u 2.2 ]
+tran 0.5u 200u
+plot vdd bg_out
+.endc
+.control
+alter @Vs[pwl] = [ 0 0 50u 0 150u 2.4 200u 2.4 ]
+tran 0.5u 200u
+plot vdd bg_out
+.endc
+
+
 
