@@ -2,7 +2,7 @@
 
 ## Schematic
 
-![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Bandgap_self_3.7_schematic.png)
+![Image of BGR schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Bandgap_self_2.4_schematic.png)
 
 
 ## a. DC analysis
@@ -12,7 +12,7 @@ and ensure that all mosfets are in saturation region (Vds > Vdsat).
 
 ## b. Temperature variations
 
-Use the command (.DC temp) then press netlist then press simulate. After simulation is done write the command (plot vref) to plot the reference voltage vs temp.
+Use the command (.DC temp) then press netlist then press simulate. After simulation is done write the command (plot bg_out) to plot the reference voltage vs temp.
 
 ![Image of BGR Temp](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/Temp_variation.png)
 
@@ -30,7 +30,7 @@ Use the command (.tran) then press netlist then press simulate. After simulation
 
 ## e. PSRR analysis
 
-Use the command (.AC vin) then press netlist then press simulate. After simulation is done write the command (plot vdb(vref)) to plot the PSRR in dB.
+Use the command (.AC vin) then press netlist then press simulate. After simulation is done write the command (plot vdb(bg_out)) to plot the PSRR in dB.
 
 ![Image of BGR PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/PSRR_simulation.png)
 
@@ -44,6 +44,6 @@ The netlist of all previous analyses is below or you can run it using the script
 
 Specification    | Achieved
 -----------------| ------------------------------------
-Reference output |              1.1v
-Temp. variation  | 10.5mv over T from -40 deg to 125 deg
-Supply variation | 30mv  over VDD from 3v to 3.6v 
+Reference output |              1.14v
+Temp. variation  | 8mv over T from -40 deg to 125 deg
+Supply variation | 3mv  over VDD from 2v to 2.4v 
