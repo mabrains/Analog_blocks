@@ -1,34 +1,14 @@
 **.subckt Bandgap_self_3.3v
-R1 inp net3 10k m=1
-XM3 net4 inp net5 GND sky130_fd_pr__nfet_g5v0d10v5 L=1.2 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM8 inn mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM4 mirr net4 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM1 inp mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM7 net5 net6 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=2 m=2 
-XM8 inn mirr VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=2 m=2 
-XM1 inp mirr VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=2 m=2 
-XM2 net4 net4 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM5 net6 mirr VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM9 net6 net6 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM10 bg_out mirr VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.2 W=8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM10 bg_out mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-R2 bg_out net7 120k m=1
-XQ2 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2 
+XQ2 GND GND net4 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ3 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ4 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ8 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
@@ -37,23 +17,43 @@ XQ12 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ14 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ16 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
 XQ18 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XQ5 GND GND net7 sky130_fd_pr__pnp_05v5_W0p68L0p68
-XM6 mirr inn net5 GND sky130_fd_pr__nfet_g5v0d10v5 L=1.2 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-R3 net3 net1 70k m=1
-R4 inn net2 70k m=1
+XQ5 GND GND net2 sky130_fd_pr__pnp_05v5_W0p68L0p68
 Vs VDD GND 2.2
-XM11 net8 bg_out GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+XM11 net3 bg_out GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM12 VDD net8 inn GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2 
+XM12 VDD net3 inn GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM13 net8 bg_out VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+XM13 net3 bg_out VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-C2 mirr GND 0.05p m=1
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2 
+XM2 net7 net7 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM3 net7 inp net6 GND sky130_fd_pr__nfet_g5v0d10v5 L=1.2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM4 mir inn net6 GND sky130_fd_pr__nfet_g5v0d10v5 L=1.2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM5 mir net7 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM6 net6 net8 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM7 net8 mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM9 net8 net8 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+XC2 mir GND sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+XR5 net2 bg_out GND sky130_fd_pr__res_xhigh_po W=0.35 L=16.3 mult=1 m=1
+XR1 net5 inp GND sky130_fd_pr__res_xhigh_po W=0.35 L=1.45 mult=1 m=1
+XR4 net4 inn GND sky130_fd_pr__res_xhigh_po W=0.35 L=11 mult=1 m=1
+XR2 net1 net5 GND sky130_fd_pr__res_xhigh_po W=0.35 L=11 mult=1 m=1
 **** begin user architecture code
 
 
@@ -97,6 +97,49 @@ C2 mirr GND 0.05p m=1
 
 
 
+
+.control
+op
+print all
+.endc
+.control
+dc Vs 0 2.2 0.1
+plot vdd bg_out
+meas DC Vref_Sup_pos10per FIND bg_out AT=2
+meas DC Vref_Sup_neg10per FIND bg_out AT=2.4
+.endc
+*Temprature Variation
+.control
+alter Vs DC = 2.2
+dc temp -40 125 1
+plot v(bg_out)
+.endc
+
+*PSRR Analysis
+.control
+alter Vs DC =2.2
+alter Vs AC = 1
+ac dec 10 1 1G
+plot db(bg_out)
+meas ac PSRR_1k FIND vdb(bg_out) AT=1k
+meas ac PSRR_1M FIND vdb(bg_out) AT=1Meg
+.endc
+**Transient
+.control
+alter @Vs[pulse] = [ 0 2 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
+plot vdd bg_out
+.endc
+.control
+alter @Vs[pulse] = [ 0 2.2 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
+plot vdd bg_out
+.endc
+.control
+alter @Vs[pulse] = [ 0 2.4 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
+plot vdd bg_out
+.endc
 
 
 **** end user architecture code
