@@ -3,9 +3,10 @@
 
 .control
 op
+print all
 .endc
 .control
-dc Vs 0 4.2 0.2
+dc Vs 0 2.2 0.1
 plot vdd bg_out
 meas DC Vref_Sup_pos10per FIND bg_out AT=2
 meas DC Vref_Sup_neg10per FIND bg_out AT=2.4
@@ -28,20 +29,19 @@ meas ac PSRR_1M FIND vdb(bg_out) AT=1Meg
 .endc
 **Transient
 .control
-alter @Vs[pwl] = [ 0 0 50u 0 150u 2 200u 2 ]
-tran 0.5u 200u
+alter @Vs[pulse] = [ 0 2 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
 plot vdd bg_out
 .endc
 .control
-alter @Vs[pwl] = [ 0 0 50u 0 150u 2.2 200u 2.2 ]
-tran 0.5u 200u
+alter @Vs[pulse] = [ 0 2.2 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
 plot vdd bg_out
 .endc
 .control
-alter @Vs[pwl] = [ 0 0 50u 0 150u 2.4 200u 2.4 ]
-tran 0.5u 200u
+alter @Vs[pulse] = [ 0 2.4 15u 10u 5u 100u 200u ]
+tran 0.1u 100u
 plot vdd bg_out
 .endc
-
 
 
