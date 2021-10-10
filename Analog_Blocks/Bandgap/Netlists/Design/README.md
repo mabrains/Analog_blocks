@@ -20,7 +20,7 @@ Use the command (.DC temp) then press netlist then press simulate. After simulat
 
 Use the command (.DC vin) then press netlist then press simulate. After simulation is done write the command (plot vdd vref) to plot the reference voltage vs vdd.
 
-![Image of BGR vdd](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/supply_variation.png)
+![Image of BGR vdd](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/Bandgap/Images/Bandgap5v/supply_var_banba.png)
 
 ## d. Transient analysis
 
