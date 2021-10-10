@@ -49,6 +49,6 @@ The netlist of all previous analyses is below or you can run it using the script
 
 Specification    | Achieved
 -----------------| ------------------------------------
-Reference output |              1.12v
-Temp. variation  | 8mv over T from -40 deg to 125 deg
-Supply variation | 3mv  over VDD from 2v to 2.4v 
+Reference output |              1.11v
+Temp. variation  | 2mv over T from 0 deg to 85 deg
+Supply variation | less than 1mv  over VDD from 2v to 2.4v 
