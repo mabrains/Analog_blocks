@@ -221,8 +221,8 @@ def main():
     # resistors = [18e3, 180, 18]
     
     corners = ["tt"]
-    supplys = [2]
-    temps = [27]
+    supplys = [2, 2.2, 2.4]
+    temps = [0, 27, 85]
     resistors = [18000]
     psrr_table = "corner,temp,resistor,supply,psr100,psr100k\n"
     dc_sweep_table = "corner,temp,resistor,supply,dropout,line_reg\n"
@@ -252,7 +252,7 @@ def main():
                         
     
     for future in concurrent.futures.as_completed(workers):
-        url = future_to_url[future]
+        ldo_corner_string = workers[future]
         try:
             data = future.result()
             psrr_table += data["psrr"]
@@ -260,11 +260,8 @@ def main():
             temp_sweep_table += data["temp_sweep"]
 
         except Exception as exc:
-            print('%r generated an exception: %s' % (url, exc))
-        else:
-            print('%r page is %d bytes' % (url, len(data)))
-
-
+            print('%r generated an exception: %s' % (ldo_corner_string, exc))
+       
     with open("./corners_run/tables/psrr.csv","w") as f:
         f.write(psrr_table)
     with open("./corners_run/tables/dc_sweep.csv","w") as f:
