@@ -146,7 +146,7 @@ print temp_coeff
 set wr_singlescale
 set wr_vecnames
 set appendwrite
-wrdata ./run_results/temp_sweep_{resistor}_{temp}_{supply}_{corner} temp_coeff
+wrdata ./corners_run/run_results/temp_sweep_{resistor}_{temp}_{supply}_{corner} temp_coeff
 .endc
 *supply_sweep
 .control
@@ -161,7 +161,7 @@ print dropout
 set wr_singlescale
 set wr_vecnames
 set appendwrite
-wrdata ./run_results/dc_sweep_{resistor}_{temp}_{supply}_{corner} dropout line_reg
+wrdata ./corners_run/run_results/dc_sweep_{resistor}_{temp}_{supply}_{corner} dropout line_reg
 
 .endc
 *PSRR_Analysis
@@ -173,7 +173,7 @@ meas AC PSRR100k FIND vdb(ldo_out) AT=100k
 set appendwrite
 set wr_singlescale
 set wr_vecnames
-wrdata ./run_results/psrr_{resistor}_{temp}_{supply}_{corner} PSRR100 PSRR100k
+wrdata ./corners_run/run_results/psrr_{resistor}_{temp}_{supply}_{corner} PSRR100 PSRR100k
 .endc
 """
 
@@ -201,7 +201,7 @@ def collect_results(table_name, corner,supply,temp,resistor,num_specs):
     return row+"\n"
 
 
-def run_simulation(netlist_path, log_file):
+def run_simulation(netlist_path, log_file, corner, supply, temp, resistor):
     os.system(f"ngspice -b {netlist_path} > {log_file} 2>&1")
     psrr_result = collect_results("psrr",corner,supply,temp,resistor,2)
     dc_sweep_result = collect_results("dc_sweep",corner,supply,temp,resistor,2)
@@ -211,19 +211,21 @@ def run_simulation(netlist_path, log_file):
 
 def main():
     arguments = docopt(__doc__, version='Ldo Sweeper 1.0')
-    # corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
-    #             "ff", "ff_ll", "ff_lh","ff_hl", "ff_hh",
-    #             "fs", "fs_ll", "fs_lh","fs_hl", "fs_hh",
-    #             "ss", "ss_ll", "ss_lh","ss_hl", "ss_hh",
-    #             "sf", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
-    # supplys = [2, 2.2, 2.4]
-    # temps = [0,27,85]
-    # resistors = [18e3, 180, 18]
-    
-    corners = ["tt"]
+    corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
+                 "ff", "ff_ll", "ff_lh","ff_hl", "ff_hh",
+                 "fs", "fs_ll", "fs_lh","fs_hl", "fs_hh",
+                 "ss", "ss_ll", "ss_lh","ss_hl", "ss_hh",
+                 "sf", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
     supplys = [2, 2.2, 2.4]
-    temps = [0, 27, 85]
-    resistors = [18000]
+    temps = [0,27,85]
+    resistors = [18e3, 180, 18]
+    
+    #corners = ["tt"]
+    #supplys = [2, 2.2, 2.4]
+    #temps = [0, 27, 85]
+    #resistors = [18000]
+
+
     psrr_table = "corner,temp,resistor,supply,psr100,psr100k\n"
     dc_sweep_table = "corner,temp,resistor,supply,dropout,line_reg\n"
     temp_sweep_table = "corner,temp,resistor,supply,temp_coeff\n"
@@ -248,7 +250,7 @@ def main():
                         #Running simulation
                         netlist_path = f"./corners_run/netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net"
                         log_file = f"./corners_run/log/ldo_{resistor}_{temp}_{supply}_{corner}.log"
-                        workers[executor.submit(run_simulation, netlist_path,log_file)] = "ldo_{resistor}_{temp}_{supply}_{corner}"
+                        workers[executor.submit(run_simulation, netlist_path, log_file, corner, supply, temp, resistor)] = "ldo_{resistor}_{temp}_{supply}_{corner}"
                         
     
     for future in concurrent.futures.as_completed(workers):
