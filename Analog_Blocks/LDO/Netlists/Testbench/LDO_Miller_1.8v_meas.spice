@@ -36,12 +36,13 @@ print (Vmax-Vmin)/0.25
 ************************************************
 .control
 alter VVin DC = 2
-dc Iout 0 1m 10u
+dc Iout 0 50m 50u
 plot Vout
 plot i(VVin)
 meas DC Iq FIND i(VVin) AT=0
 meas DC Vmax FIND Vout AT=0
 meas DC Vmin FIND Vout AT=1m
+meas DC Vmin FIND Iout WHEN Vout=1.71
 print (Vmax-Vmin)/1m
 .endc
 ************************************************
