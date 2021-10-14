@@ -178,12 +178,12 @@ wrdata ./run_results/psrr_{resistor}_{temp}_{supply}_{corner} PSRR100 PSRR100k
 """
 
 
-    with open(f"./netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net","w") as f:
+    with open(f"./corners_run/netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net","w") as f:
         f.write(netlist_analysis)
     
 def collect_results(table_name, corner,supply,temp,resistor,num_specs):
    
-    file_name =f"./run_results/{table_name}_{resistor}_{temp}_{supply}_{corner}"
+    file_name =f"./corners_run/run_results/{table_name}_{resistor}_{temp}_{supply}_{corner}"
     row = f"{corner},{temp},{resistor},{supply}"
 
     if not os.path.isfile(file_name):
@@ -203,6 +203,11 @@ def collect_results(table_name, corner,supply,temp,resistor,num_specs):
 
 def run_simulation(netlist_path, log_file):
     os.system(f"ngspice -b {netlist_path} > {log_file} 2>&1")
+    psrr_result = collect_results("psrr",corner,supply,temp,resistor,2)
+    dc_sweep_result = collect_results("dc_sweep",corner,supply,temp,resistor,2)
+    temp_sweep_result = collect_results("temp_sweep",corner,supply,temp,resistor,1)
+    return {"psrr" : psrr_result, "dc_sweep": dc_sweep_result, "temp_sweep": temp_sweep_result}
+
 
 def main():
     arguments = docopt(__doc__, version='Ldo Sweeper 1.0')
@@ -225,12 +230,14 @@ def main():
 
     #workers_count = 2*multiprocessing.cpu_count()
     
-    Path("./netlist").mkdir(parents=True, exist_ok=True)
-    Path("./run_results").mkdir(parents=True, exist_ok=True)
-    Path("./log").mkdir(parents=True, exist_ok=True)
-    Path("./tables").mkdir(parents=True, exist_ok=True)
+    Path("./corners_run/netlist").mkdir(parents=True, exist_ok=True)
+    Path("./corners_run/run_results").mkdir(parents=True, exist_ok=True)
+    Path("./corners_run/log").mkdir(parents=True, exist_ok=True)
+    Path("./corners_run/tables").mkdir(parents=True, exist_ok=True)
 
     workers_count = 26 if arguments['--n'] == None else int(arguments['--n'])
+    workers = {}
+    
     with concurrent.futures.ProcessPoolExecutor(max_workers=workers_count) as executor:
         for corner in corners:
             for supply in supplys:
@@ -239,19 +246,30 @@ def main():
                         print(f"Running corner  {corner}  on supply: {supply} temp: {temp} resistor: {resistor}")
                         generate_netlist(corner,supply,temp,resistor)
                         #Running simulation
-                        netlist_path = f"./netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net"
-                        log_file = f"./log/ldo_{resistor}_{temp}_{supply}_{corner}.log"
-                        executor.submit(run_simulation, netlist_path,log_file)
+                        netlist_path = f"./corners_run/netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net"
+                        log_file = f"./corners_run/log/ldo_{resistor}_{temp}_{supply}_{corner}.log"
+                        workers[executor.submit(run_simulation, netlist_path,log_file)] = "ldo_{resistor}_{temp}_{supply}_{corner}"
                         
-                        psrr_table += collect_results("psrr",corner,supply,temp,resistor,2)
-                        dc_sweep_table += collect_results("dc_sweep",corner,supply,temp,resistor,2)
-                        temp_sweep_table += collect_results("temp_sweep",corner,supply,temp,resistor,1)
+    
+    for future in concurrent.futures.as_completed(workers):
+        url = future_to_url[future]
+        try:
+            data = future.result()
+            psrr_table += data["psrr"]
+            dc_sweep_table += data["dc_sweep"]
+            temp_sweep_table += data["temp_sweep"]
 
-    with open("tables/psrr.csv","w") as f:
+        except Exception as exc:
+            print('%r generated an exception: %s' % (url, exc))
+        else:
+            print('%r page is %d bytes' % (url, len(data)))
+
+
+    with open("./corners_run/tables/psrr.csv","w") as f:
         f.write(psrr_table)
-    with open("tables/dc_sweep.csv","w") as f:
+    with open("./corners_run/tables/dc_sweep.csv","w") as f:
         f.write(dc_sweep_table)
-    with open("tables/temp_sweep.csv","w") as f:
+    with open("./corners_run/tables/temp_sweep.csv","w") as f:
         f.write(temp_sweep_table)   
         
 if __name__ == "__main__":
