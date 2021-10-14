@@ -1,0 +1,50 @@
+ Reference value :  8.00000e+01Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Note: One successful gmin step
+Trying gmin =   2.3714E-08 Note: One successful gmin step
+Trying gmin =   6.4938E-09 Warning: Further gmin increment
+Trying gmin =   1.7154E-08 Note: One successful gmin step
+Trying gmin =   1.0554E-08 Warning: Further gmin increment
+Trying gmin =   1.5193E-08 Note: One successful gmin step
+Trying gmin =   1.2663E-08 Note: One successful gmin step
+Trying gmin =   9.6358E-09 Note: One successful gmin step
+Trying gmin =   6.3960E-09 Note: One successful gmin step
+Trying gmin =   3.4589E-09 Note: One successful gmin step
+Trying gmin =   1.3756E-09 Note: One successful gmin step
+Trying gmin =   3.4499E-10 Note: One successful gmin step
+Trying gmin =   4.3331E-11 Note: One successful gmin step
+Trying gmin =   4.3331E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+ Reference value :  1.16000e+00
+No compatibility mode selected!
+
+
+Circuit: * ldo netlist 
+
+Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 81
+temp_coeff = 2.966524e+01
+Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 151
+vldo_sup_2          =  1.791152e+00
+vldo_sup_3          =  1.793532e+00
+line_reg = 2.380000e-03
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+vin                 =  1.920252e+00
+dropout = 1.562520e-01
+Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 91
+psrr100             =  -5.357122e+01
+psrr100k            =  -2.879941e+01
