@@ -1,4 +1,4 @@
- Reference value :  8.50000e+01 Reference value :  2.40000e+01Note: Starting true gmin stepping
+ Reference value :  8.50000e+01Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -55,7 +55,7 @@ Trying gmin =   1.1496E-11 Note: One successful gmin step
 Trying gmin =   2.2317E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-Note: Starting true gmin stepping
+ Reference value :  1.42000e+00Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -72,7 +72,7 @@ Trying gmin =   1.1757E-11 Note: One successful gmin step
 Trying gmin =   1.3216E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.40000e+00
+ Reference value :  3.80000e-01
 No compatibility mode selected!
 
 
@@ -166,7 +166,7 @@ Trying gmin =   6.5018E-11 Note: One successful gmin step
 Trying gmin =   6.5018E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 pm                  =  6.189322e+01
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 

@@ -172,7 +172,7 @@ Trying gmin =   5.1051E-11 Note: One successful gmin step
 Trying gmin =   5.1051E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.00000e+00vin                 =  1.764098e+00
+vin                 =  1.764098e+00
 dropout = 9.800000e-05
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
@@ -198,7 +198,7 @@ Trying gmin =   5.1051E-11 Note: One successful gmin step
 Trying gmin =   5.1051E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 pm                  =  6.647920e+01
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 

@@ -111,7 +111,7 @@ Trying gmin =   1.9507E-11 Note: One successful gmin step
 Trying gmin =   1.9507E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.40000e+00Note: Starting true gmin stepping
+ Reference value :  9.60000e-01Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -145,7 +145,7 @@ Trying gmin =   1.0000E-11 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: Dynamic gmin stepping completed
- Reference value :  4.00000e-02
+
 No compatibility mode selected!
 
 
@@ -170,7 +170,7 @@ Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 No. of Data Rows : 91
 Error: no such vector PM
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 
 Error: measure  pm  (AT) : out of interval
  meas ac pm find p when vdb(ldo_out)=0 failed!

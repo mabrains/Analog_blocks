@@ -161,7 +161,7 @@ Trying gmin =   1.0098E-11 Note: One successful gmin step
 Trying gmin =   1.0098E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.20000e+00
+ Reference value :  1.20000e+00 Reference value : -1.94983e-15
 No compatibility mode selected!
 
 
@@ -273,7 +273,7 @@ Trying gmin =   3.2240E-11 Note: One successful gmin step
 Trying gmin =   3.2240E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 
 Error: measure  pm  (AT) : out of interval
  meas ac pm find p when vdb(ldo_out)=0 failed!

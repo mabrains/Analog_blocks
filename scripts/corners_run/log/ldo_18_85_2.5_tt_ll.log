@@ -36,7 +36,7 @@ Trying gmin =   7.1050E-11 Note: One successful gmin step
 Trying gmin =   7.9863E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  8.00000e-02
+
 No compatibility mode selected!
 
 
@@ -54,7 +54,7 @@ No. of Data Rows : 141
 vldo_sup_2          =  1.809458e+00
 vldo_sup_2_8        =  1.813320e+00
 line_reg = 4.827500e-03
-vin                 =  1.948152e+00
+ Reference value :  1.58489e+07vin                 =  1.948152e+00
 dropout = 1.841520e-01
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 

@@ -1,4 +1,4 @@
- Reference value :  8.50000e+01 Reference value :  1.00000e+01Note: Starting true gmin stepping
+ Reference value :  8.50000e+01Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -204,14 +204,14 @@ No. of Data Rows : 141
 vldo_sup_2          =  1.806554e+00
 vldo_sup_2_8        =  1.806652e+00
 line_reg = 1.225000e-04
-vin                 =  1.901641e+00
+ Reference value :  1.00000e+00vin                 =  1.901641e+00
 dropout = 1.376410e-01
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
 Error: no such vector PM
- Reference value :  5.01187e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 
 Error: measure  pm  (AT) : out of interval
  meas ac pm find p when vdb(ldo_out)=0 failed!

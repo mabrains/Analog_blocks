@@ -1,4 +1,4 @@
- Reference value :  8.50000e+01Note: Starting true gmin stepping
+ Reference value :  8.50000e+01 Reference value :  2.80000e+00Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -44,7 +44,7 @@ Trying gmin =   1.0000E-11 Note: One successful gmin step
 Trying gmin =   3.1623E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-
+ Reference value :  3.80000e-01
 No compatibility mode selected!
 
 
@@ -88,7 +88,7 @@ Trying gmin =   2.2248E-11 Note: One successful gmin step
 Trying gmin =   2.2248E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.00000e+00
+
 Error: measure  vin  (WHEN) : out of interval
  meas dc vin when v(ldo_out)=1.764 failed!
 
@@ -119,7 +119,7 @@ Trying gmin =   2.2248E-11 Note: One successful gmin step
 Trying gmin =   2.2248E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 
 Error: measure  pm  (AT) : out of interval
  meas ac pm find p when vdb(ldo_out)=0 failed!

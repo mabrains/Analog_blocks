@@ -116,13 +116,13 @@ No. of Data Rows : 141
 vldo_sup_2          =  1.806228e+00
 vldo_sup_2_8        =  1.808068e+00
 line_reg = 2.300000e-03
- Reference value :  1.25893e+04vin                 =  1.764139e+00
+vin                 =  1.764139e+00
 dropout = 1.390000e-04
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
-Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+ Reference value :  1.00000e+00Note: No ".plot", ".print", or ".fourier" lines; no simulations run
 pm                  =  6.485872e+01
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
