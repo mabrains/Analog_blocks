@@ -1,0 +1,89 @@
+ Reference value :  8.00000e+01Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Warning: Further gmin increment
+Trying gmin =   5.6234E-09 Note: One successful gmin step
+Trying gmin =   2.3714E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Warning: Further gmin increment
+Trying gmin =   1.9110E-09 Note: One successful gmin step
+Trying gmin =   1.3824E-09 Warning: Further gmin increment
+Trying gmin =   1.7624E-09 Note: One successful gmin step
+Trying gmin =   1.5608E-09 Note: One successful gmin step
+Trying gmin =   1.3009E-09 Note: One successful gmin step
+Trying gmin =   1.0843E-09 Note: One successful gmin step
+Trying gmin =   8.2509E-10 Note: One successful gmin step
+Trying gmin =   5.4768E-10 Note: One successful gmin step
+Trying gmin =   2.9618E-10 Note: One successful gmin step
+Trying gmin =   1.1779E-10 Note: One successful gmin step
+Trying gmin =   2.9541E-11 Note: One successful gmin step
+Trying gmin =   3.7103E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+ Reference value :  1.34000e+00Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Warning: Further gmin increment
+Trying gmin =   5.6234E-09 Note: One successful gmin step
+Trying gmin =   2.3714E-09 Note: One successful gmin step
+Trying gmin =   6.4938E-10 Warning: Further gmin increment
+Trying gmin =   1.7154E-09 Note: One successful gmin step
+Trying gmin =   1.0554E-09 Warning: Further gmin increment
+Trying gmin =   1.5193E-09 Note: One successful gmin step
+Trying gmin =   1.2663E-09 Note: One successful gmin step
+Trying gmin =   9.6358E-10 Warning: Further gmin increment
+Trying gmin =   1.1827E-09 Note: One successful gmin step
+Trying gmin =   1.0675E-09 Warning: Further gmin increment
+Trying gmin =   1.1528E-09 Note: One successful gmin step
+Trying gmin =   1.1093E-09 Warning: Further gmin increment
+Trying gmin =   1.1418E-09 Note: One successful gmin step
+Trying gmin =   1.1254E-09 Note: One successful gmin step
+Trying gmin =   1.1093E-09 Note: One successful gmin step
+Trying gmin =   1.0856E-09 Note: One successful gmin step
+Trying gmin =   1.0510E-09 Note: One successful gmin step
+Trying gmin =   1.0011E-09 Note: One successful gmin step
+Trying gmin =   9.3070E-10 Note: One successful gmin step
+Trying gmin =   8.3425E-10 Note: One successful gmin step
+Trying gmin =   7.0798E-10 Note: One successful gmin step
+Trying gmin =   5.5350E-10 Note: One successful gmin step
+Trying gmin =   3.8261E-10 Note: One successful gmin step
+Trying gmin =   2.1989E-10 Note: One successful gmin step
+Trying gmin =   9.5807E-11 Note: One successful gmin step
+Trying gmin =   2.7554E-11 Note: One successful gmin step
+Trying gmin =   4.2496E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+ Reference value :  1.32000e+00
+No compatibility mode selected!
+
+
+Circuit: * ldo netlist 
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 81
+temp_coeff = 2.345243e+01
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 151
+vldo_sup_2          =  1.798179e+00
+vldo_sup_3          =  1.798199e+00
+line_reg = 2.000000e-05
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+vin                 =  1.932463e+00
+dropout = 1.684630e-01
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 91
+psrr100             =  -8.485943e+01
+psrr100k            =  -2.503745e+01

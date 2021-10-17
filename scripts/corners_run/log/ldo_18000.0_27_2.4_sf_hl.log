@@ -1,0 +1,60 @@
+ Reference value :  8.00000e+01Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Note: One successful gmin step
+Trying gmin =   3.1623E-08 Note: One successful gmin step
+Trying gmin =   1.3335E-08 Note: One successful gmin step
+Trying gmin =   3.6517E-09 Note: One successful gmin step
+Trying gmin =   5.2330E-10 Note: One successful gmin step
+Trying gmin =   5.2330E-11 Note: One successful gmin step
+Trying gmin =   5.2330E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+ Reference value :  1.66000e+00Error: -9.87986e+159, 2 out of range for ^
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Note: One successful gmin step
+Trying gmin =   3.1623E-08 Note: One successful gmin step
+Trying gmin =   1.3335E-08 Note: One successful gmin step
+Trying gmin =   3.6517E-09 Note: One successful gmin step
+Trying gmin =   5.2330E-10 Note: One successful gmin step
+Trying gmin =   5.2330E-11 Note: One successful gmin step
+Trying gmin =   5.2330E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+
+No compatibility mode selected!
+
+
+Circuit: * ldo netlist 
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 81
+temp_coeff = 3.602042e+01
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 151
+vldo_sup_2          =  1.797457e+00
+vldo_sup_3          =  1.797598e+00
+line_reg = 1.410000e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
+vin                 =  1.764274e+00
+dropout = 2.740000e-04
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 91
+psrr100             =  -6.966859e+01
+psrr100k            =  -3.223421e+01
