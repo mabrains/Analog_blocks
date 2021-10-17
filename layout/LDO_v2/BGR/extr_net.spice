@@ -1,0 +1,8 @@
+* NGSPICE file created from TOP.ext - technology: sky130A
+
+.subckt TOP bg_out GND VDD inn
+X0 a_n2186_2122# bg_out GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u M=8
+X1 inn a_n2186_2122# VDD GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=4
+X2 VDD bg_out a_n2186_2122# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=420000u l=5e+06u M=2
+.ends
+
