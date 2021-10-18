@@ -85,7 +85,7 @@ XM24 ldo_out net12 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int(
 XM26 vb mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
-XC3 net11 net8 sky130_fd_pr__cap_mim_m3_1 W=50 L=50 MF=1 m=1
+XC3 net8 net11 sky130_fd_pr__cap_mim_m3_1 W=50 L=50 MF=1 m=1
 XR7 out net11 GND sky130_fd_pr__res_xhigh_po_0p69 L=4.5 mult=1 m=1
 XR8 pos ldo_out GND sky130_fd_pr__res_xhigh_po_0p69 L=11.4 mult=1 m=1
 XR9 GND pos GND sky130_fd_pr__res_xhigh_po_0p69 L=17.8 mult=1 m=1
@@ -117,30 +117,15 @@ define max(vector_name) (vecmax(vector_name))
 define min(vector_name) (vecmin(vector_name))
 .endc
 
-*Temp_sweep
-.control
-dc temp 85 0 -1
-let temp_coeff=1000000*(max(ldo_out)-min(ldo_out))/85
-print temp_coeff
+.control  
+op
+print all
 set wr_singlescale
 set wr_vecnames
 set appendwrite
-wrdata ./corners_run/results/temp_sweep_180_27_2.3_sf_tt temp_coeff
-.endc
-*supply_sweep
-.control
-dc Vs 2.8 0 -0.02
-meas DC Vldo_Sup_2 FIND ldo_out AT=2
-meas DC Vldo_Sup_2_8 FIND ldo_out AT=2.8
-let line_reg=abs((Vldo_Sup_2_8-Vldo_Sup_2)/0.8)
-print line_reg
-meas DC vin WHEN v(ldo_out)=1.764
-let dropout=vin-1.764
-print dropout
-set wr_singlescale
-set wr_vecnames
-set appendwrite
-wrdata ./corners_run/results/dc_sweep_180_27_2.3_sf_tt dropout line_reg
+if v(ldo_out)>1
+wrdata ./corners_run/results/op_point_180_27_2.3_sf_tt v(ldo_out)
+end
 .endc
 
 *Stability_Analysis
@@ -169,4 +154,33 @@ set wr_singlescale
 set wr_vecnames
 wrdata ./corners_run/results/psrr_180_27_2.3_sf_tt PSRR100 PSRR100k
 .endc
+
+
+*Temp_sweep
+.control
+dc temp 85 0 -1
+let temp_coeff=1000000*(max(ldo_out)-min(ldo_out))/85
+print temp_coeff
+set wr_singlescale
+set wr_vecnames
+set appendwrite
+wrdata ./corners_run/results/temp_sweep_180_27_2.3_sf_tt temp_coeff
+.endc
+*supply_sweep
+.control
+dc Vs 2.8 0 -0.02
+meas DC Vldo_Sup_2 FIND ldo_out AT=2
+meas DC Vldo_Sup_2_8 FIND ldo_out AT=2.8
+let line_reg=abs((Vldo_Sup_2_8-Vldo_Sup_2)/0.8)
+print line_reg
+meas DC vin WHEN v(ldo_out)=1.764
+let dropout=vin-1.764
+print dropout
+set wr_singlescale
+set wr_vecnames
+set appendwrite
+wrdata ./corners_run/results/dc_sweep_180_27_2.3_sf_tt dropout line_reg
+.endc
+
+
 .end

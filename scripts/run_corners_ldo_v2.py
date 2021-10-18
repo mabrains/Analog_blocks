@@ -241,21 +241,20 @@ def run_simulation(netlist_path, log_file, corner, supply, temp,resistor):
     pm_result = collect_results("pm",corner,supply,temp,resistor,1)
     dc_sweep_result = collect_results("dc_sweep",corner,supply,temp,resistor,2)
     temp_sweep_result = collect_results("temp_sweep",corner,supply,temp,resistor,1)
-    return {"psrr" : psrr_result, "pm": pm_result, "dc_sweep": dc_sweep_result, "temp_sweep": temp_sweep_result}
+    return {"psrr" : psrr_result, "pm": pm_result, "dc_sweep": dc_sweep_result, "temp_s:Qweep": temp_sweep_result}
 
 
 
 def main():
     arguments = docopt(__doc__, version='Ldo Sweeper 1.0')
-    # corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
-    #            "ff_tt", "ff_ll", "ff_lh","ff_hl", "ff_hh",
-    #              "fs_tt", "fs_ll", "fs_lh","fs_hl", "fs_hh",
-    #              "ss_tt", "ss_ll", "ss_lh","ss_hl", "ss_hh",
-    #              "sf_tt", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
-    corners=["sf_hh"]
-    supplys = [2.1]
-    temps = [27]
-    resistors = [36e3]
+    corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
+               "ff_tt", "ff_ll", "ff_lh","ff_hl", "ff_hh",
+                 "fs_tt", "fs_ll", "fs_lh","fs_hl", "fs_hh",
+                 "ss_tt", "ss_ll", "ss_lh","ss_hl", "ss_hh",
+                 "sf_tt", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
+    supplys = [2.3,2.5,2.1]
+    temps = [27,85,0]
+    resistors = [36e3,180,18]
     psrr_table = "corner,temp,resistor,supply,psr100,psr100k\n"
     pm_table = "corner,temp,resistor,supply,pm\n"
     dc_sweep_table = "corner,temp,resistor,supply,dropout,line_reg\n"
