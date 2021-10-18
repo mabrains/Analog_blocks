@@ -108,7 +108,7 @@ XM24 ldo_out net12 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int(
 XM26 vb mir VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=4 m=4 
-XC3 net11 net8 sky130_fd_pr__cap_mim_m3_1 W=50 L=50 MF=1 m=1
+XC3 net8 net11 sky130_fd_pr__cap_mim_m3_1 W=50 L=50 MF=1 m=1
 XR7 out net11 GND sky130_fd_pr__res_xhigh_po_0p69 L=4.5 mult=1 m=1
 XR8 pos ldo_out GND sky130_fd_pr__res_xhigh_po_0p69 L=11.4 mult=1 m=1
 XR9 GND pos GND sky130_fd_pr__res_xhigh_po_0p69 L=17.8 mult=1 m=1
@@ -140,30 +140,15 @@ define max(vector_name) (vecmax(vector_name))
 define min(vector_name) (vecmin(vector_name))
 .endc
 
-*Temp_sweep
-.control
-dc temp 85 0 -1
-let temp_coeff=1000000*(max(ldo_out)-min(ldo_out))/85
-print temp_coeff
+.control  
+op
+print all
 set wr_singlescale
 set wr_vecnames
 set appendwrite
-wrdata ./corners_run/results/temp_sweep_{resistor}_{temp}_{supply}_{corner} temp_coeff
-.endc
-*supply_sweep
-.control
-dc Vs 2.8 0 -0.02
-meas DC Vldo_Sup_2 FIND ldo_out AT=2
-meas DC Vldo_Sup_2_8 FIND ldo_out AT=2.8
-let line_reg=abs((Vldo_Sup_2_8-Vldo_Sup_2)/0.8)
-print line_reg
-meas DC vin WHEN v(ldo_out)=1.764
-let dropout=vin-1.764
-print dropout
-set wr_singlescale
-set wr_vecnames
-set appendwrite
-wrdata ./corners_run/results/dc_sweep_{resistor}_{temp}_{supply}_{corner} dropout line_reg
+if v(ldo_out)>1
+wrdata ./corners_run/results/op_point_{resistor}_{temp}_{supply}_{corner} v(ldo_out)
+end
 .endc
 
 *Stability_Analysis
@@ -192,51 +177,85 @@ set wr_singlescale
 set wr_vecnames
 wrdata ./corners_run/results/psrr_{resistor}_{temp}_{supply}_{corner} PSRR100 PSRR100k
 .endc
+
+
+*Temp_sweep
+.control
+dc temp 85 0 -1
+let temp_coeff=1000000*(max(ldo_out)-min(ldo_out))/85
+print temp_coeff
+set wr_singlescale
+set wr_vecnames
+set appendwrite
+wrdata ./corners_run/results/temp_sweep_{resistor}_{temp}_{supply}_{corner} temp_coeff
+.endc
+*supply_sweep
+.control
+dc Vs 2.8 0 -0.02
+meas DC Vldo_Sup_2 FIND ldo_out AT=2
+meas DC Vldo_Sup_2_8 FIND ldo_out AT=2.8
+let line_reg=abs((Vldo_Sup_2_8-Vldo_Sup_2)/0.8)
+print line_reg
+meas DC vin WHEN v(ldo_out)=1.764
+let dropout=vin-1.764
+print dropout
+set wr_singlescale
+set wr_vecnames
+set appendwrite
+wrdata ./corners_run/results/dc_sweep_{resistor}_{temp}_{supply}_{corner} dropout line_reg
+.endc
+
+
 .end
 """
 
-
     with open(f"./corners_run/netlist/ldo_{resistor}_{temp}_{supply}_{corner}.net","w") as f:
         f.write(netlist_analysis)
-    
+       
 def collect_results(table_name, corner,supply,temp,resistor,num_specs):
-   
     file_name =f"./corners_run/results/{table_name}_{resistor}_{temp}_{supply}_{corner}"
     row = f"{corner},{temp},{resistor},{supply}"
-
-    if not os.path.isfile(file_name):
+    flag=0
+    opfile_name =f"./corners_run/results/op_point_{resistor}_{temp}_{supply}_{corner}"
+    if not os.path.isfile(opfile_name):        
+        flag=1
+    if ((not os.path.isfile(file_name)) or flag==1):        
         for i in range(num_specs):
             row+=",error"
         return row+"\n"
-
-    with open(file_name,"r") as f:
-        lines = f.readlines()
-
-    specs = lines[1]
-    for i in range(num_specs):
-        row+=f",{specs.split()[i+1]}"
+    if not((not os.path.isfile(file_name)) or flag==1):
+        with open(file_name,"r") as f:
+            lines = f.readlines()
+            specs = lines[1]
+            for i in range(num_specs):
+                row+=f",{specs.split()[i+1]}"
 
     return row+"\n"
 
 
 def run_simulation(netlist_path, log_file, corner, supply, temp,resistor):
     os.system(f"ngspice -b {netlist_path} > {log_file} 2>&1")
+
+          
     psrr_result = collect_results("psrr",corner,supply,temp,resistor,2)
     pm_result = collect_results("pm",corner,supply,temp,resistor,1)
     dc_sweep_result = collect_results("dc_sweep",corner,supply,temp,resistor,2)
     temp_sweep_result = collect_results("temp_sweep",corner,supply,temp,resistor,1)
     return {"psrr" : psrr_result, "pm": pm_result, "dc_sweep": dc_sweep_result, "temp_sweep": temp_sweep_result}
 
+
+
 def main():
     arguments = docopt(__doc__, version='Ldo Sweeper 1.0')
-    corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
-                 "ff_tt", "ff_ll", "ff_lh","ff_hl", "ff_hh",
-                 "fs_tt", "fs_ll", "fs_lh","fs_hl", "fs_hh",
-                 "ss_tt", "ss_ll", "ss_lh","ss_hl", "ss_hh",
-                 "sf_tt", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
-    supplys = [2.1, 2.3, 2.5]
-    temps = [0,27,85]
-    resistors = [36e3, 180, 18]
+    # corners = ["tt", "tt_ll", "tt_lh","tt_hl", "tt_hh",
+    #            "ff_tt", "ff_ll", "ff_lh","ff_hl", "ff_hh",
+    #              "fs_tt", "fs_ll", "fs_lh","fs_hl", "fs_hh",
+    #              "ss_tt", "ss_ll", "ss_lh","ss_hl", "ss_hh",
+    #              "sf_tt", "sf_ll", "sf_lh","sf_hl", "sf_hh"]
+    corners=["sf_hh"]
+    supplys = [2.1]
+    temps = [27]
+    resistors = [36e3]
     psrr_table = "corner,temp,resistor,supply,psr100,psr100k\n"
     pm_table = "corner,temp,resistor,supply,pm\n"
     dc_sweep_table = "corner,temp,resistor,supply,dropout,line_reg\n"

@@ -1,0 +1,13 @@
+* NGSPICE file created from error_amplifier_flattened.ext - technology: sky130A
+
+.subckt error_amplifier_flattened out vb VDD GND net10 net9 net8 bg_out pos
+X0 net9 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=4
+X1 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=8
+X2 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=12
+X3 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=12
+X4 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u M=8
+X5 net8 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=4
+X6 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u M=8
+X7 vb vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=4
+.ends
+

@@ -1,0 +1,282 @@
+**.subckt LDO_Miller_1.8v_meas
+C2 Vout net1 1u m=1
+R3 net1 0 100m m=1
+x1 Vin Vout 0 LDO_Miller_OTA_1.8v
+**** begin user architecture code
+
+
+************************************************
+*Source initialization
+************************************************
+VVin Vin 0 DC 0 AC 0
+Iout Vout 0 DC 0 AC 0
+************************************************
+*Input/Output Characteristic
+************************************************
+.control
+dc VVin 0 2.2 0.2
+show
+plot Vin Vout
+meas DC Vreg WHEN Vout=1.8
+print Vreg-1.8
+.endc
+************************************************
+*Line regulation
+************************************************
+.control
+alter Iout DC = 100u
+dc VVin 1.8 2.3 0.01
+plot Vout
+meas DC Vmin FIND Vout AT=1.95
+meas DC Vmax FIND Vout AT=2.2
+print (Vmax-Vmin)/0.25
+.endc
+************************************************
+*Load regulation and Quiescent current
+************************************************
+.control
+alter VVin DC = 2
+dc Iout 0 50m 50u
+plot Vout
+plot i(VVin)
+meas DC Iq FIND i(VVin) AT=0
+meas DC Vmax FIND Vout AT=0
+meas DC Vmin FIND Vout AT=1m
+meas DC Vmin FIND Iout WHEN Vout=1.71
+print (Vmax-Vmin)/1m
+.endc
+************************************************
+*Temerature variation
+************************************************
+.control
+alter VVin DC = 2
+dc TEMP -45 125 1
+plot Vout
+meas DC Vout_nom FIND Vout AT=27
+meas DC Vout_neg40 FIND Vout AT=-40
+meas DC Vout_120 FIND Vout AT=120
+.endc
+************************************************
+*PSRR analysis
+************************************************
+.control
+alter VVin DC = 2
+alter VVin AC = 1
+ac dec 10 1 100MEG
+plot db(Vout)
+meas AC PSR_1k FIND vdb(Vout) AT=1k
+meas AC PSR_1M FIND vdb(Vout) AT=1MEG
+.endc
+************************************************
+*Line Transient
+************************************************
+.control
+alter Iout DC = 100u
+alter @VVin[pulse] = [ 1.95 2.2 50u 5u 5u 50u 100u ]
+tran 20u 150u
+plot Vin Vout
+.endc
+************************************************
+*Load Transient
+************************************************
+.control
+alter VVin DC = 2
+alter @Iout[pulse] = [ 0 100u 50u 5u 5u 50u 100u ]
+tran 20u 150u
+plot Iout Vout
+.endc
+************************************************
+*Quiescent current Transient
+************************************************
+.control
+alter VVin DC = 2
+alter Iout DC = 0
+tran 20u 400u
+plot i(VVin)
+.endc
+************************************************
+
+
+
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor/Capacitor
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+* All models
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/all.spice
+* Corner
+.include ~/mabrains/Analog_blocks/models/sky130A/libs.tech/ngspice/corners/tt/rf.spice
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:
+*+  /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym # of pins=3
+* sym_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sym
+* sch_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/LDO_Miller_OTA_1.8v.sch
+.subckt LDO_Miller_OTA_1.8v  Vin Vout GND
+*.ipin Vin
+*.ipin GND
+*.opin Vout
+XC1 Vout net1 sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
+XM1 Vout net2 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=60 m=60 
+XR1 net1 Vout GND sky130_fd_pr__res_xhigh_po_1p41 L=6.9 mult=8 m=8
+XR2 GND net1 GND sky130_fd_pr__res_xhigh_po_1p41 L=9.3 mult=8 m=8
+x1 Vin net3 net1 net2 net3 GND Error_Amplifier
+x2 net3 Vin GND Bandgap1.8v
+.ends
+
+
+* expanding   symbol:
+*+  /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym # of pins=6
+* sym_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sym
+* sch_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Error_Amplifier.sch
+.subckt Error_Amplifier  Vdd Vn Vp Vout Ibias GND
+*.opin Vout
+*.ipin Vdd
+*.ipin GND
+*.ipin Vp
+*.ipin Vn
+*.ipin Ibias
+XM2 net1 Vn net3 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM3 net2 Vp net3 GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM4 net1 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM5 net2 net1 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=4 m=4 
+XM6 Vout net2 Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=16 m=16 
+XM7 net3 Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM9 Vout Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=64 m=64 
+XM1 Ibias Ibias GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.75 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XC1 Vout net2 sky130_fd_pr__cap_mim_m3_2 W=25 L=25 MF=3 m=3
+.ends
+
+
+* expanding   symbol:
+*+  /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sym # of pins=3
+* sym_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sym
+* sch_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v.sch
+.subckt Bandgap1.8v  Vref VDD GND
+*.opin Vref
+*.ipin VDD
+*.ipin GND
+XR1 net1 net2 GND sky130_fd_pr__res_xhigh_po W=1 L=2 mult=1 m=1
+XR2 net2 Vref GND sky130_fd_pr__res_xhigh_po W=1 L=6.5 mult=1 m=1
+XR3 net3 Vref GND sky130_fd_pr__res_xhigh_po W=1 L=6.5 mult=1 m=1
+XM2 net4 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+XM3 net3 net4 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2 
+XM1 net4 net5 GND GND sky130_fd_pr__nfet_g5v0d10v5 L=20 W=0.42 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+x1 VDD Vref net3 net2 net5 GND Bandgap1.8v_OTA
+XQ1 GND GND net3 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ2 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ3 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ4 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ5 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ6 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ7 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ8 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+XQ9 GND GND net1 sky130_fd_pr__pnp_05v5_W0p68L0p68
+.ends
+
+
+* expanding   symbol:
+*+  /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym # of pins=6
+* sym_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sym
+* sch_path:
+*+ /home/eslam/mabrains/Analog_blocks/Analog_Blocks/LDO/Schematic/LDO_Miller_1.8v/Bandgap1.8v_OTA.sch
+.subckt Bandgap1.8v_OTA  Vdd Ibias Vn Vp Vhigh Vn
+*.opin Ibias
+*.ipin Vhigh
+*.ipin Vdd
+*.ipin Gnd
+*.ipin Vp
+*.ipin Vn
+XM6 Ibias Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=5 m=5 
+XM5 net3 Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=5 m=5 
+XM1 net2 Vn net3 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=9 m=9 
+XM8 Vhigh net1 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4 
+XM4 net1 net2 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=3 m=3 
+XM3 net2 net2 Gnd Gnd sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=3 m=3 
+XC1 net1 Vhigh sky130_fd_pr__cap_mim_m3_2 W=1 L=1 MF=1 m=1
+XM2 net1 Vp net3 Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=9 m=9 
+XM7 Vhigh Vhigh Vdd Vdd sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=7 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=10 m=10 
+.ends
+
+** flattened .save nodes
+.end

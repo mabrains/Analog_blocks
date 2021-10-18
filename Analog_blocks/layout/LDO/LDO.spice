@@ -1,0 +1,108 @@
+* NGSPICE file created from LDO.ext - technology: sky130A
+
+
+* Top level circuit LDO
+
+X0 G1011 G1011 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u M=44
+X1 GND Vn VoutEA GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=64
+X2 GND GND VBJTS sky130_fd_pr__pnp_05v5 area=0p M=-nan
+X3 a_88185_83607# a_88715_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X4 G4 a_98774_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X5 Vin VoutEA Vout Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+07u l=500000u M=60
+X6 G1011 D6 GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=420000u l=500000u M=10
+X7 a_79705_83607# a_79175_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X8 Vin D3 VoutEA Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=16
+X9 D6 G3 D5 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+07u l=500000u M=6
+X10 D9 G4 D5 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1.5e+07u l=500000u M=6
+X11 a_101435_83607# a_101965_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X12 D9 D9 GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=420000u l=500000u M=4
+X13 D5 G1011 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=500000u M=4
+X14 D1011 G1011 GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=420000u l=2e+07u
+X15 Vin D2 D3 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=4
+X16 a_98244_102185# a_98774_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X17 D3 Vp D7 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X18 D2BGR G1011 Vin Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X19 a_70165_83607# a_70695_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X20 GND a_96135_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X21 a_87125_83607# a_87655_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X22 a_79705_83607# a_80235_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X23 D6 D9 GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=420000u l=500000u M=4
+X24 a_78645_83607# a_78115_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X25 a_71225_83607# a_70695_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X26 a_92425_83607# a_92955_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X27 Vin G1011 Vn Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X28 a_83945_83607# a_83415_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X29 a_101435_83607# a_100905_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X30 D7 Vn GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=4
+X31 a_74405_83607# a_74935_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X32 D2 Vn D7 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=5e+06u l=500000u M=4
+X33 a_96124_102185# a_95594_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X34 GND Vn Vn GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=750000u l=500000u M=4
+X35 a_86065_83607# a_86595_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X36 a_103555_83607# Vp GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X37 Vin D1011 G4 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+07u l=1e+06u M=2
+X38 a_77585_83607# Vp GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X39 a_95605_83607# a_96135_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X40 a_70165_83607# Vout GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X41 a_91365_83607# a_91895_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X42 a_87125_83607# a_86595_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X43 a_95064_102185# a_95594_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X44 a_77585_83607# a_78115_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X45 a_82885_83607# a_82355_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X46 a_100375_83607# a_99845_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X47 a_99315_83607# a_99845_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X48 a_73345_83607# a_73875_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X49 a_92425_83607# a_91895_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X50 a_82885_83607# a_83415_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X51 a_74405_83607# a_73875_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X52 D2BGR a_97714_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X53 a_94545_83607# a_95075_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X54 a_98244_102185# a_97714_102977# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X55 Vin G1011 D1011 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+07u l=1e+06u M=2
+X56 a_86065_83607# a_85535_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X57 a_76525_83607# a_77055_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X58 a_100375_83607# a_100905_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X59 a_98255_83607# a_98785_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X60 a_91365_83607# a_90835_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X61 GND GND G4 sky130_fd_pr__pnp_05v5 area=0p
+X62 a_89245_83607# a_89775_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X63 a_81825_83607# a_82355_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X64 a_99315_83607# a_98785_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X65 a_73345_83607# a_72815_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X66 a_103555_83607# a_103025_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X67 Vin D2 D2 Vin sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=500000u M=4
+X68 VoutEA D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X69 a_95605_83607# a_95075_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X70 VoutEA D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X71 a_80765_83607# a_81295_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X72 a_72285_83607# a_71755_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X73 a_98255_83607# a_97725_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X74 a_89245_83607# a_88715_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X75 a_95064_102185# Vn GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X76 a_102495_83607# a_101965_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X77 a_75465_83607# a_75995_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X78 a_94545_83607# a_94015_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X79 a_85005_83607# a_85535_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X80 a_102495_83607# a_103025_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X81 a_76525_83607# a_75995_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X82 a_90305_83607# a_90835_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X83 a_81825_83607# a_81295_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X84 a_97195_83607# a_77055_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X85 a_72285_83607# a_72815_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X86 a_88185_83607# a_87655_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X87 a_78645_83607# a_79175_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X88 a_96124_102185# G3 GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X89 a_93485_83607# a_92955_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X90 a_83945_83607# a_84475_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X91 VBJTS G3 GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=1.8e+06u
+X92 Vout Vp sky130_fd_pr__cap_mim_m3_2 l=3e+07u w=3e+07u
+X93 a_75465_83607# a_74935_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X94 a_93485_83607# a_94015_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X95 a_85005_83607# a_84475_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X96 VoutEA D3 sky130_fd_pr__cap_mim_m3_2 l=2.5e+07u w=2.5e+07u
+X97 a_80765_83607# a_80235_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X98 a_97195_83607# a_97725_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X99 a_71225_83607# a_71755_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+X100 a_90305_83607# a_89775_84439# GND sky130_fd_pr__res_xhigh_po w=1.41e+06u l=2e+06u
+.end
+

@@ -1,0 +1,43 @@
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+Class LDO.spice:  Merged 2 devices.
+Class LDO_nocells.spice:  Merged 7 devices.
+
+Subcircuit summary:
+Circuit 1: LDO.spice                       |Circuit 2: LDO_nocells.spice               
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (12)          |sky130_fd_pr__pfet_g5v0d10v5 (12)          
+sky130_fd_pr__nfet_g5v0d10v5 (9)           |sky130_fd_pr__nfet_g5v0d10v5 (9)           
+sky130_fd_pr__pnp_05v5 (2)                 |sky130_fd_pr__pnp_05v5 (2)                 
+sky130_fd_pr__res_xhigh_po (5)             |sky130_fd_pr__res_xhigh_po (5)             
+sky130_fd_pr__cap_mim_m3_2 (2)             |sky130_fd_pr__cap_mim_m3_2 (2)             
+Number of devices: 30                      |Number of devices: 30                      
+Number of nets: 18                         |Number of nets: 18                         
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Property errors were found.
+Netlists match uniquely.
+There were property errors.
+sky130_fd_pr__res_xhigh_po91 vs. sky130_fd_pr__res_xhigh_poR4:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po33 vs. sky130_fd_pr__res_xhigh_poR3:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po52 vs. sky130_fd_pr__res_xhigh_poR5:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po77 vs. sky130_fd_pr__res_xhigh_poR6:
+Property w in circuit1 has no matching property in circuit2
+sky130_fd_pr__res_xhigh_po71 vs. sky130_fd_pr__res_xhigh_poR7:
+Property w in circuit1 has no matching property in circuit2
+Circuit 1 LDO.spice instance sky130_fd_pr__pnp_05v561 property "area" has no match in circuit 2.
+sky130_fd_pr__pnp_05v52 vs. sky130_fd_pr__pnp_05v5Q11:
+ M circuit1: 0   circuit2: 8   
+sky130_fd_pr__pnp_05v52 vs. sky130_fd_pr__pnp_05v5Q11:
+Property area in circuit1 has no matching property in circuit2
+Cells have no pins;  pin matching not needed.
+Device classes LDO.spice and LDO_nocells.spice are equivalent.
+Circuits match uniquely.
+Property errors were found.
+The following cells had property errors: LDO.spice
