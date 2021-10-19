@@ -2,7 +2,7 @@
 
 ## Schematic
 
-![Image of LDO schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Schematic.png)
+![Image of LDO schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Testbench_schematic.png)
 
 ## Error Amplifier 
 
