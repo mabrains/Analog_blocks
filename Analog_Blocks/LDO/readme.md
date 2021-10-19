@@ -10,11 +10,8 @@
 
 ## Bandgap
 
-![Image of LDO_BGR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/BGR.png)
+![Image of LDO_BGR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Bandgap_symbol.png)
 
-## Bandgap OTA
-
-![Image of LDO_BGR_OTA](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/BGR_OTA.png)
 
 ## a. DC analysis
 
@@ -25,52 +22,41 @@ and ensure that all mosfets are in saturation region (Vds > Vdsat).
 
 Use the command (.DC vin) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vout vs vin.
 
-![Image of LDO_Vout_vs_Vin](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Vout_Vin.png)
+![Image of LDO_Vout_vs_Vin](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/dcsweep.png)
 
 ## c. PSRR analysis
 
 Use the command (.AC vin) then press netlist then press simulate. After simulation is done write the command (plot db(vout)) to plot the PSRR in dB.
 
-![Image of LDO_PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/PSRR.png)
+![Image of LDO_PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/psrr.png)
 
 ## d. Transient analysis
 
 Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vin and vout vs time.
-
-![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Line_transient.png)
+When VDD varies from 0 to 2.3v
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.3v.png)
+When VDD varies from 0 to 2.1v
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.1v.png)
+When VDD varies from 0 to 2.5v
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.5v.png)
 
 ## e. Testbench netlist
 
 The netlist of all previous analyses is below or you can simply run it using script "LDO_script.bash" existed in scripts folder.
 
-![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/TB_netlist.png)
+![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Testbench.png)
 
 ## Simulation results
+The typical conditions are tt corner ,load of 50uA, T=27°C , VDD=2.3V , We have a script to automate running process corners then getting their statistical distribution where the variation of the load from 50uA till 100mA is included in the corners  
 
-  Specification  |      TT        |       FF         |       SS         |       FS         |         SF         
------------------| ---------------|------------------|------------------|------------------|------------------
-output Voltage   | 1.79v to 1.84v |1.79v to 1.85v    |1.77v to 1.83v    |1.79v to 1.83v    |1.79 to 1.83v       
-Input range      | 1.812v to 2.2v |1.8v to 2.2v      |1.877v to 2.2v    |1.8v to 2.2v      |1.8v to 2.2v
-Vdropout         | 12.4 mv        |0.3 mv            |77 mv             |0.8 mv            |10mv
-Line regulation  | 110 mv/v       |135 mv/v          |142 mv/v          |74mv/v            |120mv/v
-PSRR @ 1KHz      | 31 dB          |36 dB             |29 dB             |29 dB             |30 dB
-PSRR @ 1MHz      | 77 dB          |76 dB             |82 dB             |86 dB             |85 dB
-
-## Layout
-
-![Image of LDO_layout](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/LDO_layout.png)
-
-### DRC report
-
-The layout was checked using the script "run_standard_drc.py" existed in scripts folder and it was DRC clean.
-
-### LVS report 
-
-LVS was checked using the script "run_standard_lvs.py" existed in scripts folder and it was LVS clean. 
-
-![Image of LDO_lvs_report](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/LDO_lvs_report.png)
-
-note: There is mismatch in resistor model name in schematic editor and layout editor leads to above mismatches.
-
-
+  Specification  |      TT                  
+-----------------| ---------------
+Temperature Coeffiecient   | 40.7 ppm/°C
+Dropout Voltage            | 0.124mV
+Line Regulation            | 0.1787 mv/v
+Load Regulation            | 0.153mV    IL=0.1mA till IL=100mA
+PSRR @ 1KHz                | 72.4dB
+PSRR @ 100kHz              | 26.9dB
+Load range                 | 50uA -> 100mA
+Phase Margin               | 54.7°
 
