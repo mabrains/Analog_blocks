@@ -8,14 +8,14 @@ Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 1
-bg_out = 1.099649e+00
-inn = 1.061590e+00
-inp = 1.061558e+00
+bg_out = 1.200698e+00
+inn = 1.146622e+00
+inp = 1.146611e+00
 l1#branch = 0.000000e+00
-ldo_out = 1.807738e+00
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#body = 2.944285e-11
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.644169e-11
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.188686e-11
+ldo_out = 1.806503e+00
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#body = 3.030134e-11
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.697150e-11
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.393253e-11
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
@@ -28,172 +28,167 @@ m.xm4.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#body = 1.913437e-11
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.783582e-11
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#sbody = 9.567301e-12
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#body = 1.910077e-11
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.775180e-11
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#sbody = 9.550495e-12
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#body = 2.759696e-11
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.476980e-11
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#sbody = 2.802108e-11
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#body = 2.737393e-11
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.421223e-11
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#sbody = 2.790957e-11
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#body = 2.854128e-11
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.522678e-11
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.039707e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#body = 2.836263e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.478015e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.030775e-11
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#body = 5.463901e-12
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#dbody = 1.365968e-11
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#sbody = 2.732019e-12
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#body = 6.415504e-12
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#dbody = 1.603869e-11
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.207821e-12
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#body = 2.575905e-14
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#dbody = 6.439581e-14
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.288134e-14
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#body = 5.500024e-11
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#dbody = 1.004805e-10
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.452024e-11
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#body = 1.410687e-14
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.526598e-14
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#sbody = 7.054637e-15
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#body = 5.606315e-11
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#dbody = 1.010119e-10
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.717749e-11
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#body = 1.937486e-11
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.843602e-11
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#sbody = 9.687510e-12
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#body = 2.949111e-11
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.656234e-11
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.191099e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#body = 1.240850e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.102117e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.204326e-12
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#body = 1.187726e-11
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#dbody = 2.969305e-11
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#sbody = 5.938743e-12
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#body = 1.937606e-11
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.843900e-11
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#sbody = 9.688109e-12
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#body = 3.031826e-11
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#dbody = 5.701380e-11
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#sbody = 3.394099e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#body = 1.237573e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.093926e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.187941e-12
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#body = 1.268638e-11
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.171583e-11
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.343298e-12
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm26.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm26.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm26.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-mir = 1.249596e+00
-net1 = 6.299100e-01
-net2 = 4.985728e-05
-net3 = 7.034397e-01
-net4 = 2.675365e-01
-net5 = 1.253457e+00
-net6 = 8.478867e-01
-net7 = 7.034077e-01
-net8 = 1.333618e+00
-net9 = 1.351460e+00
-net10 = 2.815714e-01
-net11 = 1.394373e+00
-net12 = 1.394373e+00
+mir = 1.253618e+00
+net1 = 6.299207e-01
+net2 = 2.729516e-05
+net3 = 7.034543e-01
+net4 = 3.320786e-01
+net5 = 1.254972e+00
+net6 = 8.451983e-01
+net7 = 7.034425e-01
+net8 = 1.336561e+00
+net9 = 1.350853e+00
+net10 = 3.576703e-01
+net11 = 1.394468e+00
+net12 = 1.394468e+00
 net13 = 0.000000e+00
-out = 1.394373e+00
-pos = 1.099835e+00
-q.xq2.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.964289e-03
-q.xq3.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq4.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq8.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq10.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq12.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq14.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq16.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-q.xq18.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.741040e-04
-vb = 8.371063e-01
+out = 1.394468e+00
+pos = 1.200851e+00
+q.xq2.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.965383e-03
+q.xq3.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq4.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq8.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq10.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq12.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq14.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq16.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+q.xq18.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 3.742265e-04
+vb = 8.344850e-01
 vdd = 2.500000e+00
-vs#branch = -1.01828e-02
+vs#branch = -1.01751e-02
 vt#branch = 0.000000e+00
 xc1.a = 0.000000e+00
 xc1.b1 = 0.000000e+00
-xc3.a = 1.394373e+00
-xc3.b1 = 1.394373e+00
-xr1.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.093600e-01
-xr2.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.093919e-01
-xr3.xsky130_fd_pr__res_xhigh_po_0p69.ra = 3.640902e-03
-xr4.xsky130_fd_pr__res_xhigh_po_0p69.ra = 6.322896e-01
-xr5.xsky130_fd_pr__res_xhigh_po_0p69.ra = 3.640727e-03
-xr6.xsky130_fd_pr__res_xhigh_po_0p69.ra = 6.296758e-03
-xr7.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.394373e+00
-xr8.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.109400e+00
-xr9.xsky130_fd_pr__res_xhigh_po_0p69.ra = 9.874434e-03
+xc3.a = 1.394468e+00
+xc3.b1 = 1.394468e+00
+xr1.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.092592e-01
+xr2.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.092710e-01
+xr3.xsky130_fd_pr__res_xhigh_po_0p69.ra = 3.468457e-03
+xr4.xsky130_fd_pr__res_xhigh_po_0p69.ra = 6.323011e-01
+xr5.xsky130_fd_pr__res_xhigh_po_0p69.ra = 3.468396e-03
+xr6.xsky130_fd_pr__res_xhigh_po_0p69.ra = 6.162595e-03
+xr7.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.394468e+00
+xr8.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.211095e+00
+xr9.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.074468e-02
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
-Error: no such vector PM
 Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Note: One successful gmin step
-Trying gmin =   1.0000E-08 Warning: Further gmin increment
-Trying gmin =   5.6234E-08 Note: One successful gmin step
-Trying gmin =   2.3714E-08 Warning: Further gmin increment
-Trying gmin =   4.5316E-08 Note: One successful gmin step
-Trying gmin =   3.2781E-08 Note: One successful gmin step
-Trying gmin =   2.0169E-08 Note: One successful gmin step
-Trying gmin =   9.7338E-09 Note: One successful gmin step
-Trying gmin =   3.2634E-09 Note: One successful gmin step
-Trying gmin =   6.3352E-10 Note: One successful gmin step
-Trying gmin =   6.3352E-11 Note: One successful gmin step
-Trying gmin =   6.3352E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Warning: Further gmin increment
+Trying gmin =   5.6234E-07 Note: One successful gmin step
+Trying gmin =   2.3714E-07 Note: One successful gmin step
+Trying gmin =   6.4938E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Warning: Further gmin increment
+Trying gmin =   3.9954E-08 Note: One successful gmin step
+Trying gmin =   1.9282E-08 Note: One successful gmin step
+Trying gmin =   6.4647E-09 Note: One successful gmin step
+Trying gmin =   1.2550E-09 Note: One successful gmin step
+Trying gmin =   1.2550E-10 Note: One successful gmin step
+Trying gmin =   1.2550E-11 Note: One successful gmin step
+Trying gmin =   1.2550E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  1.38000e+00Note: Starting true gmin stepping
+ Reference value :  1.42000e+00Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Note: One successful gmin step
-Trying gmin =   1.0000E-08 Warning: Further gmin increment
-Trying gmin =   5.6234E-08 Note: One successful gmin step
-Trying gmin =   2.3714E-08 Warning: Further gmin increment
-Trying gmin =   4.5316E-08 Note: One successful gmin step
-Trying gmin =   3.2781E-08 Warning: Further gmin increment
-Trying gmin =   4.1792E-08 Note: One successful gmin step
-Trying gmin =   3.7013E-08 Note: One successful gmin step
-Trying gmin =   3.0850E-08 Note: One successful gmin step
-Trying gmin =   2.3475E-08 Note: One successful gmin step
-Trying gmin =   1.5582E-08 Note: One successful gmin step
-Trying gmin =   8.4267E-09 Note: One successful gmin step
-Trying gmin =   3.3513E-09 Note: One successful gmin step
-Trying gmin =   8.4049E-10 Note: One successful gmin step
-Trying gmin =   1.0556E-10 Note: One successful gmin step
-Trying gmin =   1.0556E-11 Note: One successful gmin step
-Trying gmin =   1.0556E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Warning: Further gmin increment
+Trying gmin =   5.6234E-07 Note: One successful gmin step
+Trying gmin =   2.3714E-07 Note: One successful gmin step
+Trying gmin =   6.4938E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Warning: Further gmin increment
+Trying gmin =   3.9954E-08 Warning: Further gmin increment
+Trying gmin =   5.7513E-08 Note: One successful gmin step
+Trying gmin =   4.7936E-08 Note: One successful gmin step
+Trying gmin =   3.6476E-08 Note: One successful gmin step
+Trying gmin =   2.4212E-08 Note: One successful gmin step
+Trying gmin =   1.3094E-08 Note: One successful gmin step
+Trying gmin =   5.2073E-09 Note: One successful gmin step
+Trying gmin =   1.3060E-09 Note: One successful gmin step
+Trying gmin =   1.6403E-10 Note: One successful gmin step
+Trying gmin =   1.6403E-11 Note: One successful gmin step
+Trying gmin =   1.6403E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: True gmin stepping completed
- Reference value :  7.40000e-01
-Error: measure  pm  (AT) : out of interval
- meas ac pm find p when vdb(ldo_out)=0 failed!
-
+ Reference value :  6.40000e-01pm                  =  -8.100441e+01
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
-psrr100             =  -5.524487e+01
-psrr100k            =  -2.598565e+01
+psrr100             =  -5.358142e+01
+psrr100k            =  -2.585269e+01
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 86
-temp_coeff = 4.662764e+01
+temp_coeff = 1.444281e+02
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 141
-vldo_sup_2          =  1.806415e+00
-vldo_sup_2_8        =  1.808350e+00
-line_reg = 2.418750e-03
+vldo_sup_2          =  1.804831e+00
+vldo_sup_2_8        =  1.807210e+00
+line_reg = 2.973750e-03
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
-vin                 =  1.788070e+00
-dropout = 2.407000e-02
+vin                 =  1.788075e+00
+dropout = 2.407500e-02

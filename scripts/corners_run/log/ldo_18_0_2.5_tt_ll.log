@@ -3,49 +3,51 @@ Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Warning: Further gmin increment
-Trying gmin =   5.6234E-07 Note: One successful gmin step
-Trying gmin =   2.3714E-07 Note: One successful gmin step
-Trying gmin =   6.4938E-08 Warning: Further gmin increment
-Trying gmin =   1.7154E-07 Note: One successful gmin step
-Trying gmin =   1.0554E-07 Warning: Further gmin increment
-Trying gmin =   1.5193E-07 Note: One successful gmin step
-Trying gmin =   1.2663E-07 Warning: Further gmin increment
-Trying gmin =   1.4517E-07 Note: One successful gmin step
-Trying gmin =   1.3558E-07 Note: One successful gmin step
-Trying gmin =   1.2238E-07 Warning: Further gmin increment
-Trying gmin =   1.3215E-07 Note: One successful gmin step
-Trying gmin =   1.2717E-07 Warning: Further gmin increment
-Trying gmin =   1.3089E-07 Note: One successful gmin step
-Trying gmin =   1.2902E-07 Warning: Further gmin increment
-Trying gmin =   1.3042E-07 Note: One successful gmin step
-Trying gmin =   1.2972E-07 Warning: Further gmin increment
-Trying gmin =   1.3024E-07 Note: One successful gmin step
-Trying gmin =   1.2998E-07 Note: One successful gmin step
-Trying gmin =   1.2959E-07 Warning: Further gmin increment
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2996E-07 Note: One successful gmin step
-Trying gmin =   1.2992E-07 Note: One successful gmin step
-Trying gmin =   1.2986E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Last gmin step failed
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Warning: Further gmin increment
+Trying gmin =   8.6596E-08 Note: One successful gmin step
+Trying gmin =   6.9783E-08 Warning: Further gmin increment
+Trying gmin =   8.2047E-08 Note: One successful gmin step
+Trying gmin =   7.5667E-08 Warning: Further gmin increment
+Trying gmin =   8.0403E-08 Note: One successful gmin step
+Trying gmin =   7.7999E-08 Warning: Further gmin increment
+Trying gmin =   7.9795E-08 Note: One successful gmin step
+Trying gmin =   7.8892E-08 Warning: Further gmin increment
+Trying gmin =   7.9569E-08 Note: One successful gmin step
+Trying gmin =   7.9230E-08 Note: One successful gmin step
+Trying gmin =   7.8724E-08 Warning: Further gmin increment
+Trying gmin =   7.9103E-08 Warning: Further gmin increment
+Trying gmin =   7.9198E-08 Warning: Further gmin increment
+Trying gmin =   7.9222E-08 Note: One successful gmin step
+Trying gmin =   7.9210E-08 Note: One successful gmin step
+Trying gmin =   7.9192E-08 Warning: Further gmin increment
+Trying gmin =   7.9205E-08 Note: One successful gmin step
+Trying gmin =   7.9199E-08 Warning: Further gmin increment
+Trying gmin =   7.9204E-08 Note: One successful gmin step
+Trying gmin =   7.9201E-08 Warning: Last gmin step failed
 Warning: True gmin stepping failed
 Note: Starting dynamic gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Note: One successful gmin step
-Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Note: One successful gmin step
-Trying gmin =   1.0000E-08 Note: One successful gmin step
-Trying gmin =   1.0000E-09 Note: One successful gmin step
-Trying gmin =   1.0000E-10 Note: One successful gmin step
-Trying gmin =   1.0000E-11 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   1.3335E-07 Warning: Further gmin increment
+Trying gmin =   5.7255E-07 Warning: Further gmin increment
+Trying gmin =   8.2417E-07 Note: One successful gmin step
+Trying gmin =   6.8693E-07 Note: One successful gmin step
+Trying gmin =   5.2271E-07 Note: One successful gmin step
+Trying gmin =   3.4696E-07 Note: One successful gmin step
+Trying gmin =   1.8764E-07 Note: One successful gmin step
+Trying gmin =   7.4621E-08 Note: One successful gmin step
+Trying gmin =   1.8715E-08 Note: One successful gmin step
+Trying gmin =   2.3506E-09 Note: One successful gmin step
+Trying gmin =   2.3506E-10 Note: One successful gmin step
+Trying gmin =   2.3506E-11 Note: One successful gmin step
+Trying gmin =   2.3506E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: Dynamic gmin stepping completed
  Reference value :  0.00000e+00
@@ -58,14 +60,14 @@ Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 1
-bg_out = 1.099166e+00
-inn = 1.181216e+00
-inp = 1.181189e+00
-l1#branch = -1.17004e-31
-ldo_out = 2.507185e+00
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#body = 1.843966e-11
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.028500e-11
-m.xm1.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.503398e-11
+bg_out = 1.194084e+00
+inn = 1.263499e+00
+inp = 1.263485e+00
+l1#branch = -6.93889e-18
+ldo_out = 1.796653e+00
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#body = 1.925721e-11
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.078684e-11
+m.xm1.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.698478e-11
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm2.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
@@ -78,54 +80,54 @@ m.xm4.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm5.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#body = 1.208157e-11
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.020392e-11
-m.xm6.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.040791e-12
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#body = 1.205000e-11
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.012499e-11
+m.xm6.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.025004e-12
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm7.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm8.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#body = 1.759989e-11
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.062004e-11
-m.xm9.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.217963e-11
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#body = 1.985584e-07
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#dbody = 9.934168e-08
-m.xm10.msky130_fd_pr__nfet_g5v0d10v5#sbody = 9.928258e-08
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#body = 1.952602e-11
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.304476e-11
+m.xm9.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.553329e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#body = 1.939123e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.270780e-11
+m.xm10.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.546590e-11
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm11.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm12.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#body = 1.689821e-12
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.224543e-12
-m.xm13.msky130_fd_pr__nfet_g5v0d10v5#sbody = 8.449200e-13
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#body = 2.885123e-12
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#dbody = 7.212796e-12
+m.xm13.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.442572e-12
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm14.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#body = 1.128470e-15
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#dbody = 2.821120e-15
-m.xm15.msky130_fd_pr__nfet_g5v0d10v5#sbody = 5.642912e-16
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#body = 4.601532e-11
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#dbody = 8.550778e-11
-m.xm16.msky130_fd_pr__nfet_g5v0d10v5#sbody = 5.253819e-11
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#body = 5.044714e-16
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#dbody = 1.261143e-15
+m.xm15.msky130_fd_pr__nfet_g5v0d10v5#sbody = 2.522709e-16
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#body = 4.704385e-11
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#dbody = 8.602204e-11
+m.xm16.msky130_fd_pr__nfet_g5v0d10v5#sbody = 5.510952e-11
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm17.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#body = 1.715259e-18
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.288130e-18
-m.xm18.msky130_fd_pr__nfet_g5v0d10v5#sbody = 8.576477e-19
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#body = 1.849040e-11
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.041184e-11
-m.xm19.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.505934e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#body = 1.236599e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.091495e-11
-m.xm20.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.183006e-12
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#body = 2.907109e-12
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#dbody = 7.267768e-12
-m.xm22.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.453559e-12
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#body = 1.258420e-11
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.146047e-11
+m.xm18.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.292110e-12
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#body = 1.928161e-11
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#dbody = 4.084785e-11
+m.xm19.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.699698e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#body = 1.233280e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#dbody = 3.083198e-11
+m.xm20.msky130_fd_pr__nfet_g5v0d10v5#sbody = 6.166412e-12
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#body = 3.678125e-12
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#dbody = 9.195307e-12
+m.xm22.msky130_fd_pr__nfet_g5v0d10v5#sbody = 1.839067e-12
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#body = 2.500000e+00
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm24.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
@@ -135,148 +137,151 @@ Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Warning: Further gmin increment
-Trying gmin =   5.6234E-07 Note: One successful gmin step
-Trying gmin =   2.3714E-07 Note: One successful gmin step
-Trying gmin =   6.4938E-08 Warning: Further gmin increment
-Trying gmin =   1.7154E-07 Note: One successful gmin step
-Trying gmin =   1.0554E-07 Warning: Further gmin increment
-Trying gmin =   1.5193E-07 Note: One successful gmin step
-Trying gmin =   1.2663E-07 Warning: Further gmin increment
-Trying gmin =   1.4517E-07 Note: One successful gmin step
-Trying gmin =   1.3558E-07 Note: One successful gmin step
-Trying gmin =   1.2238E-07 Warning: Further gmin increment
-Trying gmin =   1.3215E-07 Note: One successful gmin step
-Trying gmin =   1.2717E-07 Warning: Further gmin increment
-Trying gmin =   1.3089E-07 Note: One successful gmin step
-Trying gmin =   1.2902E-07 Warning: Further gmin increment
-Trying gmin =   1.3042E-07 Note: One successful gmin step
-Trying gmin =   1.2972E-07 Warning: Further gmin increment
-Trying gmin =   1.3024E-07 Note: One successful gmin step
-Trying gmin =   1.2998E-07 Note: One successful gmin step
-Trying gmin =   1.2959E-07 Warning: Further gmin increment
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2996E-07 Note: One successful gmin step
-Trying gmin =   1.2992E-07 Note: One successful gmin step
-Trying gmin =   1.2986E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Last gmin step failed
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Warning: Further gmin increment
+Trying gmin =   8.6596E-08 Note: One successful gmin step
+Trying gmin =   6.9783E-08 Warning: Further gmin increment
+Trying gmin =   8.2047E-08 Note: One successful gmin step
+Trying gmin =   7.5667E-08 Warning: Further gmin increment
+Trying gmin =   8.0403E-08 Note: One successful gmin step
+Trying gmin =   7.7999E-08 Warning: Further gmin increment
+Trying gmin =   7.9795E-08 Note: One successful gmin step
+Trying gmin =   7.8892E-08 Warning: Further gmin increment
+Trying gmin =   7.9569E-08 Note: One successful gmin step
+Trying gmin =   7.9230E-08 Note: One successful gmin step
+Trying gmin =   7.8724E-08 Warning: Further gmin increment
+Trying gmin =   7.9103E-08 Warning: Further gmin increment
+Trying gmin =   7.9198E-08 Warning: Further gmin increment
+Trying gmin =   7.9222E-08 Note: One successful gmin step
+Trying gmin =   7.9210E-08 Note: One successful gmin step
+Trying gmin =   7.9192E-08 Warning: Further gmin increment
+Trying gmin =   7.9205E-08 Note: One successful gmin step
+Trying gmin =   7.9199E-08 Warning: Further gmin increment
+Trying gmin =   7.9204E-08 Note: One successful gmin step
+Trying gmin =   7.9201E-08 Warning: Last gmin step failed
 Warning: True gmin stepping failed
 Note: Starting dynamic gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Note: One successful gmin step
-Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Note: One successful gmin step
-Trying gmin =   1.0000E-08 Note: One successful gmin step
-Trying gmin =   1.0000E-09 Note: One successful gmin step
-Trying gmin =   1.0000E-10 Note: One successful gmin step
-Trying gmin =   1.0000E-11 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   1.3335E-07 Warning: Further gmin increment
+Trying gmin =   5.7255E-07 Warning: Further gmin increment
+Trying gmin =   8.2417E-07 Note: One successful gmin step
+Trying gmin =   6.8693E-07 Note: One successful gmin step
+Trying gmin =   5.2271E-07 Note: One successful gmin step
+Trying gmin =   3.4696E-07 Note: One successful gmin step
+Trying gmin =   1.8764E-07 Note: One successful gmin step
+Trying gmin =   7.4621E-08 Note: One successful gmin step
+Trying gmin =   1.8715E-08 Note: One successful gmin step
+Trying gmin =   2.3506E-09 Note: One successful gmin step
+Trying gmin =   2.3506E-10 Note: One successful gmin step
+Trying gmin =   2.3506E-11 Note: One successful gmin step
+Trying gmin =   2.3506E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: Dynamic gmin stepping completed
  Reference value :  1.00000e+00_fd_pr__pfet_g5v0d10v5#dbody = 2.500000e+00
 m.xm26.msky130_fd_pr__pfet_g5v0d10v5#sbody = 2.500000e+00
-mir = 1.242602e+00
-net1 = 7.710623e-01
-net2 = 9.022415e-05
-net3 = 8.248201e-01
-net4 = 2.325611e-01
-net5 = 1.246661e+00
-net6 = 9.665180e-01
-net7 = 8.247921e-01
-net8 = 2.499287e+00
-net9 = 1.272801e+00
-net10 = 1.351839e-01
-net11 = 1.372111e-07
-net12 = 1.372111e-07
+mir = 1.246325e+00
+net1 = 7.710697e-01
+net2 = 4.033378e-05
+net3 = 8.248297e-01
+net4 = 2.942423e-01
+net5 = 1.248277e+00
+net6 = 9.639922e-01
+net7 = 8.248156e-01
+net8 = 1.320484e+00
+net9 = 1.331267e+00
+net10 = 2.308080e-01
+net11 = 1.006734e+00
+net12 = 1.006734e+00
 net13 = 0.000000e+00
-out = 1.372111e-07
-pos = -7.36495e+02
-q.xq2.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 1.934165e-03
-q.xq3.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq4.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq8.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq10.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq12.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq14.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq16.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-q.xq18.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435225e-04
-vb = 9.892771e-01
+out = 1.006734e+00
+pos = 1.194174e+00
+q.xq2.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 1.934822e-03
+q.xq3.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq4.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq8.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq10.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq12.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq14.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq16.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+q.xq18.qsky130_fd_pr__pnp_05v5_w0p68l0p68#collcx = 2.435953e-04
+vb = 9.866220e-01
 vdd = 2.500000e+00
-vs#branch = 7.244355e-03
+vs#branch = -9.99401e-02
 vt#branch = 0.000000e+00
 xc1.a = 0.000000e+00
 xc1.b1 = 0.000000e+00
-xc3.a = 1.372111e-07
-xc3.b1 = 1.372111e-07
-xr1.xsky130_fd_pr__res_xhigh_po_0p69.ra = 8.276512e-01
-xr2.xsky130_fd_pr__res_xhigh_po_0p69.ra = 8.276792e-01
-xr3.xsky130_fd_pr__res_xhigh_po_0p69.ra = 2.083003e-03
-xr4.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.719031e-01
-xr5.xsky130_fd_pr__res_xhigh_po_0p69.ra = 2.082927e-03
-xr6.xsky130_fd_pr__res_xhigh_po_0p69.ra = 3.040103e-03
-xr7.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.372111e-07
-xr8.xsky130_fd_pr__res_xhigh_po_0p69.ra = -7.72934e+02
-xr9.xsky130_fd_pr__res_xhigh_po_0p69.ra = -3.64393e+01
+xc3.a = 1.006734e+00
+xc3.b1 = 1.006734e+00
+xr1.xsky130_fd_pr__res_xhigh_po_0p69.ra = 8.275944e-01
+xr2.xsky130_fd_pr__res_xhigh_po_0p69.ra = 8.276084e-01
+xr3.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.984368e-03
+xr4.xsky130_fd_pr__res_xhigh_po_0p69.ra = 7.719108e-01
+xr5.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.984332e-03
+xr6.xsky130_fd_pr__res_xhigh_po_0p69.ra = 2.959059e-03
+xr7.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.006734e+00
+xr8.xsky130_fd_pr__res_xhigh_po_0p69.ra = 1.199093e+00
+xr9.xsky130_fd_pr__res_xhigh_po_0p69.ra = 5.158099e-03
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
-Error: no such vector PM
 Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Warning: Further gmin increment
-Trying gmin =   5.6234E-07 Note: One successful gmin step
-Trying gmin =   2.3714E-07 Note: One successful gmin step
-Trying gmin =   6.4938E-08 Warning: Further gmin increment
-Trying gmin =   1.7154E-07 Note: One successful gmin step
-Trying gmin =   1.0554E-07 Warning: Further gmin increment
-Trying gmin =   1.5193E-07 Note: One successful gmin step
-Trying gmin =   1.2663E-07 Warning: Further gmin increment
-Trying gmin =   1.4517E-07 Note: One successful gmin step
-Trying gmin =   1.3558E-07 Note: One successful gmin step
-Trying gmin =   1.2238E-07 Warning: Further gmin increment
-Trying gmin =   1.3215E-07 Note: One successful gmin step
-Trying gmin =   1.2717E-07 Warning: Further gmin increment
-Trying gmin =   1.3089E-07 Note: One successful gmin step
-Trying gmin =   1.2902E-07 Warning: Further gmin increment
-Trying gmin =   1.3042E-07 Note: One successful gmin step
-Trying gmin =   1.2972E-07 Warning: Further gmin increment
-Trying gmin =   1.3024E-07 Note: One successful gmin step
-Trying gmin =   1.2998E-07 Note: One successful gmin step
-Trying gmin =   1.2959E-07 Warning: Further gmin increment
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2996E-07 Note: One successful gmin step
-Trying gmin =   1.2992E-07 Note: One successful gmin step
-Trying gmin =   1.2986E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2988E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Further gmin increment
-Trying gmin =   1.2990E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Note: One successful gmin step
-Trying gmin =   1.2989E-07 Warning: Last gmin step failed
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Warning: Further gmin increment
+Trying gmin =   5.6234E-08 Warning: Further gmin increment
+Trying gmin =   8.6596E-08 Note: One successful gmin step
+Trying gmin =   6.9783E-08 Warning: Further gmin increment
+Trying gmin =   8.2047E-08 Note: One successful gmin step
+Trying gmin =   7.5667E-08 Warning: Further gmin increment
+Trying gmin =   8.0403E-08 Note: One successful gmin step
+Trying gmin =   7.7999E-08 Warning: Further gmin increment
+Trying gmin =   7.9795E-08 Note: One successful gmin step
+Trying gmin =   7.8892E-08 Warning: Further gmin increment
+Trying gmin =   7.9569E-08 Note: One successful gmin step
+Trying gmin =   7.9230E-08 Note: One successful gmin step
+Trying gmin =   7.8724E-08 Warning: Further gmin increment
+Trying gmin =   7.9103E-08 Warning: Further gmin increment
+Trying gmin =   7.9198E-08 Warning: Further gmin increment
+Trying gmin =   7.9222E-08 Note: One successful gmin step
+Trying gmin =   7.9210E-08 Note: One successful gmin step
+Trying gmin =   7.9192E-08 Warning: Further gmin increment
+Trying gmin =   7.9205E-08 Note: One successful gmin step
+Trying gmin =   7.9199E-08 Warning: Further gmin increment
+Trying gmin =   7.9204E-08 Note: One successful gmin step
+Trying gmin =   7.9201E-08 Warning: Last gmin step failed
 Warning: True gmin stepping failed
 Note: Starting dynamic gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Note: One successful gmin step
-Trying gmin =   1.0000E-06 Note: One successful gmin step
-Trying gmin =   1.0000E-07 Note: One successful gmin step
-Trying gmin =   1.0000E-08 Note: One successful gmin step
-Trying gmin =   1.0000E-09 Note: One successful gmin step
-Trying gmin =   1.0000E-10 Note: One successful gmin step
-Trying gmin =   1.0000E-11 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   1.3335E-07 Warning: Further gmin increment
+Trying gmin =   5.7255E-07 Warning: Further gmin increment
+Trying gmin =   8.2417E-07 Note: One successful gmin step
+Trying gmin =   6.8693E-07 Note: One successful gmin step
+Trying gmin =   5.2271E-07 Note: One successful gmin step
+Trying gmin =   3.4696E-07 Note: One successful gmin step
+Trying gmin =   1.8764E-07 Note: One successful gmin step
+Trying gmin =   7.4621E-08 Note: One successful gmin step
+Trying gmin =   1.8715E-08 Note: One successful gmin step
+Trying gmin =   2.3506E-09 Note: One successful gmin step
+Trying gmin =   2.3506E-10 Note: One successful gmin step
+Trying gmin =   2.3506E-11 Note: One successful gmin step
+Trying gmin =   2.3506E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
 Note: Dynamic gmin stepping completed
  Reference value :  1.00000e+00Note: Starting true gmin stepping
@@ -286,24 +291,165 @@ Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Warning: Further gmin increment
 Trying gmin =   5.6234E-06 Note: One successful gmin step
 Trying gmin =   2.3714E-06 Note: One successful gmin step
-Trying gmin =   6.4938E-07 Warning: Further gmin increment
-Trying gmin =   1.7154E-06 Note: One successful gmin step
-Trying gmin =   1.0554E-06 Note: One successful gmin step
-Trying gmin =   5.0937E-07 Note: One successful gmin step
-Trying gmin =   1.7077E-07 Warning: Further gmin increment
-Trying gmin =   3.8760E-07 Note: One successful gmin step
-Trying gmin =   2.5728E-07 Note: One successful gmin step
-Trying gmin =   1.7077E-07 Note: One successful gmin step
-Trying gmin =   9.2354E-08 Note: One successful gmin step
-Trying gmin =   3.6728E-08 Note: One successful gmin step
-Trying gmin =   9.2114E-09 Note: One successful gmin step
-Trying gmin =   1.1569E-09 Note: One successful gmin step
-Trying gmin =   1.1569E-10 Note: One successful gmin step
-Trying gmin =   1.1569E-11 Note: One successful gmin step
-Trying gmin =   1.1569E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: True gmin stepping completed
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   1.9110E-06 Note: One successful gmin step
+Trying gmin =   1.3824E-06 Note: One successful gmin step
+Trying gmin =   8.5053E-07 Note: One successful gmin step
+Trying gmin =   4.1047E-07 Note: One successful gmin step
+Trying gmin =   1.9810E-07 Note: One successful gmin step
+Trying gmin =   6.6415E-08 Note: One successful gmin step
+Trying gmin =   1.2893E-08 Warning: Further gmin increment
+Trying gmin =   4.4085E-08 Warning: Further gmin increment
+Trying gmin =   5.9947E-08 Note: One successful gmin step
+Trying gmin =   5.1408E-08 Note: One successful gmin step
+Trying gmin =   4.0824E-08 Warning: Further gmin increment
+Trying gmin =   4.8529E-08 Note: One successful gmin step
+Trying gmin =   4.4510E-08 Warning: Further gmin increment
+Trying gmin =   4.7491E-08 Note: One successful gmin step
+Trying gmin =   4.5977E-08 Note: One successful gmin step
+Trying gmin =   4.3794E-08 Warning: Further gmin increment
+Trying gmin =   4.5421E-08 Note: One successful gmin step
+Trying gmin =   4.4600E-08 Warning: Further gmin increment
+Trying gmin =   4.5214E-08 Note: One successful gmin step
+Trying gmin =   4.4906E-08 Warning: Further gmin increment
+Trying gmin =   4.5137E-08 Note: One successful gmin step
+Trying gmin =   4.5022E-08 Note: One successful gmin step
+Trying gmin =   4.4849E-08 Warning: Further gmin increment
+Trying gmin =   4.4978E-08 Warning: Further gmin increment
+Trying gmin =   4.5011E-08 Warning: Further gmin increment
+Trying gmin =   4.5019E-08 Note: One successful gmin step
+Trying gmin =   4.5015E-08 Warning: Further gmin increment
+Trying gmin =   4.5018E-08 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   1.5399E-06 Note: One successful gmin step
+Trying gmin =   8.0584E-07 Note: One successful gmin step
+Trying gmin =   3.0505E-07 Note: One successful gmin step
+Trying gmin =   7.1050E-08 Warning: Further gmin increment
+Trying gmin =   2.1192E-07 Warning: Further gmin increment
+Trying gmin =   2.7850E-07 Note: One successful gmin step
+Trying gmin =   2.4294E-07 Warning: Further gmin increment
+Trying gmin =   2.6915E-07 Note: One successful gmin step
+Trying gmin =   2.5571E-07 Note: One successful gmin step
+Trying gmin =   2.3680E-07 Warning: Further gmin increment
+Trying gmin =   2.5084E-07 Note: One successful gmin step
+Trying gmin =   2.4372E-07 Warning: Further gmin increment
+Trying gmin =   2.4904E-07 Note: One successful gmin step
+Trying gmin =   2.4637E-07 Warning: Further gmin increment
+Trying gmin =   2.4837E-07 Note: One successful gmin step
+Trying gmin =   2.4737E-07 Warning: Further gmin increment
+Trying gmin =   2.4812E-07 Note: One successful gmin step
+Trying gmin =   2.4774E-07 Note: One successful gmin step
+Trying gmin =   2.4718E-07 Warning: Further gmin increment
+Trying gmin =   2.4760E-07 Note: One successful gmin step
+Trying gmin =   2.4739E-07 Warning: Further gmin increment
+Trying gmin =   2.4755E-07 Note: One successful gmin step
+Trying gmin =   2.4747E-07 Warning: Further gmin increment
+Trying gmin =   2.4753E-07 Note: One successful gmin step
+Trying gmin =   2.4750E-07 Warning: Further gmin increment
+Trying gmin =   2.4752E-07 Note: One successful gmin step
+Trying gmin =   2.4751E-07 Note: One successful gmin step
+Trying gmin =   2.4749E-07 Warning: Further gmin increment
+Trying gmin =   2.4751E-07 Note: One successful gmin step
+Trying gmin =   2.4750E-07 Warning: Last gmin step failed
+Error: -4.0409e+228, 2 out of range for ^
+Warning: Dynamic gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% Note: One successful source step
+Supplies reduced to   0.1000% Note: One successful source step
+Supplies reduced to   0.2000% Note: One successful source step
+Supplies reduced to   0.3500% Note: One successful source step
+Supplies reduced to   0.5750% Note: One successful source step
+Supplies reduced to   0.9125% Note: One successful source step
+Supplies reduced to   1.4188% Note: One successful source step
+Supplies reduced to   2.1781% Note: One successful source step
+Supplies reduced to   3.3172% Note: One successful source step
+Supplies reduced to   5.0258% Note: One successful source step
+Supplies reduced to   7.5887% Note: One successful source step
+Supplies reduced to  11.4330% Note: One successful source step
+Supplies reduced to  17.1995% Note: One successful source step
+Supplies reduced to  25.8493% Note: One successful source step
+Supplies reduced to  38.8239% Supplies reduced to  25.8493% Note: One successful source step
+Supplies reduced to  26.8493% Note: One successful source step
+Supplies reduced to  28.3493% Note: One successful source step
+Supplies reduced to  30.5993% Note: One successful source step
+Supplies reduced to  33.9743% Note: One successful source step
+Supplies reduced to  39.0368% Note: One successful source step
+Supplies reduced to  46.6305% Supplies reduced to  39.0368% Note: One successful source step
+Supplies reduced to  40.0368% Note: One successful source step
+Supplies reduced to  41.5368% Note: One successful source step
+Supplies reduced to  43.7868% Note: One successful source step
+Supplies reduced to  47.1618% Supplies reduced to  43.7868% Note: One successful source step
+Supplies reduced to  44.2930% Supplies reduced to  43.7868% Note: One successful source step
+Supplies reduced to  43.8627% Note: One successful source step
+Supplies reduced to  43.9766% Note: One successful source step
+Supplies reduced to  44.1475% Note: One successful source step
+Supplies reduced to  44.4038% Note: One successful source step
+Supplies reduced to  44.7882% Note: One successful source step
+Supplies reduced to  45.3648% Note: One successful source step
+Supplies reduced to  46.2298% Note: One successful source step
+Supplies reduced to  47.5273% Note: One successful source step
+Supplies reduced to  49.4735% Note: One successful source step
+Supplies reduced to  52.3928% Note: One successful source step
+Supplies reduced to  56.7717% Note: One successful source step
+Supplies reduced to  63.3401% Note: One successful source step
+Supplies reduced to  73.1927% Note: One successful source step
+Supplies reduced to  87.9716% Note: One successful source step
+Supplies reduced to 100.0000% Note: One successful source step
+Note: Source stepping completed
  Reference value :  2.80000e+00Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   3.1623E-09 Note: One successful gmin step
+Trying gmin =   5.6234E-10 Warning: Further gmin increment
+Trying gmin =   2.0535E-09 Note: One successful gmin step
+Trying gmin =   1.0746E-09 Note: One successful gmin step
+Trying gmin =   5.6234E-10 Note: One successful gmin step
+Trying gmin =   2.1288E-10 Warning: Further gmin increment
+Trying gmin =   4.4109E-10 Note: One successful gmin step
+Trying gmin =   3.0643E-10 Warning: Further gmin increment
+Trying gmin =   4.0270E-10 Note: One successful gmin step
+Trying gmin =   3.5128E-10 Warning: Further gmin increment
+Trying gmin =   3.8918E-10 Warning: Further gmin increment
+Trying gmin =   3.9928E-10 Note: One successful gmin step
+Trying gmin =   3.9419E-10 Note: One successful gmin step
+Trying gmin =   3.8669E-10 Warning: Further gmin increment
+Trying gmin =   3.9231E-10 Warning: Further gmin increment
+Trying gmin =   3.9372E-10 Warning: Further gmin increment
+Trying gmin =   3.9408E-10 Note: One successful gmin step
+Trying gmin =   3.9390E-10 Note: One successful gmin step
+Trying gmin =   3.9363E-10 Warning: Further gmin increment
+Trying gmin =   3.9383E-10 Warning: Further gmin increment
+Trying gmin =   3.9388E-10 Note: One successful gmin step
+Trying gmin =   3.9386E-10 Note: One successful gmin step
+Trying gmin =   3.9382E-10 Warning: Further gmin increment
+Trying gmin =   3.9385E-10 Note: One successful gmin step
+Trying gmin =   3.9383E-10 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   3.1623E-10 Note: One successful gmin step
+Trying gmin =   5.6234E-11 Note: One successful gmin step
+Trying gmin =   5.6234E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+ Reference value :  1.32000e+00Note: Starting true gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
@@ -314,52 +460,58 @@ Trying gmin =   3.1623E-09 Note: One successful gmin step
 Trying gmin =   5.6234E-10 Note: One successful gmin step
 Trying gmin =   1.0000E-10 Warning: Further gmin increment
 Trying gmin =   3.6517E-10 Note: One successful gmin step
-Trying gmin =   1.9110E-10 Note: One successful gmin step
-Trying gmin =   1.0000E-10 Note: One successful gmin step
-Trying gmin =   3.7855E-11 Note: One successful gmin step
-Trying gmin =   8.8168E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: True gmin stepping completed
-Note: Starting true gmin stepping
+Trying gmin =   1.9110E-10 Warning: Further gmin increment
+Trying gmin =   3.1059E-10 Note: One successful gmin step
+Trying gmin =   2.4362E-10 Warning: Further gmin increment
+Trying gmin =   2.9229E-10 Note: One successful gmin step
+Trying gmin =   2.6685E-10 Warning: Further gmin increment
+Trying gmin =   2.8571E-10 Note: One successful gmin step
+Trying gmin =   2.7612E-10 Warning: Further gmin increment
+Trying gmin =   2.8329E-10 Warning: Further gmin increment
+Trying gmin =   2.8511E-10 Warning: Further gmin increment
+Trying gmin =   2.8556E-10 Note: One successful gmin step
+Trying gmin =   2.8533E-10 Warning: Further gmin increment
+Trying gmin =   2.8551E-10 Note: One successful gmin step
+Trying gmin =   2.8542E-10 Note: One successful gmin step
+Trying gmin =   2.8529E-10 Warning: Further gmin increment
+Trying gmin =   2.8539E-10 Warning: Further gmin increment
+Trying gmin =   2.8541E-10 Note: One successful gmin step
+Trying gmin =   2.8540E-10 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting dynamic gmin stepping
 Trying gmin =   1.0000E-03 Note: One successful gmin step
 Trying gmin =   1.0000E-04 Note: One successful gmin step
 Trying gmin =   1.0000E-05 Note: One successful gmin step
 Trying gmin =   1.0000E-06 Note: One successful gmin step
 Trying gmin =   1.0000E-07 Note: One successful gmin step
 Trying gmin =   1.0000E-08 Note: One successful gmin step
-Trying gmin =   1.0000E-09 Note: One successful gmin step
-Trying gmin =   1.0000E-10 Warning: Further gmin increment
-Trying gmin =   5.6234E-10 Note: One successful gmin step
-Trying gmin =   3.1623E-10 Note: One successful gmin step
-Trying gmin =   1.3335E-10 Note: One successful gmin step
-Trying gmin =   8.6596E-11 Note: One successful gmin step
-Trying gmin =   4.5316E-11 Note: One successful gmin step
-Trying gmin =   1.7154E-11 Note: One successful gmin step
-Trying gmin =   3.9954E-12 Note: One successful gmin step
+Trying gmin =   3.1623E-09 Note: One successful gmin step
+Trying gmin =   1.7783E-09 Note: One successful gmin step
+Trying gmin =   7.4989E-10 Note: One successful gmin step
+Trying gmin =   2.0535E-10 Note: One successful gmin step
+Trying gmin =   2.9427E-11 Note: One successful gmin step
+Trying gmin =   2.9427E-12 Note: One successful gmin step
 Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: True gmin stepping completed
- Reference value :  1.30000e+00
-Error: measure  pm  (AT) : out of interval
- meas ac pm find p when vdb(ldo_out)=0 failed!
-
+Note: Dynamic gmin stepping completed
+ Reference value :  1.30000e+00pm                  =  1.042803e+01
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 91
-psrr100             =  -4.992092e-01
-psrr100k            =  -4.991109e-01
+psrr100             =  -6.053713e+01
+psrr100k            =  -2.798563e+01
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 86
-temp_coeff = 7.141063e+01
+temp_coeff = 1.779486e+02
 Doing analysis at TEMP = 0.000000 and TNOM = 27.000000
 
 
 No. of Data Rows : 141
-vldo_sup_2          =  1.807535e+00
-vldo_sup_2_8        =  1.806817e+00
-line_reg = 8.975000e-04
+vldo_sup_2          =  1.797211e+00
+vldo_sup_2_8        =  1.796425e+00
+line_reg = 9.825000e-04
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
-vin                 =  1.924318e+00
-dropout = 1.603180e-01
+vin                 =  1.924320e+00
+dropout = 1.603200e-01
