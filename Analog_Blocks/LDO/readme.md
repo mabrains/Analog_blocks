@@ -6,7 +6,7 @@
 
 ## Error Amplifier 
 
-![Image of LDO_Error amplifier](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_Miller_BGR_1.8v/Error_amp_sch.png)
+![Image of LDO_Error amplifier](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Error_Amp.png)
 
 ## Bandgap
 
