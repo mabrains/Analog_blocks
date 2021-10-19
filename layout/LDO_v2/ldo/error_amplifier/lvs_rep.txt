@@ -24,14 +24,40 @@ Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d1
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__res_xhigh_po has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__res_xhigh_po      |Circuit 2: sky130_fd_pr__res_xhigh_po      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__res_xhigh_po and sky130_fd_pr__res_xhigh_po are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Class error_amplifier_flattened:  Merged 52 devices.
 
 Subcircuit summary:
 Circuit 1: error_amplifier_flattened       |Circuit 2: error_amplifier_flattened       
 -------------------------------------------|-------------------------------------------
 sky130_fd_pr__pfet_g5v0d10v5 (3)           |sky130_fd_pr__pfet_g5v0d10v5 (3)           
 sky130_fd_pr__nfet_g5v0d10v5 (5)           |sky130_fd_pr__nfet_g5v0d10v5 (5)           
-Number of devices: 8                       |Number of devices: 8                       
-Number of nets: 9                          |Number of nets: 9                          
+sky130_fd_pr__res_xhigh_po (1)             |sky130_fd_pr__res_xhigh_po (1)             
+sky130_fd_pr__cap_mim_m3_1 (1)             |sky130_fd_pr__cap_mim_m3_1 (1)             
+Number of devices: 10                      |Number of devices: 10                      
+Number of nets: 10                         |Number of nets: 10                         
 ---------------------------------------------------------------------------------------
 Circuits match uniquely.
 Netlists match uniquely.
@@ -39,14 +65,15 @@ Netlists match uniquely.
 Subcircuit pins:
 Circuit 1: error_amplifier_flattened       |Circuit 2: error_amplifier_flattened       
 -------------------------------------------|-------------------------------------------
+net11                                      |net11                                      
 bg_out                                     |bg_out                                     
 pos                                        |pos                                        
-out                                        |out                                        
 net10                                      |net10                                      
-net8                                       |net8                                       
+out                                        |out                                        
 GND                                        |GND                                        
 VDD                                        |VDD                                        
 net9                                       |net9                                       
+net8                                       |net8                                       
 vb                                         |vb                                         
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.

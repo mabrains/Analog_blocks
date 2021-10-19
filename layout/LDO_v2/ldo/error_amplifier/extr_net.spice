@@ -1,13 +1,67 @@
 * NGSPICE file created from error_amplifier_flattened.ext - technology: sky130A
 
-.subckt error_amplifier_flattened out vb VDD GND net10 net9 net8 bg_out pos
-X0 net9 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=4
-X1 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=8
-X2 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=12
-X3 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=12
-X4 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u M=8
-X5 net8 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1.2e+06u M=4
-X6 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=2e+06u l=1e+06u M=8
-X7 vb vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+06u l=1e+06u M=4
+.subckt error_amplifier_flattened out vb VDD GND net10 net9 net8 bg_out pos net11
+X0 net9 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X1 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.74e+11p ps=1.403e+06u w=1e+06u l=1e+06u
+X2 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X3 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X4 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X5 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X6 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X7 net8 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X8 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X9 net10 vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.74e+11p pd=1.403e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X10 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X11 net8 pos net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X12 VDD net9 net9 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X13 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X14 net10 vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.74e+11p pd=1.403e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X15 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X16 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X17 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X18 out net11 GND sky130_fd_pr__res_xhigh_po w=690000u l=4.5e+06u
+X19 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X20 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X21 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X22 net8 pos net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X23 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X24 net10 bg_out net9 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X25 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X26 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X27 net9 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X28 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X29 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X30 net10 vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.74e+11p pd=1.403e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X31 net8 pos net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X32 net10 bg_out net9 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X33 vb vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X34 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X35 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X36 net8 net9 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X37 GND vb out GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X38 net10 bg_out net9 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X39 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X40 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X41 net8 pos net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X42 VDD net9 net8 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X43 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.74e+11p ps=1.403e+06u w=1e+06u l=1e+06u
+X44 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.74e+11p ps=1.403e+06u w=1e+06u l=1e+06u
+X45 net10 vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.74e+11p pd=1.403e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X46 VDD net9 net9 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X47 GND vb net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.74e+11p ps=1.403e+06u w=1e+06u l=1e+06u
+X48 net10 bg_out net9 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X49 GND vb vb GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X50 vb vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X51 out net8 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=4.35e+11p pd=3.29e+06u as=5.655e+11p ps=4.277e+06u w=3e+06u l=1.2e+06u
+X52 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X53 GND vb vb GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.8125e+11p pd=1.6125e+06u as=1.45e+11p ps=1.29e+06u w=1e+06u l=1e+06u
+X54 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X55 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X56 VDD net9 net8 VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X57 VDD net8 out VDD sky130_fd_pr__pfet_g5v0d10v5 ad=5.655e+11p pd=4.277e+06u as=4.35e+11p ps=3.29e+06u w=3e+06u l=1.2e+06u
+X58 net10 pos net8 GND sky130_fd_pr__nfet_g5v0d10v5 ad=3.48e+11p pd=2.806e+06u as=2.9e+11p ps=2.29e+06u w=2e+06u l=1e+06u
+X59 out vb GND GND sky130_fd_pr__nfet_g5v0d10v5 ad=1.45e+11p pd=1.29e+06u as=1.8125e+11p ps=1.6125e+06u w=1e+06u l=1e+06u
+X60 net9 bg_out net10 GND sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.29e+06u as=3.48e+11p ps=2.806e+06u w=2e+06u l=1e+06u
+X61 net8 net11 sky130_fd_pr__cap_mim_m3_1 l=5e+07u w=5e+07u
 .ends
 

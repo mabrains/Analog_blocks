@@ -1,16 +1,3 @@
-Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 has no definition, treated as a black box.
-Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 has no definition, treated as a black box.
-
-Subcircuit pins:
-Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d10v5    
--------------------------------------------|-------------------------------------------
-1                                          |1                                          
-2                                          |2                                          
-3                                          |3                                          
-4                                          |4                                          
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
 Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 has no definition, treated as a black box.
 Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 has no definition, treated as a black box.
 
@@ -24,26 +11,208 @@ Circuit 1: sky130_fd_pr__pfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__pfet_g5v0d1
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_pr__pfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 are equivalent.
-
-Subcircuit summary:
-Circuit 1: TOP                             |Circuit 2: TOP                             
--------------------------------------------|-------------------------------------------
-sky130_fd_pr__nfet_g5v0d10v5 (2)           |sky130_fd_pr__nfet_g5v0d10v5 (2)           
-sky130_fd_pr__pfet_g5v0d10v5 (1)           |sky130_fd_pr__pfet_g5v0d10v5 (1)           
-Number of devices: 3                       |Number of devices: 3                       
-Number of nets: 5                          |Number of nets: 5                          
----------------------------------------------------------------------------------------
-Circuits match uniquely.
-Netlists match uniquely.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 has no definition, treated as a black box.
 
 Subcircuit pins:
-Circuit 1: TOP                             |Circuit 2: TOP                             
+Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d10v5    
 -------------------------------------------|-------------------------------------------
-inn                                        |inn                                        
-bg_out                                     |bg_out                                     
-GND                                        |GND                                        
-VDD                                        |VDD                                        
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes TOP and TOP are equivalent.
+Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__pnp_05v5 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pnp_05v5 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pnp_05v5          |Circuit 2: sky130_fd_pr__pnp_05v5          
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pnp_05v5 and sky130_fd_pr__pnp_05v5 are equivalent.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__cap_mim_m3_1 has no definition, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__cap_mim_m3_1      |Circuit 2: sky130_fd_pr__cap_mim_m3_1      
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__cap_mim_m3_1 and sky130_fd_pr__cap_mim_m3_1 are equivalent.
+Class bandgap_flattened:  Merged 75 devices.
+Class bandgap_flattened:  Merged 7 devices.
+
+Subcircuit summary:
+Circuit 1: bandgap_flattened               |Circuit 2: bandgap_flattened               
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_g5v0d10v5 (8)           |sky130_fd_pr__pfet_g5v0d10v5 (8)           
+sky130_fd_pr__nfet_g5v0d10v5 (6)           |sky130_fd_pr__nfet_g5v0d10v5 (6)           
+sky130_fd_pr__pnp_05v5 (2)                 |sky130_fd_pr__pnp_05v5 (2)                 
+sky130_fd_pr__cap_mim_m3_1 (1)             |sky130_fd_pr__cap_mim_m3_1 (1)             
+Number of devices: 17                      |Number of devices: 17                      
+Number of nets: 13                         |Number of nets: 13                         
+---------------------------------------------------------------------------------------
+Resolving automorphisms by property value.
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v5Q2 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v5Q2 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v5Q2 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v5Q2 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance sky130_fd_pr__pnp_05v5Q3 network:
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+  area = 0
+Circuit 2 instance sky130_fd_pr__pnp_05v580 network:
+  area = 0
+Netlists match uniquely.
+Netlists match uniquely.
+Circuits match correctly.
+
+Subcircuit pins:
+Circuit 1: bandgap_flattened               |Circuit 2: bandgap_flattened               
+-------------------------------------------|-------------------------------------------
+net3                                       |net3                                       
+net1                                       |net1                                       
+vb                                         |vb                                         
+GND                                        |GND                                        
+inp                                        |inp                                        
+net5                                       |net5                                       
+net6                                       |net6                                       
+VDD                                        |VDD                                        
+mir                                        |mir                                        
+bg_out                                     |bg_out                                     
+inn                                        |inn                                        
+net4                                       |net4                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes bandgap_flattened and bandgap_flattened are equivalent.
 Circuits match uniquely.
