@@ -1,6 +1,0 @@
-* NGSPICE file created from pass_tran_res_flattened.ext - technology: sky130A
-
-.subckt pass_tran_res_flattened out VDD ldo_out
-X0 ldo_out out VDD VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=0p ps=0u w=1e+07u l=500000u M=800
-.ends
-

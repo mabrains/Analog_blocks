@@ -1,6 +1,0 @@
-** startup circuit
-.subckt TOP bg_out GND VDD inn
-XM15 net2 bg_out GND GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 m=8
-XM16 VDD net2 inn GND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=3 m=4
-XM17 net2 bg_out VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=5 W=0.42 m=2
-.ends
