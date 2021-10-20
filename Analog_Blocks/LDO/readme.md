@@ -59,4 +59,4 @@ PSRR @ 1KHz                | 72.4dB
 PSRR @ 100kHz              | 26.9dB
 Load range                 | 50uA -> 100mA
 Phase Margin               | 54.7°
-
+Quiescent Current          | 127uA
