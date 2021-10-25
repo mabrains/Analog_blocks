@@ -1,5 +1,7 @@
 # LDO Simulation
 
+We have an enable switch so all the following analysis when the enable signal is high.
+
 ## Schematic
 
 ![Image of LDO schematic](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Testbench_schematic.png)
@@ -15,36 +17,42 @@
 
 ## a. DC analysis
 
-Use the command (.op) then press netlist then press simulate. After simulation is done write the command (show) this command will display all the transistors parameters
-and ensure that all mosfets are in saturation region (Vds > Vdsat).
+We used dc analysis for displaying the operating point for proper biasing of transistors and also dc sweep of output voltage against variations in supply and temprature to calculate dropout voltage,line regulation,temperature coefficient.
 
-## b. Vout/Vin charactersitics
-
-Use the command (.DC vin) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vout vs vin.
+## Supply variation
+We made dc sweep on the supply and plotted voltage of the output node and vdd node overlaid on the same plot
 
 ![Image of LDO_Vout_vs_Vin](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/dcsweep.png)
 
-## c. PSRR analysis
+## Temperature variation
+We made dc sweep on temperature from 0 to 85°C and plotted the output voltage vs temperature from which we found temperature coeffiecient in ppm/°C.
 
-Use the command (.AC vin) then press netlist then press simulate. After simulation is done write the command (plot db(vout)) to plot the PSRR in dB.
+![Image of LDO_Vout_vs_Vin](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tempsweep.png)
+
+## c. AC analysis
+## PSRR
+We used AC analysis by injecting small ac signal over the supply and plotted the output voltage in dB which refers to the PSRR vs Frequency.
 
 ![Image of LDO_PSRR](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/psrr.png)
-
+## Stability analysis
+We made the above testbench to cut the feedback loop of the ldo and inject ac signal and then measure the loop gain and phase to find phase margin.
 ## d. Transient analysis
 
-Use the command (.tran) then press netlist then press simulate. After simulation is done write the command (plot vin vout) to plot vin and vout vs time.
+## Line Transient 
+We used transient analysis to show the line transient by varying the supply from 0 to vdd at different supply levels corners such that the nominal supply is 2.3v.
 When VDD varies from 0 to 2.3v
 ![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.3v.png)
-When VDD varies from 0 to 2.1v
+When VDD varies from 0 to 2.07v
 ![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.1v.png)
-When VDD varies from 0 to 2.5v
+When VDD varies from 0 to 2.53v
 ![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.5v.png)
-
+## Load Transient 
+![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.5v.png)
 ## e. Testbench netlist
 
 The netlist of all previous analyses is below or you can simply run it using script "LDO_script.bash" existed in scripts folder.
 
-![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Testbench.png)
+![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/load_transient.png)
 
 ## Simulation results
 The typical conditions are tt corner ,load of 50uA, T=27°C , VDD=2.3V , We have a script to automate running process corners then getting their statistical distribution where the variation of the load from 50uA till 100mA is included in the corners  
