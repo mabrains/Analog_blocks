@@ -47,12 +47,13 @@ When VDD varies from 0 to 2.07v
 When VDD varies from 0 to 2.53v
 ![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.5v.png)
 ## Load Transient 
-![Image of LDO_Transient](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/tran2.5v.png)
+The load is varied from 0.1mA to 10mA where the load is modeled as current source varied as PWL source.
+![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/load_transient.png)
 ## e. Testbench netlist
 
 The netlist of all previous analyses is below or you can simply run it using script "LDO_script.bash" existed in scripts folder.
 
-![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/load_transient.png)
+![Image of LDO_netlist](https://github.com/mabrains/Analog_blocks/blob/main/Analog_Blocks/LDO/Images/LDO_v2/Testbench.png)
 
 ## Simulation results
 The typical conditions are tt corner ,load of 50uA, T=27°C , VDD=2.3V , We have a script to automate running process corners then getting their statistical distribution where the variation of the load from 50uA till 100mA is included in the corners  
